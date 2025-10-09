@@ -1,0 +1,145 @@
+\documentclass[12pt,a4paper]{article}
+
+% Idioma e tipografia
+\usepackage[brazil]{babel}
+\usepackage{csquotes}
+
+% Layout e recursos básicos
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+
+% Matemática e teoremas (essencial só se você usa)
+\usepackage{amsmath,amssymb,amsthm}
+
+% Bibliografia ABNT numerada
+\usepackage[
+  backend=biber,
+  style=abnt,
+  citestyle=abnt-numeric,
+  sorting=none,
+  giveninits=true,
+  uniquename=false,
+  doi=false,
+  isbn=false,
+  url=false,
+  language=brazil
+]{biblatex}
+\addbibresource{refs.bib}
+
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0cm}
+        
+            \includegraphics[width=0.5\textwidth]{Images/Logo_FGV.png} 
+            
+        \vspace{1.5cm}
+        \large
+        
+        Ciência de Dados e I.A.\\
+        Escola de Matemática Aplicada\\
+        Fundação Getúlio Vargas\\
+
+        \vspace{1cm}  
+    
+        \Large
+        Engenharia de Requisitos
+            
+        \vspace{2cm}
+        
+        \vspace{0.25cm}
+
+        \Huge \textbf{Proposta de TCC} \\ 
+        \vspace{0.5cm}
+        \huge \textbf{LLM para Engenharia de Requisitos}
+        \vspace{3.6cm}
+        
+        \large
+                Aluno: Isabela Yabe\\
+                Orientador: Rafael de Pinho André\\
+                Escola de Matemática Aplicada, FGV/EMAp \\
+                Rio de Janeiro - RJ.
+        \vfill
+            
+        \vspace{0.8cm}  
+        
+        Rio de Janeiro, 2025
+            
+    \end{center}
+\end{titlepage}
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{Introdução}
+
+A engenharia de software estuda e avalia métodos capazes de aproximar o código fonte da linguagem natural. Essa busca se manifesta em duas vertentes complementares: a interação com o usuário final e a comunicação entre os próprios desenvolvedores.
+
+Esse estudo fundamenta-se nas constribuições de Larry Constantine, Edward Yourdon, Ivar Jacobson e Alistar Cockburn, autores que defendem o desenvolvimento estruturado e orientado ao usuário. Isto é, projetado a partir da visão e das necessidades de quem o utiliza, e não apenas da estrutura interna ou das preferências de quem o desenvolve. Essa perspectiva deu origem a princípios de design centrados na função e no comportamento observável do sistema, enfatizando que a organização do código deve refletir a experiência do usuário e os fluxos de interação previstos. \textcite{yourdon1978structured} descrevem o processo tradicional de desenvolvimento de software como uma cadeia de tradução sucessiva. O diálogo ocorre entre o proprietário do produto, o usuário, e o analista responsável por capturar suas ideias, conhecimentos de usabilidade e o comportamento esperado do software. Em seguida, o engenheiro de requisitos traduz essa concepção em um conjunto de requisitos funcionais e não funcionais, que por sua vez são reinterpretados pelo designer de sistemas em estruturas lógicas e técnicas. Por fim, o programador concretiza essas decisões, implementando no código as interpretações que compreendeu a partir do trabalho do designer. Cada etapa dessa cadeia de traduções implica na perda ou distorção de parte do significado original do usuário, o que pode resultar em comportamentoa apenas próximo ao desejado.
+
+Nesse contexto, surge o conceito de \textit{projeto estruturado}, entendido como “a arte de definir os componentes de um sistema e as inter-relações entre esses componentes da melhor forma possível”(Colocar autor e data). Esse processo tem início na clareza e na visibilidade das decisões e atividades envolvidas, promovendo uma compreensão compartilhada entre os membros da equipe e garantindo que o design reflita as intenções originais do sistema.
+
+Para Constantine, propriedades de qualidade como coesão e acoplamento não são apenas métricas técnicas, mas indicadores de quão bem o software reflete o domínio do problema e promove a clareza de propósito de cada módulo. Um sistema altamente coeso e fracamente acoplado tende a reproduzir com maior fidelidade a lógica do usuário, tornando-se mais previsível, transparente e alinhado às suas necessidades operacionais.
+
+Afim de alcançar o resultado de um software onde observamos o comportamento esperado, modelagem de \textit{casos de uso} surge como uma estratégia orientada ao usuário. Introduzido por Ivar Jacobson em 1989, o conceito propõe que para compreendermos o que um sistema deve fazer, é preciso identificar quem o utilizará e quais objetivos esse usuário pretende alcançar. 
+
+Segundo Jacobson e Cockburn, um caso de uso “conta a história completa”, uma sequência de eventos que se inicia com uma necessidade e termina com a geração de valor, incluindo também alternativas, desvios e exceções. Essa narrativa funcional estabelece o elo entre o domínio do problema e a estrutura do software, permitindo que analistas e desenvolvedores compartilhem uma mesma linguagem de entendimento sobre o sistema.
+
+Os princípios subjacentes aos casos de uso refletem diretamente o ideal do projeto estruturado defendido por Constantine e Yourdon. Ambos valorizam a decomposição do sistema em unidades compreensíveis e interdependentes, com ênfase na clareza das intenções e na previsibilidade das interações. Enquanto o projeto estruturado busca representar a estrutura do sistema de forma coerente e modular, os casos de uso descrevem o comportamento dessa estrutura na perspectiva do usuário.
+
+Autores posteriores ampliaram essa discussão ao destacar o papel humano da comunicação no próprio ato de programar. Autores como Frederick P. Brooks Jr., Martin Fowler, Kent Beck e Robert C. Martin ressaltam que o desenvolvimento de software não é apenas um esforço técnico, mas também um ato de comunicação entre mentes humanas mediado pelo código. A produtividade e a clareza de um sistema dependem, portanto, não apenas da habilidade individual do programador, mas da forma como o conhecimento é transmitido, compreendido e preservado entre diferentes desenvolvedores ao longo do tempo.
+
+Nesse sentido, a documentação, a estrutura do código, a nomenclatura e o comportamento esperado funcionam como pontes entre a intenção original do autor e a compreensão dos futuros mantenedores. Sommerville e Wiegers e Beatty  destacam que a documentação é um artefato essencial da engenharia de requisitos, atuando como quem nos diz quem é o software, ou quem deveria ser. Ela traduz como o usuário pretende utilizar o sistema e quais são as características de negócio que o software deve refletir. A ausência de clareza nesse elo resulta em sistemas de difícil manutenção, inconsistências entre requisitos e implementação e perda de rastreabilidade, um problema recorrente em ambientes de desenvolvimento complexos e colaborativos.
+
+No cenário contemporâneo, o avanço dos modelos de linguagem e das técnicas de representação semântica, como os \textit{embeddings}, oferece novas possibilidades. Trabalhos recentes exploram como representações vetoriais de elementos de software, tais como identificadores, comentários, \textit{issues}, \textit{commits} e \textit{docstrings}, podem capturar aspectos semânticos úteis à engenharia de requisitos e à geração automatizada de artefatos. Essa evolução permite observar o código não apenas como uma estrutura sintática, mas como um repositório de intenções comunicativas, em que cada elemento textual contribui para reconstruir a lógica, o propósito e o comportamento esperados do sistema.
+
+É nesse contexto que se insere o presente trabalho, propondo uma abordagem de engenharia reversa orientada por aprendizado de máquina, fundamentada em \textit{embeddings} e \textit{Retrieval-Augmented Generation} (RAG). O objetivo é investigar como informações semânticas presentes em comentários, identificadores e estruturas de código podem ser utilizadas para recuperar a intenção do desenvolvedor e derivar artefatos de engenharia de requisitos, em especial casos de uso. Ao conectar o código-fonte a uma base de conhecimento composta por obras clássicas e boas práticas de engenharia de software, busca-se contribuir para a construção de um processo de documentação e elicitação de casos de uso mais preciso, compreensível e automatizável.
+
+\subsection{Fundamentos da Engenharia de Software e Projeto Estruturado}
+
+Desde as décadas de 1970 e 1980, a engenharia de software vem se consolidando como um campo preocupado em reduzir a distância entre o comportamento esperado do sistema e sua implementação técnica. Yourdon e Constantine introduziram os princípios de projeto estruturado, destacando a importância da coesão e do baixo acoplamento entre módulos como indicadores de qualidade.
+
+Posteriormente, Jacobson, Booch, Rumbaugh propuseram a UML e os casos de uso como meio de representar o comportamento do sistema a partir da perspectiva do usuário. Essa abordagem complementa o projeto estruturado ao oferecer uma visão funcional do software, alinhada às intenções e objetivos do usuário.
+
+Autores como Brooks Jr., Fowler e Martin reforçaram a dimensão humana do desenvolvimento de software, tratando o código como um meio de comunicação entre desenvolvedores e um reflexo das intenções de design. Essas obras clássicas sustentam a premissa deste trabalho: o código-fonte contém, em sua estrutura e documentação, pistas da intenção do autor que podem ser extraídas e formalizadas por técnicas de engenharia reversa.
+
+
+% Se aprofundar mais na ponte entre os assuntos
+
+\section{Metodologia de Mapeamento Sistemático}
+\subsection{Capítulo 17
+CASOS DE USO - UML}
+Nenhum sistema existe isoladamente. Todo sistema interessante interage
+com atores humanos ou autômatos que utilizam esse sistema para algum propósito e esses atores esperam que o sistema se comporte de acordo com as maneiras previstas. Um caso de uso especifica o comportamento de um sistema ou de
+parte de um sistema e é uma descrição de um conjunto de seqüências de ações,
+incluindo variantes realizadas pelo sistema para produzir um resultado observável do valor de um ator.
+Os casos de usos podem ser aplicados para captar o comportamento pretendido do sistema que está sendo desenvolvido, sem ser necessário especificar
+como esse comportamento é implementado. Os casos de uso fornecem uma maneira para os desenvolvedores chegarem a uma compreensão comum com os
+usuários finais do sistema e com os especialistas do domínio. Além disso, os casos de uso servem para ajudar a validar a arquitetura e para verificar o sistema à
+medida que ele evolui durante seu desenvolvimento. À proporção que você implementa o seu sistema, esses casos de uso são realizados por colaborações cujos
+elementos trabalham em conjunto para a execução de cada caso de uso.
+Casos de uso bem-estruturados denotam somente o comportamento essencial do sistema ou subsistema e não são amplamente gerais, nem muito específicos.
+
+Um caso de uso executa alguma quantidade tangível de trabalho. Sob a
+perspectiva de um determinado ator, um caso de uso realiza algo que é de valor
+para um ator, como o cálculo de um resultado, a geração de um novo objeto ou
+a modificação do estado de outro objeto. Por exemplo, na modelagem de um
+banco, o processamento de um empréstimo resulta na entrega de um empréstimo aprovado, manifestada como uma pilha de dinheiro entregue nas mãos do
+cliente.
+
+Você poderá aplicar os casos de uso a todo o seu sistema. Também pode
+aplicá-los a uma parte do sistema, incluindo subsistemas e até interfaces e classes
+individuais. Em cada situação, os casos de uso não apenas representam o comportamento desejado desses elementos, mas também podem ser utilizados como
+a base de casos de teste para esses elementos, à medida que evoluem durante o
+desenvolvimento. Casos de uso aplicados aos subsistemas são excelentes fontes
+de testes de regressão; casos de uso aplicados a todo o sistema são excelentes
+fontes de testes de sistema e de integração. A UML fornece a representação gráfica de um caso de uso e de um ator, conforme mostra a Figura 17.1. Essa notação permite visualizar um caso de uso em separado de sua realização e no contexto com outros casos de uso.
+\newpage
+
+\printbibliography
+
+\end{document}
