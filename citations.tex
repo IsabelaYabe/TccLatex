@@ -1,0 +1,30 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[english,portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{csquotes}
+
+\usepackage[
+    backend=biber,
+    style=abnt,
+    % citestyle=abnt-numeric,
+    sorting=none
+    ]{biblatex}
+    
+\addbibresource{refs.bib}
+
+\begin{document}
+
+
+\section{Design Estruturado}
+
+Como afirmam \textcite{yourdon1979structured}, 
+"introduzindo uma atividade específica de design formal para descrever completamente, e com antecedência, todas as partes de um sistema e suas inter-relações, não criamos uma nova atividade no ciclo de desenvolvimento de programas." 
+
+Além disso, \textcite{yourdon1979structured} destacam que 
+"o design estruturado é o processo de decidir quais componentes interconectados de qual maneira resolverão algum problema bem especificado."
+
+\printbibliography
+
+\end{document}
