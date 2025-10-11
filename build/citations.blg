@@ -1,15 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'build/citations.blg'
-[95] biber-MSWIN64:342> INFO - === 
-[140] Biber.pm:421> INFO - Reading 'build/citations.bcf'
-[238] Biber.pm:1002> INFO - Found 1 citekeys in bib section 0
-[248] Biber.pm:4487> INFO - Processing section 0
-[257] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
-[323] bibtex.pm:1713> INFO - LaTeX decoding ...
-[327] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
-[357] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[357] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'variable = shifted' with 'variable = non-ignorable'
-[357] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-PT'
-[357] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-PT'
-[358] bbl.pm:676> INFO - Writing 'build/citations.bbl' with encoding 'UTF-8'
-[359] bbl.pm:779> INFO - Output to build/citations.bbl
+[81] biber-MSWIN64:342> INFO - === 
+[115] Biber.pm:421> INFO - Reading 'build/citations.bcf'
+[199] Biber.pm:1002> INFO - Found 4 citekeys in bib section 0
+[208] Biber.pm:4487> INFO - Processing section 0
+[217] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
+[269] bibtex.pm:1713> INFO - LaTeX decoding ...
+[276] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
+[326] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[326] UCollate.pm:68> INFO - Overriding locale 'pt-PT' defaults 'variable = shifted' with 'variable = non-ignorable'
+[328] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-PT'
+[328] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-PT'
+[333] bbl.pm:676> INFO - Writing 'build/citations.bbl' with encoding 'UTF-8'
+[335] bbl.pm:779> INFO - Output to build/citations.bbl

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  10 OCT 2025 16:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  11 OCT 2025 03:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -363,24 +363,24 @@ Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'portuguese'.
  (d:\TccLatex\build\citations.aux
 Package babel Info: 'portuguese' activates 'portuges' shorthands.
-(babel)             Reported on input line 14.
+(babel)             Reported on input line 10.
 )
 \openout1 = `citations.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 Package biblatex Info: Trying to load language 'portuguese' -> 'portuguese-abnt'...
 Package biblatex Info: ... file 'portuguese-abnt.lbx' found.
  (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/lbx\portuguese-abnt.lbx
@@ -508,33 +508,121 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'citations.bbl' found.
  (d:\TccLatex\build\citations.bbl)
-Package biblatex Info: Reference section=0 on input line 17.
-Package biblatex Info: Reference segment=0 on input line 17.
+Package biblatex Info: Reference section=0 on input line 16.
+Package biblatex Info: Reference segment=0 on input line 16.
+
+Overfull \hbox (2.14465pt too wide) in paragraph at lines 26--26
+[]\T1/cmr/bx/n/17.28 Genesis II, Cre-a-tion and re-cre-a-tion with com-
+ []
+
+
+Overfull \hbox (38.08713pt too wide) in paragraph at lines 31--33
+[]\T1/cmr/m/n/12 ^^PEu es-tava en-vol-vido em um jogo de in-ter-pre-ta-Á„o de pa-pÈis n„o-computadorizado
+ []
+
 
 
 [1
 
-{C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (d:\TccLatex\build\citations.aux)
+{C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+
+[2]
+
+[3]
+Overfull \hbox (60.04524pt too wide) in paragraph at lines 97--98
+\T1/cmr/m/n/12 url: https://samizdat.co/shelf/documents/2004/05.27-historyOfZork/historyOfZork.pdf 
+ []
+
+
+
+[4]
+Overfull \hbox (4.49117pt too wide) in paragraph at lines 108--109
+\T1/cmr/m/n/12 (pos-te-ri-or-mente re-no-me-ada para MDL), de-sen-vol-vida como su-ces-sora do LISP.
+ []
+
+
+
+[5]
+
+[6]
+
+[7]
+
+[8]
+
+[9]
+
+[10]
+d:/TccLatex/citations.tex:282: Misplaced alignment tab character &.
+l.282 ... he consoled himself with long Dungeons &
+                                                  
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+
+[11]
+d:/TccLatex/citations.tex:316: Misplaced alignment tab character &.
+l.316 Dungeons &
+                 Dragons campaign they sometimes played after work. In
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+d:/TccLatex/citations.tex:317: Misplaced alignment tab character &.
+l.317 D&
+        D, a game with no winnable objective, a godlike ‚ÄúDungeon Master‚Äù
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 326.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 326.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 326.
+
+
+[12] (d:\TccLatex\build\citations.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
 Package logreq Info: Writing requests to 'citations.run.xml'.
 \openout1 = `citations.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 11353 strings out of 468130
- 219546 string characters out of 5447467
- 1135839 words of memory out of 5000000
- 39845 multiletter control sequences out of 15000+600000
- 630892 words of font info for 46 fonts, out of 8000000 for 9000
+ 11382 strings out of 468130
+ 220252 string characters out of 5447467
+ 1149884 words of memory out of 5000000
+ 39866 multiletter control sequences out of 15000+600000
+ 633643 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,5n,97p,710b,6025s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk>
-Output written on d:\TccLatex\build\citations.pdf (1 page, 36867 bytes).
+ 78i,6n,97p,832b,6025s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk>
+Output written on d:\TccLatex\build\citations.pdf (12 pages, 115242 bytes).
 PDF statistics:
- 119 PDF objects out of 1000 (max. 8388607)
+ 282 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

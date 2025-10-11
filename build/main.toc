@@ -3,3 +3,6 @@
 \contentsline {subsection}{\numberline {1.1}Fundamentos da Engenharia de Software e Projeto Estruturado}{4}{subsection.1.1}%
 \contentsline {section}{\numberline {2}Metodologia de Mapeamento Sistemático}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Capítulo 17 CASOS DE USO - UML}{4}{subsection.2.1}%
+\contentsline {section}{\numberline {3}Escolha da linguagem e porque OO}{5}{section.3}%
+\contentsline {section}{\numberline {4}Escolha de repositório}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Colossal Cave Adventure}{5}{subsection.4.1}%

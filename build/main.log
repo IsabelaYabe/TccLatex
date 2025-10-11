@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  10 OCT 2025 16:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  11 OCT 2025 03:24
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,6 +23,8 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
+) (D:\MikTec\tex/latex/base\fontenc.sty
+Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
 ) (D:\MikTec\tex/generic/babel\babel.sty
 Package: babel 2025/08/03 v25.12 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count283
@@ -363,7 +365,7 @@ Package biblatex Info: ... file 'blx-dm.def' found.
 File: blx-dm.def 2025/07/10 v3.21 biblatex datamodel (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex style data model...
-Package biblatex Info: ... file 'abnt-ibid.dbx' not found.
+Package biblatex Info: ... file 'abnt.dbx' not found.
 Package biblatex Info: Trying to load biblatex custom data model...
 Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@afterword=\count366
@@ -471,10 +473,6 @@ File: biblatex.def 2025/07/10 v3.21 biblatex compatibility (PK/MW)
 \biburllcskip=\muskip22
 \c@smartand=\count442
 )
-Package biblatex Info: Trying to load bibliography style 'abnt-ibid'...
-Package biblatex Info: ... file 'abnt-ibid.bbx' found.
- (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/bbx\abnt-ibid.bbx
-File: abnt-ibid.bbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
 Package biblatex Info: Trying to load bibliography style 'abnt'...
 Package biblatex Info: ... file 'abnt.bbx' found.
  (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/bbx\abnt.bbx
@@ -495,33 +493,266 @@ Package biblatex Info: ... file 'standard.bbx' found.
 File: standard.bbx 2025/07/10 v3.21 biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count444
 \c@bbx:relatedtotal=\count445
+))
+Package biblatex Info: Trying to load citation style 'abnt'...
+Package biblatex Info: ... file 'abnt.cbx' found.
+ (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/cbx\abnt.cbx
+File: abnt.cbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load citation style 'authoryear-comp'...
+Package biblatex Info: ... file 'authoryear-comp.cbx' found.
+ (D:\MikTec\tex/latex/biblatex/cbx\authoryear-comp.cbx
+File: authoryear-comp.cbx 2025/07/10 v3.21 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\footcites'.
+Package biblatex Info: Redefining '\footcitetexts'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcites'.
+Package biblatex Info: Redefining '\citetitle'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\citeauthor'.
+Package biblatex Info: Redefining '\citeyear'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (D:\MikTec\tex/latex/biblatex\biblatex.cfg
+File: biblatex.cfg 
+)
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Document encoding is UTF8 ....
+Package biblatex Info: ... and expl3
+(biblatex)             2025-09-02 L3 programming layer (loader) 
+(biblatex)             is new enough (at least 2020/04/06),
+(biblatex)             setting 'casechanger=expl3'.
+ (D:\MikTec\tex/latex/biblatex\blx-case-expl3.sty
+Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
+))
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'brazil'.
+ (d:\TccLatex\build\main.aux
+Package babel Info: 'brazil' activates 'portuges' shorthands.
+(babel)             Reported on input line 10.
+)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=674.33032pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-23.91173pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(D:\MikTec\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count446
+\scratchdimen=\dimen173
+\scratchbox=\box55
+\nofMPsegments=\count447
+\nofMParguments=\count448
+\everyMPshowfont=\toks31
+\MPscratchCnt=\count449
+\MPscratchDim=\dimen174
+\MPnumerator=\count450
+\makeMPintoPDFobject=\count451
+\everyMPtoPDFconversion=\toks32
+) (D:\MikTec\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (D:\MikTec\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring OFF on input line 34.
+Package biblatex Info: Trying to load language 'brazil' -> 'brazil-abnt'...
+Package biblatex Info: ... file 'brazil-abnt.lbx' found.
+ (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/lbx\brazil-abnt.lbx
+File: brazil-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (D:\MikTec\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 )))
-Package biblatex Info: Trying to load citation style 'abnt-ibid'...
-Package biblatex Info: ... file 'abnt-ibid.cbx' found.
- (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/cbx\abnt-ibid.cbx
-File: abnt-ibid.cbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (D:\MikTec\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'brazil'...
+Package biblatex Info: ... file 'brazil.lbx' found.
+ (D:\MikTec\tex/latex/biblatex/lbx\brazil.lbx
+File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (D:\MikTec\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)))
+Package biblatex Info: Trying to load language 'brazil'...
+Package biblatex Info: ... file 'brazil.lbx' found.
+ (D:\MikTec\tex/latex/biblatex/lbx\brazil.lbx
+File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (D:\MikTec\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'brazil'...
+Package biblatex Info: ... file 'brazil.lbx' found.
+ (D:\MikTec\tex/latex/biblatex/lbx\brazil.lbx
+File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (D:\MikTec\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+))))))
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout3 = `main.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'main.bbl' found.
+ (d:\TccLatex\build\main.bbl)
+Package biblatex Info: Reference section=0 on input line 34.
+Package biblatex Info: Reference segment=0 on input line 34.
+<Images/Logo_FGV.png, id=3, 408.52625pt x 124.465pt>
+File: Images/Logo_FGV.png Graphic file (type png)
+<use Images/Logo_FGV.png>
+Package pdftex.def Info: Images/Logo_FGV.png  used on input line 40.
+(pdftex.def)             Requested size: 213.39568pt x 65.01463pt.
 
 
-! LaTeX Error: File `l3regex.sty' not found.
+[1
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+{C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Images/Logo_FGV.png>] (d:\TccLatex\build\main.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (D:\MikTec\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (D:\MikTec\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+\tf@toc=\write4
+\openout4 = `main.toc'.
 
-Enter file name: 
-C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/cbx\abnt-ibid.cbx:24: Emergency stop.
-<read *> 
-         
-l.24 ^^M
-        
-*** (cannot \read from terminal in nonstop modes)
 
- 
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.80 \newpage
+              [1]
+
+[2]
+
+[3]
+
+[4]
+
+[5]
+
+[6]
+
+[7] (d:\TccLatex\build\main.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2020/03/25>
+ ***********
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
+
+ ) 
 Here is how much of TeX's memory you used:
- 17930 strings out of 468130
- 304546 string characters out of 5447467
- 932078 words of memory out of 5000000
- 46409 multiletter control sequences out of 15000+600000
- 627123 words of font info for 41 fonts, out of 8000000 for 9000
+ 20211 strings out of 468130
+ 346474 string characters out of 5447467
+ 1245726 words of memory out of 5000000
+ 48572 multiletter control sequences out of 15000+600000
+ 639003 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 83i,0n,81p,405b,196s stack positions out of 10000i,1000n,20000p,200000b,200000s
-C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/cbx\abnt-ibid.cbx:24:  ==> Fatal error occurred, no output PDF file produced!
+ 78i,6n,79p,1551b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk>
+Output written on d:\TccLatex\build\main.pdf (8 pages, 145595 bytes).
+PDF statistics:
+ 437 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
+ 62 words of extra memory for PDF output out of 10000 (max. 10000000)
+

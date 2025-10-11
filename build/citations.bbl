@@ -54,6 +54,115 @@
       \field{title}{Structured design: fundamentals of a discipline of computer program and systems design}
       \field{year}{1979}
     \endentry
+    \entry{peterson1983genesis}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=92b9b2299c2d435388f3b91670d2d31e}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={Dale},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Reston Publishing Company}%
+      }
+      \strng{namehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{fullhash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{fullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{bibnamehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authorbibnamehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authornamehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authorfullhash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authorfullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Genesis II, Creation and recreation with computers}
+      \field{year}{1983}
+    \endentry
+    \entry{lowood2024debugging}{book}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=19512482e571feff5c1b4401fadfb798}{%
+           family={Lowood},
+           familyi={L\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=f91a636ff0bfde6ce05c41c73f2afb75}{%
+           family={Guins},
+           familyi={G\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{67c34460b483bb7fb148dac601c4299f}
+      \strng{fullhash}{67c34460b483bb7fb148dac601c4299f}
+      \strng{fullhashraw}{67c34460b483bb7fb148dac601c4299f}
+      \strng{bibnamehash}{67c34460b483bb7fb148dac601c4299f}
+      \strng{authorbibnamehash}{67c34460b483bb7fb148dac601c4299f}
+      \strng{authornamehash}{67c34460b483bb7fb148dac601c4299f}
+      \strng{authorfullhash}{67c34460b483bb7fb148dac601c4299f}
+      \strng{authorfullhashraw}{67c34460b483bb7fb148dac601c4299f}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780262551106}
+      \field{series}{Game Histories}
+      \field{title}{Debugging Game History: A Critical Lexicon}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://books.google.com.br/books?id=RWbqEAAAQBAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.br/books?id=RWbqEAAAQBAJ
+      \endverb
+    \endentry
+    \entry{evans2018broadband}{book}{}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=be3ac7cbd7c5d1a06b510269a78f14c4}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={Claire\bibnamedelima L.},
+           giveni={C\bibinitperiod\bibinitdelim L\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Portfolio}%
+      }
+      \strng{namehash}{be3ac7cbd7c5d1a06b510269a78f14c4}
+      \strng{fullhash}{be3ac7cbd7c5d1a06b510269a78f14c4}
+      \strng{fullhashraw}{be3ac7cbd7c5d1a06b510269a78f14c4}
+      \strng{bibnamehash}{be3ac7cbd7c5d1a06b510269a78f14c4}
+      \strng{authorbibnamehash}{be3ac7cbd7c5d1a06b510269a78f14c4}
+      \strng{authornamehash}{be3ac7cbd7c5d1a06b510269a78f14c4}
+      \strng{authorfullhash}{be3ac7cbd7c5d1a06b510269a78f14c4}
+      \strng{authorfullhashraw}{be3ac7cbd7c5d1a06b510269a78f14c4}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780735211759}
+      \field{subtitle}{The Untold Story of the Women Who Made the Internet}
+      \field{title}{Broad Band}
+      \field{year}{2018}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
