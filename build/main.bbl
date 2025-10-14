@@ -134,42 +134,6 @@
       \verb https://books.google.com.br/books?id=2H1_DwAAQBAJ
       \endverb
     \endentry
-    \entry{sommerville2016software}{book}{}{}
-      \name{author}{1}{}{%
-        {{hash=391822eb61c91ef5882d24cbd1592b6f}{%
-           family={Sommerville},
-           familyi={S\bibinitperiod},
-           given={I.},
-           giveni={I\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Pearson}%
-      }
-      \strng{namehash}{391822eb61c91ef5882d24cbd1592b6f}
-      \strng{fullhash}{391822eb61c91ef5882d24cbd1592b6f}
-      \strng{fullhashraw}{391822eb61c91ef5882d24cbd1592b6f}
-      \strng{bibnamehash}{391822eb61c91ef5882d24cbd1592b6f}
-      \strng{authorbibnamehash}{391822eb61c91ef5882d24cbd1592b6f}
-      \strng{authornamehash}{391822eb61c91ef5882d24cbd1592b6f}
-      \strng{authorfullhash}{391822eb61c91ef5882d24cbd1592b6f}
-      \strng{authorfullhashraw}{391822eb61c91ef5882d24cbd1592b6f}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{isbn}{9780133943030}
-      \field{series}{Always learning}
-      \field{title}{Software Engineering}
-      \field{year}{2016}
-      \verb{urlraw}
-      \verb https://books.google.com.br/books?id=tW4VngEACAAJ
-      \endverb
-      \verb{url}
-      \verb https://books.google.com.br/books?id=tW4VngEACAAJ
-      \endverb
-    \endentry
     \entry{wiegers2013software}{book}{}{}
       \name{author}{2}{}{%
         {{hash=68405c2a3daef0e53ccf9b027981562f}{%
@@ -194,8 +158,8 @@
       \strng{authornamehash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
       \strng{authorfullhash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
       \strng{authorfullhashraw}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -227,8 +191,8 @@
       \strng{authornamehash}{eb282136fd89e99b6510fe7a46722b0a}
       \strng{authorfullhash}{eb282136fd89e99b6510fe7a46722b0a}
       \strng{authorfullhashraw}{eb282136fd89e99b6510fe7a46722b0a}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -259,8 +223,8 @@
       \strng{authornamehash}{05004c2c43cb43acd5435e7651eeef00}
       \strng{authorfullhash}{05004c2c43cb43acd5435e7651eeef00}
       \strng{authorfullhashraw}{05004c2c43cb43acd5435e7651eeef00}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -301,8 +265,8 @@
       \strng{authornamehash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhashraw}{19ba120924ee09440cd988b6ab1afc90}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -330,8 +294,8 @@
       \strng{authornamehash}{060483eb5e4f219b7d16f68852edae7c}
       \strng{authorfullhash}{060483eb5e4f219b7d16f68852edae7c}
       \strng{authorfullhashraw}{060483eb5e4f219b7d16f68852edae7c}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
