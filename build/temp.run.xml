@@ -41,13 +41,13 @@
   >
 ]>
 <requests version="1.0">
-  <internal package="biblatex" priority="9" active="1">
+  <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>citations.bcf</file>
+      <file>temp.bcf</file>
     </provides>
     <requires type="dynamic">
-      <file>citations.bbl</file>
+      <file>temp.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-dm.def</file>
@@ -62,28 +62,25 @@
       <file>brazilian-abnt.lbx</file>
       <file>brazil.lbx</file>
       <file>brazil-abnt.lbx</file>
-      <file>portuguese-abnt.lbx</file>
-      <file>english.lbx</file>
-      <file>english-abnt.lbx</file>
     </requires>
   </internal>
   <external package="biblatex" priority="5" active="0">
     <generic>biber</generic>
     <cmdline>
       <binary>biber</binary>
-      <infile>citations</infile>
+      <infile>temp</infile>
     </cmdline>
     <input>
-      <file>citations.bcf</file>
+      <file>temp.bcf</file>
     </input>
     <output>
-      <file>citations.bbl</file>
+      <file>temp.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>citations.bbl</file>
+      <file>temp.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>citations.bcf</file>
+      <file>temp.bcf</file>
     </requires>
     <requires type="editable">
       <file>refs.bib</file>

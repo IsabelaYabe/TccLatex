@@ -78,48 +78,35 @@
 \tableofcontents
 
 \newpage
+
 \section{Introdução}
 
 A engenharia de software estuda e avalia métodos capazes de aproximar o código fonte da linguagem natural. Essa busca se manifesta em duas vertentes complementares: a interação com o usuário final e a comunicação entre os próprios desenvolvedores.
 
-Esse estudo fundamenta-se nas constribuições de Larry Constantine, Edward Yourdon, Ivar Jacobson e Alistar Cockburn, autores que defendem o desenvolvimento estruturado e orientado ao usuário. Isto é, projetado a partir da visão e das necessidades de quem o utiliza, e não apenas da estrutura interna ou das preferências de quem o desenvolve. Essa perspectiva deu origem a princípios de design centrados na função e no comportamento observável do sistema, enfatizando que a organização do código deve refletir a experiência do usuário e os fluxos de interação previstos. \textcite{yourdon1979structured} descrevem o processo tradicional de desenvolvimento de software como uma cadeia de tradução sucessiva. O diálogo ocorre entre o proprietário do produto, o usuário, e o analista responsável por capturar suas ideias, conhecimentos de usabilidade e o comportamento esperado do software. Em seguida, o engenheiro de requisitos traduz essa concepção em um conjunto de requisitos funcionais e não funcionais, que por sua vez são reinterpretados pelo designer de sistemas em estruturas lógicas e técnicas. Por fim, o programador concretiza essas decisões, implementando no código as interpretações que compreendeu a partir do trabalho do designer. Cada etapa dessa cadeia de traduções implica na perda ou distorção de parte do significado original do usuário, o que pode resultar em comportamentoa apenas próximo ao desejado.
+Esse estudo fundamenta-se em autores que defendem o desenvolvimento estruturado e orientado ao usuário. Isto é, projetado a partir da visão e das necessidades de quem o utiliza, e não apenas da estrutura interna ou das preferências de quem o desenvolve. Essa perspectiva deu origem a princípios de design centrados na função e no comportamento observável do sistema, enfatizando que a organização do código deve refletir a experiência do usuário e os fluxos de interação previstos. \textcite{yourdon1979structured} descrevem o processo tradicional de desenvolvimento de software como uma cadeia de tradução sucessiva. O diálogo ocorre entre o proprietário do produto, o usuário, e o analista responsável por capturar suas ideias, conhecimentos de usabilidade e o comportamento esperado do software. Em seguida, o engenheiro de requisitos traduz essa concepção em um conjunto de requisitos funcionais e não funcionais, que por sua vez são reinterpretados pelo designer de sistemas em estruturas lógicas e técnicas. Por fim, o programador concretiza essas decisões, implementando no código as interpretações que compreendeu a partir do trabalho do designer. Cada etapa dessa cadeia de traduções implica na perda ou distorção de parte do significado original do usuário, o que pode resultar em comportamento apenas próximo ao desejado.
 
-Como solução desse problema, os autores apresentam o conceito de \textit{projeto estruturado}, 
+Diante desta situação, \textcite{yourdon1979structured} propõem o projeto estruturado, cujo ponto inicial é a clareza e a visibilidade das decisões e atividades envolvidas, promovendo uma compreensão compartilhada entre os membros da equipe e garantindo que o design reflita as intenções originais do sistema.
 
-entendido como “a arte de definir os componentes de um sistema e as inter-relações entre esses componentes da melhor forma possível”\textcite{yourdon1979structured}. Esse processo tem início na clareza e na visibilidade das decisões e atividades envolvidas, promovendo uma compreensão compartilhada entre os membros da equipe e garantindo que o design reflita as intenções originais do sistema.
+Com o mesmo intuito de tornar o comportamento do sistema visível e compreensível, surge a modelagem de casos de uso como um instrumento de unificação entre requisitos, design e usabilidade. Segundo \textcite{booch1999unified}, nenhum sistema existe isoladamente, todo sistema relevante interage com atores, humanos ou automáticos, que esperam comportamentos previsíveis. O caso de uso descreve essas interações por meio de um diagrama UML.
 
-"Introduzindo uma atividade específica de design formal para descrever completamente, e com antecedência, todas as partes de um sistema e suas inter-relações, não criamos uma nova atividade no ciclo de desenvolvimento de programas. O design estruturado apenas consolida, formaliza e torna visíveis as atividades e decisões de design que inevitavelmente acontecem - e de forma invisível - no curso de todo projeto de desenvolvimento de sistemas. Em vez de ocorrerem por tentativa e erro, sorte e padrão, essas decisões podem ser abordadas deliberadamente como compensações técnicas."
+O diagrama de casos de uso coloca o usuário no centro do projeto, permitindo que analistas e desenvolvedores discutam o comportamento do sistema sem se prender aos detalhes da implementação. Essa representação funcional traduz a lógica de usabilidade em uma forma visual e verificável. Assim, os casos de uso oferecem uma linguagem comum para represetarmos comportamentos.
 
-"Reunindo todas as decisões que afetam a escolha de módulos e inter-relações em um sistema, inevitavelmente influenciamos a maneira como outras decisões são organizadas e resolvidas. Assim, algumas questões que tradicionalmente eram abordadas de uma certa forma durante a fase inicial de um projeto podem ter que ser tratadas de uma maneira completamente diferente em uma fase muito posterior, uma vez que o designer adota uma abordagem de design estruturado."
+Autores posteriores ampliaram essa discussão ao nível do código, enfatizando a necessidade do código não ser apenas executável, mas também fácel de compreender. Trazendo as mesmas características que o desing estruturado: clareza e visibilidade. O código expressa intenções e decisões funcionando como um texto coletivo que deve ser lido e compreendido por outros desenvolvedores.
 
-"O design estruturado é o processo de decidir quais componentes interconectados de qual maneira resolverão algum problema bem especificado."
+"Qualquer tolo escreve um código que um computador possa entender. Bons programadores escrevem códigos que os seres humanos podem entender." \textcite{fowler2018refactoring}
 
-Para Constantine, propriedades de qualidade como coesão e acoplamento não são apenas métricas técnicas, mas indicadores de quão bem o software reflete o domínio do problema e promove a clareza de propósito de cada módulo. Um sistema altamente coeso e fracamente acoplado tende a reproduzir com maior fidelidade a lógica do usuário, tornando-se mais previsível, transparente e alinhado às suas necessidades operacionais.
+Em projetos reais, frequentemente o código é o único artefato que sobrevive às mudanças de equipe, tecnologia ou escopo. Embora o código contenha as decisões e comportamentos implementados, ele raramente comunica o motivo por trás dessas escolhas. 
 
-Afim de alcançar o resultado de um software onde observamos o comportamento esperado, modelagem de \textit{casos de uso} surge como uma estratégia orientada ao usuário. Introduzido por Ivar Jacobson em 1989, o conceito propõe que para compreendermos o que um sistema deve fazer, é preciso identificar quem o utilizará e quais objetivos esse usuário pretende alcançar. 
+\textcite{wiegers2013software} destacam que a documentação é um artefato fundamental da engenharia de requisitos, atuando como quem nos diz quem o software é, ou quem ele deveria ser. Ela traduz como o usuário pretende utilizar o sistema e quais são as características de negócio que o software deve refletir.
 
-Segundo Jacobson e Cockburn, um caso de uso “conta a história completa”, uma sequência de eventos que se inicia com uma necessidade e termina com a geração de valor, incluindo também alternativas, desvios e exceções. Essa narrativa funcional estabelece o elo entre o domínio do problema e a estrutura do software, permitindo que analistas e desenvolvedores compartilhem uma mesma linguagem de entendimento sobre o sistema.
+Quando essa camada de comunicação se perde, seja por ausência de documentação, desatualização ou inconsistências, o código torna-se a principal fonte de informações sobre o sistema. Essa situação, comum em projetos de longo ciclo de vida, motiva a necessidade de reconstruir a documentação a partir do próprio código-fonte, restaurando o elo entre o comportamento implementado e o comportamento pretendido.
 
-Os princípios subjacentes aos casos de uso refletem diretamente o ideal do projeto estruturado defendido por Constantine e Yourdon. Ambos valorizam a decomposição do sistema em unidades compreensíveis e interdependentes, com ênfase na clareza das intenções e na previsibilidade das interações. Enquanto o projeto estruturado busca representar a estrutura do sistema de forma coerente e modular, os casos de uso descrevem o comportamento dessa estrutura na perspectiva do usuário.
 
-Autores posteriores ampliaram essa discussão ao destacar o papel humano da comunicação no próprio ato de programar. Autores como Frederick P. Brooks Jr., Martin Fowler, Kent Beck e Robert C. Martin ressaltam que o desenvolvimento de software não é apenas um esforço técnico, mas também um ato de comunicação entre mentes humanas mediado pelo código. A produtividade e a clareza de um sistema dependem, portanto, não apenas da habilidade individual do programador, mas da forma como o conhecimento é transmitido, compreendido e preservado entre diferentes desenvolvedores ao longo do tempo.
-
-Nesse sentido, a documentação, a estrutura do código, a nomenclatura e o comportamento esperado funcionam como pontes entre a intenção original do autor e a compreensão dos futuros mantenedores. Sommerville e Wiegers e Beatty  destacam que a documentação é um artefato essencial da engenharia de requisitos, atuando como quem nos diz quem é o software, ou quem deveria ser. Ela traduz como o usuário pretende utilizar o sistema e quais são as características de negócio que o software deve refletir. A ausência de clareza nesse elo resulta em sistemas de difícil manutenção, inconsistências entre requisitos e implementação e perda de rastreabilidade, um problema recorrente em ambientes de desenvolvimento complexos e colaborativos.
+\subsection{}
 
 No cenário contemporâneo, o avanço dos modelos de linguagem e das técnicas de representação semântica, como os \textit{embeddings}, oferece novas possibilidades. Trabalhos recentes exploram como representações vetoriais de elementos de software, tais como identificadores, comentários, \textit{issues}, \textit{commits} e \textit{docstrings}, podem capturar aspectos semânticos úteis à engenharia de requisitos e à geração automatizada de artefatos. Essa evolução permite observar o código não apenas como uma estrutura sintática, mas como um repositório de intenções comunicativas, em que cada elemento textual contribui para reconstruir a lógica, o propósito e o comportamento esperados do sistema.
 
 É nesse contexto que se insere o presente trabalho, propondo uma abordagem de engenharia reversa orientada por aprendizado de máquina, fundamentada em \textit{embeddings} e \textit{Retrieval-Augmented Generation} (RAG). O objetivo é investigar como informações semânticas presentes em comentários, identificadores e estruturas de código podem ser utilizadas para recuperar a intenção do desenvolvedor e derivar artefatos de engenharia de requisitos, em especial casos de uso. Ao conectar o código-fonte a uma base de conhecimento composta por obras clássicas e boas práticas de engenharia de software, busca-se contribuir para a construção de um processo de documentação e elicitação de casos de uso mais preciso, compreensível e automatizável.
-
-\subsection{Fundamentos da Engenharia de Software e Projeto Estruturado}
-
-Desde as décadas de 1970 e 1980, a engenharia de software vem se consolidando como um campo preocupado em reduzir a distância entre o comportamento esperado do sistema e sua implementação técnica. Yourdon e Constantine introduziram os princípios de projeto estruturado, destacando a importância da coesão e do baixo acoplamento entre módulos como indicadores de qualidade.
-
-Posteriormente, Jacobson, Booch, Rumbaugh propuseram a UML e os casos de uso como meio de representar o comportamento do sistema a partir da perspectiva do usuário. Essa abordagem complementa o projeto estruturado ao oferecer uma visão funcional do software, alinhada às intenções e objetivos do usuário.
-
-Autores como Brooks Jr., Fowler e Martin reforçaram a dimensão humana do desenvolvimento de software, tratando o código como um meio de comunicação entre desenvolvedores e um reflexo das intenções de design. Essas obras clássicas sustentam a premissa deste trabalho: o código-fonte contém, em sua estrutura e documentação, pistas da intenção do autor que podem ser extraídas e formalizadas por técnicas de engenharia reversa.
-
-
-% Se aprofundar mais na ponte entre os assuntos
 
 \section{Metodologia de Mapeamento Sistemático}
 \subsection{Capítulo 17
@@ -151,18 +138,239 @@ de testes de regressão; casos de uso aplicados a todo o sistema são excelentes
 fontes de testes de sistema e de integração. A UML fornece a representação gráfica de um caso de uso e de um ator, conforme mostra a Figura 17.1. Essa notação permite visualizar um caso de uso em separado de sua realização e no contexto com outros casos de uso.
 \section{Escolha da linguagem e porque OO}
 \section{Escolha de repositório}
+
 \subsection{Colossal Cave Adventure}
+Este trabalho utiliza como base uma reimplementação de \textcite{rhodes_adventure_py} em Python 3, que preserva o jogo original de Crowther e Don Woods, utilizando o arquivo de dados \texttt{advent.dat} \textcite{adventure_original_sources}. O pacote permite jogar em dois modos, no \emph{prompt} do Python e em terminal do sistema operacional. Além disso, disponibiliza \textit{walkthroughs} automatizados na pasta de testes.
 
-Um casal de programadores e espleólogos, Will Crowther e sua ex Patricia Crowther, participaram do mapeando do maior sistema de cavernas de Flint Ridge, a caverna Mammoth no Kentucky. No verão de 1974, Will jogava campanhas de Dungeons And Dragons e virava noites programando em FORTRAN o primeiro jogo de ficção interativa, "ADVENT". A jogabilidade baseava-se em comandos de texto digitados pelo jogador, que descreviam ações dentro de um ambiente simulado por texto. O sistema respondia interpretando instruções como “go north”, “take lamp” ou “open door”, e devolvendo descrições das consequências, criando um diálogo.
+\subsection{Descrição do jogo}
 
-Como Will e sua ex esposa faziam o trabalho de mapearem Mammmoth, o mapa ustilizado no que viria ser o Colossossal Cave Adventure.  
+\textit{Colossal Cave Adventure}, também conhecido como \textit{ADVENT} ou simplesmente \textit{Adventure}, é amplamente reconhecido como o primeiro jogo de aventura baseado em texto da história, criado por Will Crowther em meados de 1975 e expandido por Don Woods em 1976. 
 
+Ambientado em uma caverna repleta de tesouros, criaturas e labiríntos, o jogador interage por comandos de texto, como \textit{"GO NORTH"} ou \textit{"GET LAMP"}. O sistema responde com descrições que narram as consequências das ações.
 
-Eu estava envolvido em um jogo de interpretação de papéis não-computadorizado chamado Dungeons and Dragons na época, e também vinha explorando ativamente cavernas — especialmente a Mammoth Cave, no Kentucky. De repente, eu tive uma ideia que combinasse o meu interesse por exploração de cavernas com algo que também fosse um jogo para as crianças, e talvez tivesse alguns elementos de Dungeons and Dragons, que eu vinha jogando. Minha ideia era que fosse um jogo de computador que não intimidasse pessoas que não usavam computadores, e esse foi um dos motivos pelos quais eu fiz com que o jogador dirigisse o jogo por meio de comandos em linguagem natural, em vez de comandos mais padronizados. Meus filhos acharam que foi muito divertido.
+Como observa \textcite{dibbell1998mytinylife}, o jogo automatiza o papel do mestre (\textit{Dungeon Master}) característico de campanhas de \textit{Dungeons and Dragons}. Suas descrições textuais simulam a fala do mestre (“\textit{YOU ARE IN A MAZE OF TWISTY LITTLE PASSAGES, ALL ALIKE}”).  
 
-Colossal Cave Adventure, inicialmente nomeado como "ADVENT", foi criado por Will Crowther em 1976 e expandido por Don Woods em 1977. Foi o primeiro jogo de ficção interativa, onde o jogador explora um mundo apenas por texto. O jogo foi inspirado em Dungeons and Dragons e também na caverna Mammoth no Kentucky. 
-Escrito originalmente em FORTRAN para o computador PDP-10.
+“Como qualquer programa significativo, \textit{Adventure} expressava a personalidade e o ambiente de seus autores.” \textcite{levy2010hackers}
 
+Will Crowther e sua ex-esposa, Patricia Crowther, ambos programadores e espeleólogos, participaram do mapeamento do sistema de cavernas \textit{Mammoth Cave}. No verão de 1974, enquanto jogava campanhas de \textit{Dungeons and Dragons}, Will começou o desenvolvimento do seu jogo utilizando o Fortran. O mapa utilizado no jogo foi inspirado diretamente nos levantamentos realizados pelo casal durante as expedições à Mammoth Cave, construindo no código a estrutura real da caverna.
+
+Como o próprio Will Crowther relata, a ideia do jogo surgiu da combinação entre suas experiências em espeleologia e seu interesse por \textit{Dungeons and Dragons}: “Eu estava envolvido em um jogo de interpretação de papéis... e tive uma ideia que combinasse o meu interesse por exploração de cavernas com algo que também fosse um jogo para as crianças...” \textcite{peterson1983genesis}.
+
+\textcite{levy2010hackers} conta como inicia a colaboração de Donald Woods, um pesquisador da \textit{Stanford Artificial Intelligence Laboratory} (SAIL), em 1976. Após ter contato com uma prévia do jogo, Woods entrou em contato com Crowther, obteve sua permissão e passou a expandir o código. Sua versão incorporou novos puzzles, criaturas e elementos de fantasia inspirados na obra de Tolkien, além de um sistema de pontuação que estabelecia um objetivo ao jogador. A versão combinada de Crowther e Woods é um marco na história da interação humano-computador.
+
+\subsection{}
+Como o jogo não possui documentação original, utilizei o artigo de \textcite{jerz2007colossal} como referência para compreender a estrutura e o funcionamento do código. O autor recupera e examina o código-fonte escrito por Will Crowther, a partir de um backup preservado no SAIL. Jerz descreve as seis tabelas centrais que organizam os dados do jogo: descrições longas, rótulos curtos das salas, dados de mapa, vocabulário agrupado, estados estáticos e eventos ou dicas.  
+
+Essa arquitetura de dados é mantida na reimplementação em Python, embora expandida para doze seções, resultado da integração da versão de Don Woods \textcite{rhodes_adventure_py}. A leitura e o processamento dessas tabelas ocorrem por meio do arquivo \texttt{advent.dat}, que preserva a semântica e a estrutura do código original. 
+
+As seis tabelas descritas por Crowther estruturam o mundo do jogo e suas interações:
+\begin{enumerate}
+    \item \textbf{Long Descriptions}: textos descritivos longos que definem os ambientes e estados narrativos;
+    \item \textbf{Short Room Labels}: nomes curtos usados internamente para identificar locais e facilitar a navegação;
+    \item \textbf{Map Data}: conexões topológicas entre os ambientes e as direções de movimento possíveis;
+    \item \textbf{Grouped Vocabulary Keywords}: agrupamento de palavras-chave e comandos interpretados pelo sistema;
+    \item \textbf{Static Game States}: variáveis e condições fixas que controlam a lógica do jogo;
+    \item \textbf{Hints and Events}: mensagens de ajuda, eventos dinâmicos e respostas a situações específicas.
+\end{enumerate}
+
+As outras seis adicionadas na versão em colaboração com Woods são:
+
+\begin{enumerate}
+  \item \emph{Object locations} — localização dos objetos;
+  \item \emph{Action defaults} — mensagens padrão ligadas a verbos de ação;
+  \item \emph{Liquid assets / flags} — \texttt{COND} por sala (luz, líquidos, restrições do pirata, bits de dicas);
+  \item \emph{Class messages} — faixas de pontuação e mensagens de classificação do jogador;
+  \item \emph{Hints} — dicas (turnos necessários, penalidade, pergunta e resposta);
+  \item \emph{Magic messages} — mensagens de inicialização e manutenção.
+\end{enumerate}
+
+\paragraph{Tabela 1 – Long Descriptions.}  
+A Tabela 1 contém descrições extensas dos ambientes do jogo. Com entradas identificadas de 1 a 140, ela define os textos apresentados ao jogador em diferentes locais. Cada linha representa uma sala ou estado narrativo. Parte dessas descrições refere-se diretamente a locais da caverna, como o trecho “\textit{YOU ARE STANDING AT THE END OF A ROAD BEFORE A SMALL BRICK BUILDING}”, enquanto outras descrevem situações de falha ou eventos inesperados, como “\textit{YOU ARE AT THE BOTTOM OF THE PIT WITH A BROKEN NECK}”.  
+
+Exemplos:  
+\begin{itemize}
+    \item 1	\textit{AROUND YOU IS A FOREST.  A SMALL STREAM FLOWS OUT OF THE BUILDING AND DOWN A GULLY}.
+    \item 2	\textit{YOU HAVE WALKED UP A HILL, STILL IN THE FOREST.  THE ROAD SLOPES BACK DOWN THE OTHER SIDE OF THE HILL.  THERE IS A BUILDING IN THE DISTANCE.}
+    \item 3	\textit{YOU ARE INSIDE A BUILDING, A WELL HOUSE FOR A LARGE SPRING.}
+\end{itemize}
+
+\paragraph{Tabela 2 – Short Room Labels.}  
+A Tabela 2 contém rótulos curtos correspondentes às localizações/ambientes do jogo. Com entradas numeradas de 1 a 130, nem todas as salas ou estados definidos em \textit{Long Descriptions} possuem equivalentes resumidos.  
+
+Exemplos:  
+\begin{itemize}
+    \item 1 \textit{YOU'RE AT END OF ROAD AGAIN.}
+    \item 3 \textit{YOU'RE INSIDE BUILDING.}
+    \item 18 \textit{YOU'RE IN NUGGET OF GOLD ROOM.}
+    \item 19 \textit{YOU'RE IN HALL OF MT KING.}
+\end{itemize}
+
+\paragraph{Tabela 3 – Map Data.}
+A Tabela 3 codifica a topologia do mundo do jogo e as regras de navegação, funcionando como um grafo dirigido rotulado. A primeira coluna indica o ambiente em que o jogador se encontra, a segunda define o ambiente de destino, e as colunas subsequentes agrupam os vocabulários que podem ser utilizados para realizar a transição entre os dois pontos. O mapeamento dos vocabulários é definido na Tabela 4.  
+
+Em alguns casos, o valor do destino representa uma condição especial, e não uma simples sala. Se o número de destino for maior que 500, o jogo exibe uma mensagem da Tabela 6 e o jogador permanece no mesmo local; Se estiver entre 300 e 500, o valor indica um salto especial para um trecho de código do jogo.
+   
+Exemplos:
+\begin{itemize}
+  \item 1  2  2  44  29: o jogador se desloca do ambiente 1 ao aombiente 2, se utilizados os comando 2, 44 ou 29. 
+  \item 3  1  3  11  32  44: o jogador se desloca do ambiente 2 ao ambiente 1 se utilizados os comando 3, 11, 32 ou 44.
+\end{itemize}
+
+\paragraph{Tabela 4 – Grouped Vocabulary Keywords.}
+No código original em Fortran, toda entrada de texto era truncada nos cinco primeiros caracteres, de modo que o comando \textit{“inventory”}, por exemplo, poderia ser digitado simplesmente como \textit{“inven”}. A reimplementação em Python de \textcite{rhodes_adventure_py} preserva essa lógica.  
+
+Os dados da tabela 4 são divididos em 4 grupos: o primeiro com id's entre 1 e 100 para movimento no jogo; com ids entre 1000 e 2000, trata de objetos manipuláveis ou características de cenário; com ids entra 2000 e 3000 são verbos de ação, se entre 3000 e 4000 são para casos especiais.
+
+\begin{itemize}
+  \item 1–100: verbos de movimento, utilizados para navegação no espaço do jogo;  
+  \item 1000–2000: objetos e elementos de cenário manipuláveis;  
+  \item 2000–3000: verbos de ação (\textit{carry}, \textit{attack}, \textit{drop}, etc.);  
+  \item 3000–4000: verbos de casos especiais, geralmente associados a eventos ou mensagens específicas definidas na Tabela 6.  
+\end{itemize}
+
+Além dos comandos clássicos de navegação por bússola, "\textit{EAST}"/"\textit{E}", "\textit{WEST}"/"\textit{W}", "\textit{NORTH}"/"\textit{N}", "\textit{SOUTH}"/"\textit{S}", parte dos veros de movimentos são nomes de locais da caverna como "\textit{BEDQU}" (truncamento de \textit{Bedquilt}), "\textit{HOUSE}", "\textit{GATE}" e "\textit{FORES}" (\textit{forest}).
+
+Exemplos:  
+\begin{itemize}
+    \item 2 \textit{ROAD}
+    \item 3 \textit{ENTER}
+    \item 3 \textit{DOOR}
+    \item 3 \textit{GATE}
+    \item 4 \textit{UPSTR}
+    \item 5 \textit{DOWNS}
+    \item 6 \textit{FORES}
+\end{itemize}
+
+Palavras de mesmo sentido/sinônimos possuem mesmo id, como "\textit{ENTER}", "\textit{DOOR}" e "\textit{GATE}".
+
+\paragraph{Tabela 5 – Static Game States.}  
+A Tabela 5 armazena descrições curtas que representam estados do jogo, correspondendo às mudanças permanentes no ambiente. Cada linha contém um número e uma mensagem descritiva.  
+
+Quando o identificador está entre 1 e 100, a linha define a mensagem de inventário associada a um objeto, exemplo: “\textit{SET OF KEYS}” se refere a "\textit{KEYS}". Quando o identificador é um múltiplo de 100, a mensagem descreve uma propriedado do objeto. 
+
+Exemplos:  
+\begin{itemize}
+    \item 1	SET OF KEYS
+    \item 000	THERE ARE SOME KEYS ON THE GROUND HERE.
+    \item 2	BRASS LANTERN
+    \item 000	THERE IS A SHINY BRASS LAMP NEARBY.
+    \item 100	THERE IS A LAMP SHINING NEARBY.
+    \item 3	*GRATE
+    \item 000	THE GRATE IS LOCKED.
+    \item 100	THE GRATE IS OPEN.
+\end{itemize}
+
+\paragraph{Tabela 6 – Hints and Events.}
+A Tabela 6 reúne mensagens arbitrárias usadas como dicas e como descrições de eventos pontuais. Essas mensagens não estão relacionadas a um ambiente ou objeto específicos, elas são acionadas por outras estruturas do jogo, como as tabelas 3, 4, 8 e 11.
+
+Exemplos:
+\begin{enumerate}
+    \item 3	AXE AT YOU WHICH MISSED, CURSED, AND RAN AWAY.
+    \item 6	NONE OF THEM HIT YOU!
+    \item 13 I DON'T UNDERSTAND THAT!
+    \item 24 YOU ARE ALREADY CARRYING IT!
+    \item 33 I DON'T KNOW HOW TO LOCK OR UNLOCK SUCH A THING.
+\end{enumerate}
+
+\paragraph{Tabela 7 – Object Locations.}
+A Tabela 7 define onde cada objeto surge no mundo do jogo e se ele é móvel ou fixo. Cada linha possui o identificador do objeto, a sala inicial, e um campo opcional que indica imobilidade (-1) ou uma segunda sala quando o objeto existe simultaneamente em dois lugares 
+
+\begin{itemize}
+  \item Sala inicial = 0: o objeto não aparece no mundo no início e só será criado por algum evento ou ação do jogador.
+  \item Terceiro campo = -1: o objeto está fixo naquela sala (não pode ser carregado).
+  \item Terceiro campo = número de sala: o objeto está presente em duas salas ao mesmo tempo, objetos com duas localizações são tratados como imóveis.
+\end{itemize}
+
+Exemplos:
+\begin{itemize}
+  \item 1 3: objeto 1 (1001 - KEY, KEYS) começam na sala 3 (INSIDE BUILDING).
+  \item 2 3: objeto 2 (1002 - LAMP, HEADL, LANTE) começam na sala 3 (INSIDE BUILDING).
+  \item 3 8 9: objeto 3 (1003 - grate) existe nas salas 8 e 9 simultaneamente (8 - YOU'RE OUTSIDE GRATE, 9 - YOU'RE BELOW THE GRATE.).
+  \item (9 - DOOR) (94 - YOU ARE AT ONE END OF AN IMMENSE NORTH/SOUTH PASSAGE.)
+  \item 9 94 -1: objeto 9 (1009 - DOOR) é fixo na sala 94 (94 - YOU ARE AT ONE END OF AN IMMENSE NORTH/SOUTH PASSAGE.).
+  \item 15 0: objeto 15 (1015 - OYSTE) começa fora do mundo e aparece mais tarde.
+\end{itemize}
+
+\paragraph{Tabela 8 – Action Defaults.}  
+A Tabela 8 define o comportamento padrão dos verbos de ação, associando cada identificador de verbo ao índice da mensagem correspondente na Tabela 6. Cada linha contém dois valores: o primeiro é o número do verbo de ação, e o segundo é o identificador da mensagem padrão que deve ser exibida.
+
+Exemplos:  
+\begin{itemize}
+  \item 1 24: o verbo de ação associado ao id 1 (2001 - CARRY, TAKE, KEEP, CATCH, STEAL, CAPTU, GET, TOTE) e a mensagem 24 da tabela 6 (YOU ARE ALREADY CARRYING IT!). 
+  \item 6 33: o verbo de ação associado ao id 6 (2006 - LOCK, CLOSE) e a mensagem 33 da tabela 6 (I DON'T KNOW HOW TO LOCK OR UNLOCK SUCH A THING.).
+  \item 7 38: o verbo de ação associado ao id 7 (2007 - LIGHT, ON) e a mensagem 38 da tabela 6 (YOU HAVE NO SOURCE OF LIGHT.). 
+\end{itemize}
+
+\paragraph{Tabela 9 – Liquid Assets, Etc.}
+A Tabela 9 define os bits de condição associados a cada sala, controlando luz, líquidos, presença de inimigos e zonas de interesse para as rotinas de dicas. Cada linha contém um identificador de bit e uma lista de até vinte localizações nas quais esse bit é ativado. O jogo usa esses bits para determinar o comportamento dinâmico de cada ambiente.
+
+\begin{itemize}
+  \item 0: indica que o ambiente está naturalmente iluminado.
+  \item 1: tipo de líquido usado em conjunto com o bit 2. Quando o bit 2 está ativo, este bit diferencia óleo (1) de água (0).
+  \item 2: marca as salas que contêm água ou óleo.
+  \item 3: impede que o pirata apareça ali, exceto quando persegue o jogador.
+  \item 4: jogador tentando entrar na caverna.
+  \item 5: tentativa de capturar o pássaro.
+  \item 6: interação com a cobra.
+  \item 7: perdido no labirinto.
+  \item 8: refletindo no quarto escuro.
+  \item 9: na área final Witt's End.
+\end{itemize}
+
+Exemplos:
+\begin{itemize}
+  \item 0 1 2 3 4 5 6 7 8 9 10 100 115 116 126: salas naturalmente iluminadas próximas à entrada.
+  \item 2 1 3 4 7 38 95 113 24: presença de líquido (água ou óleo) nessas salas.
+  \item 9 108: marca a área final do jogo, Witt’s End.
+\end{itemize}
+
+\paragraph{Tabela 10 – Class Messages.}
+A Tabela 10 contém as mensagens de classificação do jogador de acordo com a pontuação total atingida ao final da partida. Cada linha associa um limite superior de pontuação a uma mensagem que descreve o título ou o nível de habilidade alcançado.  
+
+Exemplos:
+\begin{itemize}
+  \item 35: YOU ARE OBVIOUSLY A RANK AMATEUR.  BETTER LUCK NEXT TIME.
+  \item 100: YOUR SCORE QUALIFIES YOU AS A NOVICE CLASS ADVENTURER.
+  \item 130: YOU HAVE ACHIEVED THE RATING: ‘EXPERIENCED ADVENTURER’.
+  \item 200: YOU MAY NOW CONSIDER YOURSELF A ‘SEASONED ADVENTURER’.
+  \item 250: YOU HAVE REACHED ‘JUNIOR MASTER’ STATUS.
+  \item 300: MASTER ADVENTURER CLASSES C.
+  \item 330: MASTER ADVENTURER CLASSES B.
+  \item 349: MASTER ADVENTURER CLASSES A.
+  \item 9999: ALL OF ADVENTUREDOM GIVES TRIBUTE TO YOU, ADVENTURER GRANDMASTER!
+\end{itemize}
+
+\paragraph{Tabela 11 – Hints.}
+A Tabela 11 associa dicas contextuais a condições determinadas de jogo.  
+Cada linha contém cinco valores:  
+
+\begin{itemize}
+  \item O primeiro valor vincula a dica a uma condição definidos na Tabela 9.
+  \item O segundo valor define quantos turnos o jogador deve gastar no mesmo estado antes da dica ser oferecida.
+  \item O terceiro valor representa a penalidade subtraída da pontuação total ao aceitar a ajuda.
+  \item Os dois últimos valores apontam para mensagens da Tabela 6: a pergunta inicial e a resposta.
+\end{itemize}
+
+Exemplos:
+\begin{itemize}
+  \item 4 4 2 62 63 — Bit 4 (entrada da caverna): após 4 turnos no local, o jogo exibe a pergunta 62 (Do you need help getting inside?) e, se aceita, mostra a resposta 63 (Perhaps you should explore the grate.), descontando 2 pontos.
+  \item 6 8 2 20 21 — Bit 6 (cobra): depois de 8 turnos, o jogador recebe uma dica para resolver o enigma da serpente.
+  \item 7 75 4 176 177 — Bit 7 (labirinto): após 75 turnos perdido, é oferecida uma dica de saída, com penalidade de 4 pontos.
+  \item 8 25 5 178 179 — Bit 8 (quarto escuro): a dica surge depois de 25 turnos, custando 5 pontos.
+\end{itemize}
+
+\paragraph{Tabela 12 – Magic Messages.}
+A Tabela 12 contém as chamadas \textit{Magic Messages}, um conjunto de mensagens reservadas utilizadas pelos modos de inicialização, manutenção e administração do jogo.  
+Embora seu formato seja idêntico ao da Tabela 6, elas são separadas para facilitar o acesso e o controle das rotinas especiais do sistema. Cada linha contém um identificador e um texto associado.agens internas do sistema.
+\end{itemize}
+
+Exemplos
+\begin{itemize}
+  \item 1 \textit{A LARGE CLOUD OF GREEN SMOKE APPEARS IN FRONT OF YOU… HE MAKES A SINGLE PASS OVER YOU WITH HIS HANDS, AND EVERYTHING FADES AWAY INTO A GREY NOTHINGNESS.}
+  \item 2 \textit{EVEN WIZARDS HAVE TO WAIT LONGER THAN THAT!}
+  \item 3 \textit{I'M TERRIBLY SORRY, BUT COLOSSAL CAVE IS CLOSED. OUR HOURS ARE:}
+  \item 4 \textit{ONLY WIZARDS ARE PERMITTED WITHIN THE CAVE RIGHT NOW.}
+\end{itemize}
 
 \newpage
 

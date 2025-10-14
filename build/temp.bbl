@@ -1,0 +1,223 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{yourdon1979structured}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=ee6bc3c9f8c0a6c784c023dffc23d4ca}{%
+           family={Yourdon},
+           familyi={Y\bibinitperiod},
+           given={Edward},
+           giveni={E\bibinitperiod}}}%
+        {{hash=0f3f2e0d93cec9c983dc1bb7cf2fa275}{%
+           family={Constantine},
+           familyi={C\bibinitperiod},
+           given={Larry\bibnamedelima L},
+           giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Prentice-Hall, Inc.}%
+      }
+      \strng{namehash}{3248ba981c8d1cc5300ed32260a51a45}
+      \strng{fullhash}{3248ba981c8d1cc5300ed32260a51a45}
+      \strng{fullhashraw}{3248ba981c8d1cc5300ed32260a51a45}
+      \strng{bibnamehash}{3248ba981c8d1cc5300ed32260a51a45}
+      \strng{authorbibnamehash}{3248ba981c8d1cc5300ed32260a51a45}
+      \strng{authornamehash}{3248ba981c8d1cc5300ed32260a51a45}
+      \strng{authorfullhash}{3248ba981c8d1cc5300ed32260a51a45}
+      \strng{authorfullhashraw}{3248ba981c8d1cc5300ed32260a51a45}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Structured design: fundamentals of a discipline of computer program and systems design}
+      \field{year}{1979}
+    \endentry
+    \entry{levy2010hackers}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=060483eb5e4f219b7d16f68852edae7c}{%
+           family={Levy},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media}%
+      }
+      \strng{namehash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{fullhash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{fullhashraw}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{bibnamehash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{authorbibnamehash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{authornamehash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{authorfullhash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{authorfullhashraw}{060483eb5e4f219b7d16f68852edae7c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781449393748}
+      \field{title}{Hackers: Heroes of the Computer Revolution - 25th Anniversary Edition}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb https://books.google.com.br/books?id=mShXzzKtpmEC
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.br/books?id=mShXzzKtpmEC
+      \endverb
+    \endentry
+    \entry{peterson1983genesis}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=92b9b2299c2d435388f3b91670d2d31e}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={Dale},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Reston Publishing Company}%
+      }
+      \strng{namehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{fullhash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{fullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{bibnamehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authorbibnamehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authornamehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authorfullhash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authorfullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Genesis II, Creation and recreation with computers}
+      \field{year}{1983}
+    \endentry
+    \entry{adventure_original_sources}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=510a6ec0dd9b27c8b2b20a082e0a800b}{%
+           family={Crowther},
+           familyi={C\bibinitperiod},
+           given={Will},
+           giveni={W\bibinitperiod}}}%
+        {{hash=f0e248ab5a2d39447e36d9304cadf26d}{%
+           family={Woods},
+           familyi={W\bibinitperiod},
+           given={Don},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{fullhash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{fullhashraw}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{bibnamehash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{authorbibnamehash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{authornamehash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{authorfullhash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{authorfullhashraw}{05004c2c43cb43acd5435e7651eeef00}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Archive of original sources}
+      \field{note}{Linked from the historical page curated by Rick Adams.}
+      \field{title}{Original Adventure sources (FORTRAN) and data}
+      \field{year}{1977}
+      \verb{urlraw}
+      \verb http://www.ifarchive.org/if-archive/games/source/advent-original.tar.gz
+      \endverb
+      \verb{url}
+      \verb http://www.ifarchive.org/if-archive/games/source/advent-original.tar.gz
+      \endverb
+    \endentry
+    \entry{jerz2007colossal}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=43fb3f4f59c49358e6efeb3c59ef7bbd}{%
+           family={Jerz},
+           familyi={J\bibinitperiod},
+           given={Dennis\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{fullhash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{fullhashraw}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{bibnamehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{authorbibnamehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{authornamehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{authorfullhash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{authorfullhashraw}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Digital Humanities Quarterly}
+      \field{shortjournal}{DHQ}
+      \field{subtitle}{Examining Will Crowther's Original “Adventure” in Code and in Kentucky}
+      \field{title}{Somewhere Nearby is Colossal Cave}
+      \field{year}{2007}
+      \verb{urlraw}
+      \verb https://www.digitalhumanities.org/dhq/vol/1/2/000009/000009.html
+      \endverb
+      \verb{url}
+      \verb https://www.digitalhumanities.org/dhq/vol/1/2/000009/000009.html
+      \endverb
+    \endentry
+    \entry{rhodes_adventure_py}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=eb282136fd89e99b6510fe7a46722b0a}{%
+           family={Rhodes},
+           familyi={R\bibinitperiod},
+           given={Brandon},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{fullhash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{fullhashraw}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{bibnamehash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{authorbibnamehash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{authornamehash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{authorfullhash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{authorfullhashraw}{eb282136fd89e99b6510fe7a46722b0a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Adventure (Python 3 port) — a faithful port of Crowther and Woods’s 1977 FORTRAN Adventure}
+      \field{version}{1.6}
+      \field{year}{2010}
+      \warn{\item software entry 'rhodes_adventure_py' (refs.bib): Invalid format '2010-2015' of date field 'date' - ignoring}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

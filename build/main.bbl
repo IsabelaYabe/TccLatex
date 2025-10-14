@@ -52,6 +52,365 @@
       \field{title}{Structured design: fundamentals of a discipline of computer program and systems design}
       \field{year}{1979}
     \endentry
+    \entry{booch1999unified}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=379663f8b780c2545626c2d633406876}{%
+           family={Booch},
+           familyi={B\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=830cbad03fbe6761e2d2fcf94ec994f7}{%
+           family={Rumbaugh},
+           familyi={R\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d17187a6b7e782cf1158d1ac21d40106}{%
+           family={Jacobson},
+           familyi={J\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{f98880d978b420ac8842fdc7a6361beb}
+      \strng{fullhash}{f98880d978b420ac8842fdc7a6361beb}
+      \strng{fullhashraw}{f98880d978b420ac8842fdc7a6361beb}
+      \strng{bibnamehash}{f98880d978b420ac8842fdc7a6361beb}
+      \strng{authorbibnamehash}{f98880d978b420ac8842fdc7a6361beb}
+      \strng{authornamehash}{f98880d978b420ac8842fdc7a6361beb}
+      \strng{authorfullhash}{f98880d978b420ac8842fdc7a6361beb}
+      \strng{authorfullhashraw}{f98880d978b420ac8842fdc7a6361beb}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780201571684}
+      \field{series}{Addison-Wesley object technology series}
+      \field{title}{The Unified Modeling Language User Guide}
+      \field{year}{1999}
+      \verb{urlraw}
+      \verb https://books.google.com.br/books?id=caVQAAAAMAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.br/books?id=caVQAAAAMAAJ
+      \endverb
+    \endentry
+    \entry{fowler2018refactoring}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=c3035fa4fc8a043ebf2ea4bff39adda1}{%
+           family={Fowler},
+           familyi={F\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Education}%
+      }
+      \strng{namehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
+      \strng{fullhash}{c3035fa4fc8a043ebf2ea4bff39adda1}
+      \strng{fullhashraw}{c3035fa4fc8a043ebf2ea4bff39adda1}
+      \strng{bibnamehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
+      \strng{authorbibnamehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
+      \strng{authornamehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
+      \strng{authorfullhash}{c3035fa4fc8a043ebf2ea4bff39adda1}
+      \strng{authorfullhashraw}{c3035fa4fc8a043ebf2ea4bff39adda1}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780134757704}
+      \field{series}{Addison-Wesley Signature Series (Fowler)}
+      \field{title}{Refactoring: Improving the Design of Existing Code}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://books.google.com.br/books?id=2H1_DwAAQBAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.br/books?id=2H1_DwAAQBAJ
+      \endverb
+    \endentry
+    \entry{sommerville2016software}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=391822eb61c91ef5882d24cbd1592b6f}{%
+           family={Sommerville},
+           familyi={S\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson}%
+      }
+      \strng{namehash}{391822eb61c91ef5882d24cbd1592b6f}
+      \strng{fullhash}{391822eb61c91ef5882d24cbd1592b6f}
+      \strng{fullhashraw}{391822eb61c91ef5882d24cbd1592b6f}
+      \strng{bibnamehash}{391822eb61c91ef5882d24cbd1592b6f}
+      \strng{authorbibnamehash}{391822eb61c91ef5882d24cbd1592b6f}
+      \strng{authornamehash}{391822eb61c91ef5882d24cbd1592b6f}
+      \strng{authorfullhash}{391822eb61c91ef5882d24cbd1592b6f}
+      \strng{authorfullhashraw}{391822eb61c91ef5882d24cbd1592b6f}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780133943030}
+      \field{series}{Always learning}
+      \field{title}{Software Engineering}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://books.google.com.br/books?id=tW4VngEACAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.br/books?id=tW4VngEACAAJ
+      \endverb
+    \endentry
+    \entry{wiegers2013software}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=68405c2a3daef0e53ccf9b027981562f}{%
+           family={Wiegers},
+           familyi={W\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=ef5e363e94151c169ec333a25197c00e}{%
+           family={Beatty},
+           familyi={B\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pearson Education}%
+      }
+      \strng{namehash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
+      \strng{fullhash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
+      \strng{fullhashraw}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
+      \strng{bibnamehash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
+      \strng{authorbibnamehash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
+      \strng{authornamehash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
+      \strng{authorfullhash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
+      \strng{authorfullhashraw}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780735679627}
+      \field{series}{Developer Best Practices}
+      \field{title}{Software Requirements}
+      \field{year}{2013}
+      \verb{urlraw}
+      \verb https://books.google.com.br/books?id=nbpCAwAAQBAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.br/books?id=nbpCAwAAQBAJ
+      \endverb
+    \endentry
+    \entry{rhodes_adventure_py}{software}{}{}
+      \name{author}{1}{}{%
+        {{hash=eb282136fd89e99b6510fe7a46722b0a}{%
+           family={Rhodes},
+           familyi={R\bibinitperiod},
+           given={Brandon},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{fullhash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{fullhashraw}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{bibnamehash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{authorbibnamehash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{authornamehash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{authorfullhash}{eb282136fd89e99b6510fe7a46722b0a}
+      \strng{authorfullhashraw}{eb282136fd89e99b6510fe7a46722b0a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Adventure (Python 3 port) — a faithful port of Crowther and Woods’s 1977 FORTRAN Adventure}
+      \field{version}{1.6}
+      \field{year}{2010}
+      \warn{\item software entry 'rhodes_adventure_py' (refs.bib): Invalid format '2010-2015' of date field 'date' - ignoring}
+    \endentry
+    \entry{adventure_original_sources}{misc}{}{}
+      \name{author}{2}{}{%
+        {{hash=510a6ec0dd9b27c8b2b20a082e0a800b}{%
+           family={Crowther},
+           familyi={C\bibinitperiod},
+           given={Will},
+           giveni={W\bibinitperiod}}}%
+        {{hash=f0e248ab5a2d39447e36d9304cadf26d}{%
+           family={Woods},
+           familyi={W\bibinitperiod},
+           given={Don},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{fullhash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{fullhashraw}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{bibnamehash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{authorbibnamehash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{authornamehash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{authorfullhash}{05004c2c43cb43acd5435e7651eeef00}
+      \strng{authorfullhashraw}{05004c2c43cb43acd5435e7651eeef00}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Archive of original sources}
+      \field{note}{Linked from the historical page curated by Rick Adams.}
+      \field{title}{Original Adventure sources (FORTRAN) and data}
+      \field{year}{1977}
+      \verb{urlraw}
+      \verb http://www.ifarchive.org/if-archive/games/source/advent-original.tar.gz
+      \endverb
+      \verb{url}
+      \verb http://www.ifarchive.org/if-archive/games/source/advent-original.tar.gz
+      \endverb
+    \endentry
+    \entry{dibbell1998mytinylife}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=19ba120924ee09440cd988b6ab1afc90}{%
+           family={Dibbell},
+           familyi={D\bibinitperiod},
+           given={Julian},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {New York}%
+      }
+      \list{publisher}{1}{%
+        {Holt}%
+      }
+      \strng{namehash}{19ba120924ee09440cd988b6ab1afc90}
+      \strng{fullhash}{19ba120924ee09440cd988b6ab1afc90}
+      \strng{fullhashraw}{19ba120924ee09440cd988b6ab1afc90}
+      \strng{bibnamehash}{19ba120924ee09440cd988b6ab1afc90}
+      \strng{authorbibnamehash}{19ba120924ee09440cd988b6ab1afc90}
+      \strng{authornamehash}{19ba120924ee09440cd988b6ab1afc90}
+      \strng{authorfullhash}{19ba120924ee09440cd988b6ab1afc90}
+      \strng{authorfullhashraw}{19ba120924ee09440cd988b6ab1afc90}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{subtitle}{Crime and Passion in a Virtual World}
+      \field{title}{My Tiny Life}
+      \field{year}{1998}
+    \endentry
+    \entry{levy2010hackers}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=060483eb5e4f219b7d16f68852edae7c}{%
+           family={Levy},
+           familyi={L\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media}%
+      }
+      \strng{namehash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{fullhash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{fullhashraw}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{bibnamehash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{authorbibnamehash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{authornamehash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{authorfullhash}{060483eb5e4f219b7d16f68852edae7c}
+      \strng{authorfullhashraw}{060483eb5e4f219b7d16f68852edae7c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9781449393748}
+      \field{title}{Hackers: Heroes of the Computer Revolution - 25th Anniversary Edition}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb https://books.google.com.br/books?id=mShXzzKtpmEC
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.br/books?id=mShXzzKtpmEC
+      \endverb
+    \endentry
+    \entry{peterson1983genesis}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=92b9b2299c2d435388f3b91670d2d31e}{%
+           family={Peterson},
+           familyi={P\bibinitperiod},
+           given={Dale},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Reston Publishing Company}%
+      }
+      \strng{namehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{fullhash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{fullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{bibnamehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authorbibnamehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authornamehash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authorfullhash}{92b9b2299c2d435388f3b91670d2d31e}
+      \strng{authorfullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Genesis II, Creation and recreation with computers}
+      \field{year}{1983}
+    \endentry
+    \entry{jerz2007colossal}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=43fb3f4f59c49358e6efeb3c59ef7bbd}{%
+           family={Jerz},
+           familyi={J\bibinitperiod},
+           given={Dennis\bibnamedelima G.},
+           giveni={D\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \strng{namehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{fullhash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{fullhashraw}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{bibnamehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{authorbibnamehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{authornamehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{authorfullhash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \strng{authorfullhashraw}{43fb3f4f59c49358e6efeb3c59ef7bbd}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Digital Humanities Quarterly}
+      \field{shortjournal}{DHQ}
+      \field{subtitle}{Examining Will Crowther's Original “Adventure” in Code and in Kentucky}
+      \field{title}{Somewhere Nearby is Colossal Cave}
+      \field{year}{2007}
+      \verb{urlraw}
+      \verb https://www.digitalhumanities.org/dhq/vol/1/2/000009/000009.html
+      \endverb
+      \verb{url}
+      \verb https://www.digitalhumanities.org/dhq/vol/1/2/000009/000009.html
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
