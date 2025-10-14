@@ -81,7 +81,7 @@
 
 \section{Introdução}
 
-A engenharia de software estuda e avalia métodos capazes de aproximar o código fonte da linguagem natural. Essa busca se manifesta em duas vertentes complementares: a interação com o usuário final e a comunicação entre os próprios desenvolvedores.
+A engenharia de software estuda e avalia métodos capazes de aproximar o código fonte da linguagem natural. Essa busca se mostra em duas vertentes complementares: a interação com o usuário final e a comunicação entre os próprios desenvolvedores. 
 
 Esse estudo fundamenta-se em autores que defendem o desenvolvimento estruturado e orientado ao usuário. Isto é, projetado a partir da visão e das necessidades de quem o utiliza, e não apenas da estrutura interna ou das preferências de quem o desenvolve. Essa perspectiva deu origem a princípios de design centrados na função e no comportamento observável do sistema, enfatizando que a organização do código deve refletir a experiência do usuário e os fluxos de interação previstos. \textcite{yourdon1979structured} descrevem o processo tradicional de desenvolvimento de software como uma cadeia de tradução sucessiva. O diálogo ocorre entre o proprietário do produto, o usuário, e o analista responsável por capturar suas ideias, conhecimentos de usabilidade e o comportamento esperado do software. Em seguida, o engenheiro de requisitos traduz essa concepção em um conjunto de requisitos funcionais e não funcionais, que por sua vez são reinterpretados pelo designer de sistemas em estruturas lógicas e técnicas. Por fim, o programador concretiza essas decisões, implementando no código as interpretações que compreendeu a partir do trabalho do designer. Cada etapa dessa cadeia de traduções implica na perda ou distorção de parte do significado original do usuário, o que pode resultar em comportamento apenas próximo ao desejado.
 
@@ -135,8 +135,12 @@ a base de casos de teste para esses elementos, à medida que evoluem durante o
 desenvolvimento. Casos de uso aplicados aos subsistemas são excelentes fontes
 de testes de regressão; casos de uso aplicados a todo o sistema são excelentes
 fontes de testes de sistema e de integração. A UML fornece a representação gráfica de um caso de uso e de um ator, conforme mostra a Figura 17.1. Essa notação permite visualizar um caso de uso em separado de sua realização e no contexto com outros casos de uso.
+
 \section{Escolha da linguagem e porque OO}
-\section{Escolha de repositório}
+Neste estudo vamos focar nas linguagens orientadas a objetos, pelo maior entendimento e compreensão que possuo dessa linguagem. Restringindo nosso escopo a POO, podemos análisar o código a partir dos relacionamentos de classes, olhando principalmente para dependências, inputs e outputs. 
+
+\section{Escolha dos repositórios}
+Para análise foram escolhidos três repositórios independentes, dois de David Beazley e um de Brandon Rhodes, duas referências em linguagem Python. Os repositórios de David Beazley possui uma documentação completa no próprio repositório, facilitando a compreensão do software construido. Já o repositório do Brandon Rhodes não contém documentação, contudo o conteúdo é a portabilidade do jogo Colossal Cave Adventure de Fortran para Python.
 
 \subsection{Colossal Cave Adventure}
 Este trabalho utiliza como base uma reimplementação de \textcite{rhodes_adventure_py} em Python 3, que preserva o jogo original de Crowther e Don Woods, utilizando o arquivo de dados \texttt{advent.dat} \textcite{adventure_original_sources}. O pacote permite jogar em dois modos, no \emph{prompt} do Python e em terminal do sistema operacional. Além disso, disponibiliza \textit{walkthroughs} automatizados na pasta de testes.
