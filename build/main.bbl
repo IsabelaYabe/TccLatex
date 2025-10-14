@@ -134,45 +134,44 @@
       \verb https://books.google.com.br/books?id=2H1_DwAAQBAJ
       \endverb
     \endentry
-    \entry{wiegers2013software}{book}{}{}
+    \entry{sommerville1997requirements}{book}{}{}
       \name{author}{2}{}{%
-        {{hash=68405c2a3daef0e53ccf9b027981562f}{%
-           family={Wiegers},
-           familyi={W\bibinitperiod},
-           given={K.},
-           giveni={K\bibinitperiod}}}%
-        {{hash=ef5e363e94151c169ec333a25197c00e}{%
-           family={Beatty},
-           familyi={B\bibinitperiod},
-           given={J.},
-           giveni={J\bibinitperiod}}}%
+        {{hash=391822eb61c91ef5882d24cbd1592b6f}{%
+           family={Sommerville},
+           familyi={S\bibinitperiod},
+           given={I.},
+           giveni={I\bibinitperiod}}}%
+        {{hash=baacb362fca23395eaebab947907d439}{%
+           family={Sawyer},
+           familyi={S\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {Pearson Education}%
+        {Wiley}%
       }
-      \strng{namehash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
-      \strng{fullhash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
-      \strng{fullhashraw}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
-      \strng{bibnamehash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
-      \strng{authorbibnamehash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
-      \strng{authornamehash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
-      \strng{authorfullhash}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
-      \strng{authorfullhashraw}{d5265c77ac0ab07bc4ca4ddc2b7bfd5a}
+      \strng{namehash}{2edbfb632f5695e6d024677f7aa288cd}
+      \strng{fullhash}{2edbfb632f5695e6d024677f7aa288cd}
+      \strng{fullhashraw}{2edbfb632f5695e6d024677f7aa288cd}
+      \strng{bibnamehash}{2edbfb632f5695e6d024677f7aa288cd}
+      \strng{authorbibnamehash}{2edbfb632f5695e6d024677f7aa288cd}
+      \strng{authornamehash}{2edbfb632f5695e6d024677f7aa288cd}
+      \strng{authorfullhash}{2edbfb632f5695e6d024677f7aa288cd}
+      \strng{authorfullhashraw}{2edbfb632f5695e6d024677f7aa288cd}
       \field{sortinit}{5}
       \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{9780735679627}
-      \field{series}{Developer Best Practices}
-      \field{title}{Software Requirements}
-      \field{year}{2013}
+      \field{isbn}{9780471974444}
+      \field{title}{Requirements Engineering: A Good Practice Guide}
+      \field{year}{1997}
       \verb{urlraw}
-      \verb https://books.google.com.br/books?id=nbpCAwAAQBAJ
+      \verb https://books.google.com.br/books?id=Ag7qotD-sukC
       \endverb
       \verb{url}
-      \verb https://books.google.com.br/books?id=nbpCAwAAQBAJ
+      \verb https://books.google.com.br/books?id=Ag7qotD-sukC
       \endverb
     \endentry
     \entry{rhodes_adventure_py}{software}{}{}

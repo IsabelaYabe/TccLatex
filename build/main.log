@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  14 OCT 2025 02:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  14 OCT 2025 03:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -737,16 +737,16 @@ l.80 \newpage
 [5]
 
 [6]
-Overfull \hbox (31.58539pt too wide) in paragraph at lines 231--232
+
+[7]
+Overfull \hbox (31.58539pt too wide) in paragraph at lines 230--231
 []\T1/cmr/m/n/12 Além dos co-man-dos clás-si-cos de na-ve-ga-ção por bús-sola, "\T1/cmr/m/it/12 EAST\T1/cmr/m/n/12 "/"\T1/cmr/m/it/12 E\T1/cmr/m/n/12 ", "\T1/cmr/m/it/12 WEST\T1/cmr/m/n/12 "/"\T1/cmr/m/it/12 W\T1/cmr/m/n/12 ",
  []
 
 
 
-[7]
-
 [8]
-Overfull \hbox (13.79488pt too wide) in paragraph at lines 289--290
+Overfull \hbox (13.79488pt too wide) in paragraph at lines 288--289
 []\T1/cmr/m/n/12 (9 - DOOR) (94 - YOU ARE AT ONE END OF AN IM-MENSE NORTH/SOUTH
  []
 
@@ -758,32 +758,32 @@ Overfull \hbox (13.79488pt too wide) in paragraph at lines 289--290
 
 [11]
 
-d:/TccLatex/main.tex:365: LaTeX Error: \begin{document} ended by \end{itemize}.
+d:/TccLatex/main.tex:364: LaTeX Error: \begin{document} ended by \end{itemize}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.365 \end{itemize}
+l.364 \end{itemize}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
-d:/TccLatex/main.tex:365: Extra \endgroup.
+d:/TccLatex/main.tex:364: Extra \endgroup.
 \end  ...end#1\endcsname \@checkend {#1}\endgroup 
                                                   \UseHook {env/#1/after}\if...
-l.365 \end{itemize}
+l.364 \end{itemize}
                    
 Things are pretty mixed up, but I think the worst is over.
 
 
-Overfull \hbox (4.74802pt too wide) in paragraph at lines 369--370
+Overfull \hbox (4.74802pt too wide) in paragraph at lines 368--369
 []\T1/cmr/m/n/12 1 \T1/cmr/m/it/12 A LARGE CLOUD OF GREEN SMOKE AP-PE-ARS IN FRONT OF YOU...
  []
 
 
-Overfull \hbox (42.5358pt too wide) in paragraph at lines 369--370
+Overfull \hbox (42.5358pt too wide) in paragraph at lines 368--369
 \T1/cmr/m/it/12 HE MA-KES A SIN-GLE PASS OVER YOU WITH HIS HANDS, AND EVERYTHING
  []
 
@@ -798,9 +798,6 @@ L3 programming layer <2020/03/25>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 Package biblatex Warning: Please rerun LaTeX.
 (biblatex)                Page breaks have changed.
 
@@ -809,17 +806,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20304 strings out of 468130
- 348838 string characters out of 5447467
- 1247015 words of memory out of 5000000
- 48617 multiletter control sequences out of 15000+600000
+ 20326 strings out of 468130
+ 349090 string characters out of 5447467
+ 1248515 words of memory out of 5000000
+ 48639 multiletter control sequences out of 15000+600000
  639653 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,6n,79p,1460b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk>
-Output written on d:\TccLatex\build\main.pdf (14 pages, 207311 bytes).
+ 78i,5n,79p,1460b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk>
+Output written on d:\TccLatex\build\main.pdf (14 pages, 207590 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
+ 650 PDF objects out of 1000 (max. 8388607)
  64 named destinations out of 1000 (max. 500000)
  78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
