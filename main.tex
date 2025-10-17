@@ -78,6 +78,9 @@
 \tableofcontents
 
 \newpage
+\section{Resumo}
+
+\textcite{larman2002applying} descreve três modos de desenvolvedores projetarem objetos: (i) projetar enquanto codifica, (ii) desenhar e projetar, (iii) apenas desenhar. Este trabalho propõe uma ferramenta de suporte para desenhar e projetar. # Não sei tá esquisito 
 
 \section{Introdução}
 
@@ -93,51 +96,28 @@ O diagrama de casos de uso coloca o usuário no centro do projeto, permitindo qu
 
 Autores posteriores ampliaram essa discussão ao nível do código, enfatizando a necessidade do código não ser apenas executável, mas também fácel de compreender. Trazendo as mesmas características que o desing estruturado: clareza e visibilidade. O código expressa intenções e decisões funcionando como um texto coletivo que deve ser lido e compreendido por outros desenvolvedores. Como sintetiza \textcite{fowler2018refactoring}, \enquote{Qualquer tolo escreve um código que um computador possa entender; bons programadores escrevem código que seres humanos possam entender.}
 
-Essa legibilidade, porém, não substitui a documentação de requisitos, ela a sustenta. Enquanto o código explica como o sistema se comporta, a documentação torna explícito o por que ele deve se comportar assim. Segundo \textcite{sommerville1997requirements}, a documentação de requisitos define quem o software é e quem deve ser, atuando como um contrato conceitual entre usuários, analistas e desenvolvedores. Ela traduz como o usuário pretende interagir com o sistema e quais características de negócio o software deve incorporar, mantendo o comportamento implementado alinhado às expectativas e necessidades dos usuários.
+Essa legibilidade não substitui a documentação de requisitos. Enquanto o código explica como o sistema se comporta, a documentação torna explícito o por que ele deve se comportar assim. Segundo \textcite{sommerville1997requirements}, a documentação de requisitos define quem o software é e quem deve ser, atuando como um contrato conceitual entre usuários, analistas e desenvolvedores. Ela traduz como o usuário pretende interagir com o sistema e quais características de negócio o software deve incorporar, mantendo o comportamento implementado alinhado às expectativas e necessidades dos usuários. Quando essa documentação falta ou envelhece, a legibilidade do código vira o principal ponto de apoio para reconstruir as intenções originais.
 
-Quando essa documentação falta ou envelhece, a legibilidade do código vira o principal ponto de apoio para reconstruir as intenções originais.
+Se o código é um texto escrito para ser lido por humanos, então suas palavras, nomes e estruturas carregam pistas úteis sobre o que o sistema faz e para quem. Partimos dessa premissa para investigar se técnicas de representação semântica, como embeddings e modelos de linguagem, permitem reconstruir casos de uso a partir do próprio código-fonte, produzindo uma documentação inicial para sistemas sem documentação ou com documentação obsoleta.
 
-Se o código é um texto escrito para ser lido por humanos, então suas palavras, nomes e estruturas carregam pistas úteis sobre o que o sistema faz e para quem. Partimos dessa premissa para investigar se técnicas modernas de representação semântica, como embeddings e modelos de linguagem, permitem reconstruir casos de uso a partir do próprio código-fonte, produzindo uma documentação inicial para sistemas sem documentação ou com documentação obsoleta.
+Esse tipo de investigação é definido por \textcite{chikofsky1990reverse} como \textit{Redocumentation} em \textit{Reverse engineering}, ou seja, engenharia reversa com foco em redocumentação, no sentido de criar representações de abstração do sistema existente, destinadas à leitura humana, sem alterar o comportamento do software. Aqui propôe-se criar diagramas de casos de uso, preservando a semântica do sistema original, afim de compreender o comportamento observável do ponto de vista do usuário.
 
-Neste trabalho, propomos um procedimento em três etapas: (i) extrair sinais semânticos de identificadores, comentários, mensagens e estruturas (AST) e codificá-los em \textit{embeddings}; (ii) recuperar trechos relevantes de código e exemplos de referência via \textit{retrieval} e conduzir a síntese com LLMs (formato: atores, objetivos, fluxos principal/alternativos); e (iii) gerar casos de uso com \textbf{rastreabilidade} de volta às fontes (trechos de código e arquivos), de modo que cada passo do caso de uso possa ser auditado por desenvolvedores e analistas.
+Será utilizada a representação proposta por \textcite{tonella2007reverse}, uma linguagem abstrata que preserva apenas os aspectos do código que afetam o fluxo de objetos. Instruções que não alteram referências a objetos, como condicionais e laços são ignoradas, já criações, atribuições e chamadas que propagam referências são preservadas. 
 
-\subsection{}
+Em complemento à representação abstrata de \textcite{tonella2007reverse}, adotamos a estratégia \text{Bruneliere2010MoDisco} que organiza o processo em duas fases: a descoberta de modelos, na qual um \textit{discoverer} extrai do código um modelo intermediário conforme um metamodelo (p.ex., Java ou KDM), e a compreensão do modelo, em que transformações e consultas derivam visões de alto nível para redocumentação (diagramas, métricas, relatórios). Essa arquitetura genérica e extensível permite mapear, de forma sistemática, os elementos preservados pela linguagem abstrata (criações, atribuições e chamadas que propagam referências) para um AST/modelo e, a partir dele, gerar diagramas de casos de uso e artefatos correlatos, sem alterar o comportamento do sistema. Assim, a abordagem de Tonella fornece o filtro semântico (fluxo de objetos), enquanto MoDisco fornece a infraestrutura de metamodelos, discoverers e transformações para operacionalizar a redocumentação.
 
-No cenário contemporâneo, o avanço dos modelos de linguagem e das técnicas de representação semântica, como os \textit{embeddings}, oferece novas possibilidades. Trabalhos recentes exploram como representações vetoriais de elementos de software, tais como identificadores, comentários, \textit{issues}, \textit{commits} e \textit{docstrings}, podem capturar aspectos semânticos úteis à engenharia de requisitos e à geração automatizada de artefatos. Essa evolução permite observar o código não apenas como uma estrutura sintática, mas como um repositório de intenções comunicativas, em que cada elemento textual contribui para reconstruir a lógica, o propósito e o comportamento esperados do sistema.
+Para estruturarmos as relações entre componentes do sistemas utilizaremos a mesma estrutura utilizada por \textcite{tonella2007reverse}, \textcite{pereira2011recovering}, \textcite{Wang2006AST} e \textcite{Fauzi2016AST}, a \textit{Abstract Syntax Tree} (AST). Assim teremos uma representação hierarquica do programa de forma independente da sua sintaxe textual, organizando classes, métodos, atributos e instruções.
 
-É nesse contexto que se insere o presente trabalho, propondo uma abordagem de engenharia reversa orientada por aprendizado de máquina, fundamentada em \textit{embeddings} e \textit{Retrieval-Augmented Generation} (RAG). O objetivo é investigar como informações semânticas presentes em comentários, identificadores e estruturas de código podem ser utilizadas para recuperar a intenção do desenvolvedor e derivar artefatos de engenharia de requisitos, em especial casos de uso. Ao conectar o código-fonte a uma base de conhecimento composta por obras clássicas e boas práticas de engenharia de software, busca-se contribuir para a construção de um processo de documentação e elicitação de casos de uso mais preciso, compreensível e automatizável.
+Além da linguagem abstrata, este trabalho incorpora informações semânticas extraídas diretamente das \textit{docstrings}, comentários e nomenclaturas do código. Esses elementos textuais são tratados como extensões dos objetos, pois também comunicam intenções, objetivos e relações entre entidades. Com o apoio de \textit{Large Language Models} (LLMs), essas evidências são analisadas de forma contextual, permitindo inferir papéis, objetivos e interações que não estão explicitamente representados nas chamadas ou estruturas do código.
 
-\section{Metodologia de Mapeamento Sistemático}
-\subsection{Capítulo 17
-CASOS DE USO - UML}
-Nenhum sistema existe isoladamente. Todo sistema interessante interage
-com atores humanos ou autômatos que utilizam esse sistema para algum propósito e esses atores esperam que o sistema se comporte de acordo com as maneiras previstas. Um caso de uso especifica o comportamento de um sistema ou de
-parte de um sistema e é uma descrição de um conjunto de seqüências de ações,
-incluindo variantes realizadas pelo sistema para produzir um resultado observável do valor de um ator.
-Os casos de usos podem ser aplicados para captar o comportamento pretendido do sistema que está sendo desenvolvido, sem ser necessário especificar
-como esse comportamento é implementado. Os casos de uso fornecem uma maneira para os desenvolvedores chegarem a uma compreensão comum com os
-usuários finais do sistema e com os especialistas do domínio. Além disso, os casos de uso servem para ajudar a validar a arquitetura e para verificar o sistema à
-medida que ele evolui durante seu desenvolvimento. À proporção que você implementa o seu sistema, esses casos de uso são realizados por colaborações cujos
-elementos trabalham em conjunto para a execução de cada caso de uso.
-Casos de uso bem-estruturados denotam somente o comportamento essencial do sistema ou subsistema e não são amplamente gerais, nem muito específicos.
+Dessa forma, o processo de redocumentação combina a análise estrutural, que descreve como os objetos estão correlacionados, e a análise semântica, que interpreta o vocabulário interno do sistema revelando as intenções dos desenvolvedores. 
 
-Um caso de uso executa alguma quantidade tangível de trabalho. Sob a
-perspectiva de um determinado ator, um caso de uso realiza algo que é de valor
-para um ator, como o cálculo de um resultado, a geração de um novo objeto ou
-a modificação do estado de outro objeto. Por exemplo, na modelagem de um
-banco, o processamento de um empréstimo resulta na entrega de um empréstimo aprovado, manifestada como uma pilha de dinheiro entregue nas mãos do
-cliente.
+A partir dessa modelagem, categorizaremos os elementos da AST em atores e casos de uso. Atores representam papéis externos que interagem com o sistema, enquanto os casos de uso descrevem comportamentos observáveis para os atores. As relações entre casos de uso serão classificadas segundo os tipos definidos por \textcite{booch1999unified}. 
 
-Você poderá aplicar os casos de uso a todo o seu sistema. Também pode
-aplicá-los a uma parte do sistema, incluindo subsistemas e até interfaces e classes
-individuais. Em cada situação, os casos de uso não apenas representam o comportamento desejado desses elementos, mas também podem ser utilizados como
-a base de casos de teste para esses elementos, à medida que evoluem durante o
-desenvolvimento. Casos de uso aplicados aos subsistemas são excelentes fontes
-de testes de regressão; casos de uso aplicados a todo o sistema são excelentes
-fontes de testes de sistema e de integração. A UML fornece a representação gráfica de um caso de uso e de um ator, conforme mostra a Figura 17.1. Essa notação permite visualizar um caso de uso em separado de sua realização e no contexto com outros casos de uso.
+\section{Revisão literária}
+Esta revisão literária foca em redocumentação através da engenharia reversa, com ênfase em recuperação de artefatos de alto nível, como diagramas UML e casos de uso a partir da análise estática. O objetivo é identificar as principais linhas de pesquisa, técnicas e limitações que fundamentam a proposta deste trabalho.
 
-\section{Escolha da linguagem e porque OO}
-Neste estudo vamos focar nas linguagens orientadas a objetos, pelo maior entendimento e compreensão que possuo dessa linguagem. Restringindo nosso escopo a POO, podemos análisar o código a partir dos relacionamentos de classes, olhando principalmente para dependências, inputs e outputs. 
+Foram analisadas publicações disponíveis nas bibliotecas digitais IEEE Xplore e ACM Digital Library, no período de 2015 a 2025, utilizando combinações de termos relacionados a reverse engineering, design recovery, use case, UML, AST, static analysis e natural language processing. Os critérios de inclusão foram artigos que propõem métodos para extrair artefatos de alto nível a partir do código-fonte e estudos que aplicam técnicas de NLP ou LLMs na recuperação de requisitos ou documentação. Foram excluídos revisões secundárias, tutoriais e trabalhos voltados exclusivamente a hardware
 
 \section{Escolha dos repositórios}
 Para análise foram escolhidos três repositórios independentes, dois de David Beazley e um de Brandon Rhodes, duas referências em linguagem Python. Os repositórios de David Beazley possui uma documentação completa no próprio repositório, facilitando a compreensão do software construido. Já o repositório do Brandon Rhodes não contém documentação, contudo o conteúdo é a portabilidade do jogo Colossal Cave Adventure de Fortran para Python.
@@ -365,7 +345,6 @@ Exemplos:
 \paragraph{Tabela 12 – Magic Messages.}
 A Tabela 12 contém as chamadas \textit{Magic Messages}, um conjunto de mensagens reservadas utilizadas pelos modos de inicialização, manutenção e administração do jogo.  
 Embora seu formato seja idêntico ao da Tabela 6, elas são separadas para facilitar o acesso e o controle das rotinas especiais do sistema. Cada linha contém um identificador e um texto associado.agens internas do sistema.
-\end{itemize}
 
 Exemplos
 \begin{itemize}

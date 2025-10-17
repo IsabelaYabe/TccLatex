@@ -266,7 +266,7 @@ Pouco depois da viagem da conexão, o casamento de Patricia e Will começou a se
 Eles se divorciaram em 1976, após uma separação que deixou Will “fragmentado de várias maneiras”.
 Explorar cavernas sem Patricia, entre amigos em comum da Cave Research Foundation, havia se tornado constrangedor.
 
-Sozinho, cercado pelos mapas que haviam feito juntos — incluindo um levantamento detalhado da seção Bedquilt do Mammoth, realizado no verão de 1974 —, Will buscou consolo em longas campanhas de Dungeons & Dragons e noites de programação.
+Sozinho, cercado pelos mapas que haviam feito juntos — incluindo um levantamento detalhado da seção Bedquilt do Mammoth, realizado no verão de 1974 —, Will buscou consolo em longas campanhas de Dungeons Dragons e noites de programação.
 Quando Sandy e Laura o visitavam, geralmente o encontravam trabalhando em uma longa e elegante sequência de código FORTRAN.
 Ele lhes dizia que era um jogo de computador, e que, quando terminasse, seria delas para jogar.
 
@@ -303,8 +303,8 @@ e, por sua vez, a ponte de cristal não aparece sem um aceno da vara;
 e enquanto isso, o jogador está preso em um labirinto de passagens tortuosas,
 todas diferentes — ou pior, todas iguais.
 
-Isso era familiar aos colegas de Will, que jogavam Dungeons & Dragons após o expediente.
-Em D&D, um jogo sem objetivo de vitória, um “Mestre” descreve as cenas em detalhes e desafia os jogadores a decidir suas ações.
+Isso era familiar aos colegas de Will, que jogavam Dungeons Dragons após o expediente.
+Em DD, um jogo sem objetivo de vitória, um “Mestre” descreve as cenas em detalhes e desafia os jogadores a decidir suas ações.
 
 Mas Will escreveu o jogo para suas filhas pequenas.
 Depois do divórcio, Sandy e Laura sabiam que, ao visitar o pai, jogariam algo novo no computador.
@@ -312,6 +312,90 @@ Segundo um pesquisador que entrevistou membros da Cave Research Foundation:
 
 “Outro espeleólogo, que estivera com os Crowther em uma expedição no verão de 1975, relatou que bastou um olhar para ‘Adventure’ para reconhecer imediatamente:
 era um exercício catártico, uma tentativa de Will de preservar uma experiência perdida.”
+
+\section{Recovering Use Case Diagrams from Object Oriented Code: An MDA-based Approach}
+
+Following the approach proposed in [13], in the first stage of the
+diagram recovery process, the Java language is simplified into an abstract
+language where all features related to the object flow are maintained while the
+other syntactic details are dropped (Fig. 3). The choice of this program
+representation is motivated by the computational complexity and the “nature”
+of the object oriented programs whose code is typically structured so as to
+impose more constraints on the data flows than on the control flows. For
+example, the sequence of method invocations may change when moving from
+an application which uses a class to another one, while the possible ways to
+copy and propagate object references remains more stable
+
+\section{Reverse Engineering of Object Oriented Code}
+\textcite{tonella2007reverse}
+2.1 Abstract Language
+The static analysis conducted on Java programs to reverse engineer design
+diagrams from the code is data flow sensitive, but control flow insensitive. This
+means that programs with different control flows and the same data flows are
+22 2 The Object Flow Graph
+associated with the same analysis results. Data flow sensitivity and control
+flow insensitivity are achieved by defining the analyses with reference to a
+program representation called the Object Flow Graph (OFG). A consequence
+of the control flow insensitivity is that the construction of the OFG can be
+described with reference to a simplified, abstract version of the Java language.
+All Java instructions that refer to data flows are properly represented in the
+abstract language, while instructions that do not affect the data flows at all are
+safely ignored. Thus, all control flow statements (conditionals, loops, etc.) are
+not part of the simplified language. Moreover, in the abstract language name
+resolution is also simplified. All identifiers are given fully scoped name, being
+preceded by a dot separated list of enclosing packages, classes and methods.
+In this way, no name conflict can ever occur.
+The choice of a data flow sensitive/control flow insensitive program representation is motivated by two main reasons: computational complexity and
+the “nature” of the Object Oriented programs. As discussed in Section 2.4,
+the theoretical computational complexity and the practical performances of
+control flow insensitive algorithms are substantially superior to those of the
+control flow sensitive counterparts. Moreover, the Object Oriented code is
+typically structured so as to impose more constraints on the data flows than
+on the control flows. For example, the sequence of method invocations may
+change when moving from an application which uses a class to another one,
+while the possible ways to copy and propagate object references remains more
+stable. Thus, for Object Oriented code, where the actual method invocation
+sequence is unknown, it makes sense to adopt control flow insensitive/data
+flow sensitive analysis algorithms, which preserve the way object references
+are handled.
+Fig. 2.1 shows the abstract syntax of the simplified Java language. A Java
+program P consists of zero or more occurrences of declarations (D), followed
+by zero or more statements (S). The actual ordering of the declarations and of
+the statements is irrelevant, due to the control flow insensitivity. The nesting
+structure of packages, classes and methods is completely flattened. For example, statements belonging to different methods are not divided into separate
+groups. However, the full scope is explicitly retained in the names (see below).
+Consequently, a fine grain identification of the data elements is possible, while
+this is not the case for the control elements (control flow insensitivity).
+Transformation of a given Java program into its abstract language representation is an easy task, that can be fully automated. Program transformation tools can be employed to achieve this aim.
+
+\section{Capítulo 17
+CASOS DE USO - UML}
+Nenhum sistema existe isoladamente. Todo sistema interessante interage
+com atores humanos ou autômatos que utilizam esse sistema para algum propósito e esses atores esperam que o sistema se comporte de acordo com as maneiras previstas. Um caso de uso especifica o comportamento de um sistema ou de
+parte de um sistema e é uma descrição de um conjunto de seqüências de ações,
+incluindo variantes realizadas pelo sistema para produzir um resultado observável do valor de um ator.
+Os casos de usos podem ser aplicados para captar o comportamento pretendido do sistema que está sendo desenvolvido, sem ser necessário especificar
+como esse comportamento é implementado. Os casos de uso fornecem uma maneira para os desenvolvedores chegarem a uma compreensão comum com os
+usuários finais do sistema e com os especialistas do domínio. Além disso, os casos de uso servem para ajudar a validar a arquitetura e para verificar o sistema à
+medida que ele evolui durante seu desenvolvimento. À proporção que você implementa o seu sistema, esses casos de uso são realizados por colaborações cujos
+elementos trabalham em conjunto para a execução de cada caso de uso.
+Casos de uso bem-estruturados denotam somente o comportamento essencial do sistema ou subsistema e não são amplamente gerais, nem muito específicos.
+
+Um caso de uso executa alguma quantidade tangível de trabalho. Sob a
+perspectiva de um determinado ator, um caso de uso realiza algo que é de valor
+para um ator, como o cálculo de um resultado, a geração de um novo objeto ou
+a modificação do estado de outro objeto. Por exemplo, na modelagem de um
+banco, o processamento de um empréstimo resulta na entrega de um empréstimo aprovado, manifestada como uma pilha de dinheiro entregue nas mãos do
+cliente.
+
+Você poderá aplicar os casos de uso a todo o seu sistema. Também pode
+aplicá-los a uma parte do sistema, incluindo subsistemas e até interfaces e classes
+individuais. Em cada situação, os casos de uso não apenas representam o comportamento desejado desses elementos, mas também podem ser utilizados como
+a base de casos de teste para esses elementos, à medida que evoluem durante o
+desenvolvimento. Casos de uso aplicados aos subsistemas são excelentes fontes
+de testes de regressão; casos de uso aplicados a todo o sistema são excelentes
+fontes de testes de sistema e de integração. A UML fornece a representação gráfica de um caso de uso e de um ator, conforme mostra a Figura 17.1. Essa notação permite visualizar um caso de uso em separado de sua realização e no contexto com outros casos de uso.
+
 
 \printbibliography
 

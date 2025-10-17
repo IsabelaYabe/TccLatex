@@ -78,6 +78,22 @@
 \tableofcontents
 
 \newpage
+\section{Proposta de resumo}
+Este trabalho propõe uma quarta via para o projeto de software, além das três descritas por Larman — “codificar”, “desenhar-depois-codificar” e “apenas desenhar”: codificar e visualizar. Partimos da engenharia reversa com foco em redocumentação para gerar diagramas de casos de uso diretamente do código-fonte. A abordagem combina (i) uma linguagem abstrata sensível a fluxo de dados e insensível a fluxo de controle, que preserva apenas criações, atribuições e chamadas que propagam referências; (ii) uma AST reduzida que organiza classes, métodos, atributos e instruções; e (iii) análise semântica assistida por LLMs sobre docstrings, comentários e nomenclaturas. No plano de processo, seguimos os princípios de Model-Driven Reverse Engineering: descobrimos um modelo a partir do código (AST/metamodelo) e derivamos visões de alto nível (casos de uso, dependências, generalizações), com rastreabilidade de cada elemento para os trechos de código de origem. Aplicamos o método a três repositórios Python (incluindo a reimplementação do Colossal Cave Adventure), demonstrando a viabilidade da recuperação automática de casos de uso e a utilidade prática dos artefatos produzidos (diagrama, dicionário de vocabulário e mapa de navegação) para compreensão e manutenção. Como limitações, discutimos: identificação de atores ainda predominantemente guiada por evidências textuais; ausência de análise dinâmica; e sensibilidade a nomenclaturas pobres. Os resultados apontam que a estratégia reduz o esforço inicial de entendimento e estabelece uma base padronizada para evolução e auditoria de sistemas legados.
+
+Palavras-chave: engenharia reversa; redocumentação; AST; UML; casos de uso; análise estática; LLM; MDRE.
+
+A ideia é simples: enquanto o desenvolvedor programa, uma ferramenta acoplada ao repositório analisa identificadores, comentários, mensagens e estruturas de código, extrai sinais semânticos por meio de \emph{embeddings} e, com apoio de \emph{LLMs}, \textbf{reconstrói e atualiza casos de uso} em tempo de edição. O resultado é uma visão contínua dos \textbf{atores}, \textbf{objetivos} e \textbf{relacionamentos} (fluxo principal e alternativas), com \emph{rastreabilidade} de volta às linhas de código que motivaram cada passo.
+
+Concretamente, o modo \emph{codificar e visualizar} oferece:
+\begin{itemize}
+  \item \textbf{Feedback imediato}: geração incremental de casos de uso (texto + diagrama UML) a cada \emph{commit} ou salvamento.
+  \item \textbf{Rastreabilidade}: links do caso de uso para trechos de código, testes e mensagens de \emph{commit}.
+  \item \textbf{Alinhamento conceptual}: destaque de atores afetados por uma mudança e de requisitos possivelmente impactados.
+  \item \textbf{Onboarding acelerado}: documentação inicial sempre atualizada para sistemas com documentação ausente ou obsoleta.
+\end{itemize}
+
+Dessa forma, o desenvolvedor mantém, durante a própria codificação, uma visão verificável do comportamento que está implementando, reduzindo o desvio entre \emph{o que} o sistema faz e \emph{para quem} ele faz.
 
 \section{AAAH}
 

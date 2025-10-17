@@ -81,8 +81,8 @@
       \strng{authornamehash}{f98880d978b420ac8842fdc7a6361beb}
       \strng{authorfullhash}{f98880d978b420ac8842fdc7a6361beb}
       \strng{authorfullhashraw}{f98880d978b420ac8842fdc7a6361beb}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -117,8 +117,8 @@
       \strng{authornamehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
       \strng{authorfullhash}{c3035fa4fc8a043ebf2ea4bff39adda1}
       \strng{authorfullhashraw}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -158,8 +158,8 @@
       \strng{authornamehash}{2edbfb632f5695e6d024677f7aa288cd}
       \strng{authorfullhash}{2edbfb632f5695e6d024677f7aa288cd}
       \strng{authorfullhashraw}{2edbfb632f5695e6d024677f7aa288cd}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -172,6 +172,218 @@
       \endverb
       \verb{url}
       \verb https://books.google.com.br/books?id=Ag7qotD-sukC
+      \endverb
+    \endentry
+    \entry{chikofsky1990reverse}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=c44837c79ca9e00f11e74ab5d1f33067}{%
+           family={Chikofsky},
+           familyi={C\bibinitperiod},
+           given={Elliot\bibnamedelima J},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=fd47a720d0e6b4c30000d591c94947fe}{%
+           family={Cross},
+           familyi={C\bibinitperiod},
+           given={James\bibnamedelima H},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{fullhash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{fullhashraw}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{bibnamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{authorbibnamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{authornamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{authorfullhash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{authorfullhashraw}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Software}
+      \field{number}{1}
+      \field{title}{Reverse engineering and design recovery: A taxonomy}
+      \field{volume}{7}
+      \field{year}{1990}
+      \field{pages}{13\bibrangedash 17}
+      \range{pages}{5}
+    \endentry
+    \entry{tonella2007reverse}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=e49d634c74b34b3fabfc7986bdb9a0f0}{%
+           family={Tonella},
+           familyi={T\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=3e95797209ae7d7d4256bd6877e2faa7}{%
+           family={Potrich},
+           familyi={P\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer New York}%
+      }
+      \strng{namehash}{18ea12786a6e30a632f2ca37383d1f6e}
+      \strng{fullhash}{18ea12786a6e30a632f2ca37383d1f6e}
+      \strng{fullhashraw}{18ea12786a6e30a632f2ca37383d1f6e}
+      \strng{bibnamehash}{18ea12786a6e30a632f2ca37383d1f6e}
+      \strng{authorbibnamehash}{18ea12786a6e30a632f2ca37383d1f6e}
+      \strng{authornamehash}{18ea12786a6e30a632f2ca37383d1f6e}
+      \strng{authorfullhash}{18ea12786a6e30a632f2ca37383d1f6e}
+      \strng{authorfullhashraw}{18ea12786a6e30a632f2ca37383d1f6e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780387238036}
+      \field{series}{Monographs in Computer Science}
+      \field{title}{Reverse Engineering of Object Oriented Code}
+      \field{year}{2007}
+      \verb{urlraw}
+      \verb https://books.google.com.br/books?id=EUZ-_poEq_gC
+      \endverb
+      \verb{url}
+      \verb https://books.google.com.br/books?id=EUZ-_poEq_gC
+      \endverb
+    \endentry
+    \entry{pereira2011recovering}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=87504c595c3584e56b4e1829ddea7537}{%
+           family={Pereira},
+           familyi={P\bibinitperiod},
+           given={Claudia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=66233313893b7a2588f44ec11af574b1}{%
+           family={Martínez},
+           familyi={M\bibinitperiod},
+           given={Liliana},
+           giveni={L\bibinitperiod}}}%
+        {{hash=d2217429f2d0227b48230a9dc2407402}{%
+           family={Favre},
+           familyi={F\bibinitperiod},
+           given={Liliana},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Las Vegas, NV, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{082896a559ba618f567eb5d444c9143a}
+      \strng{fullhash}{082896a559ba618f567eb5d444c9143a}
+      \strng{fullhashraw}{082896a559ba618f567eb5d444c9143a}
+      \strng{bibnamehash}{082896a559ba618f567eb5d444c9143a}
+      \strng{authorbibnamehash}{082896a559ba618f567eb5d444c9143a}
+      \strng{authornamehash}{082896a559ba618f567eb5d444c9143a}
+      \strng{authorfullhash}{082896a559ba618f567eb5d444c9143a}
+      \strng{authorfullhashraw}{082896a559ba618f567eb5d444c9143a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{title}{Recovering Use Case Diagrams from Object Oriented Code: An {MDA}-based Approach}
+      \field{year}{2011}
+      \verb{doi}
+      \verb 10.1109/ITNG.2011.130
+      \endverb
+    \endentry
+    \entry{Wang2006AST}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=03d3e23852937fa39b0e34246c4ecd1d}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=3f04010e681fb8695d9d802cc2afb1bc}{%
+           family={Yuan},
+           familyi={Y\bibinitperiod},
+           given={Xiaojie},
+           giveni={X\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Ottawa, ON, Canada}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{77fbe4a5cd92559e9164c93be2ba1fcc}
+      \strng{fullhash}{77fbe4a5cd92559e9164c93be2ba1fcc}
+      \strng{fullhashraw}{77fbe4a5cd92559e9164c93be2ba1fcc}
+      \strng{bibnamehash}{77fbe4a5cd92559e9164c93be2ba1fcc}
+      \strng{authorbibnamehash}{77fbe4a5cd92559e9164c93be2ba1fcc}
+      \strng{authornamehash}{77fbe4a5cd92559e9164c93be2ba1fcc}
+      \strng{authorfullhash}{77fbe4a5cd92559e9164c93be2ba1fcc}
+      \strng{authorfullhashraw}{77fbe4a5cd92559e9164c93be2ba1fcc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2006 Canadian Conference on Electrical and Computer Engineering (CCECE)}
+      \field{isbn}{1-4244-0038-4}
+      \field{title}{Towards an {AST}-Based Approach to Reverse Engineering}
+      \field{year}{2006}
+      \verb{doi}
+      \verb 10.1109/CCECE.2006.277552
+      \endverb
+    \endentry
+    \entry{Fauzi2016AST}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=c0e0048c068e706d06666da249825559}{%
+           family={Fauzi},
+           familyi={F\bibinitperiod},
+           given={Esa},
+           giveni={E\bibinitperiod}}}%
+        {{hash=4db0b464a858722fcecd190006fa6728}{%
+           family={Hendradjaya},
+           familyi={H\bibinitperiod},
+           given={Bayu},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5c5063f82c958885eee6d65c5c216f5c}{%
+           family={Sunindyo},
+           familyi={S\bibinitperiod},
+           given={Wikan\bibnamedelima Danar},
+           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Denpasar, Indonesia}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{fullhash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{fullhashraw}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{bibnamehash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{authorbibnamehash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{authornamehash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{authorfullhash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{authorfullhashraw}{1ccfec4b6fadc320094b5b055aea56f1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This research focuses on reverse engineering of source code to sequence diagrams using abstract syntax trees (AST). The approach is implemented in an application called REVUML, which helps in visualizing the flow of software code and supporting developers in understanding software behavior during maintenance.}
+      \field{booktitle}{2016 International Conference on Data and Software Engineering (ICoDSE)}
+      \field{month}{10}
+      \field{title}{Reverse Engineering of Source Code to Sequence Diagram Using Abstract Syntax Tree}
+      \field{year}{2016}
+      \verb{doi}
+      \verb 10.1109/ICoDSE.2016.7936137
       \endverb
     \endentry
     \entry{rhodes_adventure_py}{software}{}{}
@@ -190,8 +402,8 @@
       \strng{authornamehash}{eb282136fd89e99b6510fe7a46722b0a}
       \strng{authorfullhash}{eb282136fd89e99b6510fe7a46722b0a}
       \strng{authorfullhashraw}{eb282136fd89e99b6510fe7a46722b0a}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -222,8 +434,8 @@
       \strng{authornamehash}{05004c2c43cb43acd5435e7651eeef00}
       \strng{authorfullhash}{05004c2c43cb43acd5435e7651eeef00}
       \strng{authorfullhashraw}{05004c2c43cb43acd5435e7651eeef00}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -264,8 +476,8 @@
       \strng{authornamehash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhashraw}{19ba120924ee09440cd988b6ab1afc90}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -293,8 +505,8 @@
       \strng{authornamehash}{060483eb5e4f219b7d16f68852edae7c}
       \strng{authorfullhash}{060483eb5e4f219b7d16f68852edae7c}
       \strng{authorfullhashraw}{060483eb5e4f219b7d16f68852edae7c}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -328,8 +540,8 @@
       \strng{authornamehash}{92b9b2299c2d435388f3b91670d2d31e}
       \strng{authorfullhash}{92b9b2299c2d435388f3b91670d2d31e}
       \strng{authorfullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -356,8 +568,8 @@
       \strng{authornamehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
       \strng{authorfullhash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
       \strng{authorfullhashraw}{43fb3f4f59c49358e6efeb3c59ef7bbd}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
