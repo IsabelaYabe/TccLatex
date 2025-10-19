@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  19 OCT 2025 17:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  19 OCT 2025 18:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -23,6 +23,10 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
+) (D:\MikTec\tex/latex/base\inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
 ) (D:\MikTec\tex/latex/base\fontenc.sty
 Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
 ) (D:\MikTec\tex/generic/babel\babel.sty
@@ -58,7 +62,7 @@ Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count285
 ) (D:\MikTec\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
+\KV@toks@=\toks19
 )
 \csq@reset=\count286
 \csq@gtype=\count287
@@ -66,7 +70,7 @@ Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \csq@qlevel=\count289
 \csq@maxlvl=\count290
 \csq@tshold=\count291
-\csq@ltx@everypar=\toks18
+\csq@ltx@everypar=\toks20
  (D:\MikTec\tex/latex/csquotes\csquotes.def
 File: csquotes.def 2024-04-04 v5.2o csquotes generic definitions (JAW)
 )
@@ -92,7 +96,7 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layoutheight=\dimen155
 \Gm@layouthoffset=\dimen156
 \Gm@layoutvoffset=\dimen157
-\Gm@dimlist=\toks19
+\Gm@dimlist=\toks21
  (D:\MikTec\tex/latex/geometry\geometry.cfg)) (D:\MikTec\tex/latex/graphics\graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
  (D:\MikTec\tex/latex/graphics\graphics.sty
@@ -217,7 +221,7 @@ For additional information on amsmath, use the `?' option.
 Package: amstext 2024/11/17 v2.01 AMS text
  (D:\MikTec\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks20
+\@emptytoks=\toks22
 \ex@=\dimen164
 )) (D:\MikTec\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -255,21 +259,21 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \dotsspace@=\muskip18
 \c@parentequation=\count314
 \dspbrk@lvl=\count315
-\tag@help=\toks21
+\tag@help=\toks23
 \row@=\count316
 \column@=\count317
 \maxfields@=\count318
-\andhelp@=\toks22
+\andhelp@=\toks24
 \eqnshift@=\dimen167
 \alignsep@=\dimen168
 \tagshift@=\dimen169
 \tagwidth@=\dimen170
 \totwidth@=\dimen171
 \lineht@=\dimen172
-\@envbody=\toks23
+\@envbody=\toks25
 \multlinegap=\skip53
 \multlinetaggap=\skip54
-\mathdisplay@stack=\toks24
+\mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2949.
 LaTeX Info: Redefining \] on input line 2950.
 ) (D:\MikTec\tex/latex/amsfonts\amssymb.sty
@@ -283,15 +287,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (D:\MikTec\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks25
-\thm@bodyfont=\toks26
-\thm@headfont=\toks27
-\thm@notefont=\toks28
-\thm@headpunct=\toks29
+\thm@style=\toks27
+\thm@bodyfont=\toks28
+\thm@headfont=\toks29
+\thm@notefont=\toks30
+\thm@headpunct=\toks31
 \thm@preskip=\skip55
 \thm@postskip=\skip56
 \thm@headsep=\skip57
-\dth@everypar=\toks30
+\dth@everypar=\toks32
 ) (D:\MikTec\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2025/07/10 v3.21 programmable bibliographies (PK/MW)
  (D:\MikTec\tex/latex/logreq\logreq.sty
@@ -548,24 +552,24 @@ Package babel Info: 'brazil' activates 'portuges' shorthands.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -608,19 +612,19 @@ LaTeX Font Info:    ... okay on input line 34.
 \scratchbox=\box55
 \nofMPsegments=\count447
 \nofMParguments=\count448
-\everyMPshowfont=\toks31
+\everyMPshowfont=\toks33
 \MPscratchCnt=\count449
 \MPscratchDim=\dimen174
 \MPnumerator=\count450
 \makeMPintoPDFobject=\count451
-\everyMPtoPDFconversion=\toks32
+\everyMPtoPDFconversion=\toks34
 ) (D:\MikTec\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (D:\MikTec\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 34.
+Package hyperref Info: Link coloring OFF on input line 35.
 Package biblatex Info: Trying to load language 'brazil' -> 'brazil-abnt'...
 Package biblatex Info: ... file 'brazil-abnt.lbx' found.
  (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/lbx\brazil-abnt.lbx
@@ -696,23 +700,23 @@ Package biblatex Warning: Biber reported the following issues
 (biblatex)                - software entry 'rhodes_adventure_py' (refs.bib): Invalid format '2010-2015' of date field 'date' - ignoring.
 
 )
-Package biblatex Info: Reference section=0 on input line 34.
-Package biblatex Info: Reference segment=0 on input line 34.
+Package biblatex Info: Reference section=0 on input line 35.
+Package biblatex Info: Reference segment=0 on input line 35.
 <Images/Logo_FGV.png, id=3, 408.52625pt x 124.465pt>
 File: Images/Logo_FGV.png Graphic file (type png)
 <use Images/Logo_FGV.png>
-Package pdftex.def Info: Images/Logo_FGV.png  used on input line 40.
+Package pdftex.def Info: Images/Logo_FGV.png  used on input line 41.
 (pdftex.def)             Requested size: 213.39568pt x 65.01463pt.
 
 
 [1
 
 {C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./Images/Logo_FGV.png>] (d:\TccLatex\build\main.toc
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 7.
  (D:\MikTec\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 7.
  (D:\MikTec\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
@@ -725,42 +729,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.80 \newpage
+l.81 \newpage
               [1]
-d:/TccLatex/main.tex:83: You can't use `macro parameter character #' in horizontal mode.
-l.83 ...nta de suporte para desenhar e projetar. #
-                                                   NÃ£o sei tÃ¡ esquisito
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
 
 [2]
 
 [3]
-
-LaTeX Warning: Citation 'Bruneliere2010MoDisco' on page 4 undefined on input line 119.
-
-
-LaTeX Warning: Citation 'feng2020codebert' on page 4 undefined on input line 119.
-
-
-LaTeX Warning: Citation 'feng2020codebert' on page 4 undefined on input line 119.
-
-
-LaTeX Warning: Citation 'ngo2023exploring' on page 4 undefined on input line 119.
-
-
-LaTeX Warning: Citation '' on page 4 undefined on input line 119.
-
-
-Overfull \hbox (10.23076pt too wide) in paragraph at lines 119--120
-\T1/cmr/m/n/12 tigo [], ana-li-za-mos 3 prin-ci-pais ar-ti-gos: [],
- []
-
-
 
 [4]
 
@@ -769,30 +743,30 @@ Overfull \hbox (10.23076pt too wide) in paragraph at lines 119--120
 [6]
 
 [7]
-Overfull \hbox (31.58539pt too wide) in paragraph at lines 217--218
+Overfull \hbox (31.58539pt too wide) in paragraph at lines 221--222
 []\T1/cmr/m/n/12 Além dos co-man-dos clás-si-cos de na-ve-ga-ção por bús-sola, "\T1/cmr/m/it/12 EAST\T1/cmr/m/n/12 "/"\T1/cmr/m/it/12 E\T1/cmr/m/n/12 ", "\T1/cmr/m/it/12 WEST\T1/cmr/m/n/12 "/"\T1/cmr/m/it/12 W\T1/cmr/m/n/12 ",
  []
 
 
 
 [8]
-Overfull \hbox (13.79488pt too wide) in paragraph at lines 275--276
+
+[9]
+Overfull \hbox (13.79488pt too wide) in paragraph at lines 279--280
 []\T1/cmr/m/n/12 (9 - DOOR) (94 - YOU ARE AT ONE END OF AN IM-MENSE NORTH/SOUTH
  []
 
 
 
-[9]
-
 [10]
 
 [11]
-Overfull \hbox (4.74802pt too wide) in paragraph at lines 354--355
+Overfull \hbox (4.74802pt too wide) in paragraph at lines 358--359
 []\T1/cmr/m/n/12 1 \T1/cmr/m/it/12 A LARGE CLOUD OF GREEN SMOKE AP-PE-ARS IN FRONT OF YOU...
  []
 
 
-Overfull \hbox (42.5358pt too wide) in paragraph at lines 354--355
+Overfull \hbox (42.5358pt too wide) in paragraph at lines 358--359
 \T1/cmr/m/it/12 HE MA-KES A SIN-GLE PASS OVER YOU WITH HIS HANDS, AND EVERYTHING
  []
 
@@ -807,40 +781,22 @@ Overfull \hbox (42.5358pt too wide) in paragraph at lines 354--355
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20366 strings out of 468130
- 350364 string characters out of 5447467
- 1247959 words of memory out of 5000000
- 48670 multiletter control sequences out of 15000+600000
+ 20415 strings out of 468130
+ 351636 string characters out of 5447467
+ 1249900 words of memory out of 5000000
+ 48716 multiletter control sequences out of 15000+600000
  639653 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,5n,79p,1460b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{subsection.4.3} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.2} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{subsection.4.1} has been referenced but does not exist, replaced by a fixed one
-
  <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\eccc1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\Isas_\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk>
-Output written on d:\TccLatex\build\main.pdf (15 pages, 212558 bytes).
+Output written on d:\TccLatex\build\main.pdf (15 pages, 220673 bytes).
 PDF statistics:
- 677 PDF objects out of 1000 (max. 8388607)
+ 700 PDF objects out of 1000 (max. 8388607)
  73 named destinations out of 1000 (max. 500000)
  70 words of extra memory for PDF output out of 10000 (max. 10000000)
 

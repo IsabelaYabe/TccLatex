@@ -79,8 +79,8 @@
       \strng{authornamehash}{3248ba981c8d1cc5300ed32260a51a45}
       \strng{authorfullhash}{3248ba981c8d1cc5300ed32260a51a45}
       \strng{authorfullhashraw}{3248ba981c8d1cc5300ed32260a51a45}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -117,8 +117,8 @@
       \strng{authornamehash}{f98880d978b420ac8842fdc7a6361beb}
       \strng{authorfullhash}{f98880d978b420ac8842fdc7a6361beb}
       \strng{authorfullhashraw}{f98880d978b420ac8842fdc7a6361beb}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -153,8 +153,8 @@
       \strng{authornamehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
       \strng{authorfullhash}{c3035fa4fc8a043ebf2ea4bff39adda1}
       \strng{authorfullhashraw}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -247,6 +247,58 @@
       \field{year}{1990}
       \field{pages}{13\bibrangedash 17}
       \range{pages}{5}
+    \endentry
+    \entry{Bruneliere2010MoDisco}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=f4a7818357e3a25bc84f3c15705bfdc4}{%
+           family={Bruneliere},
+           familyi={B\bibinitperiod},
+           given={Hugo},
+           giveni={H\bibinitperiod}}}%
+        {{hash=62ac8b9f995fa937460d3e98b6b95465}{%
+           family={Cabot},
+           familyi={C\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod}}}%
+        {{hash=379604fa4f2b47b9ec566f5f04b3f89d}{%
+           family={Jouault},
+           familyi={J\bibinitperiod},
+           given={Frédéric},
+           giveni={F\bibinitperiod}}}%
+        {{hash=5b99a8b044418a837678afa0d2154ebb}{%
+           family={Madiot},
+           familyi={M\bibinitperiod},
+           given={Frédéric},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Nantes, France}%
+      }
+      \list{organization}{1}{%
+        {AtlanMod, INRIA RBA Center \& EMN; Mia-Software}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{848f1791ad4e85141e31d81238a3ee48}
+      \strng{fullhash}{0431cb00848001331662ed6189fa10ac}
+      \strng{fullhashraw}{0431cb00848001331662ed6189fa10ac}
+      \strng{bibnamehash}{848f1791ad4e85141e31d81238a3ee48}
+      \strng{authorbibnamehash}{848f1791ad4e85141e31d81238a3ee48}
+      \strng{authornamehash}{848f1791ad4e85141e31d81238a3ee48}
+      \strng{authorfullhash}{0431cb00848001331662ed6189fa10ac}
+      \strng{authorfullhashraw}{0431cb00848001331662ed6189fa10ac}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE International Conference on Software Maintenance (ICSM)}
+      \field{title}{MoDisco: A Generic and Extensible Framework for Model Driven Reverse Engineering}
+      \field{year}{2010}
+      \field{pages}{173\bibrangedash 182}
+      \range{pages}{10}
     \endentry
     \entry{tonella2007reverse}{book}{}{}
       \name{author}{2}{}{%
@@ -422,6 +474,153 @@
       \verb 10.1109/ICoDSE.2016.7936137
       \endverb
     \endentry
+    \entry{feng2020codebert}{inproceedings}{}{}
+      \name{author}{11}{}{%
+        {{hash=ab3ff7c90017062cb61e7267dbcc7094}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Zhangyin},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=a65b6db35516aecf6dcadd97221ae4cf}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Daya},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f461de7960a8577e556002194a8d492a}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Duyu},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d487976fc92039fa50b07a190b1f5e49}{%
+           family={Duan},
+           familyi={D\bibinitperiod},
+           given={Nan},
+           giveni={N\bibinitperiod}}}%
+        {{hash=4594292cf0c840c87461b4f0e43a3d84}{%
+           family={Feng},
+           familyi={F\bibinitperiod},
+           given={Xiaocheng},
+           giveni={X\bibinitperiod}}}%
+        {{hash=6a7890342801071984a28a5a80160c05}{%
+           family={Gong},
+           familyi={G\bibinitperiod},
+           given={Ming},
+           giveni={M\bibinitperiod}}}%
+        {{hash=310728a15f98f87d253c148f370d37e5}{%
+           family={Shou},
+           familyi={S\bibinitperiod},
+           given={Linjun},
+           giveni={L\bibinitperiod}}}%
+        {{hash=1b651c40ade9404b1c43c1786d1a7466}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Bing},
+           giveni={B\bibinitperiod}}}%
+        {{hash=df4100f4c9320162410d3ddcc9257d55}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Ting},
+           giveni={T\bibinitperiod}}}%
+        {{hash=fffb2e1d40009032d73404c4f8e287ec}{%
+           family={Jiang},
+           familyi={J\bibinitperiod},
+           given={Daxin},
+           giveni={D\bibinitperiod}}}%
+        {{hash=2a72f304d2bc33c9c92301f2dc3063b2}{%
+           family={Zhou},
+           familyi={Z\bibinitperiod},
+           given={Ming},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Online}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
+      \strng{namehash}{71c10044948383ff26d8a0143d554471}
+      \strng{fullhash}{d028ea321cdbe585a52434f0ea59b07d}
+      \strng{fullhashraw}{d028ea321cdbe585a52434f0ea59b07d}
+      \strng{bibnamehash}{71c10044948383ff26d8a0143d554471}
+      \strng{authorbibnamehash}{71c10044948383ff26d8a0143d554471}
+      \strng{authornamehash}{71c10044948383ff26d8a0143d554471}
+      \strng{authorfullhash}{d028ea321cdbe585a52434f0ea59b07d}
+      \strng{authorfullhashraw}{d028ea321cdbe585a52434f0ea59b07d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Findings of the Association for Computational Linguistics: EMNLP 2020}
+      \field{month}{11}
+      \field{title}{CodeBERT: A Pre-Trained Model for Programming and Natural Languages}
+      \field{year}{2020}
+      \field{pages}{1536\bibrangedash 1547}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.18653/v1/2020.findings-emnlp.139
+      \endverb
+      \verb{urlraw}
+      \verb https://aclanthology.org/2020.findings-emnlp.139
+      \endverb
+      \verb{url}
+      \verb https://aclanthology.org/2020.findings-emnlp.139
+      \endverb
+    \endentry
+    \entry{ngo2023exploring}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=b622a6192ac368a37764ef1f9f8746a0}{%
+           family={Ngo},
+           familyi={N\bibinitperiod},
+           given={Long\bibnamedelima H.},
+           giveni={L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=e76a39396004f6c6615724806a779519}{%
+           family={Sekar},
+           familyi={S\bibinitperiod},
+           given={Veeraraghavan},
+           giveni={V\bibinitperiod}}}%
+        {{hash=0053d854ca8501f386c2f0a972b5cebe}{%
+           family={Leclercq},
+           familyi={L\bibinitperiod},
+           given={Etienne},
+           giveni={E\bibinitperiod}}}%
+        {{hash=2fe4e5c28e6efaa7a5201a7128b0633b}{%
+           family={Rivalan},
+           familyi={R\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Xiamen, China}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{e6636ec618035b2bbc1394bf1f2541b0}
+      \strng{fullhash}{44c84b7c8e4bae36cde51a274212e10a}
+      \strng{fullhashraw}{44c84b7c8e4bae36cde51a274212e10a}
+      \strng{bibnamehash}{e6636ec618035b2bbc1394bf1f2541b0}
+      \strng{authorbibnamehash}{e6636ec618035b2bbc1394bf1f2541b0}
+      \strng{authornamehash}{e6636ec618035b2bbc1394bf1f2541b0}
+      \strng{authorfullhash}{44c84b7c8e4bae36cde51a274212e10a}
+      \strng{authorfullhashraw}{44c84b7c8e4bae36cde51a274212e10a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2023 IEEE 3rd International Conference on Software Engineering and Artificial Intelligence (SEAI)}
+      \field{month}{6}
+      \field{title}{Exploring code2vec and {AST}miner for Python Code Embeddings}
+      \field{year}{2023}
+      \field{pages}{53\bibrangedash 57}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/SEAI59139.2023.10217505
+      \endverb
+    \endentry
     \entry{rhodes_adventure_py}{software}{}{}
       \name{author}{1}{}{%
         {{hash=eb282136fd89e99b6510fe7a46722b0a}{%
@@ -438,8 +637,8 @@
       \strng{authornamehash}{eb282136fd89e99b6510fe7a46722b0a}
       \strng{authorfullhash}{eb282136fd89e99b6510fe7a46722b0a}
       \strng{authorfullhashraw}{eb282136fd89e99b6510fe7a46722b0a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -512,8 +711,8 @@
       \strng{authornamehash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhashraw}{19ba120924ee09440cd988b6ab1afc90}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -541,8 +740,8 @@
       \strng{authornamehash}{060483eb5e4f219b7d16f68852edae7c}
       \strng{authorfullhash}{060483eb5e4f219b7d16f68852edae7c}
       \strng{authorfullhashraw}{060483eb5e4f219b7d16f68852edae7c}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -576,8 +775,8 @@
       \strng{authornamehash}{92b9b2299c2d435388f3b91670d2d31e}
       \strng{authorfullhash}{92b9b2299c2d435388f3b91670d2d31e}
       \strng{authorfullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
