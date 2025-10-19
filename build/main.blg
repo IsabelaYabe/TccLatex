@@ -1,18 +1,18 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is 'build/main.blg'
-[148] biber-MSWIN64:342> INFO - === 
-[287] Biber.pm:421> INFO - Reading 'build/main.bcf'
-[377] Biber.pm:1002> INFO - Found 15 citekeys in bib section 0
-[387] Biber.pm:4487> INFO - Processing section 0
-[396] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
-[456] bibtex.pm:1713> INFO - LaTeX decoding ...
-[485] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
-[581] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[581] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[581] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
-[581] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
-[591] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
-[597] bbl.pm:779> INFO - Output to build/main.bbl
-[597] Biber.pm:132> WARN - legacy month field 'October' in entry 'Fauzi2016AST' is not an integer - this will probably not sort properly.
-[597] Biber.pm:132> WARN - software entry 'rhodes_adventure_py' (refs.bib): Invalid format '2010-2015' of date field 'date' - ignoring
-[597] Biber.pm:134> INFO - WARNINGS: 2
+[3] Config.pm:331> INFO - Logfile is 'build/main.blg'
+[209] biber-MSWIN64:342> INFO - === 
+[314] Biber.pm:421> INFO - Reading 'build/main.bcf'
+[419] Biber.pm:1002> INFO - Found 16 citekeys in bib section 0
+[428] Biber.pm:4487> INFO - Processing section 0
+[446] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
+[530] bibtex.pm:1713> INFO - LaTeX decoding ...
+[563] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
+[725] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[725] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[726] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
+[726] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[769] bbl.pm:676> INFO - Writing 'build/main.bbl' with encoding 'UTF-8'
+[775] bbl.pm:779> INFO - Output to build/main.bbl
+[775] Biber.pm:132> WARN - legacy month field 'October' in entry 'Fauzi2016AST' is not an integer - this will probably not sort properly.
+[775] Biber.pm:132> WARN - software entry 'rhodes_adventure_py' (refs.bib): Invalid format '2010-2015' of date field 'date' - ignoring
+[775] Biber.pm:134> INFO - WARNINGS: 2

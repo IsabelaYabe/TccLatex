@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/main"] 1760726565.60386 "build/main.bcf" "build/main.bbl" "build/main" 1760726619.51839 0
-  "build/main.bcf" 1760726619 116045 26bd3ee04e6a20d26989ced4156c315c "pdflatex"
-  "refs.bib" 1760726563 7245 8ddd993ca79b257bbb26facc90219ca9 ""
+["biber build/main"] 1760905894.64202 "build/main.bcf" "build/main.bbl" "build/main" 1760905905.361 0
+  "build/main.bcf" 1760905904 116412 899035729eeb9a276e20ecbc417435c2 "pdflatex"
+  "refs.bib" 1760905890 8895 fddb14fd17d9edbd015081fe05483f98 ""
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1760726615.94519 "d:/TccLatex/main.tex" "build/main.pdf" "main" 1760726619.51891 2
+["pdflatex"] 1760905902.30926 "d:/TccLatex/main.tex" "build/main.pdf" "main" 1760905905.36152 2
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1760148323 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1200.pk" 1760116865 31952 9975d7756231004e55941cf8754e4718 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecbx1440.pk" 1760137799 40136 aab3e46afb219608a6074d80edac9c9c ""
@@ -128,13 +128,13 @@
   "D:/MikTec/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "D:/MikTec/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "Images/Logo_FGV.png" 1760051702 2490 33a2339c99ef5f8115145ba188c3c2a8 ""
-  "build/main.aux" 1760726619 9853 41af38f413cd891009180eb5306e43de "pdflatex"
-  "build/main.bbl" 1760726615 24471 9e2e0af17be10a44a2b5150971915c2a "biber build/main"
-  "build/main.run.xml" 1760726619 2437 008d72b8f0d40ede4a58e04452678b72 "pdflatex"
-  "build/main.toc" 1760726619 1448 790039d897d41bd889ce629fac838f6a "pdflatex"
-  "d:/TccLatex/main.tex" 1760726560 29338 b89c9b1e996542e074520fc2035d9a99 ""
-  "main.tex" 1760726560 29338 b89c9b1e996542e074520fc2035d9a99 ""
-  "refs.bib" 1760726563 7245 8ddd993ca79b257bbb26facc90219ca9 ""
+  "build/main.aux" 1760905904 10565 adac507efcfe1002fb91c419e974627f "pdflatex"
+  "build/main.bbl" 1760905902 25991 c0609f5c718ef1e0138588b8395a0b11 "biber build/main"
+  "build/main.run.xml" 1760905904 2437 008d72b8f0d40ede4a58e04452678b72 "pdflatex"
+  "build/main.toc" 1760905904 1507 2e7735c532bd19e373a1bb3a5c8ee725 "pdflatex"
+  "d:/TccLatex/main.tex" 1760905890 29616 aee647f257c9f0a395178a4f9679e39d ""
+  "main.tex" 1760905890 29616 aee647f257c9f0a395178a4f9679e39d ""
+  "refs.bib" 1760905890 8895 fddb14fd17d9edbd015081fe05483f98 ""
   (generated)
   "build/main.aux"
   "build/main.bcf"
