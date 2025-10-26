@@ -1,21 +1,26 @@
 \babel@toc {brazil}{}\relax 
 \contentsline {section}{\numberline {1}Resumo}{2}{section.1}%
 \contentsline {section}{\numberline {2}Introdução}{2}{section.2}%
-\contentsline {section}{\numberline {3}AST}{4}{section.3}%
-\contentsline {section}{\numberline {4}Revisão literária}{4}{section.4}%
-\contentsline {section}{\numberline {5}Escolha dos repositórios}{5}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Colossal Cave Adventure}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Descrição do jogo}{5}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}}{6}{subsection.5.3}%
-\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{7}{section*.2}%
-\contentsline {paragraph}{Tabela 2 – Short Room Labels.}{7}{section*.3}%
-\contentsline {paragraph}{Tabela 3 – Map Data.}{8}{section*.4}%
-\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{8}{section*.5}%
-\contentsline {paragraph}{Tabela 5 – Static Game States.}{9}{section*.6}%
-\contentsline {paragraph}{Tabela 6 – Hints and Events.}{9}{section*.7}%
-\contentsline {paragraph}{Tabela 7 – Object Locations.}{10}{section*.8}%
-\contentsline {paragraph}{Tabela 8 – Action Defaults.}{10}{section*.9}%
-\contentsline {paragraph}{Tabela 9 – Liquid Assets, Etc.}{11}{section*.10}%
-\contentsline {paragraph}{Tabela 10 – Class Messages.}{11}{section*.11}%
-\contentsline {paragraph}{Tabela 11 – Hints.}{12}{section*.12}%
-\contentsline {paragraph}{Tabela 12 – Magic Messages.}{12}{section*.13}%
+\contentsline {subsection}{\numberline {2.1}Problematização}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Questão e hipótese}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Objetivos}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Relevância}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {3}AST}{5}{section.3}%
+\contentsline {section}{\numberline {4}Revisão literária}{5}{section.4}%
+\contentsline {section}{\numberline {5}A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code}{5}{section.5}%
+\contentsline {section}{\numberline {6}Escolha dos repositórios}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Colossal Cave Adventure}{7}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Descrição do jogo}{7}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}}{8}{subsection.6.3}%
+\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{9}{section*.2}%
+\contentsline {paragraph}{Tabela 2 – Short Room Labels.}{9}{section*.3}%
+\contentsline {paragraph}{Tabela 3 – Map Data.}{9}{section*.4}%
+\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{10}{section*.5}%
+\contentsline {paragraph}{Tabela 5 – Static Game States.}{10}{section*.6}%
+\contentsline {paragraph}{Tabela 6 – Hints and Events.}{11}{section*.7}%
+\contentsline {paragraph}{Tabela 7 – Object Locations.}{11}{section*.8}%
+\contentsline {paragraph}{Tabela 8 – Action Defaults.}{12}{section*.9}%
+\contentsline {paragraph}{Tabela 9 – Liquid Assets, Etc.}{12}{section*.10}%
+\contentsline {paragraph}{Tabela 10 – Class Messages.}{13}{section*.11}%
+\contentsline {paragraph}{Tabela 11 – Hints.}{13}{section*.12}%
+\contentsline {paragraph}{Tabela 12 – Magic Messages.}{14}{section*.13}%

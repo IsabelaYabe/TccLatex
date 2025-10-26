@@ -79,8 +79,8 @@
       \strng{authornamehash}{3248ba981c8d1cc5300ed32260a51a45}
       \strng{authorfullhash}{3248ba981c8d1cc5300ed32260a51a45}
       \strng{authorfullhashraw}{3248ba981c8d1cc5300ed32260a51a45}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -210,44 +210,6 @@
       \verb https://books.google.com.br/books?id=Ag7qotD-sukC
       \endverb
     \endentry
-    \entry{chikofsky1990reverse}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=c44837c79ca9e00f11e74ab5d1f33067}{%
-           family={Chikofsky},
-           familyi={C\bibinitperiod},
-           given={Elliot\bibnamedelima J},
-           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-        {{hash=fd47a720d0e6b4c30000d591c94947fe}{%
-           family={Cross},
-           familyi={C\bibinitperiod},
-           given={James\bibnamedelima H},
-           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{36481a2f1aa1c63f5e5a68014e6a1450}
-      \strng{fullhash}{36481a2f1aa1c63f5e5a68014e6a1450}
-      \strng{fullhashraw}{36481a2f1aa1c63f5e5a68014e6a1450}
-      \strng{bibnamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
-      \strng{authorbibnamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
-      \strng{authornamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
-      \strng{authorfullhash}{36481a2f1aa1c63f5e5a68014e6a1450}
-      \strng{authorfullhashraw}{36481a2f1aa1c63f5e5a68014e6a1450}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Software}
-      \field{number}{1}
-      \field{title}{Reverse engineering and design recovery: A taxonomy}
-      \field{volume}{7}
-      \field{year}{1990}
-      \field{pages}{13\bibrangedash 17}
-      \range{pages}{5}
-    \endentry
     \entry{Bruneliere2010MoDisco}{inproceedings}{}{}
       \name{author}{4}{}{%
         {{hash=f4a7818357e3a25bc84f3c15705bfdc4}{%
@@ -341,138 +303,43 @@
       \verb https://books.google.com.br/books?id=EUZ-_poEq_gC
       \endverb
     \endentry
-    \entry{pereira2011recovering}{article}{}{}
-      \name{author}{3}{}{%
-        {{hash=87504c595c3584e56b4e1829ddea7537}{%
-           family={Pereira},
-           familyi={P\bibinitperiod},
-           given={Claudia},
-           giveni={C\bibinitperiod}}}%
-        {{hash=66233313893b7a2588f44ec11af574b1}{%
-           family={Martínez},
-           familyi={M\bibinitperiod},
-           given={Liliana},
-           giveni={L\bibinitperiod}}}%
-        {{hash=d2217429f2d0227b48230a9dc2407402}{%
-           family={Favre},
-           familyi={F\bibinitperiod},
-           given={Liliana},
-           giveni={L\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Las Vegas, NV, USA}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{082896a559ba618f567eb5d444c9143a}
-      \strng{fullhash}{082896a559ba618f567eb5d444c9143a}
-      \strng{fullhashraw}{082896a559ba618f567eb5d444c9143a}
-      \strng{bibnamehash}{082896a559ba618f567eb5d444c9143a}
-      \strng{authorbibnamehash}{082896a559ba618f567eb5d444c9143a}
-      \strng{authornamehash}{082896a559ba618f567eb5d444c9143a}
-      \strng{authorfullhash}{082896a559ba618f567eb5d444c9143a}
-      \strng{authorfullhashraw}{082896a559ba618f567eb5d444c9143a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{month}{4}
-      \field{title}{Recovering Use Case Diagrams from Object Oriented Code: An {MDA}-based Approach}
-      \field{year}{2011}
-      \verb{doi}
-      \verb 10.1109/ITNG.2011.130
-      \endverb
-    \endentry
-    \entry{Wang2006AST}{inproceedings}{}{}
+    \entry{chikofsky1990reverse}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=03d3e23852937fa39b0e34246c4ecd1d}{%
-           family={Wang},
-           familyi={W\bibinitperiod},
-           given={Xin},
-           giveni={X\bibinitperiod}}}%
-        {{hash=3f04010e681fb8695d9d802cc2afb1bc}{%
-           family={Yuan},
-           familyi={Y\bibinitperiod},
-           given={Xiaojie},
-           giveni={X\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Ottawa, ON, Canada}%
+        {{hash=c44837c79ca9e00f11e74ab5d1f33067}{%
+           family={Chikofsky},
+           familyi={C\bibinitperiod},
+           given={Elliot\bibnamedelima J},
+           giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=fd47a720d0e6b4c30000d591c94947fe}{%
+           family={Cross},
+           familyi={C\bibinitperiod},
+           given={James\bibnamedelima H},
+           giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {IEEE}%
       }
-      \strng{namehash}{77fbe4a5cd92559e9164c93be2ba1fcc}
-      \strng{fullhash}{77fbe4a5cd92559e9164c93be2ba1fcc}
-      \strng{fullhashraw}{77fbe4a5cd92559e9164c93be2ba1fcc}
-      \strng{bibnamehash}{77fbe4a5cd92559e9164c93be2ba1fcc}
-      \strng{authorbibnamehash}{77fbe4a5cd92559e9164c93be2ba1fcc}
-      \strng{authornamehash}{77fbe4a5cd92559e9164c93be2ba1fcc}
-      \strng{authorfullhash}{77fbe4a5cd92559e9164c93be2ba1fcc}
-      \strng{authorfullhashraw}{77fbe4a5cd92559e9164c93be2ba1fcc}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \strng{namehash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{fullhash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{fullhashraw}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{bibnamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{authorbibnamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{authornamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{authorfullhash}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \strng{authorfullhashraw}{36481a2f1aa1c63f5e5a68014e6a1450}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{2006 Canadian Conference on Electrical and Computer Engineering (CCECE)}
-      \field{isbn}{1-4244-0038-4}
-      \field{title}{Towards an {AST}-Based Approach to Reverse Engineering}
-      \field{year}{2006}
-      \verb{doi}
-      \verb 10.1109/CCECE.2006.277552
-      \endverb
-    \endentry
-    \entry{Fauzi2016AST}{inproceedings}{}{}
-      \name{author}{3}{}{%
-        {{hash=c0e0048c068e706d06666da249825559}{%
-           family={Fauzi},
-           familyi={F\bibinitperiod},
-           given={Esa},
-           giveni={E\bibinitperiod}}}%
-        {{hash=4db0b464a858722fcecd190006fa6728}{%
-           family={Hendradjaya},
-           familyi={H\bibinitperiod},
-           given={Bayu},
-           giveni={B\bibinitperiod}}}%
-        {{hash=5c5063f82c958885eee6d65c5c216f5c}{%
-           family={Sunindyo},
-           familyi={S\bibinitperiod},
-           given={Wikan\bibnamedelima Danar},
-           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Denpasar, Indonesia}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{1ccfec4b6fadc320094b5b055aea56f1}
-      \strng{fullhash}{1ccfec4b6fadc320094b5b055aea56f1}
-      \strng{fullhashraw}{1ccfec4b6fadc320094b5b055aea56f1}
-      \strng{bibnamehash}{1ccfec4b6fadc320094b5b055aea56f1}
-      \strng{authorbibnamehash}{1ccfec4b6fadc320094b5b055aea56f1}
-      \strng{authornamehash}{1ccfec4b6fadc320094b5b055aea56f1}
-      \strng{authorfullhash}{1ccfec4b6fadc320094b5b055aea56f1}
-      \strng{authorfullhashraw}{1ccfec4b6fadc320094b5b055aea56f1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{This research focuses on reverse engineering of source code to sequence diagrams using abstract syntax trees (AST). The approach is implemented in an application called REVUML, which helps in visualizing the flow of software code and supporting developers in understanding software behavior during maintenance.}
-      \field{booktitle}{2016 International Conference on Data and Software Engineering (ICoDSE)}
-      \field{month}{10}
-      \field{title}{Reverse Engineering of Source Code to Sequence Diagram Using Abstract Syntax Tree}
-      \field{year}{2016}
-      \verb{doi}
-      \verb 10.1109/ICoDSE.2016.7936137
-      \endverb
+      \field{journaltitle}{IEEE Software}
+      \field{number}{1}
+      \field{title}{Reverse engineering and design recovery: A taxonomy}
+      \field{volume}{7}
+      \field{year}{1990}
+      \field{pages}{13\bibrangedash 17}
+      \range{pages}{5}
     \endentry
     \entry{feng2020codebert}{inproceedings}{}{}
       \name{author}{11}{}{%
@@ -546,8 +413,8 @@
       \strng{authornamehash}{71c10044948383ff26d8a0143d554471}
       \strng{authorfullhash}{d028ea321cdbe585a52434f0ea59b07d}
       \strng{authorfullhashraw}{d028ea321cdbe585a52434f0ea59b07d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -605,8 +472,8 @@
       \strng{authornamehash}{e6636ec618035b2bbc1394bf1f2541b0}
       \strng{authorfullhash}{44c84b7c8e4bae36cde51a274212e10a}
       \strng{authorfullhashraw}{44c84b7c8e4bae36cde51a274212e10a}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -619,6 +486,70 @@
       \range{pages}{5}
       \verb{doi}
       \verb 10.1109/SEAI59139.2023.10217505
+      \endverb
+    \endentry
+    \entry{Sabir2019MDRE}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=6673fa0903305a555d025f8c6779e4db}{%
+           family={Sabir},
+           familyi={S\bibinitperiod},
+           given={Umair},
+           giveni={U\bibinitperiod}}}%
+        {{hash=6372a05a89ae07648215684d98f8c2a1}{%
+           family={Azam},
+           familyi={A\bibinitperiod},
+           given={Farooque},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c48c83270afe8168febd1d410459fb55}{%
+           family={Haq},
+           familyi={H\bibinitperiod},
+           given={Sami\bibnamedelima Ul},
+           giveni={S\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
+        {{hash=3edd2fd01bcd18d0d778b3bbad7c3c0f}{%
+           family={Anwar},
+           familyi={A\bibinitperiod},
+           given={Muhammad\bibnamedelima Waseem},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=1f019fc4263570add80300d40e9e98a2}{%
+           family={Butt},
+           familyi={B\bibinitperiod},
+           given={Wasi\bibnamedelima Haider},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=b930f7f9d1d40aeca3ba9160e33244e1}{%
+           family={Amjad},
+           familyi={A\bibinitperiod},
+           given={Anam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{fullhash}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \strng{fullhashraw}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \strng{bibnamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{authorbibnamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{authornamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{authorfullhash}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \strng{authorfullhashraw}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Proposes the Src2MoF framework for generating UML structural and behavioral diagrams from Java source code through Model Driven Reverse Engineering.}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{A Model Driven Reverse Engineering Framework for Generating High Level UML Models from Java Source Code}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{pages}{158931\bibrangedash 158950}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2019.2950884
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/ACCESS.2019.2950884
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/ACCESS.2019.2950884
       \endverb
     \endentry
     \entry{rhodes_adventure_py}{software}{}{}
@@ -711,8 +642,8 @@
       \strng{authornamehash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhashraw}{19ba120924ee09440cd988b6ab1afc90}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}

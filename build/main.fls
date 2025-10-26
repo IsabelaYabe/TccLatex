@@ -258,8 +258,15 @@ INPUT D:\MikTec\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT D:\MikTec\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT D:\MikTec\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 OUTPUT d:\TccLatex\build\main.toc
-INPUT D:\MikTec\fonts\tfm\jknappen\ec\ecti1200.tfm
+INPUT .\Images\draw\fluxo_info.png
+INPUT .\Images\draw\fluxo_info.png
+INPUT .\Images\draw\fluxo_info.png
+INPUT .\Images\draw\fluxo_info.png
+INPUT .\Images\draw\fluxo_info.png
+INPUT .\Images\draw\fluxo_info.png
+INPUT .\Images\draw\fluxo_info.png
 INPUT D:\MikTec\fonts\tfm\jknappen\ec\ecbx1440.tfm
+INPUT D:\MikTec\fonts\tfm\jknappen\ec\ecti1200.tfm
 INPUT D:\MikTec\fonts\tfm\jknappen\ec\ectt1200.tfm
 INPUT D:\MikTec\fonts\tfm\jknappen\ec\tcrm1200.tfm
 INPUT D:\MikTec\fonts\tfm\jknappen\ec\eccc1200.tfm
@@ -272,10 +279,10 @@ INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcr
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk
-INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
-INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecti1200.pk
+INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
+INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
@@ -288,3 +295,5 @@ INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecr
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk
+INPUT D:\MikTec\fonts\type1\public\amsfonts\cm\cmr12.pfb
+INPUT D:\MikTec\fonts\type1\public\amsfonts\cm\cmr12.pfb
