@@ -137,11 +137,13 @@ Dessa forma, o processo de redocumentação combina a análise estrutural, que d
 
 \subsection{Relevância}
 
-A proposta contribui para reduzir o custo e o esforço de redocumentação de sistemas legados, um problema recorrente em ambientes corporativos e de pesquisa, nos quais o código frequentemente sobrevive à sua documentação. Ao unir análise sintática e interpretação semântica assistida por IA, o trabalho visa aproximar o entendimento do sistema à linguagem natural, recuperando a lógica de usabilidade e o comportamento observável do ponto de vista do usuário.
+Este trabalho contribui para auxiliar desenvolvedores durante a codificação e também na compreensão de sistemas sem documentação. Ao gerar visões de alto nível do sistema, especificamente casos de uso, a proposta facilita a compreensão e as interações entre componentes. 
 
-Além disso, o estudo resgata a importância dos casos de uso como ferramenta central na modelagem e comunicação entre equipes de desenvolvimento. Segundo \textcite{larman2002applying}, os casos de uso não apenas documentam funcionalidades, mas representam um instrumento essencial de convergência entre analistas, projetistas e programadores — especialmente em metodologias ágeis, nas quais a documentação deve ser leve, iterativa e centrada no valor entregue ao usuário. Nesses contextos, casos de uso bem definidos auxiliam na priorização de requisitos, na validação de comportamentos e na manutenção de uma visão compartilhada do sistema, mesmo em ambientes de mudança constante.
+Segundo \textcite{larman2002applying}, os casos de uso não apenas documentam funcionalidades, mas representam um instrumento de convergência entre analistas, projetistas e programadore. Em contextos dinâmicos, casos de uso bem definidos apoiam a priorização de requisitos, a validação de comportamentos e a manutenção de uma visão compartilhada do sistema, mesmo diante de mudanças constantes.
 
-Embora a maioria dos estudos sobre Model-Driven Reverse Engineering (MDRE) e redocumentação esteja concentrada em linguagens como Java, este trabalho propõe uma abordagem direcionada à linguagem Python.
+Embora a maioria dos estudos sobre Model-Driven Reverse Engineering (MDRE) e redocumentação concentre-se em linguagens como Java, este trabalho propõe uma abordagem direcionada à linguagem Python, que, segundo o TIOBE Index (2025) \parencite{tiobe2025}, mantém-se como a linguagem mais popular globalmente. 
+
+Por fim, além de oferecer uma nova aplicação prática de Large Language Models na engenharia de software, o estudo propõe uma ponte entre engenharia de requisitos e engenharia reversa, reforçando a ideia de que compreender um sistema começa por compreender seu código, não apenas como sequência de instruções, mas como expressão das intenções humanas que lhe deram origem.
 
 \section{AST}
 Para a escolha do modo que faremos o modelo de \textit{discovery}, como mencionado no artigo \textcite{Bruneliere2010MoDisco}, analizamos 3 principais artigos: \textcite{feng2020codebert, feng2020codebert, ngo2023exploring}.
