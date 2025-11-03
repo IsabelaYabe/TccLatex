@@ -152,105 +152,48 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
 
 \section{RQ1. Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
 
-No artigo analisado, tanto a implementação da ferramenta quanto a avaliação empírica concentram-se na linguagem Java. Em termos de domínio, os autores testam a abordagem em pequenos sistemas orientados a objetos de propósito geral, típicos de benchmarks didáticos e bibliotecas: um jogo (\textit{Minesweeper}), um blog (\textit{Blog}), um sistema de folha de pagamento (\textit{PayrollSys}), uma e-library (\textit{eLib}) e uma biblioteca de algoritmos (\textit{myAlgsLib}). Esse conjunto de casos sinaliza que a aplicação prática recai sobre programas de escopo reduzido e natureza genérica, sem amarração a um domínio específico de negócio.
+A implementação e avaliação concentram-se na linguagem Java. Os autores testam a abordagem em cinco pequenos sistemas orientados a objetos de propósito geral: \textit{Minesweeper}, \textit{Blog}, \textit{PayrollSys}, \textit{eLib} e \textit{myAlgsLib}. Esses casos evidenciam a aplicação em programas de escopo reduzido e natureza genérica, sem vínculo a um domínio específico.
 
-Por fim, embora todo o exercício experimental esteja restrito ao ecossistema Java, os autores afirmam que o uso do intermediário J2X foi concebido para “isolar diferenças de linguagem” e, assim, permitir a reutilização do mesmo método de \textit{reverse} em outras linguagens, uma generalidade pretendida no plano conceitual, mas não demonstrada empiricamente no estudo.
-
-Síntese de RQ1: 
-Linguagem aplicada: Java (implementação e avaliação).
-
-Domínio dos estudos: pequenos sistemas OO genéricos (jogo, blog, sistema de folha de pagamento, biblioteca de algoritmos, e-library).
-
-Escopo pretendido: método projetado para ser estendido a outras linguagens via J2X (afirmação conceitual, não demonstrada empiricamente no artigo).
+Embora a experimentação esteja restrita ao ecossistema Java, o artigo destaca que o uso do intermediário J2X foi concebido para “isolar diferenças de linguagem” e permitir a extensão do método a outras linguagens.
 
 
 \section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
-
-O método gera dois artefatos UML de alto nível: (i) diagrama de classes (estrutura) e (ii) diagrama de sequência (comportamento de interação). 
-
-Operacionalmente, o framework (a) “first transforms source code to J2X representation”, (b) constrói o diagrama de classes com base nas informações extraídas, e (c) combina OFG e CFG para “construct UML sequence diagram”. Esses elementos (J2X, OFG, CFG) são artefatos intermediários.
-
-Cadeia que conduz a esses modelos (código → J2X → OFG/CFG → UML) e menções a “construct UML class diagram” e “construct UML sequence diagram”: Abstract e Approach Overview.
-
-Síntese para o texto do TCC (sugerido):
-“O método entrega, como artefatos de alto nível, o UML Class Diagram e o UML Sequence Diagram. A geração é suportada por uma cadeia estática que transforma o código em J2X e analisa OFG/CFG, culminando na construção dos diagramas (‘construct UML class diagram’; ‘construct UML sequence diagram’).”
+O método gera dois artefatos UML de alto nível: o diagrama de classes (estrutura) e o diagrama de sequência (comportamento de interação). O processo ocorre em três etapas: (i) transformação do código em representação J2X, (ii) extração estrutural para o diagrama de classes e (iii) análise de fluxo (OFG e CFG) para construir o diagrama de sequência. Assim, a cadeia de transformação é: \textit{código} $\rightarrow$ \textit{J2X} $\rightarrow$ \textit{OFG/CFG} $\rightarrow$ \textit{UML}.
 
 \section{RQ3. Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo?}
+A abordagem é predominantemente \Static, operando sobre o código-fonte sem execução. O objetivo central é a \Comp\ e \Redoc\ de sistemas OO, elevando o nível de abstração por meio da geração de diagramas UML de classes e sequência.
 
-A abordagem é de \Static, pois opera exclusivamente sobre o código-fonte, sem instrumentação nem execução. O objetivo principal é \Comp\ e \Redoc\ de sistemas orientados a objetos, por meio da elevação do nível de abstração: do código para modelos UML. Em particular, gera-se \textit{UML Classe} (estrutura) e \textit{UML Sequência} (interação) a partir de informações derivadas estaticamente do código, o que apoia entendimento, manutenção e documentação do sistema.
-
-Em síntese, trata-se de uma análise \Static\ que extrai tanto a estrutura (classes e relacionamentos) quanto a interação (mensagens em sequência) com base em \textit{artefatos derivados do próprio código}, preparando o terreno para as transformações discutidas na RQ4.
-
-
-\paragraph{Extensão proposta (minha versão).}
+\paragraph{Extensão proposta (minha proposta).}
 
 Os autores reconhecem a possibilidade de um futuro híbrido (estático + dinâmico) para aumentar a acurácia. Como extensão, propomos um \Hybrid\ que combine a análise estática com uma \textit{análise de intenção} (o que o software está intencionado a fazer), inferida de indícios semânticos do código (nomes, contratos, comentários) e correlacionada a casos de uso. A hipótese é que a integração entre (\Static) e intenção de alto nível melhore a precisão na identificação de interações relevantes e reduza ambiguidades na geração de UML Sequência, mantendo o baixo custo de coleta (sem execução).
 
 \section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
+O processo segue um pipeline de quatro fases principais:
 
-\emph{(1) Código $\rightarrow$ AST $\rightarrow$ J2X (IR).} O método realiza o \textit{parsing} do código, visita a AST e anota semântica em uma linguagem intermediária XML (\textit{J2X}) que padroniza elementos estruturais e “isola diferenças de linguagem”. 
-\textit{Efeito prático:} a J2X viabiliza armazenamento/troca de informações e estabiliza as etapas seguintes sem depender novamente do código-fonte.
+\begin{enumerate}
+  \item \textbf{Código $\rightarrow$ AST $\rightarrow$ J2X (IR):} parsing e anotação semântica do código em linguagem intermediária XML (J2X), que padroniza elementos e isola diferenças de linguagem.
+  \item \textbf{J2X $\rightarrow$ metadados $\rightarrow$ UML Classe:} extração de classes, interfaces, métodos e campos, mapeando relações de generalização, implementação, associação e dependência.
+  \item \textbf{OFG (Object Flow Graph):} refinamento das relações por rastreamento de fluxos de objetos, reduzindo falsos positivos/negativos e tratando polimorfismo.
+  \item \textbf{J2X $\rightarrow$ CFG $\rightarrow$ (OFG + CFG) $\rightarrow$ UML Sequência:} 
+Para a geração do diagrama de sequência, o método modela as chamadas de métodos e as estruturas de controle do programa em um \textit{Control Flow Graph} (CFG). Em seguida, esse grafo é combinado ao \textit{Object Flow Graph} (OFG), de modo a associar o fluxo de controle às instâncias de objetos efetivamente envolvidos nas interações. 
+Essa integração permite identificar, de forma estática, os objetos participantes, as mensagens trocadas e as condições e repetições (\textsf{alt}/\textsf{opt}/\textsf{loop}) que estruturam o comportamento do sistema. 
+\end{enumerate}
 
-\emph{(2) J2X $\rightarrow$ metadados + mapeamentos para \textit{UML Classe}.} A partir do J2X, extrai-se a estrutura básica (classes, interfaces, métodos, campos) e mapeiam-se quatro relações estruturais para o diagrama de classes: generalização, implementação, associação e dependencia.
-\textit{Efeito prático:} torna explícitas hierarquias (generalização/realização) e acoplamentos (associação/dependência), úteis a \Comp/\Redoc.
-
-\emph{(3) Refinamento de relações com OFG (sentenças simplificadas $\rightarrow$ OFG).} Para aumentar a precisão de associação/dependência, a representação J2X é reduzida a “sentenças simplificadas” e então usada para construir um \textit{Object Flow Graph} (OFG) que rastreia a propagação de objetos.
-\textit{Efeito prático:} reduz falsos positivos/negativos como polimorfismo nas relações estruturais ao confirmar tipos e fluxos reais de objetos.
-
-\emph{(4) J2X $\rightarrow$ CFG $\rightarrow$ (OFG + CFG) $\rightarrow$ \textit{UML Sequência}.} Para o diagrama de sequência, o método modela chamadas e estruturas de controle em um \textit{Control Flow Graph} (CFG) e o combina com o OFG a fim de identificar objetos participantes, mensagens e condições/loops.
-\textit{Efeito prático:} mesmo sem execução, a combinação OFG+CFG preserva ordem/condição das interações, permitindo gerar \textit{UML Sequência} com \emph{lifelines}, \emph{messages} e \emph{fragments} (\textsf{alt}/\textsf{opt}/\textsf{loop}).
-
-\medskip
-\noindent\textbf{Síntese de RQ4:} 
-\begin{itemize}
-  \item \textbf{Intermediário:} Código $\rightarrow$ AST $\rightarrow$ \textbf{J2X (XML)}.
-  \item \textbf{Classe:} metadados + mapeamentos diretos (generalização, realização, associação, dependência).
-  \item \textbf{Precisão de relações:} sentenças simplificadas $\rightarrow$ \textbf{OFG} (fluxo de objetos).
-  \item \textbf{Sequência:} \textbf{CFG} (fluxo de controle) + \textbf{OFG} $\Rightarrow$ mensagens/condições sem execução.
-\end{itemize}
-
+\textit{OFG+CFG,efeito prático:} mesmo sem instrumentação ou execução, a combinação preserva a ordem e a lógica das interações entre objetos, possibilitando a geração automática de \textit{UML Sequence Diagrams} completos, contendo \emph{lifelines}, \emph{messages} e \emph{interaction fragments}.
 
 \section{RQ5. Quais ferramentas/frameworks são utilizados?}
+O ecossistema técnico inclui:
 
-Em alinhamento com o pipeline técnico descrito na RQ4, o ecossistema de suporte compreende: (i) a ferramenta de engenharia reversa que orquestra a extração e geração de diagramas; (ii) o gerador de \textit{parser} para obtenção da AST; (iii) a infraestrutura de processamento XML sobre a linguagem intermediária; e (iv) a própria linguagem intermediária (IR), que, embora não seja uma ferramenta, é o artefato central de representação.
-
-\paragraph{Ferramenta de engenharia reversa (J2UML).}
-Os autores implementam a ferramenta que materializa o processo de \textit{reverse}.
-\textit{Papel no pipeline:} integra a leitura do J2X, aplica mapeamentos para \textit{UML Classe} e combina OFG/CFG para \textit{UML Sequência}, entregando os artefatos de alto nível úteis a \Comp/\Redoc.
-
-\paragraph{Gerador de \textit{parser} (JavaCC).}
-O \textit{frontend} do processo usa um gerador de analisadores para construir a AST:
-\foreignblockquote{english}[\textcite{zhang2016j2x}]{``[The parser is] automatic generated by JavaCC.''}
-\textit{Papel no pipeline:} viabiliza \emph{Código} $\rightarrow$ \emph{AST}, primeiro passo para rotular semântica no J2X.
-
-\paragraph{Infraestrutura de processamento XML (DOM4J e equivalentes).}
-Para manipular a representação intermediária, os autores recorrem a bibliotecas maduras
-\textit{Papel no pipeline:} permite consultar/transformar o \textbf{J2X (XML)} com eficiência e baixo acoplamento ao \textit{parser}.
-
-\paragraph{Linguagem intermediária (J2X, DTD/XML).}
-Document Type Definition (DTD) define a estrutura do XML usado como IR.
-A J2X é a IR que armazena semântica e estrutura do programa.
-A especificação em DTD padroniza elementos e atributos, sustentando a extração estruturada (\emph{Código} $\rightarrow$ \emph{AST} $\rightarrow$ \textbf{J2X}).
-
-\paragraph{Ambiente de execução (contexto experimental).}
-Para reprodutibilidade, os autores reportam o contexto de execução:
-\foreignblockquote{english}[\textcite{zhang2016j2x}]{``The tool runs on a PC with Windows [...] 32bit, 3G Memory and 2.93Ghz Intel Core 2 Duo CPU.''}
-\textit{Observação:} trata-se de caracterização do \emph{setup} usado nos experimentos, não de requisito da abordagem.
-
-\medskip
-\noindent\textbf{Síntese de RQ5:}
 \begin{itemize}
-  \item \textbf{Ferramenta central:} J2UML (orquestra extração e geração de UML).
-  \item \textbf{Parser/AST:} gerado com \textbf{JavaCC}.
-  \item \textbf{Processamento da IR:} bibliotecas XML (e.g., \textbf{DOM4J}).
-  \item \textbf{Representação:} \textbf{J2X (DTD/XML)} como linguagem intermediária.
-  \item \textbf{Ambiente de execução:} especificado para reprodutibilidade dos resultados.
+  \item \textbf{J2UML:} ferramenta desenvolvida pelos autores que orquestra a extração e geração dos diagramas UML.
+  \item \textbf{JavaCC:} gerador de analisadores automáticos usado para construir a AST a partir do código-fonte.
+  \item \textbf{DOM4J:} biblioteca para manipulação eficiente do XML que representa o modelo intermediário J2X.
+  \item \textbf{J2X (DTD/XML):} linguagem intermediária padronizada para estruturar e armazenar informações semânticas do programa.
 \end{itemize}
 
+Os experimentos foram realizados em um ambiente Windows 32-bit, com 3GB de memória e CPU Intel Core 2 Duo a 2,93GHz, garantindo reprodutibilidade dos resultados.
 
 \section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
-
-Fonte no artigo e como extraí: toda a evidência de validação está na seção Experiment and Evaluation e na Tabela 4 do paper; ali os autores descrevem o procedimento, os estudos de caso, as métricas e interpretam os resultados. Extraí os dados diretamente desse trecho.
 
 Os autores implementam a ferramenta J2UML e a avaliam em um conjunto de casos de teste de pequeno porte, medindo desempenho (tempo de execução) e exatidão na extração do diagrama de classes. Os dados observados são: número de classes, tempo, e contagens extraídas pela ferramenta.
 
@@ -261,15 +204,12 @@ A extração de classes é mais precisa que a de relações; os autores consider
 
 A validação foi conduzida por estudo experimental com cinco sistemas OO de pequeno porte, medindo tempo e acurácia da extração do diagrama de classes. A acurácia foi definida como a razão entre itens corretamente extraídos e o ground truth manual (classes e relações). Os resultados indicam acurácia de 96,4–100\% para classes e 65,0–90,4\% para relações, com desempenho considerado aceitável, variando conforme a complexidade das dependências.
 
-\medskip
-\noindent\textbf{Síntese de RQ6:}
-\begin{itemize}
-  \item \textbf{Desenho}: estudo experimental com 5 sistemas OO pequenos; comparação ferramenta vs. \textit{ground truth} manual.
-  \item \textbf{Métricas}: tempo de execução; acurácia de classes e relações (definições explícitas).
-  \item \textbf{Resultados}: classes \(\approx 96{,}4\%\)–\(100\%\); relações \(\approx 65{,}0\%\)–\(90{,}4\%\); tempos em ms.
-  \item \textbf{Qualidade prática}: útil para \Comp/\Redoc\ com custo baixo; OFG melhora relações.
-  \item \textbf{Limitações}: casos didáticos; pouca evidência para sistemas grandes; \textit{ground truth} manual; sem análise estatística.
-\end{itemize}
+\paragraph{Síntese (RQ6).}
+\textit{Desenho:} estudo experimental com 5 sistemas OO.  
+\textit{Métricas:} tempo e acurácia (classes e relações).  
+\textit{Resultados:} classes 96,4–100\%; relações 65,0–90,4\%.  
+\textit{Qualidade prática:} boa precisão estrutural; limitações de escala e avaliação.
+
 
 \begin{table}[h!]
 \centering
@@ -292,11 +232,10 @@ A validação foi conduzida por estudo experimental com cinco sistemas OO de peq
 \textcite{zhang2016j2x} &
 Java; pequenos sistemas OO (eLib, Minesweeper, Blog, PayrollSys, myAlgsLib) &
 UML Classe; UML Sequência &
-Estático — compreensão, manutenção/redocumentação &
-Código→AST→J2X; mapeamentos (gen./impl./assoc./dep.); sentenças simplif.→OFG; CFG+OFG→Sequência &
-J2UML; JavaCC; Dom4j; J2X (DTD/XML) &
+Estático — compreensão e redocumentação &
+Código$\rightarrow$AST$\rightarrow$J2X; sentenças simplif.$\rightarrow$OFG; CFG+OFG$\rightarrow$Sequência &
+J2UML; JavaCC; DOM4J; J2X (DTD/XML) &
 5 casos pequenos; acurácia: classes 96,4–100\%; relações 65,0–90,4\% \\
-
 
 \bottomrule
 \end{tabularx}

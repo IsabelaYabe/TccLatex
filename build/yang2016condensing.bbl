@@ -1,0 +1,87 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{yang2016condensing}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=b1f2347b2de29d8479d6f2a9a3b16e97}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Xinyi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=cac8ebdbf2f8a8f2b7f49f6e737c2649}{%
+           family={Lo},
+           familyi={L\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=389bc525f2088642cfd16749beb3312e}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=18d6768f3b7b4cdf6986023492b0489c}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jianling},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {Atlanta, Georgia, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{c0074d3715aee98cb483aba5161a1692}
+      \strng{fullhash}{3845186f74385584c3157a43fec70837}
+      \strng{fullhashraw}{3845186f74385584c3157a43fec70837}
+      \strng{bibnamehash}{c0074d3715aee98cb483aba5161a1692}
+      \strng{authorbibnamehash}{c0074d3715aee98cb483aba5161a1692}
+      \strng{authornamehash}{c0074d3715aee98cb483aba5161a1692}
+      \strng{authorfullhash}{3845186f74385584c3157a43fec70837}
+      \strng{authorfullhashraw}{3845186f74385584c3157a43fec70837}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 40th IEEE Annual International Computers, Software and Applications Conference (COMPSAC 2016)}
+      \field{note}{Published in COMPSAC 2016: Proceedings of the 40th IEEE Annual International Computers, Software and Applications Conference}
+      \field{title}{Condensing Class Diagrams With Minimal Manual Labeling Cost}
+      \field{year}{2016}
+      \field{pages}{22\bibrangedash 31}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/COMPSAC.2016.83
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/COMPSAC.2016.83
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/COMPSAC.2016.83
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
