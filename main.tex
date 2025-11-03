@@ -5,6 +5,8 @@
 % Idioma e tipografia
 \usepackage[brazil]{babel}
 \usepackage{csquotes}
+\usepackage{lmodern}
+\usepackage{microtype}
 
 % Layout e recursos básicos
 \usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
@@ -15,10 +17,20 @@
 % Matemática e teoremas (essencial só se você usa)
 \usepackage{amsmath,amssymb,amsthm}
 
+% Tabelas em paisagem e colunas flexíveis
+% \usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{array} % para \newcolumntype
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\usepackage{rotating} % para sidewaystable/sideways
+
+
 % Bibliografia ABNT numerada
 \usepackage[
   backend=biber,
-  style=abnt,          % estilo bibliográfico
+  style=abnt,
   sorting=none,
   giveninits=true,
   uniquename=false,
@@ -30,7 +42,51 @@
   ittitles,
   justify
 ]{biblatex}
-\addbibresource{refs.bib}
+\addbibresource{D:/TccLatex/refs.bib} % ← caminho corrigido
+
+
+
+% ======= PADRONIZAÇÃO PARA A TABELA MDRE =======
+
+% Coluna flexível "Y" (se ainda não tiver)
+% \usepackage{tabularx,booktabs,ragged2e,array}
+% \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+% 1) Vocabulário controlado (sempre em SMALL CAPS):
+\newcommand{\Static}{\textsc{Estático}}
+\newcommand{\Dynamic}{\textsc{Dinâmico}}
+\newcommand{\Hybrid}{\textsc{Híbrido}}
+\newcommand{\Comp}{\textsc{Compreensão}}
+\newcommand{\Redoc}{\textsc{Redocumentação}}
+\newcommand{\Mig}{\textsc{Migração}}
+\newcommand{\Quali}{\textsc{Qualidade}}
+
+% 2) Macros para setas e encadeamentos:
+\newcommand{\ctoa}{\(\text{Código} \rightarrow \text{AST}\)}
+\newcommand{\atoxi}{\(\text{AST} \rightarrow \text{IM}\)}   % IM = modelo intermediário
+\newcommand{\imtoxml}{\(\text{IM} \rightarrow \text{XML}\)}
+\newcommand{\imtomdl}{\(\text{IM} \rightarrow \text{UML}\)}
+\newcommand{\tmtomdl}{\(\text{T2M/M2M} \rightarrow \text{UML}\)}
+\newcommand{\xtoSeq}{\(\rightarrow \text{UML Sequência}\)}
+\newcommand{\xtoClass}{\(\rightarrow \text{UML Classe}\)}
+\newcommand{\xtoAct}{\(\rightarrow \text{UML Atividade}\)}
+
+% 3) Abreviações de ferramentas (consistentes):
+\newcommand{\EMF}{Eclipse/EMF}
+\newcommand{\UMLtwo}{UML2}
+\newcommand{\PlantUML}{PlantUML}
+\newcommand{\JavaParser}{JavaParser}
+
+% 4) Formato da célula “Aspecto”: Técnica ; Objetivo(s)
+%    Ex.: \Static; \Comp/\Redoc (estrutura + comportamento)
+
+% 5) Formato da célula “Técnica/Transformação”:
+%    Use sempre cadeia com “→”, negrite elementos-chaves e padronize nomes.
+%    Ex.: Código → AST → \textbf{IM(XML)} → T2M/M2M → \textbf{UML2}
+%
+% 6) Formato da célula “Validação”:
+%    [tipo de evidência; dataset/projetos; métrica(s) ou avaliação; nota curta]
+%    Ex.: OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo 10%
 
 \begin{document}
 
@@ -74,11 +130,13 @@
             
     \end{center}
 \end{titlepage}
-
 \newpage
+\pagenumbering{roman}
 \tableofcontents
 
 \newpage
+\pagenumbering{arabic}
+
 \section{Resumo}
 
 \textcite{larman2002applying} descreve três modos de desenvolvedores projetarem objetos: (i) projetar enquanto codifica, (ii) desenhar e projetar, (iii) apenas desenhar. Este trabalho propõe uma ferramenta de suporte para desenhar e projetar. % Não sei tá esquisito 
@@ -141,33 +199,137 @@ Este trabalho contribui para auxiliar desenvolvedores durante a codificação e 
 
 Segundo \textcite{larman2002applying}, os casos de uso não apenas documentam funcionalidades, mas representam um instrumento de convergência entre analistas, projetistas e programadore. Em contextos dinâmicos, casos de uso bem definidos apoiam a priorização de requisitos, a validação de comportamentos e a manutenção de uma visão compartilhada do sistema, mesmo diante de mudanças constantes.
 
-Embora a maioria dos estudos sobre Model-Driven Reverse Engineering (MDRE) e redocumentação concentre-se em linguagens como Java, este trabalho propõe uma abordagem direcionada à linguagem Python, que, segundo o TIOBE Index (2025) \parencite{tiobe2025}, mantém-se como a linguagem mais popular globalmente. 
+Embora a maioria dos estudos sobre Model-Driven Reverse Engineering (MDRE) e redocumentação concentre-se em linguagens como Java, este trabalho propõe uma abordagem direcionada à linguagem Python, que, segundo o TIOBE Index (2025), mantém-se como a linguagem mais popular globalmente. 
 
 Por fim, além de oferecer uma nova aplicação prática de Large Language Models na engenharia de software, o estudo propõe uma ponte entre engenharia de requisitos e engenharia reversa, reforçando a ideia de que compreender um sistema começa por compreender seu código, não apenas como sequência de instruções, mas como expressão das intenções humanas que lhe deram origem.
 
-\section{AST}
-Para a escolha do modo que faremos o modelo de \textit{discovery}, como mencionado no artigo \textcite{Bruneliere2010MoDisco}, analizamos 3 principais artigos: \textcite{feng2020codebert, feng2020codebert, ngo2023exploring}.
-
 \section{Revisão literária}
-Esta revisão literária foca em redocumentação através da engenharia reversa, com ênfase em recuperação de artefatos de alto nível, como diagramas UML e casos de uso a partir da análise estática. O objetivo é identificar as principais linhas de pesquisa, técnicas e limitações que fundamentam a proposta deste trabalho.
 
-Foram analisadas publicações disponíveis nas bibliotecas digitais IEEE Xplore e ACM Digital Library, no período de 2015 a 2025, utilizando combinações de termos relacionados a reverse engineering, design recovery, use case, UML, AST, static analysis e natural language processing. Os critérios de inclusão foram artigos que propõem métodos para extrair artefatos de alto nível a partir do código-fonte e estudos que aplicam técnicas de NLP ou LLMs na recuperação de requisitos ou documentação. Foram excluídos revisões secundárias, tutoriais e trabalhos voltados exclusivamente a hardware.
+A revisão tem o objetivo de compreender o estado da arte das abordagens de engenharia reversa que partem de código-fonte e produzem artefatos de alto nível, como diagramas UML. Para garantir uma análise sistemática e comparável entre diferentes propostas, foram definidas perguntas de pesquisa (\textit{Research Questions — RQs}) que orientam a coleta e síntese dos dados extraídos dos estudos selecionados.
 
-\section{A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code}
+\begin{itemize}
+  \item \textbf{RQ1.} Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?
+  \item \textbf{RQ2.} Quais modelos/artefatos de alto nível são gerados?
+  \item \textbf{RQ3.} Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?
+  \item \textbf{RQ4.} Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?
+  \item \textbf{RQ5.} Quais ferramentas/frameworks são utilizados?
+  \item \textbf{RQ6.} Como as abordagens são validadas e com que qualidade prática?
+\end{itemize}
 
-Sistemas legados permanecem essenciais para a execução de operações críticas em diversas organizações, porém sua modernização representa um desafio significativo, especialmente diante da ausência de documentação arquitetural e de projeto. A \textit{Engenharia Reversa} (RE) exerce papel central nesse processo, permitindo compreender e redocumentar sistemas existentes. No entanto, as abordagens tradicionais de RE são trabalhosas, propensas a erros e, geralmente, limitadas à análise estrutural do software \textcite{Sabir2019MDRE}.
+A coleta dos estudos seguiu uma estratégia sistemática de busca em bases reconhecidas, IEEE Xplore e ACM Digital Library no período de 2015 a 2025.
 
-Com o surgimento da \textit{Model Driven Engineering} (MDE), surgiu uma vertente complementar: a \textit{Model Driven Reverse Engineering} (MDRE). Essa abordagem propõe representar sistemas legados em níveis mais altos de abstração por meio de modelos, reduzindo a complexidade estrutural e promovendo a reutilização, portabilidade e automação. Em geral, o processo de MDRE compreende duas etapas: (1) a extração de um modelo abstrato a partir dos artefatos-fonte e (2) a transformação desse modelo em representações de nível superior, como diagramas UML \textcite{Sabir2019MDRE}.
+A query se estrutura na combinação de três blocos temáticos:
 
-Diversos trabalhos anteriores contribuíram para o avanço dessa área. O \textit{MoDisco}, proposto por \textcite{Bruneliere2010MoDisco}, é um \textit{framework} extensível para engenharia reversa em Eclipse, baseado no metamodelo \textit{Knowledge Discovery Metamodel} (KDM). Apesar de sua relevância, a ferramenta limita-se à extração de aspectos estruturais, sem contemplar o comportamento dos sistemas. Outro trabalho relevante é o de Canovas2014Gra2MoL, que propõe a linguagem \textit{Gra2MoL} para transformação texto-para-modelo (\textit{Text-to-Model}, T2M), embora sem avaliação prática abrangente.  
+\begin{itemize}
+  \item ("Abstract": "MDRE" OR "reverse engineering" OR "model driven reverse engineering" OR "design recovery")
+  \item ("Abstract": "UML" OR "UML class diagram" OR "UML activity diagram" OR "UML sequence diagram" OR "UML models" OR "Diagram")
+  \item: ("Abstract": "static analysis" OR "source code analysis" OR "abstract syntax tree" OR "AST" OR "text-to-model" OR "T2M" OR "parser" OR "source code" OR "parsing")
+\end{itemize}
 
-A revisão evidencia lacunas importantes: (1) suporte limitado para extração e modelagem conjunta dos aspectos estruturais e comportamentais de sistemas legados; (2) ausência de \textit{frameworks} completos que integrem ambos os tipos de modelos; e (3) escassez de avaliações experimentais robustas \textcite{Sabir2019MDRE}.
+Foram incluídos apenas os estudos que propõe uma abordagem de engenharia reversa aplicada à geração de modelos UML (classes, atividades ou sequência) diretamente a partir do código-fonte.
+  
+Foram excluídos os trabalhos que se enquadravam em uma ou mais das seguintes categorias:
+\begin{itemize}
+  \item Foco em forward engineering ou geração de código.
+  \item Estudos centrados em rastreabilidade ou anti-padrões.
+  \item Trabalhos puramente empíricos ou teóricos sem proposta de transformação automatizada.
+  \item Abordagens puramente dinâmicas.
+\end{itemize}
 
-Para superar essas limitações, \textcite{Sabir2019MDRE} propõem o \textit{Source to Model Framework} (Src2MoF), um \textit{framework} de MDRE que gera diagramas UML estruturais (classes) e comportamentais (atividades) a partir de código-fonte Java. O Src2MoF é composto por dois módulos principais: o \textit{Intermediate Model Discoverer} (IMD), responsável por criar um modelo intermediário em formato XML com base em uma árvore de sintaxe abstrata (AST); e o \textit{UML Model Generator}, que transforma esse modelo intermediário em diagramas UML por meio de regras de mapeamento do tipo \textit{Text-to-Model}.
+Com base nos critérios de inclusão e exclusão, foram selecionados os seguintes estudos para análise detalhada:
 
-A validação do Src2MoF foi realizada com cinco estudos de caso, incluindo o sistema de \textit{ATM} de Deitel2010Java e o caso industrial \textit{Amadeus Hospitality}. Os resultados indicam que o \textit{framework} é capaz de recuperar e modelar, de forma automatizada, tanto a estrutura quanto o comportamento de sistemas Java, superando ferramentas anteriores como o \textit{MoDisco} e o \textit{fREX}.
+\begin{itemize}
+  \item A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code (2019).
+  \item Condensing Class Diagrams With Minimal Manual Labeling Cost (2016).
+  \item Enhancing Model-Driven Reverse Engineering Using Machine Learning (2024).
+  \item Reverse Engineering of Source Code to Sequence Diagram Using Abstract Syntax Tree (2016).
+  \item Towards a New Hybrid Approach of the Reverse Engineering of UML Sequence Diagram (2016).
+  \item WIP: Generating Sequence Diagrams for Modern Fortran (2017).
+\end{itemize}
 
-Os autores reconhecem, contudo, algumas limitações: o suporte atual é restrito à linguagem Java, e certos elementos dos diagramas de atividade UML (como \textit{merge nodes} e \textit{fork nodes}) ainda não são tratados. Como trabalhos futuros, pretendem estender o Src2MoF para outras linguagens, como C\#, e incorporar novos tipos de diagramas UML (sequência e componentes), ampliando a aplicabilidade do \textit{framework} em contextos de modernização de sistemas legados.
+\subsection{Síntese comparativa dos estudos}
+
+\begin{sidewaystable}[p] % gera uma página própria com a tabela girada
+\centering
+\scriptsize % Mudar o tamanho da fonte para caber melhor
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textheight}{Y Y Y Y Y Y Y}
+\toprule
+\textbf{Autores / Referência} &
+\textbf{Linguagem / Domínio} & % Verde
+\textbf{Modelo Gerado} & % Azul
+\textbf{Aspecto} & % Laranja
+\textbf{Técnica / Tipo de Transformação} & % Roxo
+\textbf{Ferramenta / Framework} & % Cinza
+\textbf{Validação / Estudo de Caso} \\ % Rosa
+\midrule
+
+\textcite{Sabir2019MDRE} &
+Java (sistemas legados orientados a objetos) &
+UML \emph{Class Diagram} + \emph{Activity Diagram} (em pacote UML) &
+Estático; objetivo: compreensão/redocumentação &
+T2M/M2M em duas fases: Parser$\rightarrow$AST$\rightarrow$IM(XML) e mapeamentos IM$\rightarrow$UML (classe/atividade) &
+Eclipse + UML2/EMF; JavaParser (IMD); (Papyrus/StarUML/Rational Rose na validação manual) &
+Comparação especialista (modelos manuais vs. gerados), 5 estudos de caso; ATM e Amadeus descritos \\ 
+
+\textcite{zhang2016j2x} &
+Java; pequenos sistemas OO (eLib, Minesweeper, Blog, PayrollSys, myAlgsLib) &
+UML Classe; UML Sequência &
+Estático — compreensão, manutenção/redocumentação &
+Código→AST→J2X; mapeamentos (gen./impl./assoc./dep.); sentenças simplif.→OFG; CFG+OFG→Sequência &
+J2UML; JavaCC; Dom4j; J2X (DTD/XML) &
+5 casos pequenos; acurácia: classes 96,4–100\%; relações 65,0–90,4\% \\
+
+\textcite{yang2016condensing} &
+Java (OSS) &
+UML Classe condensado (classes “importantes”) &
+\Static; \Comp\ (redução cognitiva) &
+Métricas (size, coupling, network) $\rightarrow$ \textit{k}-means (amostragem) $\rightarrow$ ensemble (Random Forest) $\Rightarrow$ seleção de classes &
+MCCondenser; SDMetrics; MagicDraw &
+OSS (9 projetos; 2640 classes); AUC=0.73; +10–20\% vs. baselines; treino ≈1s; predição <0,1s; rótulos 10\% \\
+% foi
+
+\textcite{siala2024enhancing} &
+Java; Python; sistemas legados &
+UML Classe; OCL &
+Estático — compreensão, redocumentação e migração &
+código $\rightarrow$ tokenização/simplificação $\rightarrow$ geração textual UML/OCL intermediária(LLM) $\rightarrow$ model repair $\rightarrow$ diagramas UML/OCL &
+Graphviz; PlantUML; Modelio; AgileUML; LLM &
+Comparação MDRE: dois estudos de caso; correção semântica, completude e compreensibilidade \\
+
+
+\textcite{Fauzi2016AST} &
+Java; OO geral &
+UML Sequência &
+Estático; Compreensão/Redocumentação (comportamento) &
+Código $\rightarrow$ AST (JavaParser); DFS pós-ordem; regras para \emph{calls}, \emph{object creation}, \emph{return}, \emph{alt}/\emph{loop}; geração com PlantUML &
+REVUML; JavaParser; PlantUML API &
+126 casos sintéticos (alt/loop; formas/locais de chamada; criação; herança/polimorfismo; lambdas); avaliação funcional (“desenha corretamente”) \\
+
+\textcite{baidada2016hybrid} &
+Genérico; aplicações OO (GUI e multithread) &
+UML Sequência (HLSD) &
+\textbf{Híbrido} (Estático + Dinâmico); Compreensão/Redocumentação (comportamento) &
+Estático: \textbf{CFG} para derivar valores de entrada por caso de uso $\rightarrow$ guiar execução; 
+Dinâmico: traços múltiplos + \textbf{filtragem por pacote} (e.g., Swing) $\rightarrow$ 
+Modelo intermediário: \textbf{Colored Petri Nets (CPN)} para fundir traços e detectar \texttt{seq/alt/opt/loop/par} $\rightarrow$ transformação CPN$\Rightarrow$UML &
+Metodologia (sem ferramenta nomeada); IM em \textbf{CPN} &
+Proposta conceitual; sem estudo industrial concluído; autores planejam avaliar em sistemas complexos \\
+
+\textcite{leatongkam2017generating} &
+Fortran OO; científico (computational science) &
+UML Sequência (com suporte a coarrays) &
+Estático; Compreensão/Redocumentação (comportamento) &
+Regras formais (OMG UML) para \emph{lifelines}, \emph{messages}, \emph{conditional/decision/loop}, \emph{coarrays}; Extração sintática $\rightarrow$ árvore de classes $\rightarrow$ mapeamento $\rightarrow$ XMI &
+Extensão do \textit{ForUML}; exporta \textbf{XMI}; visualização em \textit{ArgoUML} (avaliação de outras ferramentas) &
+Work-in-progress; plano de testes com pacotes Fortran OO e avaliação por usuários; sem estudo industrial concluído \\
+
+\bottomrule
+\end{tabularx}
+\caption{Síntese comparativa dos estudos selecionados.}
+\label{tab:sintese_comparativa}
+\end{sidewaystable}
 
 \section{Escolha dos repositórios}
 Para análise foram escolhidos três repositórios independentes, dois de David Beazley e um de Brandon Rhodes, duas referências em linguagem Python. Os repositórios de David Beazley possui uma documentação completa no próprio repositório, facilitando a compreensão do software construido. Já o repositório do Brandon Rhodes não contém documentação, contudo o conteúdo é a portabilidade do jogo Colossal Cave Adventure de Fortran para Python.

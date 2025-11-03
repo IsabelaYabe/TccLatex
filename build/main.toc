@@ -1,21 +1,20 @@
 \babel@toc {brazil}{}\relax 
-\contentsline {section}{\numberline {1}Resumo}{2}{section.1}%
-\contentsline {section}{\numberline {2}Introdução}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Problematização}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Questão e hipótese}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Objetivos}{4}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Relevância}{4}{subsection.2.4}%
-\contentsline {section}{\numberline {3}AST}{5}{section.3}%
-\contentsline {section}{\numberline {4}Revisão literária}{5}{section.4}%
-\contentsline {section}{\numberline {5}A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code}{5}{section.5}%
-\contentsline {section}{\numberline {6}Escolha dos repositórios}{6}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Colossal Cave Adventure}{7}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Descrição do jogo}{7}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}}{8}{subsection.6.3}%
-\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{9}{section*.2}%
+\contentsline {section}{\numberline {1}Resumo}{1}{section.1}%
+\contentsline {section}{\numberline {2}Introdução}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Problematização}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Questão e hipótese}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Objetivos}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Relevância}{3}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Revisão literária}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Síntese comparativa dos estudos}{5}{subsection.3.1}%
+\contentsline {section}{\numberline {4}Escolha dos repositórios}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Colossal Cave Adventure}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Descrição do jogo}{7}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}}{7}{subsection.4.3}%
+\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{8}{section*.2}%
 \contentsline {paragraph}{Tabela 2 – Short Room Labels.}{9}{section*.3}%
 \contentsline {paragraph}{Tabela 3 – Map Data.}{9}{section*.4}%
-\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{10}{section*.5}%
+\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{9}{section*.5}%
 \contentsline {paragraph}{Tabela 5 – Static Game States.}{10}{section*.6}%
 \contentsline {paragraph}{Tabela 6 – Hints and Events.}{11}{section*.7}%
 \contentsline {paragraph}{Tabela 7 – Object Locations.}{11}{section*.8}%

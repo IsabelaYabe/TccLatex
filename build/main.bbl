@@ -21,23 +21,26 @@
   \datalist[entry]{none/global//global/global/global}
     \entry{larman2002applying}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=4121ca7bb990b1d760270e616939fee0}{%
+        {{hash=be7db5922f05fc919bdc1c036502e5ee}{%
            family={Larman},
            familyi={L\bibinitperiod},
-           given={C.},
+           given={Craig},
            giveni={C\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Upper Saddle River}%
       }
       \list{publisher}{1}{%
         {Prentice Hall PTR}%
       }
-      \strng{namehash}{4121ca7bb990b1d760270e616939fee0}
-      \strng{fullhash}{4121ca7bb990b1d760270e616939fee0}
-      \strng{fullhashraw}{4121ca7bb990b1d760270e616939fee0}
-      \strng{bibnamehash}{4121ca7bb990b1d760270e616939fee0}
-      \strng{authorbibnamehash}{4121ca7bb990b1d760270e616939fee0}
-      \strng{authornamehash}{4121ca7bb990b1d760270e616939fee0}
-      \strng{authorfullhash}{4121ca7bb990b1d760270e616939fee0}
-      \strng{authorfullhashraw}{4121ca7bb990b1d760270e616939fee0}
+      \strng{namehash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{fullhash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{fullhashraw}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{bibnamehash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{authorbibnamehash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{authornamehash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{authorfullhash}{be7db5922f05fc919bdc1c036502e5ee}
+      \strng{authorfullhashraw}{be7db5922f05fc919bdc1c036502e5ee}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
@@ -45,9 +48,13 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780130925695}
-      \field{series}{Safari electronic books}
-      \field{title}{Applying UML and Patterns: An Introduction to Object-oriented Analysis and Design and the Unified Process}
+      \field{subtitle}{An Introduction to Object-Oriented Analysis and Design and the Unified Process}
+      \field{title}{Applying {UML} and Patterns}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
       \field{year}{2002}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://books.google.com.br/books?id=r8i-4En_aa4C
       \endverb
@@ -65,11 +72,14 @@
         {{hash=0f3f2e0d93cec9c983dc1bb7cf2fa275}{%
            family={Constantine},
            familyi={C\bibinitperiod},
-           given={Larry\bibnamedelima L},
+           given={Larry\bibnamedelima L.},
            giveni={L\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
       }
+      \list{location}{1}{%
+        {Englewood Cliffs}%
+      }
       \list{publisher}{1}{%
-        {Prentice-Hall, Inc.}%
+        {Prentice-Hall}%
       }
       \strng{namehash}{3248ba981c8d1cc5300ed32260a51a45}
       \strng{fullhash}{3248ba981c8d1cc5300ed32260a51a45}
@@ -79,54 +89,62 @@
       \strng{authornamehash}{3248ba981c8d1cc5300ed32260a51a45}
       \strng{authorfullhash}{3248ba981c8d1cc5300ed32260a51a45}
       \strng{authorfullhashraw}{3248ba981c8d1cc5300ed32260a51a45}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Structured design: fundamentals of a discipline of computer program and systems design}
+      \field{subtitle}{Fundamentals of a Discipline of Computer Program and Systems Design}
+      \field{title}{Structured Design}
       \field{year}{1979}
     \endentry
     \entry{booch1999unified}{book}{}{}
       \name{author}{3}{}{%
-        {{hash=379663f8b780c2545626c2d633406876}{%
+        {{hash=e4f07715269e006a4d4a4efa3ce3f996}{%
            family={Booch},
            familyi={B\bibinitperiod},
-           given={G.},
+           given={Grady},
            giveni={G\bibinitperiod}}}%
-        {{hash=830cbad03fbe6761e2d2fcf94ec994f7}{%
+        {{hash=b8ace965f1ffa84dd4512f7e64c62d75}{%
            family={Rumbaugh},
            familyi={R\bibinitperiod},
-           given={J.},
+           given={James},
            giveni={J\bibinitperiod}}}%
-        {{hash=d17187a6b7e782cf1158d1ac21d40106}{%
+        {{hash=3e8f03cc324f52193ab00c1fab4df61a}{%
            family={Jacobson},
            familyi={J\bibinitperiod},
-           given={I.},
+           given={Ivar},
            giveni={I\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Reading}%
       }
       \list{publisher}{1}{%
         {Addison-Wesley}%
       }
-      \strng{namehash}{f98880d978b420ac8842fdc7a6361beb}
-      \strng{fullhash}{f98880d978b420ac8842fdc7a6361beb}
-      \strng{fullhashraw}{f98880d978b420ac8842fdc7a6361beb}
-      \strng{bibnamehash}{f98880d978b420ac8842fdc7a6361beb}
-      \strng{authorbibnamehash}{f98880d978b420ac8842fdc7a6361beb}
-      \strng{authornamehash}{f98880d978b420ac8842fdc7a6361beb}
-      \strng{authorfullhash}{f98880d978b420ac8842fdc7a6361beb}
-      \strng{authorfullhashraw}{f98880d978b420ac8842fdc7a6361beb}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \strng{namehash}{be6f3ff47123ebcb32f54f571b015ebc}
+      \strng{fullhash}{be6f3ff47123ebcb32f54f571b015ebc}
+      \strng{fullhashraw}{be6f3ff47123ebcb32f54f571b015ebc}
+      \strng{bibnamehash}{be6f3ff47123ebcb32f54f571b015ebc}
+      \strng{authorbibnamehash}{be6f3ff47123ebcb32f54f571b015ebc}
+      \strng{authornamehash}{be6f3ff47123ebcb32f54f571b015ebc}
+      \strng{authorfullhash}{be6f3ff47123ebcb32f54f571b015ebc}
+      \strng{authorfullhashraw}{be6f3ff47123ebcb32f54f571b015ebc}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780201571684}
-      \field{series}{Addison-Wesley object technology series}
+      \field{series}{Addison-Wesley Object Technology Series}
       \field{title}{The Unified Modeling Language User Guide}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
       \field{year}{1999}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://books.google.com.br/books?id=caVQAAAAMAAJ
       \endverb
@@ -136,33 +154,42 @@
     \endentry
     \entry{fowler2018refactoring}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=c3035fa4fc8a043ebf2ea4bff39adda1}{%
+        {{hash=312ac886938a9b2be4f8eb607567fe4c}{%
            family={Fowler},
            familyi={F\bibinitperiod},
-           given={M.},
+           given={Martin},
            giveni={M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Boston}%
       }
       \list{publisher}{1}{%
         {Pearson Education}%
       }
-      \strng{namehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \strng{fullhash}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \strng{fullhashraw}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \strng{bibnamehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \strng{authorbibnamehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \strng{authornamehash}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \strng{authorfullhash}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \strng{authorfullhashraw}{c3035fa4fc8a043ebf2ea4bff39adda1}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \strng{namehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{fullhashraw}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{bibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorbibnamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authornamehash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhash}{312ac886938a9b2be4f8eb607567fe4c}
+      \strng{authorfullhashraw}{312ac886938a9b2be4f8eb607567fe4c}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{edition}{2}
       \field{isbn}{9780134757704}
       \field{series}{Addison-Wesley Signature Series (Fowler)}
-      \field{title}{Refactoring: Improving the Design of Existing Code}
+      \field{subtitle}{Improving the Design of Existing Code}
+      \field{title}{Refactoring}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
       \field{year}{2018}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://books.google.com.br/books?id=2H1_DwAAQBAJ
       \endverb
@@ -172,37 +199,45 @@
     \endentry
     \entry{sommerville1997requirements}{book}{}{}
       \name{author}{2}{}{%
-        {{hash=391822eb61c91ef5882d24cbd1592b6f}{%
+        {{hash=70341b3bfcce7026902f4eb1e4111b58}{%
            family={Sommerville},
            familyi={S\bibinitperiod},
-           given={I.},
+           given={Ian},
            giveni={I\bibinitperiod}}}%
-        {{hash=baacb362fca23395eaebab947907d439}{%
+        {{hash=149ddc05b411e6f8ad2035e0533a1b5d}{%
            family={Sawyer},
            familyi={S\bibinitperiod},
-           given={P.},
+           given={Pete},
            giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Chichester}%
       }
       \list{publisher}{1}{%
         {Wiley}%
       }
-      \strng{namehash}{2edbfb632f5695e6d024677f7aa288cd}
-      \strng{fullhash}{2edbfb632f5695e6d024677f7aa288cd}
-      \strng{fullhashraw}{2edbfb632f5695e6d024677f7aa288cd}
-      \strng{bibnamehash}{2edbfb632f5695e6d024677f7aa288cd}
-      \strng{authorbibnamehash}{2edbfb632f5695e6d024677f7aa288cd}
-      \strng{authornamehash}{2edbfb632f5695e6d024677f7aa288cd}
-      \strng{authorfullhash}{2edbfb632f5695e6d024677f7aa288cd}
-      \strng{authorfullhashraw}{2edbfb632f5695e6d024677f7aa288cd}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \strng{namehash}{ff67e897d241aea265cff38650fa7662}
+      \strng{fullhash}{ff67e897d241aea265cff38650fa7662}
+      \strng{fullhashraw}{ff67e897d241aea265cff38650fa7662}
+      \strng{bibnamehash}{ff67e897d241aea265cff38650fa7662}
+      \strng{authorbibnamehash}{ff67e897d241aea265cff38650fa7662}
+      \strng{authornamehash}{ff67e897d241aea265cff38650fa7662}
+      \strng{authorfullhash}{ff67e897d241aea265cff38650fa7662}
+      \strng{authorfullhashraw}{ff67e897d241aea265cff38650fa7662}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780471974444}
-      \field{title}{Requirements Engineering: A Good Practice Guide}
+      \field{subtitle}{A Good Practice Guide}
+      \field{title}{Requirements Engineering}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
       \field{year}{1997}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://books.google.com.br/books?id=Ag7qotD-sukC
       \endverb
@@ -212,8 +247,8 @@
     \endentry
     \entry{Bruneliere2010MoDisco}{inproceedings}{}{}
       \name{author}{4}{}{%
-        {{hash=f4a7818357e3a25bc84f3c15705bfdc4}{%
-           family={Bruneliere},
+        {{hash=f3e0903a5608c56c597d4d23ef170f62}{%
+           family={Brunelière},
            familyi={B\bibinitperiod},
            given={Hugo},
            giveni={H\bibinitperiod}}}%
@@ -234,24 +269,21 @@
            giveni={F\bibinitperiod}}}%
       }
       \list{location}{1}{%
-        {Nantes, France}%
-      }
-      \list{organization}{1}{%
-        {AtlanMod, INRIA RBA Center \& EMN; Mia-Software}%
+        {Timişoara}%
       }
       \list{publisher}{1}{%
         {IEEE}%
       }
-      \strng{namehash}{848f1791ad4e85141e31d81238a3ee48}
-      \strng{fullhash}{0431cb00848001331662ed6189fa10ac}
-      \strng{fullhashraw}{0431cb00848001331662ed6189fa10ac}
-      \strng{bibnamehash}{848f1791ad4e85141e31d81238a3ee48}
-      \strng{authorbibnamehash}{848f1791ad4e85141e31d81238a3ee48}
-      \strng{authornamehash}{848f1791ad4e85141e31d81238a3ee48}
-      \strng{authorfullhash}{0431cb00848001331662ed6189fa10ac}
-      \strng{authorfullhashraw}{0431cb00848001331662ed6189fa10ac}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \strng{namehash}{da4253f0573c7fca9926c5995625f6f7}
+      \strng{fullhash}{7fcd2013decddc9a4c9729db8b666d5a}
+      \strng{fullhashraw}{7fcd2013decddc9a4c9729db8b666d5a}
+      \strng{bibnamehash}{da4253f0573c7fca9926c5995625f6f7}
+      \strng{authorbibnamehash}{da4253f0573c7fca9926c5995625f6f7}
+      \strng{authornamehash}{da4253f0573c7fca9926c5995625f6f7}
+      \strng{authorfullhash}{7fcd2013decddc9a4c9729db8b666d5a}
+      \strng{authorfullhashraw}{7fcd2013decddc9a4c9729db8b666d5a}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -264,56 +296,53 @@
     \endentry
     \entry{tonella2007reverse}{book}{}{}
       \name{author}{2}{}{%
-        {{hash=e49d634c74b34b3fabfc7986bdb9a0f0}{%
+        {{hash=91f07efa7ec20634601ecbdd7657e594}{%
            family={Tonella},
            familyi={T\bibinitperiod},
-           given={P.},
+           given={Paolo},
            giveni={P\bibinitperiod}}}%
-        {{hash=3e95797209ae7d7d4256bd6877e2faa7}{%
+        {{hash=cd53ce47d637afdb73f6dafa1265d41f}{%
            family={Potrich},
            familyi={P\bibinitperiod},
-           given={A.},
+           given={Alessandra},
            giveni={A\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Springer New York}%
+      \list{location}{1}{%
+        {New York}%
       }
-      \strng{namehash}{18ea12786a6e30a632f2ca37383d1f6e}
-      \strng{fullhash}{18ea12786a6e30a632f2ca37383d1f6e}
-      \strng{fullhashraw}{18ea12786a6e30a632f2ca37383d1f6e}
-      \strng{bibnamehash}{18ea12786a6e30a632f2ca37383d1f6e}
-      \strng{authorbibnamehash}{18ea12786a6e30a632f2ca37383d1f6e}
-      \strng{authornamehash}{18ea12786a6e30a632f2ca37383d1f6e}
-      \strng{authorfullhash}{18ea12786a6e30a632f2ca37383d1f6e}
-      \strng{authorfullhashraw}{18ea12786a6e30a632f2ca37383d1f6e}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{3c9dffd739c3444e67c1ba202b0ddd56}
+      \strng{fullhash}{3c9dffd739c3444e67c1ba202b0ddd56}
+      \strng{fullhashraw}{3c9dffd739c3444e67c1ba202b0ddd56}
+      \strng{bibnamehash}{3c9dffd739c3444e67c1ba202b0ddd56}
+      \strng{authorbibnamehash}{3c9dffd739c3444e67c1ba202b0ddd56}
+      \strng{authornamehash}{3c9dffd739c3444e67c1ba202b0ddd56}
+      \strng{authorfullhash}{3c9dffd739c3444e67c1ba202b0ddd56}
+      \strng{authorfullhashraw}{3c9dffd739c3444e67c1ba202b0ddd56}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780387238036}
       \field{series}{Monographs in Computer Science}
-      \field{title}{Reverse Engineering of Object Oriented Code}
+      \field{title}{Reverse Engineering of Object-Oriented Code}
       \field{year}{2007}
-      \verb{urlraw}
-      \verb https://books.google.com.br/books?id=EUZ-_poEq_gC
-      \endverb
-      \verb{url}
-      \verb https://books.google.com.br/books?id=EUZ-_poEq_gC
-      \endverb
     \endentry
     \entry{chikofsky1990reverse}{article}{}{}
       \name{author}{2}{}{%
         {{hash=c44837c79ca9e00f11e74ab5d1f33067}{%
            family={Chikofsky},
            familyi={C\bibinitperiod},
-           given={Elliot\bibnamedelima J},
+           given={Elliot\bibnamedelima J.},
            giveni={E\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
         {{hash=fd47a720d0e6b4c30000d591c94947fe}{%
            family={Cross},
            familyi={C\bibinitperiod},
-           given={James\bibnamedelima H},
+           given={James\bibnamedelima H.},
            giveni={J\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
@@ -327,166 +356,19 @@
       \strng{authornamehash}{36481a2f1aa1c63f5e5a68014e6a1450}
       \strng{authorfullhash}{36481a2f1aa1c63f5e5a68014e6a1450}
       \strng{authorfullhashraw}{36481a2f1aa1c63f5e5a68014e6a1450}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Software}
       \field{number}{1}
-      \field{title}{Reverse engineering and design recovery: A taxonomy}
+      \field{title}{Reverse Engineering and Design Recovery: A Taxonomy}
       \field{volume}{7}
       \field{year}{1990}
       \field{pages}{13\bibrangedash 17}
       \range{pages}{5}
-    \endentry
-    \entry{feng2020codebert}{inproceedings}{}{}
-      \name{author}{11}{}{%
-        {{hash=ab3ff7c90017062cb61e7267dbcc7094}{%
-           family={Feng},
-           familyi={F\bibinitperiod},
-           given={Zhangyin},
-           giveni={Z\bibinitperiod}}}%
-        {{hash=a65b6db35516aecf6dcadd97221ae4cf}{%
-           family={Guo},
-           familyi={G\bibinitperiod},
-           given={Daya},
-           giveni={D\bibinitperiod}}}%
-        {{hash=f461de7960a8577e556002194a8d492a}{%
-           family={Tang},
-           familyi={T\bibinitperiod},
-           given={Duyu},
-           giveni={D\bibinitperiod}}}%
-        {{hash=d487976fc92039fa50b07a190b1f5e49}{%
-           family={Duan},
-           familyi={D\bibinitperiod},
-           given={Nan},
-           giveni={N\bibinitperiod}}}%
-        {{hash=4594292cf0c840c87461b4f0e43a3d84}{%
-           family={Feng},
-           familyi={F\bibinitperiod},
-           given={Xiaocheng},
-           giveni={X\bibinitperiod}}}%
-        {{hash=6a7890342801071984a28a5a80160c05}{%
-           family={Gong},
-           familyi={G\bibinitperiod},
-           given={Ming},
-           giveni={M\bibinitperiod}}}%
-        {{hash=310728a15f98f87d253c148f370d37e5}{%
-           family={Shou},
-           familyi={S\bibinitperiod},
-           given={Linjun},
-           giveni={L\bibinitperiod}}}%
-        {{hash=1b651c40ade9404b1c43c1786d1a7466}{%
-           family={Qin},
-           familyi={Q\bibinitperiod},
-           given={Bing},
-           giveni={B\bibinitperiod}}}%
-        {{hash=df4100f4c9320162410d3ddcc9257d55}{%
-           family={Liu},
-           familyi={L\bibinitperiod},
-           given={Ting},
-           giveni={T\bibinitperiod}}}%
-        {{hash=fffb2e1d40009032d73404c4f8e287ec}{%
-           family={Jiang},
-           familyi={J\bibinitperiod},
-           given={Daxin},
-           giveni={D\bibinitperiod}}}%
-        {{hash=2a72f304d2bc33c9c92301f2dc3063b2}{%
-           family={Zhou},
-           familyi={Z\bibinitperiod},
-           given={Ming},
-           giveni={M\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Online}%
-      }
-      \list{publisher}{1}{%
-        {Association for Computational Linguistics}%
-      }
-      \strng{namehash}{71c10044948383ff26d8a0143d554471}
-      \strng{fullhash}{d028ea321cdbe585a52434f0ea59b07d}
-      \strng{fullhashraw}{d028ea321cdbe585a52434f0ea59b07d}
-      \strng{bibnamehash}{71c10044948383ff26d8a0143d554471}
-      \strng{authorbibnamehash}{71c10044948383ff26d8a0143d554471}
-      \strng{authornamehash}{71c10044948383ff26d8a0143d554471}
-      \strng{authorfullhash}{d028ea321cdbe585a52434f0ea59b07d}
-      \strng{authorfullhashraw}{d028ea321cdbe585a52434f0ea59b07d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Findings of the Association for Computational Linguistics: EMNLP 2020}
-      \field{month}{11}
-      \field{title}{CodeBERT: A Pre-Trained Model for Programming and Natural Languages}
-      \field{year}{2020}
-      \field{pages}{1536\bibrangedash 1547}
-      \range{pages}{12}
-      \verb{doi}
-      \verb 10.18653/v1/2020.findings-emnlp.139
-      \endverb
-      \verb{urlraw}
-      \verb https://aclanthology.org/2020.findings-emnlp.139
-      \endverb
-      \verb{url}
-      \verb https://aclanthology.org/2020.findings-emnlp.139
-      \endverb
-    \endentry
-    \entry{ngo2023exploring}{inproceedings}{}{}
-      \name{author}{4}{}{%
-        {{hash=b622a6192ac368a37764ef1f9f8746a0}{%
-           family={Ngo},
-           familyi={N\bibinitperiod},
-           given={Long\bibnamedelima H.},
-           giveni={L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=e76a39396004f6c6615724806a779519}{%
-           family={Sekar},
-           familyi={S\bibinitperiod},
-           given={Veeraraghavan},
-           giveni={V\bibinitperiod}}}%
-        {{hash=0053d854ca8501f386c2f0a972b5cebe}{%
-           family={Leclercq},
-           familyi={L\bibinitperiod},
-           given={Etienne},
-           giveni={E\bibinitperiod}}}%
-        {{hash=2fe4e5c28e6efaa7a5201a7128b0633b}{%
-           family={Rivalan},
-           familyi={R\bibinitperiod},
-           given={Jonathan},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Xiamen, China}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{e6636ec618035b2bbc1394bf1f2541b0}
-      \strng{fullhash}{44c84b7c8e4bae36cde51a274212e10a}
-      \strng{fullhashraw}{44c84b7c8e4bae36cde51a274212e10a}
-      \strng{bibnamehash}{e6636ec618035b2bbc1394bf1f2541b0}
-      \strng{authorbibnamehash}{e6636ec618035b2bbc1394bf1f2541b0}
-      \strng{authornamehash}{e6636ec618035b2bbc1394bf1f2541b0}
-      \strng{authorfullhash}{44c84b7c8e4bae36cde51a274212e10a}
-      \strng{authorfullhashraw}{44c84b7c8e4bae36cde51a274212e10a}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2023 IEEE 3rd International Conference on Software Engineering and Artificial Intelligence (SEAI)}
-      \field{month}{6}
-      \field{title}{Exploring code2vec and {AST}miner for Python Code Embeddings}
-      \field{year}{2023}
-      \field{pages}{53\bibrangedash 57}
-      \range{pages}{5}
-      \verb{doi}
-      \verb 10.1109/SEAI59139.2023.10217505
-      \endverb
     \endentry
     \entry{Sabir2019MDRE}{article}{}{}
       \name{author}{6}{}{%
@@ -535,11 +417,14 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Proposes the Src2MoF framework for generating UML structural and behavioral diagrams from Java source code through Model Driven Reverse Engineering.}
       \field{journaltitle}{IEEE Access}
-      \field{title}{A Model Driven Reverse Engineering Framework for Generating High Level UML Models from Java Source Code}
+      \field{title}{A Model Driven Reverse Engineering Framework for Generating High Level {UML} Models from Java Source Code}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
       \field{volume}{7}
       \field{year}{2019}
+      \field{urldateera}{ce}
       \field{pages}{158931\bibrangedash 158950}
       \range{pages}{20}
       \verb{doi}
@@ -550,6 +435,303 @@
       \endverb
       \verb{url}
       \verb https://doi.org/10.1109/ACCESS.2019.2950884
+      \endverb
+    \endentry
+    \entry{zhang2016j2x}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=2c0b840bb8e56b788648974d79a77c9e}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Haoqing},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {Changchun, China}%
+      }
+      \list{publisher}{1}{%
+        {Atlantis Press}%
+      }
+      \strng{namehash}{2c0b840bb8e56b788648974d79a77c9e}
+      \strng{fullhash}{2c0b840bb8e56b788648974d79a77c9e}
+      \strng{fullhashraw}{2c0b840bb8e56b788648974d79a77c9e}
+      \strng{bibnamehash}{2c0b840bb8e56b788648974d79a77c9e}
+      \strng{authorbibnamehash}{2c0b840bb8e56b788648974d79a77c9e}
+      \strng{authornamehash}{2c0b840bb8e56b788648974d79a77c9e}
+      \strng{authorfullhash}{2c0b840bb8e56b788648974d79a77c9e}
+      \strng{authorfullhashraw}{2c0b840bb8e56b788648974d79a77c9e}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Forum on Mechanical, Control and Automation (IFMCA 2016)}
+      \field{note}{Published in Advances in Engineering Research, vol. 113}
+      \field{title}{An Approach for Extracting {UML} Diagram from Object-Oriented Program Based on {J2X}}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{year}{2016}
+      \field{urldateera}{ce}
+      \field{pages}{266\bibrangedash 276}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.2991/ifmca-16.2016.45
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.2991/ifmca-16.2016.45
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.2991/ifmca-16.2016.45
+      \endverb
+    \endentry
+    \entry{yang2016condensing}{inproceedings}{}{}
+      \name{author}{4}{}{%
+        {{hash=b1f2347b2de29d8479d6f2a9a3b16e97}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Xinyi},
+           giveni={X\bibinitperiod}}}%
+        {{hash=cac8ebdbf2f8a8f2b7f49f6e737c2649}{%
+           family={Lo},
+           familyi={L\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=389bc525f2088642cfd16749beb3312e}{%
+           family={Xia},
+           familyi={X\bibinitperiod},
+           given={Xin},
+           giveni={X\bibinitperiod}}}%
+        {{hash=18d6768f3b7b4cdf6986023492b0489c}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Jianling},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {Atlanta, Georgia, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{c0074d3715aee98cb483aba5161a1692}
+      \strng{fullhash}{3845186f74385584c3157a43fec70837}
+      \strng{fullhashraw}{3845186f74385584c3157a43fec70837}
+      \strng{bibnamehash}{c0074d3715aee98cb483aba5161a1692}
+      \strng{authorbibnamehash}{c0074d3715aee98cb483aba5161a1692}
+      \strng{authornamehash}{c0074d3715aee98cb483aba5161a1692}
+      \strng{authorfullhash}{3845186f74385584c3157a43fec70837}
+      \strng{authorfullhashraw}{3845186f74385584c3157a43fec70837}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 40th IEEE Annual International Computers, Software and Applications Conference (COMPSAC 2016)}
+      \field{note}{Published in COMPSAC 2016: Proceedings of the 40th IEEE Annual International Computers, Software and Applications Conference}
+      \field{title}{Condensing Class Diagrams With Minimal Manual Labeling Cost}
+      \field{year}{2016}
+      \field{pages}{22\bibrangedash 31}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/COMPSAC.2016.83
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/COMPSAC.2016.83
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/COMPSAC.2016.83
+      \endverb
+    \endentry
+    \entry{siala2024enhancing}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=aaaffe192df6e5faddfa685f9566dae6}{%
+           family={Siala},
+           familyi={S\bibinitperiod},
+           given={Hanan\bibnamedelima Abdulwahab},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {Lisbon, Portugal}%
+      }
+      \list{publisher}{1}{%
+        {IEEE/ACM}%
+      }
+      \strng{namehash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{fullhash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{fullhashraw}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{bibnamehash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{authorbibnamehash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{authornamehash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{authorfullhash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{authorfullhashraw}{aaaffe192df6e5faddfa685f9566dae6}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2024 IEEE/ACM 46th International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)}
+      \field{note}{King’s College London, London, UK}
+      \field{title}{Enhancing Model-Driven Reverse Engineering Using Machine Learning}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1145/3593784.3639977
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3593784.3639977
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3593784.3639977
+      \endverb
+    \endentry
+    \entry{Fauzi2016AST}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=c0e0048c068e706d06666da249825559}{%
+           family={Fauzi},
+           familyi={F\bibinitperiod},
+           given={Esa},
+           giveni={E\bibinitperiod}}}%
+        {{hash=4db0b464a858722fcecd190006fa6728}{%
+           family={Hendradjaya},
+           familyi={H\bibinitperiod},
+           given={Bayu},
+           giveni={B\bibinitperiod}}}%
+        {{hash=5c5063f82c958885eee6d65c5c216f5c}{%
+           family={Sunindyo},
+           familyi={S\bibinitperiod},
+           given={Wikan\bibnamedelima Danar},
+           giveni={W\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Denpasar, Indonesia}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{fullhash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{fullhashraw}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{bibnamehash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{authorbibnamehash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{authornamehash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{authorfullhash}{1ccfec4b6fadc320094b5b055aea56f1}
+      \strng{authorfullhashraw}{1ccfec4b6fadc320094b5b055aea56f1}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 International Conference on Data and Software Engineering (ICoDSE)}
+      \field{isbn}{978-1-5090-5671-2}
+      \field{title}{Reverse Engineering of Source Code to Sequence Diagram Using Abstract Syntax Tree}
+      \field{year}{2016}
+      \field{pages}{1\bibrangedash 6}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICoDSE.2016.7936137
+      \endverb
+    \endentry
+    \entry{baidada2016hybrid}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=34e92783ea743d123780995b48ca534b}{%
+           family={Baidada},
+           familyi={B\bibinitperiod},
+           given={Chafik},
+           giveni={C\bibinitperiod}}}%
+        {{hash=be9958ec32d931fa56235af6e5b2e7a9}{%
+           family={Jakimi},
+           familyi={J\bibinitperiod},
+           given={Abdeslam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Beijing, China}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{4754aaa31d5c78313327a37d40e78599}
+      \strng{fullhash}{4754aaa31d5c78313327a37d40e78599}
+      \strng{fullhashraw}{4754aaa31d5c78313327a37d40e78599}
+      \strng{bibnamehash}{4754aaa31d5c78313327a37d40e78599}
+      \strng{authorbibnamehash}{4754aaa31d5c78313327a37d40e78599}
+      \strng{authornamehash}{4754aaa31d5c78313327a37d40e78599}
+      \strng{authorfullhash}{4754aaa31d5c78313327a37d40e78599}
+      \strng{authorfullhashraw}{4754aaa31d5c78313327a37d40e78599}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2016 7th IEEE International Conference on Software Engineering and Service Science (ICSESS)}
+      \field{title}{Towards a New Hybrid Approach of the Reverse Engineering of {UML} Sequence Diagram}
+      \field{year}{2016}
+      \field{pages}{164\bibrangedash 168}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ICSESS.2016.7883076
+      \endverb
+    \endentry
+    \entry{leatongkam2017generating}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=a695f4321bc2fabc08654d987ab2181b}{%
+           family={Leatongkam},
+           familyi={L\bibinitperiod},
+           given={Anawat},
+           giveni={A\bibinitperiod}}}%
+        {{hash=48a719dfc0157343aa5f5448e57539d0}{%
+           family={Nanthaamornphong},
+           familyi={N\bibinitperiod},
+           given={Aziz},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9895358d9c9c369aa4040f1d67ed06db}{%
+           family={Rouson},
+           familyi={R\bibinitperiod},
+           given={Damian\bibnamedelima W.},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Buenos Aires, Argentina}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{fullhash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{fullhashraw}{07c38b64b380f5aa883386da9d36db70}
+      \strng{bibnamehash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{authorbibnamehash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{authornamehash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{authorfullhash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{authorfullhashraw}{07c38b64b380f5aa883386da9d36db70}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 IEEE/ACM 12th International Workshop on Software Engineering for Science (SE4Science)}
+      \field{title}{WIP: Generating Sequence Diagrams for Modern Fortran}
+      \field{year}{2017}
+      \field{pages}{22\bibrangedash 25}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/SE4Science.2017.13
       \endverb
     \endentry
     \entry{rhodes_adventure_py}{software}{}{}
@@ -574,10 +756,27 @@
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Adventure (Python 3 port) — a faithful port of Crowther and Woods’s 1977 FORTRAN Adventure}
+      \field{day}{1}
+      \field{endday}{31}
+      \field{endmonth}{12}
+      \field{endyear}{2015}
+      \field{month}{1}
+      \field{subtitle}{A Faithful Port of Crowther and Woods’s 1977 FORTRAN Adventure}
+      \field{title}{Adventure (Python 3 Port)}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
       \field{version}{1.6}
       \field{year}{2010}
-      \warn{\item software entry 'rhodes_adventure_py' (refs.bib): Invalid format '2010-2015' of date field 'date' - ignoring}
+      \field{enddateera}{ce}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://pypi.org/project/adventure/
+      \endverb
+      \verb{url}
+      \verb https://pypi.org/project/adventure/
+      \endverb
     \endentry
     \entry{adventure_original_sources}{misc}{}{}
       \name{author}{2}{}{%
@@ -607,9 +806,13 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{Archive of original sources}
-      \field{note}{Linked from the historical page curated by Rick Adams.}
-      \field{title}{Original Adventure sources (FORTRAN) and data}
+      \field{note}{Linked from the historical page curated by Rick Adams}
+      \field{title}{Original Adventure Sources (FORTRAN) and Data}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
       \field{year}{1977}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb http://www.ifarchive.org/if-archive/games/source/advent-original.tar.gz
       \endverb
@@ -625,9 +828,6 @@
            given={Julian},
            giveni={J\bibinitperiod}}}%
       }
-      \list{language}{1}{%
-        {english}%
-      }
       \list{location}{1}{%
         {New York}%
       }
@@ -642,8 +842,8 @@
       \strng{authornamehash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhashraw}{19ba120924ee09440cd988b6ab1afc90}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -654,32 +854,41 @@
     \endentry
     \entry{levy2010hackers}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=060483eb5e4f219b7d16f68852edae7c}{%
+        {{hash=7e521cf3616b7c888d511a80e9b82ad5}{%
            family={Levy},
            familyi={L\bibinitperiod},
-           given={S.},
+           given={Steven},
            giveni={S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Sebastopol}%
       }
       \list{publisher}{1}{%
         {O'Reilly Media}%
       }
-      \strng{namehash}{060483eb5e4f219b7d16f68852edae7c}
-      \strng{fullhash}{060483eb5e4f219b7d16f68852edae7c}
-      \strng{fullhashraw}{060483eb5e4f219b7d16f68852edae7c}
-      \strng{bibnamehash}{060483eb5e4f219b7d16f68852edae7c}
-      \strng{authorbibnamehash}{060483eb5e4f219b7d16f68852edae7c}
-      \strng{authornamehash}{060483eb5e4f219b7d16f68852edae7c}
-      \strng{authorfullhash}{060483eb5e4f219b7d16f68852edae7c}
-      \strng{authorfullhashraw}{060483eb5e4f219b7d16f68852edae7c}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \strng{namehash}{7e521cf3616b7c888d511a80e9b82ad5}
+      \strng{fullhash}{7e521cf3616b7c888d511a80e9b82ad5}
+      \strng{fullhashraw}{7e521cf3616b7c888d511a80e9b82ad5}
+      \strng{bibnamehash}{7e521cf3616b7c888d511a80e9b82ad5}
+      \strng{authorbibnamehash}{7e521cf3616b7c888d511a80e9b82ad5}
+      \strng{authornamehash}{7e521cf3616b7c888d511a80e9b82ad5}
+      \strng{authorfullhash}{7e521cf3616b7c888d511a80e9b82ad5}
+      \strng{authorfullhashraw}{7e521cf3616b7c888d511a80e9b82ad5}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{edition}{25th Anniversary Edition}
       \field{isbn}{9781449393748}
-      \field{title}{Hackers: Heroes of the Computer Revolution - 25th Anniversary Edition}
+      \field{subtitle}{Heroes of the Computer Revolution}
+      \field{title}{Hackers}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
       \field{year}{2010}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://books.google.com.br/books?id=mShXzzKtpmEC
       \endverb
@@ -695,6 +904,9 @@
            given={Dale},
            giveni={D\bibinitperiod}}}%
       }
+      \list{location}{1}{%
+        {Reston, VA}%
+      }
       \list{publisher}{1}{%
         {Reston Publishing Company}%
       }
@@ -706,13 +918,14 @@
       \strng{authornamehash}{92b9b2299c2d435388f3b91670d2d31e}
       \strng{authorfullhash}{92b9b2299c2d435388f3b91670d2d31e}
       \strng{authorfullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Genesis II, Creation and recreation with computers}
+      \field{subtitle}{Creation and Recreation with Computers}
+      \field{title}{Genesis II}
       \field{year}{1983}
     \endentry
     \entry{jerz2007colossal}{article}{}{}
@@ -734,17 +947,20 @@
       \strng{authornamehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
       \strng{authorfullhash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
       \strng{authorfullhashraw}{43fb3f4f59c49358e6efeb3c59ef7bbd}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Digital Humanities Quarterly}
-      \field{shortjournal}{DHQ}
       \field{subtitle}{Examining Will Crowther's Original “Adventure” in Code and in Kentucky}
       \field{title}{Somewhere Nearby is Colossal Cave}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
       \field{year}{2007}
+      \field{urldateera}{ce}
       \verb{urlraw}
       \verb https://www.digitalhumanities.org/dhq/vol/1/2/000009/000009.html
       \endverb
@@ -753,7 +969,6 @@
       \endverb
     \endentry
   \enddatalist
-  \missing{tiobe2025}
 \endrefsection
 \endinput
 
