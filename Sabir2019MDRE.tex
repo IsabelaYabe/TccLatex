@@ -150,15 +150,13 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
 \end{itemize}
 
 \section{RQ1. Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
-Neste trabalho, o domínio é Java, a abordagem extrai e transforma código-fonte Java em modelos estruturais e comportamentais UML.
+O domínio abordado é Java, em sistemas legados orientados a objetos. A proposta extrai e transforma código-fonte Java em modelos estruturais e comportamentais UML.
 
 \section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
-
-São gerados os modelos de alto nível finais Class Diagram e Activity Diagram, o resultado é entregue como um UML package com esses modelos.
-Também são gerados artefatos de suporte, o Intermediate Model (XML) viabiliza as transformações T2M/M2M e cada Function Behavior serve de ponte para construir o activity por operação.
+São gerados os modelos de alto nível \emph{Class Diagram} e \emph{Activity Diagram}, entregues em um pacote UML. Também são produzidos artefatos de suporte, como o \emph{Intermediate Model} (IM), em formato XML, que viabiliza as transformações T2M/M2M. Cada \emph{Function Behavior} atua como ponte para a construção das atividades correspondentes a cada operação.
 
 \section{RQ3. Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?}
-O aspecto privilegiado é o estático (parsing do código -> AST -> modelo intermediário -> UML), todo o pipeline é T2M estático (texto -> modelo). Com objetivo principal de compreensão e redocumentação.
+O aspecto privilegiado é o estático, o pipeline realiza parsing do código, gera a AST e a transforma em modelo intermediário, culminando em representações UML. Trata-se de um processo \emph{Text-to-Model} (T2M) voltado à compreensão e redocumentação do sistema.
 
 \section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
 A passagem do código para modelo UML é viabilizada por um pipeline T2M/M2M em duas fases, (i) descoberta do modelo intermediário (IMD), (ii) gerador do modelo UML.
@@ -167,21 +165,19 @@ Na primeira fase o código é parseado para um modelo de fácil compreensão (Ja
 
 Na segunda fase são aplicadas regras de mapeamento do IM para artefatos UML, tanto mapeamento estrutural quando comportamental.
 
+
 \section{RQ5. Quais ferramentas/frameworks são utilizados?}
+A implementação do \textit{Src2MoF} apoia-se em três pilares tecnológicos: (i) \textbf{Eclipse} e a plataforma \textbf{UML2/EMF} para implementar o gerador de modelos e as transformações \emph{Text-to-Model}/\emph{Model-to-Model}; (ii) o \textbf{JavaParser}, integrado ao \emph{Intermediate Model Discoverer} (IMD), para analisar o código Java e construir uma AST refinada, a partir da qual é derivado um \emph{Intermediate Model} textual em XML; e (iii) o ecossistema \textbf{UML2} para materializar os modelos UML de alto nível (diagramas de classes e de atividades) a partir do IM.
 
-A implementação do \textit{Src2MoF} apoia-se em três pilares tecnológicos: (i) \textbf{Eclipse} e a plataforma \textbf{UML2/EMF} para implementar o gerador de modelos e as transformações \emph{Text-to-Model}/\emph{Model-to-Model}; (ii) o \textbf{JavaParser}, integrado ao \emph{Intermediate Model Discoverer} (IMD), para analisar o código Java e construir uma AST refinada, a partir da qual é derivado um \emph{Intermediate Model} (IM) textual em XML; e (iii) o ecossistema \textbf{UML2} para materializar os modelos UML de alto nível (diagramas de classes e de atividades) a partir do IM.
-
-Especificamente, o \emph{model generator} é \enquote{carried out using Eclipse tool} e suas regras de transformação são \enquote{written and implemented in UML2 platform}, acionando dois \emph{templates} (\emph{Class Diagram Creator} e \emph{Activity Diagram Creator}) \textcite{Sabir2019MDRE}. Já o IMD \enquote{uses an open source tool \textquote{Java Parser}} para produzir a AST e, a partir dela, extrair estrutura e comportamento para um IM em XML \textcite{Sabir2019MDRE}. Para a comparação manual na avaliação, os autores mencionam Papyrus, StarUML, Rational Rose e o editor UML do Eclipse; tais ferramentas não integram o \emph{pipeline} automático do \textit{Src2MoF}.
-
-\noindent\textit{Síntese (RQ5).} \emph{Eclipse + UML2/EMF} (T2M/M2M); \emph{JavaParser} (código $\rightarrow$ AST $\rightarrow$ IM/XML); \emph{Eclipse, Papyrus, StarUML, Rational Rose} (apoio à validação).
+Especificamente, o \emph{model generator} é \enquote{carried out using Eclipse tool} e suas regras de transformação são \enquote{written and implemented in UML2 platform}, acionando dois \emph{templates} (\emph{Class Diagram Creator} e \emph{Activity Diagram Creator}). Já o IMD \enquote{uses an open source tool \textquote{Java Parser}} para produzir a AST e, a partir dela, extrair estrutura e comportamento para um IM em XML. Para a comparação manual na avaliação, os autores mencionam Papyrus, StarUML, Rational Rose e o editor UML do Eclipse; tais ferramentas não integram o \emph{pipeline} automático do \textit{Src2MoF}.
 
 \section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
+A validação do \textit{Src2MoF} fundamenta-se na comparação entre modelos gerados automaticamente e modelos elaborados manualmente por especialistas, configurando uma evidência empírica e qualitativa, sem o uso de métricas quantitativas de acurácia ou desempenho. Nessa configuração, engenheiros de software constroem diagramas de classes e de atividades com ferramentas de modelagem (Eclipse, Papyrus, StarUML e Rational Rose). Em seguida, o mesmo código-fonte é processado pelo \textit{Src2MoF}, e os resultados são confrontados para avaliar a correspondência estrutural e comportamental entre as abordagens.
 
-A validação do \textit{Src2MoF} baseia-se na comparação entre os modelos gerados automaticamente e modelos elaborados manualmente por especialistas, configurando uma evidência empírica e qualitativa, sem reporte de métricas quantitativas de acurácia ou de tempo de execução. Nessa configuração, engenheiros de software primeiro constroem, com ferramentas de modelagem (Eclipse, Papyrus, StarUML e Rational Rose), diagramas de classes e de atividades a partir do mesmo código que, em seguida, é processado pelo \textit{Src2MoF}; a análise confronta as duas saídas. O protocolo é aplicado a cinco estudos de caso de referência, dos quais dois são detalhados no artigo: \textit{Automated Teller Machine (ATM)} e \textit{Amadeus Hospitality}. Permitindo observar recorrências e limites no comportamento do framework.
+O protocolo experimental foi aplicado a cinco estudos de caso, sendo dois detalhados no artigo: \textit{Automated Teller Machine (ATM)} e \textit{Amadeus Hospitality}. Os resultados indicam que os diagramas de classes gerados refletem atributos, operações e relacionamentos observáveis no código, sugerindo boa fidelidade estrutural.  
+Do ponto de vista comportamental, o framework deriva uma \texttt{Activity} para cada método, convertendo o corpo da operação em \texttt{OpaqueAction} e utilizando elementos como \texttt{CallOperationAction}, \texttt{CreateObjectAction}, nós iniciais e finais, condicionais e fluxos de controle e de objeto. Essa sistematização demonstra que estrutura e comportamento são extraídos de forma coordenada a partir do código-fonte.
 
-Nos resultados, os diagramas de classes produzidos refletem, de forma consistente, atributos, operações e relacionamentos observáveis no código, sugerindo boa correspondência estrutural. Do ponto de vista comportamental, o framework deriva uma \texttt{Activity} para cada método, traduzindo o corpo da operação em \texttt{OpaqueAction} e mobilizando \texttt{CallOperationAction} e \texttt{CreateObjectAction}, além de nós iniciais e finais, nós condicionais e fluxos de controle e de objeto; tal mapeamento sustenta a reivindicação de que estrutura e comportamento são gerados de maneira conjunta a partir do código.
-
-Contudo, a qualidade prática reportada permanece no domínio da conformidade percebida: não há estimativas de precisão/recall, nem análise de concordância entre avaliadores, escalabilidade ou custo temporal. Além disso, a implementação divulgada restringe-se à linguagem Java, foca \textit{Activity} como diagrama comportamental e não cobre certos construtos (por exemplo, nós \textit{merge} e \textit{fork}).
+Entretanto, a qualidade prática permanece no domínio da conformidade percebida: não há métricas objetivas de precisão, \textit{recall} ou tempo de execução, tampouco análise de concordância entre avaliadores. Além disso, a implementação divulgada restringe-se à linguagem Java, foca o diagrama \textit{Activity} como artefato comportamental e não cobre certos construtos, como nós \textit{merge} e \textit{fork}. Essa ausência de medidas quantitativas limita a reprodutibilidade e a generalização dos resultados.
 
 \begin{table}[h!]
 \centering

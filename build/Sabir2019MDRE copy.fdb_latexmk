@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/Sabir2019MDRE"] 1762188149.46557 "build/Sabir2019MDRE.bcf" "build/Sabir2019MDRE.bbl" "build/Sabir2019MDRE" 1762188519.26027 0
-  "build/Sabir2019MDRE.bcf" 1762188519 112970 f1a49ddd478a49acf57ce21349fe9b6e "pdflatex"
+["biber build/Sabir2019MDRE copy"] 1762188156.16501 "build/Sabir2019MDRE copy.bcf" "build/Sabir2019MDRE copy.bbl" "build/Sabir2019MDRE copy" 1762188502.32997 0
+  "build/Sabir2019MDRE copy.bcf" 1762188502 112970 f1a49ddd478a49acf57ce21349fe9b6e "pdflatex"
   "refs.bib" 1761773647 16890 87e8cedcf9a9180195c6bd6a16701e7b ""
   (generated)
-  "build/Sabir2019MDRE.bbl"
-  "build/Sabir2019MDRE.blg"
+  "build/Sabir2019MDRE copy.bbl"
+  "build/Sabir2019MDRE copy.blg"
   (rewritten before read)
-["pdflatex"] 1762188517.76411 "d:/TccLatex/Sabir2019MDRE.tex" "build/Sabir2019MDRE.pdf" "Sabir2019MDRE" 1762188519.26088 0
+["pdflatex"] 1762188500.95709 "d:/TccLatex/Sabir2019MDRE copy.tex" "build/Sabir2019MDRE copy.pdf" "Sabir2019MDRE copy" 1762188502.33049 0
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761712815 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760148962 13270132 4f7a67e4221cab14f71bfd7fb550e04a ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/tex/latex/biblatex-contrib/biblatex-abnt/bbx/abnt.bbx" 1760066467 71996 11dbc19d4619916cb1bbe9955f3bd32b ""
@@ -150,15 +150,15 @@
   "D:/MikTec/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "D:/MikTec/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "Images/Logo_FGV.png" 1760051702 2490 33a2339c99ef5f8115145ba188c3c2a8 ""
-  "Sabir2019MDRE.tex" 1762188513 11631 30bbe7eb2282b280f166b8d930ad34c5 ""
-  "build/Sabir2019MDRE.aux" 1762188518 8428 44252350d743603aa23e2821fa760f97 "pdflatex"
-  "build/Sabir2019MDRE.bbl" 1762188151 3352 c2a90661b68c52a639b0c426f98c9fe5 "biber build/Sabir2019MDRE"
-  "build/Sabir2019MDRE.run.xml" 1762188519 2500 0e4cf3591e053ac5039490903975b2d2 "pdflatex"
-  "d:/TccLatex/Sabir2019MDRE.tex" 1762188513 11631 30bbe7eb2282b280f166b8d930ad34c5 ""
+  "Sabir2019MDRE copy.tex" 1762188499 11631 30bbe7eb2282b280f166b8d930ad34c5 ""
+  "build/Sabir2019MDRE copy.aux" 1762188502 8428 44252350d743603aa23e2821fa760f97 "pdflatex"
+  "build/Sabir2019MDRE copy.bbl" 1762188158 3352 c2a90661b68c52a639b0c426f98c9fe5 "biber build/Sabir2019MDRE copy"
+  "build/Sabir2019MDRE copy.run.xml" 1762188502 2549 860ce8626f3d2674815af9189cf2ac4b "pdflatex"
+  "d:/TccLatex/Sabir2019MDRE copy.tex" 1762188499 11631 30bbe7eb2282b280f166b8d930ad34c5 ""
   (generated)
-  "build/Sabir2019MDRE.aux"
-  "build/Sabir2019MDRE.bcf"
-  "build/Sabir2019MDRE.log"
-  "build/Sabir2019MDRE.pdf"
-  "build/Sabir2019MDRE.run.xml"
+  "build/Sabir2019MDRE copy.aux"
+  "build/Sabir2019MDRE copy.bcf"
+  "build/Sabir2019MDRE copy.log"
+  "build/Sabir2019MDRE copy.pdf"
+  "build/Sabir2019MDRE copy.run.xml"
   (rewritten before read)

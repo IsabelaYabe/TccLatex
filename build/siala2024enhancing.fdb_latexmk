@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/Sabir2019MDRE"] 1762188149.46557 "build/Sabir2019MDRE.bcf" "build/Sabir2019MDRE.bbl" "build/Sabir2019MDRE" 1762188519.26027 0
-  "build/Sabir2019MDRE.bcf" 1762188519 112970 f1a49ddd478a49acf57ce21349fe9b6e "pdflatex"
+["biber build/siala2024enhancing"] 1762185922.2678 "build/siala2024enhancing.bcf" "build/siala2024enhancing.bbl" "build/siala2024enhancing" 1762185926.55813 0
+  "build/siala2024enhancing.bcf" 1762185926 113137 4806e032183456f99cacc753ff5c5ea6 "pdflatex"
   "refs.bib" 1761773647 16890 87e8cedcf9a9180195c6bd6a16701e7b ""
   (generated)
-  "build/Sabir2019MDRE.bbl"
-  "build/Sabir2019MDRE.blg"
+  "build/siala2024enhancing.bbl"
+  "build/siala2024enhancing.blg"
   (rewritten before read)
-["pdflatex"] 1762188517.76411 "d:/TccLatex/Sabir2019MDRE.tex" "build/Sabir2019MDRE.pdf" "Sabir2019MDRE" 1762188519.26088 0
+["pdflatex"] 1762185925.22962 "d:/TccLatex/siala2024enhancing.tex" "build/siala2024enhancing.pdf" "siala2024enhancing" 1762185926.55859 0
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761712815 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760148962 13270132 4f7a67e4221cab14f71bfd7fb550e04a ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/tex/latex/biblatex-contrib/biblatex-abnt/bbx/abnt.bbx" 1760066467 71996 11dbc19d4619916cb1bbe9955f3bd32b ""
@@ -31,8 +31,6 @@
   "D:/MikTec/fonts/tfm/public/lm/ec-lmr17.tfm" 1256929440 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmr8.tfm" 1256929440 12064 9b9ade9f64cb32ce1d9a88d21fbd5c2d ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmri12.tfm" 1256929440 17144 271aaf9ebb339934b04110dc5211fba4 ""
-  "D:/MikTec/fonts/tfm/public/lm/ec-lmri8.tfm" 1256929440 17152 c8240fef851c4991afefdae37a539ee1 ""
-  "D:/MikTec/fonts/tfm/public/lm/ec-lmtt12.tfm" 1256929440 1368 6a60e6a5e029141041d64d339b87e533 ""
   "D:/MikTec/fonts/tfm/public/lm/lmex10.tfm" 1256929440 992 ce925c9346c7613270a79afbee98c070 ""
   "D:/MikTec/fonts/tfm/public/lm/lmmi5.tfm" 1256929440 1508 51526923e80e59e37a4e87448b5af6e0 ""
   "D:/MikTec/fonts/tfm/public/lm/lmmi6.tfm" 1256929440 1512 94a3fd88c6f27dbd9ecb46987e297a4e ""
@@ -51,9 +49,7 @@
   "D:/MikTec/fonts/type1/public/lm/lmr17.pfb" 1256929440 119752 1bd8d06e4079df624bf59ce3ad7c9aa6 ""
   "D:/MikTec/fonts/type1/public/lm/lmr8.pfb" 1256929440 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
   "D:/MikTec/fonts/type1/public/lm/lmri12.pfb" 1256929440 109265 e6c7d377db6dfccd4a123fb26da8cffb ""
-  "D:/MikTec/fonts/type1/public/lm/lmri8.pfb" 1256929440 109952 907d11d9707997c3fd76af7ec651ec78 ""
   "D:/MikTec/fonts/type1/public/lm/lmsy8.pfb" 1256929440 27802 5c876bb2c4040caaf035d60bd74a86bd ""
-  "D:/MikTec/fonts/type1/public/lm/lmtt12.pfb" 1256929440 110323 19372944fba298bb4c4758abff959582 ""
   "D:/MikTec/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "D:/MikTec/tex/generic/babel/babel.sty" 1754220793 146665 9149bce97203d4030d7cbe4f4e85dfc4 ""
   "D:/MikTec/tex/generic/babel/txtbabel.def" 1754220793 5231 82bb24bf20af7e4d760717f2cadb5170 ""
@@ -132,7 +128,6 @@
   "D:/MikTec/tex/latex/lm/omxlmex.fd" 1430474546 568 a5494d810f2680caf10205cd1226c76c ""
   "D:/MikTec/tex/latex/lm/ot1lmr.fd" 1430474546 1882 28c08db1407ebff35a658fd141753d16 ""
   "D:/MikTec/tex/latex/lm/t1lmr.fd" 1430474546 1867 996fe743d88a01aca041ed22cc10e1bb ""
-  "D:/MikTec/tex/latex/lm/t1lmtt.fd" 1430474546 2682 555da1faa2e266801e4b221d01a42cb5 ""
   "D:/MikTec/tex/latex/lm/ts1lmr.fd" 1430474546 1914 884882d7ebb0fd65cea93fca77ff6f5a ""
   "D:/MikTec/tex/latex/logreq/logreq.def" 1280941015 1620 fb1c32b818f2058eca187e5c41dfae77 ""
   "D:/MikTec/tex/latex/logreq/logreq.sty" 1280941015 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
@@ -150,15 +145,17 @@
   "D:/MikTec/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "D:/MikTec/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "Images/Logo_FGV.png" 1760051702 2490 33a2339c99ef5f8115145ba188c3c2a8 ""
-  "Sabir2019MDRE.tex" 1762188513 11631 30bbe7eb2282b280f166b8d930ad34c5 ""
-  "build/Sabir2019MDRE.aux" 1762188518 8428 44252350d743603aa23e2821fa760f97 "pdflatex"
-  "build/Sabir2019MDRE.bbl" 1762188151 3352 c2a90661b68c52a639b0c426f98c9fe5 "biber build/Sabir2019MDRE"
-  "build/Sabir2019MDRE.run.xml" 1762188519 2500 0e4cf3591e053ac5039490903975b2d2 "pdflatex"
-  "d:/TccLatex/Sabir2019MDRE.tex" 1762188513 11631 30bbe7eb2282b280f166b8d930ad34c5 ""
+  "build/siala2024enhancing.aux" 1762185926 8343 b56ecee78c307a9c733183c6e1b5c679 "pdflatex"
+  "build/siala2024enhancing.bbl" 1762185923 2475 632051af32aac27bcc3d0b056dab96fc "biber build/siala2024enhancing"
+  "build/siala2024enhancing.run.xml" 1762185926 2535 a53e7429bc5c0d4a12d119fefd1e65d9 "pdflatex"
+  "build/siala2024enhancing.toc" 1762185926 925 e6f4f9086f5c47e88278d142563f24fc "pdflatex"
+  "d:/TccLatex/siala2024enhancing.tex" 1762056934 11096 193d78023a6c618c20751fc7e7c416c9 ""
+  "siala2024enhancing.tex" 1762056934 11096 193d78023a6c618c20751fc7e7c416c9 ""
   (generated)
-  "build/Sabir2019MDRE.aux"
-  "build/Sabir2019MDRE.bcf"
-  "build/Sabir2019MDRE.log"
-  "build/Sabir2019MDRE.pdf"
-  "build/Sabir2019MDRE.run.xml"
+  "build/siala2024enhancing.aux"
+  "build/siala2024enhancing.bcf"
+  "build/siala2024enhancing.log"
+  "build/siala2024enhancing.pdf"
+  "build/siala2024enhancing.run.xml"
+  "build/siala2024enhancing.toc"
   (rewritten before read)
