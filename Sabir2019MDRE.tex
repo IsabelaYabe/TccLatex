@@ -149,38 +149,25 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
   \item \textbf{RQ6.} Como as abordagens são validadas e com que qualidade prática?
 \end{itemize}
 
-\section{Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
+\section{RQ1. Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
 Neste trabalho, o domínio é Java, a abordagem extrai e transforma código-fonte Java em modelos estruturais e comportamentais UML.
 
-\section{Quais modelos/artefatos de alto nível são gerados?}
+\section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
 
 São gerados os modelos de alto nível finais Class Diagram e Activity Diagram, o resultado é entregue como um UML package com esses modelos.
 Também são gerados artefatos de suporte, o Intermediate Model (XML) viabiliza as transformações T2M/M2M e cada Function Behavior serve de ponte para construir o activity por operação.
 
-\section{Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?}
+\section{RQ3. Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?}
 O aspecto privilegiado é o estático (parsing do código -> AST -> modelo intermediário -> UML), todo o pipeline é T2M estático (texto -> modelo). Com objetivo principal de compreensão e redocumentação.
 
-\section{Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
+\section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
 A passagem do código para modelo UML é viabilizada por um pipeline T2M/M2M em duas fases, (i) descoberta do modelo intermediário (IMD), (ii) gerador do modelo UML.
 
 Na primeira fase o código é parseado para um modelo de fácil compreensão (JavaParser) e transformado numa AST com apenas informações relevantes, então informações de estrutura e comportamento são extraídos da AST gerando o modelo intermediário (IM) em XML (UML2-EMF).
 
-Na segunda fase são aplicadas regras de mapeamento do IM para artefatos UML, tanto mapeamento estrutural quando comportamental,
+Na segunda fase são aplicadas regras de mapeamento do IM para artefatos UML, tanto mapeamento estrutural quando comportamental.
 
-
-\section{Quais ferramentas/frameworks são utilizados?}
-
-A implementação do \textit{Src2MoF} apoia-se em três pilares tecnológicos: 
-(i) \textbf{Eclipse} (IDE e ecossistema MDE) para implementar o gerador de modelos e as transformações \emph{Text-to-Model} \emph{(A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code: ``In Src2MoF, Eclipse tool is used, which facilitates the Intermediate Model Discoverer (IMD) implementation and UML2 modeling. Our model generator is using Text-to-model transformations which is also implemented in Eclipse.''} :contentReference[oaicite:6]{index=6}); 
-(ii) o \textbf{parser de código-fonte Java} (\JavaParser) integrado ao \emph{Intermediate Model Discoverer} (IMD) para produzir uma AST e um \emph{Intermediate Model} textual em XML \emph{(A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code: ``Source code parser uses an open source tool `Java Parser' … it parses the source code and passes an abstract syntax tree AST to model discovery phase … Implemented IMD is generic and language independent … This intermediate representation is an XML like depiction of source code.''} :contentReference[oaicite:7]{index=7} :contentReference[oaicite:8]{index=8}); 
-e (iii) a plataforma \textbf{\UMLtwo} sobre \textbf{\EMF} para materializar os modelos UML de alto nível (diagramas de classes e de atividades) e para a qual os dois \emph{templates} (\emph{Class Diagram Creator} e \emph{Activity Diagram Creator}) foram escritos \emph{(A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code: ``UML2 is an Eclipse Modeling Framework (EMF) based implementation of UML 2.x … Transformation templates i.e. class diagram creator and activity diagram creator are written for UML2.''} :contentReference[oaicite:9]{index=9}).
-
-Especificamente, o \emph{model generator} “\emph{calls two templates i.e. class diagram creator and activity diagram creator}” e seu “\emph{Implementation … is carried out using Eclipse tool}” \emph{(A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code)}. :contentReference[oaicite:10]{index=10}
-
-Na avaliação, os autores também mencionam ferramentas de modelagem usadas para a comparação manual (Papyrus, StarUML, Rational Rose, editor UML do Eclipse), ainda que não façam parte do \emph{pipeline} automático do \textit{Src2MoF} \emph{(A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code: ``experts have manually performed modeling … by means of different software design tools i.e. Eclipse, papyrus, starUML, rationalrose''}. :contentReference[oaicite:11]{index=11}
-
-
-\section{Quais ferramentas/frameworks são utilizados?}
+\section{RQ5. Quais ferramentas/frameworks são utilizados?}
 
 A implementação do \textit{Src2MoF} apoia-se em três pilares tecnológicos: (i) \textbf{Eclipse} e a plataforma \textbf{UML2/EMF} para implementar o gerador de modelos e as transformações \emph{Text-to-Model}/\emph{Model-to-Model}; (ii) o \textbf{JavaParser}, integrado ao \emph{Intermediate Model Discoverer} (IMD), para analisar o código Java e construir uma AST refinada, a partir da qual é derivado um \emph{Intermediate Model} (IM) textual em XML; e (iii) o ecossistema \textbf{UML2} para materializar os modelos UML de alto nível (diagramas de classes e de atividades) a partir do IM.
 
@@ -188,24 +175,7 @@ Especificamente, o \emph{model generator} é \enquote{carried out using Eclipse 
 
 \noindent\textit{Síntese (RQ5).} \emph{Eclipse + UML2/EMF} (T2M/M2M); \emph{JavaParser} (código $\rightarrow$ AST $\rightarrow$ IM/XML); \emph{Eclipse, Papyrus, StarUML, Rational Rose} (apoio à validação).
 
-
-\section{Como as abordagens são validadas e com que qualidade prática?}
-
-Na validação, os autores comparam a saída do \textit{Src2MoF} com modelos elaborados manualmente por especialistas em ferramentas como Eclipse, Papyrus, StarUML e Rational Rose. Trata-se de uma evidência \emph{empírica e qualitativa} baseada em julgamento de especialistas, sem métricas quantitativas de acurácia (p.~ex., precisão/recall) ou tempo de execução.
-
-A avaliação ocorre em duas etapas: (1) modelagem manual (diagramas de classes e de atividades) por engenheiros de software; (2) execução do \textit{Src2MoF} nos mesmos casos; (3) comparação entre as saídas. São cinco estudos de caso de referência; dois são detalhados no artigo: \textit{Automated Teller Machine (ATM)} e \textit{Amadeus Hospitality}.
-
-Os diagramas de classes gerados refletem atributos, operações e relacionamentos observados no código.
-
-Para cada método, é criada uma \texttt{Activity}; o corpo da operação é traduzido para \texttt{OpaqueAction}, com uso de \texttt{CallOperationAction}, \texttt{CreateObjectAction}, nós inicial/final, nós condicionais e fluxos de controle/objeto. 
-
-\paragraph{Síntese (RQ6).}
-\emph{Método:} comparação especialista (modelos manuais vs.\ gerados). 
-\emph{Escopo:} 5 estudos de caso (ATM e Amadeus descritos).
-\emph{Qualidade prática:} conformidade percebida de estrutura e comportamento; \emph{sem} métricas quantitativas. 
-\emph{Ameaças:} linguagem (Java), suporte parcial em \textit{Activity}, generalização limitada.
-
-\section{Como as abordagens são validadas e com que qualidade prática?}
+\section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
 
 A validação do \textit{Src2MoF} baseia-se na comparação entre os modelos gerados automaticamente e modelos elaborados manualmente por especialistas, configurando uma evidência empírica e qualitativa, sem reporte de métricas quantitativas de acurácia ou de tempo de execução. Nessa configuração, engenheiros de software primeiro constroem, com ferramentas de modelagem (Eclipse, Papyrus, StarUML e Rational Rose), diagramas de classes e de atividades a partir do mesmo código que, em seguida, é processado pelo \textit{Src2MoF}; a análise confronta as duas saídas. O protocolo é aplicado a cinco estudos de caso de referência, dos quais dois são detalhados no artigo: \textit{Automated Teller Machine (ATM)} e \textit{Amadeus Hospitality}. Permitindo observar recorrências e limites no comportamento do framework.
 

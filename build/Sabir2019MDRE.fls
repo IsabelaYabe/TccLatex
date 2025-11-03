@@ -305,11 +305,11 @@ INPUT D:\MikTec\tex\latex\microtype\mt-msb.cfg
 INPUT D:\MikTec\tex\latex\microtype\mt-msb.cfg
 INPUT D:\MikTec\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT D:\MikTec\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT D:\MikTec\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
 INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
 INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmtt12.tfm
-INPUT D:\MikTec\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmr8.tfm
 INPUT D:\MikTec\fonts\tfm\public\lm\rm-lmr5.tfm
 INPUT D:\MikTec\fonts\tfm\public\lm\lmmi5.tfm
