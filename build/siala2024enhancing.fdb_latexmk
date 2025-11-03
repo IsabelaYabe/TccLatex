@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/siala2024enhancing"] 1762185922.2678 "build/siala2024enhancing.bcf" "build/siala2024enhancing.bbl" "build/siala2024enhancing" 1762185926.55813 0
-  "build/siala2024enhancing.bcf" 1762185926 113137 4806e032183456f99cacc753ff5c5ea6 "pdflatex"
+["biber build/siala2024enhancing"] 1762193861.88637 "build/siala2024enhancing.bcf" "build/siala2024enhancing.bbl" "build/siala2024enhancing" 1762194357.39649 0
+  "build/siala2024enhancing.bcf" 1762194357 112990 f045a81a1f46eb57c2aae98ac266eb1a "pdflatex"
   "refs.bib" 1761773647 16890 87e8cedcf9a9180195c6bd6a16701e7b ""
   (generated)
   "build/siala2024enhancing.bbl"
   "build/siala2024enhancing.blg"
   (rewritten before read)
-["pdflatex"] 1762185925.22962 "d:/TccLatex/siala2024enhancing.tex" "build/siala2024enhancing.pdf" "siala2024enhancing" 1762185926.55859 0
+["pdflatex"] 1762194356.03649 "d:/TccLatex/siala2024enhancing.tex" "build/siala2024enhancing.pdf" "siala2024enhancing" 1762194357.39701 0
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761712815 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760148962 13270132 4f7a67e4221cab14f71bfd7fb550e04a ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/tex/latex/biblatex-contrib/biblatex-abnt/bbx/abnt.bbx" 1760066467 71996 11dbc19d4619916cb1bbe9955f3bd32b ""
@@ -26,6 +26,7 @@
   "D:/MikTec/fonts/tfm/public/cm/cmr12.tfm" 1136765053 1288 655e228510b4c2a1abe905c368440826 ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmbx12.tfm" 1256929440 12088 d750ac78274fa7c9f73ba09914c04f8a ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmbx8.tfm" 1256929440 12076 360d279d01701e9e9f0f2427c1d230fe ""
+  "D:/MikTec/fonts/tfm/public/lm/ec-lmbxi10.tfm" 1256929440 17180 a5723008921cdcb0c5f4ebe997919b73 ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmcsc10.tfm" 1256929440 11276 116dd5bea6621ce4a1999f96d876084c ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmr12.tfm" 1256929440 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmr17.tfm" 1256929440 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
@@ -44,6 +45,7 @@
   "D:/MikTec/fonts/tfm/public/lm/ts1-lmr12.tfm" 1256929440 1596 1d4548788e389ded56d0b01b28377882 ""
   "D:/MikTec/fonts/type1/public/lm/lmbx12.pfb" 1256929440 116908 9a7a12d1e4df280ea0ab4aad83cdef88 ""
   "D:/MikTec/fonts/type1/public/lm/lmbx8.pfb" 1256929440 125241 791aeb35ceacc2764a175b32709cc6a9 ""
+  "D:/MikTec/fonts/type1/public/lm/lmbxi10.pfb" 1256929440 112766 6259d69aa3d87a505f375e49d8f6bf3a ""
   "D:/MikTec/fonts/type1/public/lm/lmcsc10.pfb" 1256929440 116427 4909e80035dae5d5a4ec2b5ddd9649dd ""
   "D:/MikTec/fonts/type1/public/lm/lmr12.pfb" 1256929440 113634 9384aebdf26f9881e046a4b5574566db ""
   "D:/MikTec/fonts/type1/public/lm/lmr17.pfb" 1256929440 119752 1bd8d06e4079df624bf59ce3ad7c9aa6 ""
@@ -145,17 +147,15 @@
   "D:/MikTec/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "D:/MikTec/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "Images/Logo_FGV.png" 1760051702 2490 33a2339c99ef5f8115145ba188c3c2a8 ""
-  "build/siala2024enhancing.aux" 1762185926 8343 b56ecee78c307a9c733183c6e1b5c679 "pdflatex"
-  "build/siala2024enhancing.bbl" 1762185923 2475 632051af32aac27bcc3d0b056dab96fc "biber build/siala2024enhancing"
-  "build/siala2024enhancing.run.xml" 1762185926 2535 a53e7429bc5c0d4a12d119fefd1e65d9 "pdflatex"
-  "build/siala2024enhancing.toc" 1762185926 925 e6f4f9086f5c47e88278d142563f24fc "pdflatex"
-  "d:/TccLatex/siala2024enhancing.tex" 1762056934 11096 193d78023a6c618c20751fc7e7c416c9 ""
-  "siala2024enhancing.tex" 1762056934 11096 193d78023a6c618c20751fc7e7c416c9 ""
+  "build/siala2024enhancing.aux" 1762194357 8535 b980e6d960c77c3c8d349ea7ba76cf08 "pdflatex"
+  "build/siala2024enhancing.bbl" 1762193864 2475 632051af32aac27bcc3d0b056dab96fc "biber build/siala2024enhancing"
+  "build/siala2024enhancing.run.xml" 1762194357 2535 a53e7429bc5c0d4a12d119fefd1e65d9 "pdflatex"
+  "d:/TccLatex/siala2024enhancing.tex" 1762194354 10725 b86fccd6a7e6eac2c306e412fc7a9844 ""
+  "siala2024enhancing.tex" 1762194354 10725 b86fccd6a7e6eac2c306e412fc7a9844 ""
   (generated)
   "build/siala2024enhancing.aux"
   "build/siala2024enhancing.bcf"
   "build/siala2024enhancing.log"
   "build/siala2024enhancing.pdf"
   "build/siala2024enhancing.run.xml"
-  "build/siala2024enhancing.toc"
   (rewritten before read)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  3 NOV 2025 13:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  3 NOV 2025 15:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -848,14 +848,8 @@ Package pdftex.def Info: Images/Logo_FGV.png  used on input line 95.
 
 [1
 
-{C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/MikTec/fonts/enc/dvips/lm/lm-ec.enc} <./Images/Logo_FGV.png>] (d:\TccLatex\build\siala2024enhancing.toc)
-\tf@toc=\write4
-\openout4 = `siala2024enhancing.toc'.
-
-
-
-[1]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 145.
+{C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/MikTec/fonts/enc/dvips/lm/lm-ec.enc} <./Images/Logo_FGV.png>]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 142.
  (D:\MikTec\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -864,11 +858,11 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.167 
+l.160 
        [1{D:/MikTec/fonts/enc/dvips/lm/lm-ts1.enc}]
 
 [2] (D:\MikTec\tex/latex/lm\ot1lmr.fd) (D:\MikTec\tex/latex/lm\omllmm.fd) (D:\MikTec\tex/latex/lm\omslmsy.fd) (D:\MikTec\tex/latex/lm\omxlmex.fd) (D:\MikTec\tex/latex/amsfonts\umsa.fd) (D:\MikTec\tex/latex/microtype\mt-msa.cfg) (D:\MikTec\tex/latex/amsfonts\umsb.fd) (D:\MikTec\tex/latex/microtype\mt-msb.cfg)
-Overfull \hbox (9.55241pt too wide) in paragraph at lines 233--233
+Overfull \hbox (9.55241pt too wide) in paragraph at lines 224--224
 \T1/lmr/m/n/8 (-20) ção/simplificação 
  []
 
@@ -890,17 +884,17 @@ Package logreq Info: Writing requests to 'siala2024enhancing.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22799 strings out of 468130
- 392770 string characters out of 5447467
- 1321163 words of memory out of 5000000
- 50984 multiletter control sequences out of 15000+600000
- 679768 words of font info for 126 fonts, out of 8000000 for 9000
+ 22796 strings out of 468130
+ 392674 string characters out of 5447467
+ 1321159 words of memory out of 5000000
+ 50981 multiletter control sequences out of 15000+600000
+ 684391 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,11n,79p,1596b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<D:/MikTec/fonts/type1/public/lm/lmbx12.pfb><D:/MikTec/fonts/type1/public/lm/lmbx8.pfb><D:/MikTec/fonts/type1/public/lm/lmcsc10.pfb><D:/MikTec/fonts/type1/public/lm/lmr12.pfb><D:/MikTec/fonts/type1/public/lm/lmr17.pfb><D:/MikTec/fonts/type1/public/lm/lmr8.pfb><D:/MikTec/fonts/type1/public/lm/lmri12.pfb><D:/MikTec/fonts/type1/public/lm/lmsy8.pfb>
-Output written on d:\TccLatex\build\siala2024enhancing.pdf (6 pages, 222965 bytes).
+ 78i,11n,79p,1652b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/MikTec/fonts/type1/public/lm/lmbx12.pfb><D:/MikTec/fonts/type1/public/lm/lmbx8.pfb><D:/MikTec/fonts/type1/public/lm/lmbxi10.pfb><D:/MikTec/fonts/type1/public/lm/lmcsc10.pfb><D:/MikTec/fonts/type1/public/lm/lmr12.pfb><D:/MikTec/fonts/type1/public/lm/lmr17.pfb><D:/MikTec/fonts/type1/public/lm/lmr8.pfb><D:/MikTec/fonts/type1/public/lm/lmri12.pfb><D:/MikTec/fonts/type1/public/lm/lmsy8.pfb>
+Output written on d:\TccLatex\build\siala2024enhancing.pdf (5 pages, 237479 bytes).
 PDF statistics:
- 134 PDF objects out of 1000 (max. 8388607)
- 17 named destinations out of 1000 (max. 500000)
- 30782 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 122 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 500000)
+ 32830 words of extra memory for PDF output out of 35830 (max. 10000000)
 

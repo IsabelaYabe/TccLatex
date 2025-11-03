@@ -132,7 +132,6 @@ Learning}
 
 \newpage
 \pagenumbering{arabic}
-
 \section{Revisão literária}
 Artigo revisado \textcite{siala2024enhancing}:
 
@@ -150,16 +149,14 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
 \section{RQ1. Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
 Java e Python são as linguagens de código-fonte alvo do método MDRE proposto. O artigo situa o problema em sistemas legados corporativos e industriais, caracterizados por alta complexidade e longa vida útil.
 
-\section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
 
+\section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
 O método MDRE proposto tem como objetivo gerar especificações UML (diagramas de classe) e OCL (restrições, invariantes e regras de negócio) a partir de código-fonte. Esses artefatos representam tanto a estrutura quanto a semântica dos sistemas, permitindo a compreensão e redocumentação automatizada.
 
 \section{RQ3. Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?}
-
 O aspecto privilegiado é estático, e o objetivo principal é compreensão e redocumentação, com foco secundário em migração de sistemas legados. A abordagem propõe combinar análise estrutural com abstração semântica por meio de LLMs, o que amplia o potencial de entendimento do código.
 
 \section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
-
 A proposta estrutura-se como um pipeline MDRE híbrido que integra transformações modelo–modelo (M2M) tradicionais com técnicas de aprendizado de máquina baseadas em LLMs. O fluxo é dividido em quatro etapas principais:
 
 \begin{itemize}
@@ -170,7 +167,6 @@ A proposta estrutura-se como um pipeline MDRE híbrido que integra transformaç�
 \end{itemize}
 
 O processo adota um aprendizado bidirecional, no qual o modelo aprende a traduzir tanto de código para modelo quanto de modelo para código, reforçando a consistência entre os domínios e aprimorando a capacidade de generalização.
-
 
 \section{RQ5. Quais ferramentas/frameworks são utilizados?}
 A proposta combina o paradigma MDA para interoperabilidade de modelos com técnicas de aprendizado profundo e ferramentas UML consolidadas. O ecossistema integra:
@@ -184,20 +180,17 @@ A proposta combina o paradigma MDA para interoperabilidade de modelos com técni
 Essa combinação sustenta um pipeline MDRE automatizado voltado à compreensão, redocumentação e migração de sistemas legados escritos em Java e Python.
 
 \section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
+A validação é estruturada dentro do paradigma \emph{Design Science Methodology} (DSM) e ainda está planejada de forma prospectiva. O processo prevê duas etapas principais:  
+(i) \textbf{Comparação com baseline}, aplicando o mesmo código-fonte em um método MDRE tradicional e na nova abordagem baseada em LLMs; e  
+(ii) \textbf{Estudos de caso} com dois sistemas reais de diferentes tamanhos e domínios.
 
-A validação da abordagem é planejada de forma estruturada dentro do paradigma de Design Science Methodology (DSM) e envolve comparação empírica, estudos de caso e critérios objetivos de qualidade de modelo.
-
-A validação prática será realizada em duas etapas: (i) Comparação com baseline: aplicar a mesma entrada (código-fonte) em um método MDRE tradicional e na nova abordagem baseada em LLM; (ii) Estudos de caso: dois sistemas de software reais, de diferentes tamanhos e domínios.
-
-Os critérios de avaliação para engenharia reversa incluem (i) a correção semântica e
-a completude dos modelos em comparação com o código; (ii) a qualidade e a
-compreensibilidade dos diagramas.
+Os critérios de avaliação incluem: (a) correção semântica e completude dos modelos em relação ao código; e (b) qualidade e compreensibilidade dos diagramas gerados. Os autores propõem medições quantitativas e análise de especialistas, visando mensurar a melhoria na acurácia e na utilidade prática das representações produzidas.
 
 \begin{table}[h!]
 \centering
-\scriptsize % ou \footnotesize, se quiser mais compacta
-\setlength{\tabcolsep}{4pt} % espaçamento horizontal entre colunas
-\renewcommand{\arraystretch}{1.2} % espaçamento vertical entre linhas
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.2}
 
 \begin{tabularx}{\textwidth}{Y Y Y Y Y Y Y}
 \toprule
@@ -210,21 +203,20 @@ compreensibilidade dos diagramas.
 \textbf{Validação / Estudo de Caso} \\
 \midrule
 
-
 \textcite{siala2024enhancing} &
 Java; Python; sistemas legados &
 UML Classe; OCL &
 Estático — compreensão, redocumentação e migração &
-código $\rightarrow$ tokenização/simplificação $\rightarrow$ geração textual UML/OCL intermediária(LLM) $\rightarrow$ model repair $\rightarrow$ diagramas UML/OCL &
+Código $\rightarrow$ tokenização/simplificação $\rightarrow$ geração textual UML/OCL (LLM) $\rightarrow$ model repair $\rightarrow$ diagramas UML/OCL &
 Graphviz; PlantUML; Modelio; AgileUML; LLM &
 Comparação MDRE: dois estudos de caso; correção semântica, completude e compreensibilidade \\
 
-
 \bottomrule
 \end{tabularx}
-\caption{Resumo das abordagens MDRE baseadas em código-fonte}
+\caption{Resumo da abordagem MDRE híbrida baseada em LLMs (\textcite{siala2024enhancing})}
 \label{tab:mdre6}
 \end{table}
+
 
 \newpage
 

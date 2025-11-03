@@ -1,7 +1,7 @@
 PWD d:\TccLatex
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\TccLatex\Sabir2019MDRE copy.tex
-OUTPUT d:\TccLatex\build\Sabir2019MDRE copy.log
+INPUT d:\TccLatex\siala2024enhancing copy.tex
+OUTPUT d:\TccLatex\build\siala2024enhancing copy.log
 INPUT D:\MikTec\tex\latex\base\article.cls
 INPUT D:\MikTec\tex\latex\base\article.cls
 INPUT D:\MikTec\tex\latex\base\size12.clo
@@ -192,10 +192,10 @@ INPUT D:\MikTec\tex\latex\lm\t1lmr.fd
 INPUT D:\MikTec\tex\latex\lm\t1lmr.fd
 INPUT D:\MikTec\tex\latex\lm\t1lmr.fd
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmr12.tfm
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.aux
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.aux
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.aux
-OUTPUT d:\TccLatex\build\Sabir2019MDRE copy.aux
+INPUT d:\TccLatex\build\siala2024enhancing copy.aux
+INPUT d:\TccLatex\build\siala2024enhancing copy.aux
+INPUT d:\TccLatex\build\siala2024enhancing copy.aux
+OUTPUT d:\TccLatex\build\siala2024enhancing copy.aux
 INPUT D:\MikTec\tex\latex\microtype\mt-cmr.cfg
 INPUT D:\MikTec\tex\latex\microtype\mt-cmr.cfg
 INPUT D:\MikTec\tex\latex\microtype\mt-cmr.cfg
@@ -207,7 +207,7 @@ INPUT D:\MikTec\tex\latex\epstopdf-pkg\epstopdf-base.sty
 INPUT D:\MikTec\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT D:\MikTec\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT D:\MikTec\tex\latex\00miktex\epstopdf-sys.cfg
-OUTPUT d:\TccLatex\build\Sabir2019MDRE copy.pdf
+OUTPUT d:\TccLatex\build\siala2024enhancing copy.pdf
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\tex\latex\biblatex-contrib\biblatex-abnt\lbx\brazil-abnt.lbx
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\tex\latex\biblatex-contrib\biblatex-abnt\lbx\brazil-abnt.lbx
 INPUT C:\Users\Isas_\AppData\Local\MiKTeX\tex\latex\biblatex-contrib\biblatex-abnt\lbx\brazil-abnt.lbx
@@ -238,12 +238,12 @@ INPUT D:\MikTec\tex\latex\biblatex\lbx\brazil.lbx
 INPUT D:\MikTec\tex\latex\biblatex\lbx\brazilian.lbx
 INPUT D:\MikTec\tex\latex\biblatex\lbx\brazilian.lbx
 INPUT D:\MikTec\tex\latex\biblatex\lbx\brazilian.lbx
-OUTPUT d:\TccLatex\build\Sabir2019MDRE copy.bcf
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.bbl
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.bbl
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.bbl
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.bbl
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.bbl
+OUTPUT d:\TccLatex\build\siala2024enhancing copy.bcf
+INPUT d:\TccLatex\build\siala2024enhancing copy.bbl
+INPUT d:\TccLatex\build\siala2024enhancing copy.bbl
+INPUT d:\TccLatex\build\siala2024enhancing copy.bbl
+INPUT d:\TccLatex\build\siala2024enhancing copy.bbl
+INPUT d:\TccLatex\build\siala2024enhancing copy.bbl
 INPUT .\Images\Logo_FGV.png
 INPUT .\Images\Logo_FGV.png
 INPUT .\Images\Logo_FGV.png
@@ -265,10 +265,7 @@ INPUT D:\MikTec\tex\latex\lm\ts1lmr.fd
 INPUT D:\MikTec\fonts\tfm\public\lm\ts1-lmr12.tfm
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmbx12.tfm
 INPUT D:\MikTec\fonts\enc\dvips\lm\lm-ts1.enc
-INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
-INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
-INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
-INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmtt12.tfm
+INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmbxi10.tfm
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmr8.tfm
 INPUT D:\MikTec\tex\latex\lm\ot1lmr.fd
 INPUT D:\MikTec\tex\latex\lm\ot1lmr.fd
@@ -311,16 +308,17 @@ INPUT D:\MikTec\tex\latex\microtype\mt-msb.cfg
 INPUT D:\MikTec\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT D:\MikTec\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmbx8.tfm
-INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmri8.tfm
 INPUT D:\MikTec\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmcsc10.tfm
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.aux
-INPUT d:\TccLatex\build\Sabir2019MDRE copy.run.xml
-OUTPUT d:\TccLatex\build\Sabir2019MDRE copy.run.xml
+INPUT d:\TccLatex\build\siala2024enhancing copy.aux
+INPUT d:\TccLatex\build\siala2024enhancing copy.run.xml
+OUTPUT d:\TccLatex\build\siala2024enhancing copy.run.xml
 INPUT D:\MikTec\fonts\type1\public\lm\lmbx12.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmbx12.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmbx8.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmbx8.pfb
+INPUT D:\MikTec\fonts\type1\public\lm\lmbxi10.pfb
+INPUT D:\MikTec\fonts\type1\public\lm\lmbxi10.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmcsc10.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmcsc10.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmr12.pfb
@@ -331,9 +329,5 @@ INPUT D:\MikTec\fonts\type1\public\lm\lmr8.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmr8.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmri12.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmri12.pfb
-INPUT D:\MikTec\fonts\type1\public\lm\lmri8.pfb
-INPUT D:\MikTec\fonts\type1\public\lm\lmri8.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmsy8.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmsy8.pfb
-INPUT D:\MikTec\fonts\type1\public\lm\lmtt12.pfb
-INPUT D:\MikTec\fonts\type1\public\lm\lmtt12.pfb
