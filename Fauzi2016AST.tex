@@ -1,0 +1,246 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Idioma e tipografia
+\usepackage[brazil]{babel}
+\usepackage{csquotes}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Layout e recursos básicos
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+% Matemática e teoremas (essencial só se você usa)
+\usepackage{amsmath,amssymb,amsthm}
+
+% Tabelas em paisagem e colunas flexíveis
+% \usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{array} % para \newcolumntype
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\usepackage{rotating} % para sidewaystable/sideways
+
+
+% Bibliografia ABNT numerada
+\usepackage[
+  backend=biber,
+  style=abnt,          % estilo bibliográfico
+  sorting=none,
+  giveninits=true,
+  uniquename=false, 
+  doi=false,
+  isbn=false,
+  url=false,
+  language=brazil,
+  scbib,
+  ittitles,
+  justify
+]{biblatex}
+\addbibresource{refs.bib}
+
+% ======= PADRONIZAÇÃO PARA A TABELA MDRE =======
+
+% Coluna flexível "Y" (se ainda não tiver)
+% \usepackage{tabularx,booktabs,ragged2e,array}
+% \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+% 1) Vocabulário controlado (sempre em SMALL CAPS):
+\newcommand{\Static}{\textsc{Estático}}
+\newcommand{\Dynamic}{\textsc{Dinâmico}}
+\newcommand{\Hybrid}{\textsc{Híbrido}}
+\newcommand{\Comp}{\textsc{Compreensão}}
+\newcommand{\Redoc}{\textsc{Redocumentação}}
+\newcommand{\Mig}{\textsc{Migração}}
+\newcommand{\Quali}{\textsc{Qualidade}}
+
+% 2) Macros para setas e encadeamentos:
+\newcommand{\ctoa}{\(\text{Código} \rightarrow \text{AST}\)}
+\newcommand{\atoxi}{\(\text{AST} \rightarrow \text{IM}\)}   % IM = modelo intermediário
+\newcommand{\imtoxml}{\(\text{IM} \rightarrow \text{XML}\)}
+\newcommand{\imtomdl}{\(\text{IM} \rightarrow \text{UML}\)}
+\newcommand{\tmtomdl}{\(\text{T2M/M2M} \rightarrow \text{UML}\)}
+\newcommand{\xtoSeq}{\(\rightarrow \text{UML Sequência}\)}
+\newcommand{\xtoClass}{\(\rightarrow \text{UML Classe}\)}
+\newcommand{\xtoAct}{\(\rightarrow \text{UML Atividade}\)}
+
+% 3) Abreviações de ferramentas (consistentes):
+\newcommand{\EMF}{Eclipse/EMF}
+\newcommand{\UMLtwo}{UML2}
+\newcommand{\PlantUML}{PlantUML}
+\newcommand{\JavaParser}{JavaParser}
+
+% 4) Formato da célula “Aspecto”: Técnica ; Objetivo(s)
+%    Ex.: \Static; \Comp/\Redoc (estrutura + comportamento)
+
+% 5) Formato da célula “Técnica/Transformação”:
+%    Use sempre cadeia com “→”, negrite elementos-chaves e padronize nomes.
+%    Ex.: Código → AST → \textbf{IM(XML)} → T2M/M2M → \textbf{UML2}
+%
+% 6) Formato da célula “Validação”:
+%    [tipo de evidência; dataset/projetos; métrica(s) ou avaliação; nota curta]
+%    Ex.: OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo 10%
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0cm}
+        
+            \includegraphics[width=0.5\textwidth]{Images/Logo_FGV.png} 
+            
+        \vspace{1.5cm}
+        \large
+        
+        Ciência de Dados e I.A.\\
+        Escola de Matemática Aplicada\\
+        Fundação Getúlio Vargas\\
+
+        \vspace{1cm}  
+    
+        \Large
+        Engenharia de Requisitos
+            
+        \vspace{2cm}
+        
+        \vspace{0.25cm}
+
+        \Huge \textbf{TCC} \\ 
+        \vspace{0.5cm}
+        \huge \textbf{Reverse Engineering of Source Code to Sequence Diagram Using Abstract Syntax Tree}
+        \vspace{3.6cm}
+        
+        \large
+                Aluno: Isabela Yabe\\
+                Orientador: Rafael de Pinho André\\
+                Escola de Matemática Aplicada, FGV/EMAp \\
+                Rio de Janeiro - RJ.
+        \vfill
+            
+        \vspace{0.8cm}  
+        
+        Rio de Janeiro, 2025
+            
+    \end{center}
+\end{titlepage}
+\newpage
+\pagenumbering{roman}
+% \tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\section{Revisão literária}
+Artigo revisado \textcite{Fauzi2016AST}:
+
+A revisão tem o objetivo de compreender o estado da arte das abordagens de engenharia reversa que partem de código-fonte e produzem artefatos de alto nível, como diagramas UML. Para garantir uma análise sistemática e comparável entre diferentes propostas, foram definidas perguntas de pesquisa (\textit{Research Questions — RQs}) que orientam a coleta e síntese dos dados extraídos dos estudos selecionados.
+
+\begin{itemize}
+  \item \textbf{RQ1.} Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?
+  \item \textbf{RQ2.} Quais modelos/artefatos de alto nível são gerados?
+  \item \textbf{RQ3.} Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?
+  \item \textbf{RQ4.} Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?
+  \item \textbf{RQ5.} Quais ferramentas/frameworks são utilizados?
+  \item \textbf{RQ6.} Como as abordagens são validadas e com que qualidade prática?
+\end{itemize}
+
+\section{RQ1. Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
+
+A abordagem REVUML foi aplicada ao domínio de \textbf{sistemas orientados a objetos desenvolvidos em Java}. O método realiza a engenharia reversa diretamente sobre o código-fonte Java, utilizando a estrutura \textit{Abstract Syntax Tree} (AST) para gerar representações comportamentais de alto nível no formato de diagramas de sequência UML.
+
+A ferramenta proposta, denominada REVUML, foi implementada e validada por meio de experimentos que utilizaram 126 casos de teste distintos em Java, abrangendo múltiplos conceitos da orientação a objetos, como herança, polimorfismo, classes internas, métodos estáticos, expressões \textit{lambda} e abstração.
+
+% Assim, o domínio de aplicação concentra-se em programas Java orientados a objetos, voltados para fins de compreensão e documentação estrutural e comportamental de sistemas por meio de engenharia reversa. 
+
+\section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
+
+O trabalho tem como objetivo gerar \textbf{diagramas de sequência UML} a partir de código-fonte Java, constituindo um modelo comportamental de alto nível obtido por meio de engenharia reversa. O diagrama é produzido automaticamente após a análise da \textit{Abstract Syntax Tree} (AST), que representa a estrutura sintática do código.
+
+O diagrama gerado descreve a \textbf{interação entre objetos e chamadas de métodos}, incluindo construções comportamentais como laços, condicionais e retornos.
+
+A ferramenta REVUML implementa todo o fluxo de engenharia reversa, desde a extração do código e construção da AST até a geração do diagrama final, organizando os resultados visuais de forma automatizada
+
+\section{RQ3. Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?}
+
+O trabalho de \textcite{Fauzi2016AST} privilegia o \textbf{aspecto estático} do código-fonte, pois toda a geração do diagrama de sequência ocorre a partir da \textit{Abstract Syntax Tree} (AST) obtida por análise léxica e sintática do código Java, sem execução do sistema. Trata-se, portanto, de uma abordagem de \textbf{análise estática voltada à reconstrução de comportamento dinâmico}, cujo objetivo principal é a \textbf{compreensão e redocumentação do sistema}.
+
+\section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
+
+REVUML baseia-se na aplicação do modelo conceitual \textbf{Extract–Abstract–Present (EAP)}, em que o código-fonte é extraído, abstraído e finalmente apresentado como um diagrama UML. O processo utiliza a estrutura \textbf{Abstract Syntax Tree (AST)} representar a hierarquia e as relações sintáticas do código Java.
+
+Durante a etapa de \textit{extração}, o código é analisado lexical e sintaticamente por meio da API \textbf{JavaParser}, que gera a árvore sintática abstrata em memória.
+
+Na fase de \textit{abstração}, os nós da AST são percorridos e analisados para identificar elementos relevantes , como classes, métodos, chamadas, laços, condicionais, herança e polimorfismo. Essa análise é realizada por meio de um \textbf{algoritmo de travessia DFS pós-ordem (Depth-First Search Post-Order)}, que garante a ordenação correta das instruções conforme a sequência real do código-fonte.
+
+Durante essa travessia, são aplicadas operações de registro de variáveis, rastreamento de chamadas de métodos, criação de objetos e identificação de fragmentos combinados (\textit{alt}, \textit{loop}) para representar estruturas condicionais e iterativas no diagrama.
+
+Por fim, na etapa de \textit{apresentação}, os dados abstraídos são convertidos em representações visuais por meio da biblioteca \textbf{PlantUML}, que gera automaticamente as imagens do diagrama de sequência.
+
+\section{RQ5. Quais ferramentas/frameworks são utilizados?}
+
+A implementação da abordagem proposta por \textcite{Fauzi2016AST} foi realizada com o auxílio de duas bibliotecas principais: o \textbf{JavaParser API} e o \textbf{PlantUML API}.
+
+O \textbf{JavaParser} é responsável pela análise léxica e sintática do código-fonte Java e pela construção da \textit{Abstract Syntax Tree (AST)}, que serve de base para as transformações descritas na RQ4.
+
+Já o \textbf{PlantUML} é empregado na etapa final para converter os dados abstraídos em representações visuais de diagramas de sequência UML, nos formatos PNG ou SVG.
+
+A integração entre essas ferramentas constitui um diferencial da REVUML, pois permite uma conversão direta do código-fonte em diagramas UML, sem necessidade de modelos intermediários em XML, tornando o processo mais ágil e automatizado.
+
+\subsection{Polimorfismo}
+O polimorfismo é tratado durante a fase de \textit{abstração}, quando a ferramenta percorre a \textit{Abstract Syntax Tree} (AST). Nessa etapa, o algoritmo realiza o registro e o rastreamento de variáveis para identificar possíveis mudanças de tipo dinâmico, uma vez que, em Java, o tipo de um objeto pode variar conforme as atribuições realizadas.
+
+A REVUML detecta e mantém o vínculo entre variáveis, métodos e objetos, de modo a refletir corretamente, no diagrama de sequência, o tipo efetivo do objeto que executa cada método, e não apenas o tipo declarado. Por exemplo, quando uma variável declarada como \texttt{Animal} recebe uma instância de \texttt{Cat}, o sistema reconhece que a chamada deve ser associada ao método da subclasse.
+
+Durante essa análise, a ferramenta gera representações explícitas tanto das subclasses quanto das superclasses, exibindo no diagrama as relações de herança correspondentes. Essa representação simultânea preserva a semântica hierárquica e facilita a compreensão da estrutura de chamadas entre objetos relacionados por herança.
+
+De forma resumida, a abordagem lida com o polimorfismo por meio de três mecanismos complementares: (i) rastreamento de variáveis na AST para detectar alterações de tipo em atribuições; (ii) representação conjunta de subclasses e superclasses para manter a coerência estrutural; e (iii) resolução estática das chamadas herdadas, exibindo corretamente o método original da superclasse (por exemplo, \texttt{Animal.setName()} chamado por \texttt{Cat}).
+
+\section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
+
+A abordagem proposta foi validada por meio de um \textbf{estudo experimental} que avaliou a ferramenta \textbf{REVUML} em \textbf{126 casos de teste}. O experimento teve como objetivo verificar a precisão da engenharia reversa de código Java em diagramas de sequência UML, considerando diferentes estruturas da orientação a objetos.
+
+Os resultados mostraram que a REVUML é capaz de gerar diagramas corretos e consistentes, representando com precisão chamadas recursivas, ciclos de execução e interações entre classes e subclasses. Além disso, o algoritmo demonstrou robustez na detecção de dependências complexas e recursivas, mantendo a ordem lógica das instruções conforme o fluxo real do código.
+
+De modo geral, os autores concluem que a abordagem apresenta \textbf{boa aplicabilidade prática}, uma vez que a geração automatizada dos diagramas reduz significativamente o esforço manual de documentação e facilita a compreensão do comportamento dinâmico do software, especialmente em sistemas legados sem documentação atualizada.
+
+\begin{table}[h!]
+\centering
+\scriptsize % ou \footnotesize, se quiser mais compacta
+\setlength{\tabcolsep}{4pt} % espaçamento horizontal entre colunas
+\renewcommand{\arraystretch}{1.2} % espaçamento vertical entre linhas
+
+\begin{tabularx}{\textwidth}{Y Y Y Y Y Y Y}
+\toprule
+\textbf{Autores / Referência} &
+\textbf{Linguagem / Domínio} &
+\textbf{Modelo Gerado} &
+\textbf{Aspecto} &
+\textbf{Técnica / Transformação} &
+\textbf{Ferramenta / Framework} &
+\textbf{Validação / Estudo de Caso} \\
+\midrule
+
+\textcite{Fauzi2016AST} &
+Java; sistemas orientados a objetos &
+UML Sequência (comportamental) &
+\Static; \Comp/\Redoc &
+\textbf{Código} $\rightarrow$ \textbf{AST (JavaParser)} $\rightarrow$ \textbf{DFS pós-ordem} $\rightarrow$ \textbf{PlantUML (Seq)} &
+REVUML; \JavaParser; \PlantUML &
+126 casos de teste (8 categorias: herança, polimorfismo, laços, recursão, métodos estáticos); geração correta e consistente de diagramas \\ 
+
+\bottomrule
+\end{tabularx}
+\caption{Resumo das abordagens}
+\label{tab:mdre6}
+\end{table}
+
+\newpage
+
+\printbibliography
+
+\end{document}

@@ -1,0 +1,72 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{leatongkam2017generating}{inproceedings}{}{}
+      \name{author}{3}{}{%
+        {{hash=a695f4321bc2fabc08654d987ab2181b}{%
+           family={Leatongkam},
+           familyi={L\bibinitperiod},
+           given={Anawat},
+           giveni={A\bibinitperiod}}}%
+        {{hash=48a719dfc0157343aa5f5448e57539d0}{%
+           family={Nanthaamornphong},
+           familyi={N\bibinitperiod},
+           given={Aziz},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9895358d9c9c369aa4040f1d67ed06db}{%
+           family={Rouson},
+           familyi={R\bibinitperiod},
+           given={Damian\bibnamedelima W.},
+           giveni={D\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Buenos Aires, Argentina}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{fullhash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{fullhashraw}{07c38b64b380f5aa883386da9d36db70}
+      \strng{bibnamehash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{authorbibnamehash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{authornamehash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{authorfullhash}{07c38b64b380f5aa883386da9d36db70}
+      \strng{authorfullhashraw}{07c38b64b380f5aa883386da9d36db70}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2017 IEEE/ACM 12th International Workshop on Software Engineering for Science (SE4Science)}
+      \field{title}{WIP: Generating Sequence Diagrams for Modern Fortran}
+      \field{year}{2017}
+      \field{pages}{22\bibrangedash 25}
+      \range{pages}{4}
+      \verb{doi}
+      \verb 10.1109/SE4Science.2017.13
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

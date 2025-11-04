@@ -1,0 +1,195 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Idioma e tipografia
+\usepackage[brazil]{babel}
+\usepackage{csquotes}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Layout e recursos básicos
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+% Matemática e teoremas (essencial só se você usa)
+\usepackage{amsmath,amssymb,amsthm}
+
+% Tabelas em paisagem e colunas flexíveis
+% \usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{array} % para \newcolumntype
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\usepackage{rotating} % para sidewaystable/sideways
+
+
+% Bibliografia ABNT numerada
+\usepackage[
+  backend=biber,
+  style=abnt,          % estilo bibliográfico
+  sorting=none,
+  giveninits=true,
+  uniquename=false, 
+  doi=false,
+  isbn=false,
+  url=false,
+  language=brazil,
+  scbib,
+  ittitles,
+  justify
+]{biblatex}
+\addbibresource{refs.bib}
+
+% ======= PADRONIZAÇÃO PARA A TABELA MDRE =======
+
+% Coluna flexível "Y" (se ainda não tiver)
+% \usepackage{tabularx,booktabs,ragged2e,array}
+% \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+% 1) Vocabulário controlado (sempre em SMALL CAPS):
+\newcommand{\Static}{\textsc{Estático}}
+\newcommand{\Dynamic}{\textsc{Dinâmico}}
+\newcommand{\Hybrid}{\textsc{Híbrido}}
+\newcommand{\Comp}{\textsc{Compreensão}}
+\newcommand{\Redoc}{\textsc{Redocumentação}}
+\newcommand{\Mig}{\textsc{Migração}}
+\newcommand{\Quali}{\textsc{Qualidade}}
+
+% 2) Macros para setas e encadeamentos:
+\newcommand{\ctoa}{\(\text{Código} \rightarrow \text{AST}\)}
+\newcommand{\atoxi}{\(\text{AST} \rightarrow \text{IM}\)}   % IM = modelo intermediário
+\newcommand{\imtoxml}{\(\text{IM} \rightarrow \text{XML}\)}
+\newcommand{\imtomdl}{\(\text{IM} \rightarrow \text{UML}\)}
+\newcommand{\tmtomdl}{\(\text{T2M/M2M} \rightarrow \text{UML}\)}
+\newcommand{\xtoSeq}{\(\rightarrow \text{UML Sequência}\)}
+\newcommand{\xtoClass}{\(\rightarrow \text{UML Classe}\)}
+\newcommand{\xtoAct}{\(\rightarrow \text{UML Atividade}\)}
+
+% 3) Abreviações de ferramentas (consistentes):
+\newcommand{\EMF}{Eclipse/EMF}
+\newcommand{\UMLtwo}{UML2}
+\newcommand{\PlantUML}{PlantUML}
+\newcommand{\JavaParser}{JavaParser}
+
+% 4) Formato da célula “Aspecto”: Técnica ; Objetivo(s)
+%    Ex.: \Static; \Comp/\Redoc (estrutura + comportamento)
+
+% 5) Formato da célula “Técnica/Transformação”:
+%    Use sempre cadeia com “→”, negrite elementos-chaves e padronize nomes.
+%    Ex.: Código → AST → \textbf{IM(XML)} → T2M/M2M → \textbf{UML2}
+%
+% 6) Formato da célula “Validação”:
+%    [tipo de evidência; dataset/projetos; métrica(s) ou avaliação; nota curta]
+%    Ex.: OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo 10%
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0cm}
+        
+            \includegraphics[width=0.5\textwidth]{Images/Logo_FGV.png} 
+            
+        \vspace{1.5cm}
+        \large
+        
+        Ciência de Dados e I.A.\\
+        Escola de Matemática Aplicada\\
+        Fundação Getúlio Vargas\\
+
+        \vspace{1cm}  
+    
+        \Large
+        Engenharia de Requisitos
+            
+        \vspace{2cm}
+        
+        \vspace{0.25cm}
+
+        \Huge \textbf{TCC} \\ 
+        \vspace{0.5cm}
+        \huge \textbf{Towards New Hybrid Approach of the Reverse Engineering of UML Sequence Diagram}
+        \vspace{3.6cm}
+        
+        \large
+                Aluno: Isabela Yabe\\
+                Orientador: Rafael de Pinho André\\
+                Escola de Matemática Aplicada, FGV/EMAp \\
+                Rio de Janeiro - RJ.
+        \vfill
+            
+        \vspace{0.8cm}  
+        
+        Rio de Janeiro, 2025
+            
+    \end{center}
+\end{titlepage}
+\newpage
+\pagenumbering{roman}
+% \tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\section{Revisão literária}
+Artigo revisado \textcite{baidada2016hybrid}:
+
+A revisão tem o objetivo de compreender o estado da arte das abordagens de engenharia reversa que partem de código-fonte e produzem artefatos de alto nível, como diagramas UML. Para garantir uma análise sistemática e comparável entre diferentes propostas, foram definidas perguntas de pesquisa (\textit{Research Questions — RQs}) que orientam a coleta e síntese dos dados extraídos dos estudos selecionados.
+
+\begin{itemize}
+  \item \textbf{RQ1.} Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?
+  \item \textbf{RQ2.} Quais modelos/artefatos de alto nível são gerados?
+  \item \textbf{RQ3.} Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?
+  \item \textbf{RQ4.} Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?
+  \item \textbf{RQ5.} Quais ferramentas/frameworks são utilizados?
+  \item \textbf{RQ6.} Como as abordagens são validadas e com que qualidade prática?
+\end{itemize}
+
+\section{RQ1. Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
+
+\section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
+
+\section{RQ3. Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?}
+
+\section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
+
+\section{RQ5. Quais ferramentas/frameworks são utilizados?}
+
+\section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
+
+
+\begin{table}[h!]
+\centering
+\scriptsize % ou \footnotesize, se quiser mais compacta
+\setlength{\tabcolsep}{4pt} % espaçamento horizontal entre colunas
+\renewcommand{\arraystretch}{1.2} % espaçamento vertical entre linhas
+
+\begin{tabularx}{\textwidth}{Y Y Y Y Y Y Y}
+\toprule
+\textbf{Autores / Referência} &
+\textbf{Linguagem / Domínio} &
+\textbf{Modelo Gerado} &
+\textbf{Aspecto} &
+\textbf{Técnica / Transformação} &
+\textbf{Ferramenta / Framework} &
+\textbf{Validação / Estudo de Caso} \\
+\midrule
+
+\textcite{baidada2016hybrid} &
+
+
+\bottomrule
+\end{tabularx}
+\caption{Resumo das abordagens}
+\label{tab:mdre6}
+\end{table}
+
+\newpage
+
+\printbibliography
+
+\end{document}

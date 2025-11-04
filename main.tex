@@ -288,7 +288,14 @@ UML Classe (condensado) &
 \textbf{Extração de métricas (SDMetrics)} $\rightarrow$ Normalização (z-score) $\rightarrow$ \textbf{k-means clustering} $\rightarrow$ Random under-sampling $\rightarrow$ \textbf{Ensemble learning (Random Forest)} $\rightarrow$ diagrama condensado &
 MagicDraw; SDMetrics; Random Forest; Windows 7 &
 OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo=10\%; teste de Wilcoxon e Cliff’s $\delta$ \\
-% foi
+
+\textcite{Fauzi2016AST} &
+Java; sistemas orientados a objetos &
+UML Sequência (comportamental) &
+\Static; \Comp/\Redoc &
+\textbf{Código} $\rightarrow$ \textbf{AST (JavaParser)} $\rightarrow$ \textbf{DFS pós-ordem} $\rightarrow$ \textbf{PlantUML (Seq)} &
+REVUML; \JavaParser; \PlantUML &
+126 casos de teste (8 categorias: herança, polimorfismo, laços, recursão, métodos estáticos); geração correta e consistente de diagramas \\ 
 
 \textcite{siala2024enhancing} &
 Java; Python; sistemas legados &
@@ -297,15 +304,7 @@ Estático — compreensão, redocumentação e migração &
 código $\rightarrow$ tokenização/simplificação $\rightarrow$ geração textual UML/OCL intermediária(LLM) $\rightarrow$ model repair $\rightarrow$ diagramas UML/OCL &
 Graphviz; PlantUML; Modelio; AgileUML; LLM &
 Comparação MDRE: dois estudos de caso; correção semântica, completude e compreensibilidade \\
-
-
-\textcite{Fauzi2016AST} &
-Java; OO geral &
-UML Sequência &
-Estático; Compreensão/Redocumentação (comportamento) &
-Código $\rightarrow$ AST (JavaParser); DFS pós-ordem; regras para \emph{calls}, \emph{object creation}, \emph{return}, \emph{alt}/\emph{loop}; geração com PlantUML &
-REVUML; JavaParser; PlantUML API &
-126 casos sintéticos (alt/loop; formas/locais de chamada; criação; herança/polimorfismo; lambdas); avaliação funcional (“desenha corretamente”) \\
+% foi
 
 \textcite{baidada2016hybrid} &
 Genérico; aplicações OO (GUI e multithread) &

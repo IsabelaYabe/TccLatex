@@ -1,0 +1,92 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{Sabir2019MDRE}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=6673fa0903305a555d025f8c6779e4db}{%
+           family={Sabir},
+           familyi={S\bibinitperiod},
+           given={Umair},
+           giveni={U\bibinitperiod}}}%
+        {{hash=6372a05a89ae07648215684d98f8c2a1}{%
+           family={Azam},
+           familyi={A\bibinitperiod},
+           given={Farooque},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c48c83270afe8168febd1d410459fb55}{%
+           family={Haq},
+           familyi={H\bibinitperiod},
+           given={Sami\bibnamedelima Ul},
+           giveni={S\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
+        {{hash=3edd2fd01bcd18d0d778b3bbad7c3c0f}{%
+           family={Anwar},
+           familyi={A\bibinitperiod},
+           given={Muhammad\bibnamedelima Waseem},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=1f019fc4263570add80300d40e9e98a2}{%
+           family={Butt},
+           familyi={B\bibinitperiod},
+           given={Wasi\bibnamedelima Haider},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=b930f7f9d1d40aeca3ba9160e33244e1}{%
+           family={Amjad},
+           familyi={A\bibinitperiod},
+           given={Anam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{fullhash}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \strng{fullhashraw}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \strng{bibnamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{authorbibnamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{authornamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{authorfullhash}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \strng{authorfullhashraw}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{A Model Driven Reverse Engineering Framework for Generating High Level {UML} Models from Java Source Code}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{158931\bibrangedash 158950}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2019.2950884
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/ACCESS.2019.2950884
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/ACCESS.2019.2950884
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
