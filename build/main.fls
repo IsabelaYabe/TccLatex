@@ -334,6 +334,7 @@ INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmtt8.tfm
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmtt12.tfm
 INPUT D:\MikTec\fonts\enc\dvips\lm\lm-mathsy.enc
+INPUT D:\MikTec\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmcsc10.tfm
 INPUT d:\TccLatex\build\main.aux
 INPUT d:\TccLatex\build\main.run.xml
@@ -344,6 +345,8 @@ INPUT D:\MikTec\fonts\type1\public\lm\lmbx8.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmbx8.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmcsc10.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmcsc10.pfb
+INPUT D:\MikTec\fonts\type1\public\lm\lmmi8.pfb
+INPUT D:\MikTec\fonts\type1\public\lm\lmmi8.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmr12.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmr12.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmr17.pfb

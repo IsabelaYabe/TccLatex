@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  3 NOV 2025 19:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  3 NOV 2025 21:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -920,55 +920,21 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 21
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[4{D:/MikTec/fonts/enc/dvips/lm/lm-ts1.enc}]
-d:/TccLatex/main.tex:329: LaTeX Error: Unicode character â‰ˆ (U+2248)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.329 \end{tabularx}
-                    
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-(D:\MikTec\tex/latex/lm\t1lmtt.fd)
-d:/TccLatex/main.tex:329: LaTeX Error: Unicode character â‰ˆ (U+2248)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.329 \end{tabularx}
-                    
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
+[4{D:/MikTec/fonts/enc/dvips/lm/lm-ts1.enc}] (D:\MikTec\tex/latex/lm\t1lmtt.fd)
 Overfull \hbox (1.80759pt too wide) in paragraph at lines 329--329
 \T1/lmr/m/n/8 (-20) Parser$\OMS/lmsy/m/n/8 !$\T1/lmr/m/n/8 (-20) AST$\OMS/lmsy/m/n/8 !$\T1/lmr/m/n/8 (-20) IM(XML) 
  []
 
 
-d:/TccLatex/main.tex:329: LaTeX Error: Unicode character â‰ˆ (U+2248)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.329 \end{tabularx}
-                    
-You may provide a definition with
-\DeclareUnicodeCharacter 
+Overfull \hbox (34.87418pt too wide) in paragraph at lines 329--329
+\T1/lmr/m/sc/8 (-20) são\T1/lmr/m/n/8 (-20) /\T1/lmr/m/sc/8 (-20) Redocumentação\T1/lmr/m/n/8 (-20) (estrutura)|  
+ []
 
 
 
 [5]
 
-[6{D:/MikTec/fonts/enc/dvips/lm/lm-mathsy.enc}]
+[6{D:/MikTec/fonts/enc/dvips/lm/lm-mathsy.enc}{D:/MikTec/fonts/enc/dvips/lm/lm-mathit.enc}]
 
 [7]
 
@@ -1007,30 +973,22 @@ Package microtype Info: Character `029' is missing
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please rerun LaTeX.
-(biblatex)                Page breaks have changed.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23190 strings out of 468130
- 400364 string characters out of 5447467
- 1340961 words of memory out of 5000000
- 51169 multiletter control sequences out of 15000+600000
- 701512 words of font info for 201 fonts, out of 8000000 for 9000
+ 23228 strings out of 468130
+ 400789 string characters out of 5447467
+ 1342905 words of memory out of 5000000
+ 51208 multiletter control sequences out of 15000+600000
+ 701436 words of font info for 200 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,13n,79p,1193b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<D:/MikTec/fonts/type1/public/lm/lmbx12.pfb><D:/MikTec/fonts/type1/public/lm/lmbx8.pfb><D:/MikTec/fonts/type1/public/lm/lmcsc10.pfb><D:/MikTec/fonts/type1/public/lm/lmr12.pfb><D:/MikTec/fonts/type1/public/lm/lmr17.pfb><D:/MikTec/fonts/type1/public/lm/lmr8.pfb><D:/MikTec/fonts/type1/public/lm/lmri12.pfb><D:/MikTec/fonts/type1/public/lm/lmri8.pfb><D:/MikTec/fonts/type1/public/lm/lmsy8.pfb><D:/MikTec/fonts/type1/public/lm/lmtt12.pfb><D:/MikTec/fonts/type1/public/lm/lmtt8.pfb>
-Output written on d:\TccLatex\build\main.pdf (18 pages, 379967 bytes).
+<D:/MikTec/fonts/type1/public/lm/lmbx12.pfb><D:/MikTec/fonts/type1/public/lm/lmbx8.pfb><D:/MikTec/fonts/type1/public/lm/lmcsc10.pfb><D:/MikTec/fonts/type1/public/lm/lmmi8.pfb><D:/MikTec/fonts/type1/public/lm/lmr12.pfb><D:/MikTec/fonts/type1/public/lm/lmr17.pfb><D:/MikTec/fonts/type1/public/lm/lmr8.pfb><D:/MikTec/fonts/type1/public/lm/lmri12.pfb><D:/MikTec/fonts/type1/public/lm/lmri8.pfb><D:/MikTec/fonts/type1/public/lm/lmsy8.pfb><D:/MikTec/fonts/type1/public/lm/lmtt12.pfb><D:/MikTec/fonts/type1/public/lm/lmtt8.pfb>
+Output written on d:\TccLatex\build\main.pdf (18 pages, 384796 bytes).
 PDF statistics:
- 370 PDF objects out of 1000 (max. 8388607)
+ 376 PDF objects out of 1000 (max. 8388607)
  84 named destinations out of 1000 (max. 500000)
  42091 words of extra memory for PDF output out of 42996 (max. 10000000)
 
