@@ -1,15 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'build/yang2016condensing.blg'
-[92] biber-MSWIN64:342> INFO - === 
-[133] Biber.pm:421> INFO - Reading 'build/yang2016condensing.bcf'
-[226] Biber.pm:1002> INFO - Found 1 citekeys in bib section 0
-[236] Biber.pm:4487> INFO - Processing section 0
-[245] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
-[319] bibtex.pm:1713> INFO - LaTeX decoding ...
-[368] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
-[402] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[402] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
-[403] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
-[403] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
-[407] bbl.pm:676> INFO - Writing 'build/yang2016condensing.bbl' with encoding 'UTF-8'
-[408] bbl.pm:779> INFO - Output to build/yang2016condensing.bbl
+[84] biber-MSWIN64:342> INFO - === 
+[119] Biber.pm:421> INFO - Reading 'build/yang2016condensing.bcf'
+[205] Biber.pm:1002> INFO - Found 1 citekeys in bib section 0
+[216] Biber.pm:4487> INFO - Processing section 0
+[226] Biber.pm:4678> INFO - Looking for bibtex file 'refs.bib' for section 0
+[286] bibtex.pm:1713> INFO - LaTeX decoding ...
+[328] bibtex.pm:1519> INFO - Found BibTeX data source 'refs.bib'
+[365] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'variable = shifted' with 'variable = non-ignorable'
+[365] UCollate.pm:68> INFO - Overriding locale 'pt-BR' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[365] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'pt-BR'
+[365] Biber.pm:4313> INFO - No sort tailoring available for locale 'pt-BR'
+[370] bbl.pm:676> INFO - Writing 'build/yang2016condensing.bbl' with encoding 'UTF-8'
+[371] bbl.pm:779> INFO - Output to build/yang2016condensing.bbl

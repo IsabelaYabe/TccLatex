@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  3 NOV 2025 21:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  3 NOV 2025 19:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/TccLatex/yang2016condensing.tex
-(d:/TccLatex/yang2016condensing.tex
+**d:/TccLatex/main.tex
+(d:/TccLatex/main.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (D:\MikTec\tex/latex/base\article.cls
@@ -667,40 +667,40 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'brazil'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 89.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 91.
  (D:\MikTec\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (d:\TccLatex\build\yang2016condensing.aux
+) (d:\TccLatex\build\main.aux
 Package babel Info: 'brazil' activates 'portuges' shorthands.
 (babel)             Reported on input line 10.
 )
-\openout1 = `yang2016condensing.aux'.
+\openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Info: Redefining \microtypecontext on input line 89.
-Package microtype Info: Applying patch `item' on input line 89.
-Package microtype Info: Applying patch `toc' on input line 89.
-Package microtype Info: Applying patch `eqnum' on input line 89.
-Package microtype Info: Applying patch `footnote' on input line 89.
-Package microtype Info: Applying patch `verbatim' on input line 89.
-LaTeX Info: Redefining \microtypesetup on input line 89.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 91.
+LaTeX Font Info:    ... okay on input line 91.
+LaTeX Info: Redefining \microtypecontext on input line 91.
+Package microtype Info: Applying patch `item' on input line 91.
+Package microtype Info: Applying patch `toc' on input line 91.
+Package microtype Info: Applying patch `eqnum' on input line 91.
+Package microtype Info: Applying patch `footnote' on input line 91.
+Package microtype Info: Applying patch `verbatim' on input line 91.
+LaTeX Info: Redefining \microtypesetup on input line 91.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -767,7 +767,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (D:\MikTec\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 89.
+Package hyperref Info: Link coloring OFF on input line 91.
 Package biblatex Info: Trying to load language 'brazil' -> 'brazil-abnt'...
 Package biblatex Info: ... file 'brazil-abnt.lbx' found.
  (C:\Users\Isas_\AppData\Local\MiKTeX\tex/latex/biblatex-contrib/biblatex-abnt/lbx\brazil-abnt.lbx
@@ -832,72 +832,205 @@ File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `yang2016condensing.bcf'.
+\openout3 = `main.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'yang2016condensing.bbl' found.
- (d:\TccLatex\build\yang2016condensing.bbl)
-Package biblatex Info: Reference section=0 on input line 89.
-Package biblatex Info: Reference segment=0 on input line 89.
+Package biblatex Info: ... file 'main.bbl' found.
+ (d:\TccLatex\build\main.bbl)
+Package biblatex Info: Reference section=0 on input line 91.
+Package biblatex Info: Reference segment=0 on input line 91.
 <Images/Logo_FGV.png, id=3, 408.52625pt x 124.465pt>
 File: Images/Logo_FGV.png Graphic file (type png)
 <use Images/Logo_FGV.png>
-Package pdftex.def Info: Images/Logo_FGV.png  used on input line 95.
+Package pdftex.def Info: Images/Logo_FGV.png  used on input line 97.
 (pdftex.def)             Requested size: 213.39568pt x 65.01463pt.
 
 
 [1
 
-{C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/MikTec/fonts/enc/dvips/lm/lm-ec.enc} <./Images/Logo_FGV.png>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 145.
- (D:\MikTec\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+{C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/MikTec/fonts/enc/dvips/lm/lm-ec.enc} <./Images/Logo_FGV.png>] (d:\TccLatex\build\main.toc
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4.
+ (D:\MikTec\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4.
+ (D:\MikTec\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 4.
+ (D:\MikTec\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 4.
+ (D:\MikTec\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+ (D:\MikTec\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (D:\MikTec\tex/latex/microtype\mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+ (D:\MikTec\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (D:\MikTec\tex/latex/microtype\mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+))
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+
+
+[1]
+Overfull \hbox (8.41487pt too wide) in paragraph at lines 144--145
+[]\T1/lmr/m/n/12 (-20) Quero que a in-tro-du-ção te-nha con-tex-tu-a-li-za-ção, po-ble-ma-ti-za-ção, ques-tões/hipóteses,
+ []
+
+
+Overfull \hbox (8.41487pt too wide) in paragraph at lines 148--149
+[]\T1/lmr/m/n/12 (-20) Quero que a in-tro-du-ção te-nha con-tex-tu-a-li-za-ção, po-ble-ma-ti-za-ção, ques-tões/hipóteses,
+ []
+
+<Images/draw/fluxo_info.png, id=49, 352.31625pt x 252.945pt>
+File: Images/draw/fluxo_info.png Graphic file (type png)
+<use Images/draw/fluxo_info.png>
+Package pdftex.def Info: Images/draw/fluxo_info.png  used on input line 160.
+(pdftex.def)             Requested size: 341.43437pt x 245.13249pt.
+
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.164 
-       [1{D:/MikTec/fonts/enc/dvips/lm/lm-ts1.enc}]
+l.172 
+       [1]
 
-[2] (D:\MikTec\tex/latex/lm\ot1lmr.fd) (D:\MikTec\tex/latex/lm\omllmm.fd) (D:\MikTec\tex/latex/lm\omslmsy.fd) (D:\MikTec\tex/latex/lm\omxlmex.fd) (D:\MikTec\tex/latex/amsfonts\umsa.fd) (D:\MikTec\tex/latex/microtype\mt-msa.cfg) (D:\MikTec\tex/latex/amsfonts\umsb.fd) (D:\MikTec\tex/latex/microtype\mt-msb.cfg)
-Overfull \hbox (72.2369pt too wide) in paragraph at lines 235--235
-\T1/lmr/m/sc/8 (-20) são\T1/lmr/m/n/8 (-20) /\T1/lmr/m/sc/8 (-20) Redocumentação\T1/lmr/m/n/8 (-20) (estrutura)|  
+[2{D:/MikTec/fonts/enc/dvips/lm/lm-rm.enc} <./Images/draw/fluxo_info.png>]
+
+[3]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 211.
+ (D:\MikTec\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+
+[4{D:/MikTec/fonts/enc/dvips/lm/lm-ts1.enc}]
+d:/TccLatex/main.tex:329: LaTeX Error: Unicode character â‰ˆ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.329 \end{tabularx}
+                    
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+(D:\MikTec\tex/latex/lm\t1lmtt.fd)
+d:/TccLatex/main.tex:329: LaTeX Error: Unicode character â‰ˆ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.329 \end{tabularx}
+                    
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (1.80759pt too wide) in paragraph at lines 329--329
+\T1/lmr/m/n/8 (-20) Parser$\OMS/lmsy/m/n/8 !$\T1/lmr/m/n/8 (-20) AST$\OMS/lmsy/m/n/8 !$\T1/lmr/m/n/8 (-20) IM(XML) 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+d:/TccLatex/main.tex:329: LaTeX Error: Unicode character â‰ˆ (U+2248)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.329 \end{tabularx}
+                    
+You may provide a definition with
+\DeclareUnicodeCharacter 
 
 
 
-[3]
+[5]
+
+[6{D:/MikTec/fonts/enc/dvips/lm/lm-mathsy.enc}]
+
+[7]
+
+[8]
+
+[9]
+Overfull \hbox (8.46613pt too wide) in paragraph at lines 426--427
+[]\T1/lmr/m/n/12 (-20) Além dos co-man-dos clás-si-cos de na-ve-ga-ção por bús-sola, "\T1/lmr/m/it/12 (-20) EAST\T1/lmr/m/n/12 (-20) "/"\T1/lmr/m/it/12 (-20) E\T1/lmr/m/n/12 (-20) ", "\T1/lmr/m/it/12 (-20) WEST\T1/lmr/m/n/12 (-20) "/"\T1/lmr/m/it/12 (-20) W\T1/lmr/m/n/12 (-20) ",
+ []
+
+
+
+[10]
+Overfull \hbox (4.93048pt too wide) in paragraph at lines 484--485
+[]\T1/lmr/m/n/12 (-20) (9 - DOOR) (94 - YOU ARE AT ONE END OF AN IM-MENSE NORTH/SOUTH
+ []
+
+
+
+[11]
+
+[12]
+
+[13]
+
+[14]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
 
-[4{D:/MikTec/fonts/enc/dvips/lm/lm-mathsy.enc}{D:/MikTec/fonts/enc/dvips/lm/lm-mathit.enc}] (d:\TccLatex\build\yang2016condensing.aux)
+[15]
+
+[16] (d:\TccLatex\build\main.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-Package logreq Info: Writing requests to 'yang2016condensing.run.xml'.
-\openout1 = `yang2016condensing.run.xml'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please rerun LaTeX.
+(biblatex)                Page breaks have changed.
+
+Package logreq Info: Writing requests to 'main.run.xml'.
+\openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22830 strings out of 468130
- 393058 string characters out of 5447467
- 1323168 words of memory out of 5000000
- 50984 multiletter control sequences out of 15000+600000
- 688568 words of font info for 145 fonts, out of 8000000 for 9000
+ 23190 strings out of 468130
+ 400364 string characters out of 5447467
+ 1340961 words of memory out of 5000000
+ 51169 multiletter control sequences out of 15000+600000
+ 701512 words of font info for 201 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,11n,79p,1207b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<D:/MikTec/fonts/type1/public/lm/lmbx12.pfb><D:/MikTec/fonts/type1/public/lm/lmbx8.pfb><D:/MikTec/fonts/type1/public/lm/lmcsc10.pfb><D:/MikTec/fonts/type1/public/lm/lmmi8.pfb><D:/MikTec/fonts/type1/public/lm/lmr12.pfb><D:/MikTec/fonts/type1/public/lm/lmr17.pfb><D:/MikTec/fonts/type1/public/lm/lmr8.pfb><D:/MikTec/fonts/type1/public/lm/lmri12.pfb><D:/MikTec/fonts/type1/public/lm/lmri8.pfb><D:/MikTec/fonts/type1/public/lm/lmsy8.pfb>
-Output written on d:\TccLatex\build\yang2016condensing.pdf (5 pages, 249333 bytes).
+ 78i,13n,79p,1193b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/MikTec/fonts/type1/public/lm/lmbx12.pfb><D:/MikTec/fonts/type1/public/lm/lmbx8.pfb><D:/MikTec/fonts/type1/public/lm/lmcsc10.pfb><D:/MikTec/fonts/type1/public/lm/lmr12.pfb><D:/MikTec/fonts/type1/public/lm/lmr17.pfb><D:/MikTec/fonts/type1/public/lm/lmr8.pfb><D:/MikTec/fonts/type1/public/lm/lmri12.pfb><D:/MikTec/fonts/type1/public/lm/lmri8.pfb><D:/MikTec/fonts/type1/public/lm/lmsy8.pfb><D:/MikTec/fonts/type1/public/lm/lmtt12.pfb><D:/MikTec/fonts/type1/public/lm/lmtt8.pfb>
+Output written on d:\TccLatex\build\main.pdf (18 pages, 379967 bytes).
 PDF statistics:
- 130 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 34878 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 84 named destinations out of 1000 (max. 500000)
+ 42091 words of extra memory for PDF output out of 42996 (max. 10000000)
 

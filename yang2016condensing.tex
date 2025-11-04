@@ -145,38 +145,72 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
   \item \textbf{RQ1.} Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?
   \item \textbf{RQ2.} Quais modelos/artefatos de alto nível são gerados?
   \item \textbf{RQ3.} Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?
-  \item \textbf{RQ4.} Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?
+  \item \textbf{RQ4.} Quais técnicas e transformações viabilizam o condensamento dos diagrams?
   \item \textbf{RQ5.} Quais ferramentas/frameworks são utilizados?
   \item \textbf{RQ6.} Como as abordagens são validadas e com que qualidade prática?
 \end{itemize}
 
 \section{RQ1. Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
 
+A abordagem proposta, denominada \textit{MCCondenser}, foi aplicada ao domínio de \textbf{sistemas orientados a objetos desenvolvidos em Java}, com foco na condensação de diagramas de classes gerados via engenharia reversa. Nesse contexto, o estudo busca apoiar a compreensão e documentação de grandes sistemas, reduzindo a complexidade dos diagramas produzidos a partir do código-fonte ao avaliar quais classes são mais relevantes para a visualização e análise.
 
+Para validar o método, foram utilizados nove sistemas de código aberto amplamente conhecidos: ArgoUML, JavaClient, JGAP, JPMC, Mars, Maze, Neuroph, Wro4J e xUML. Esses projetos representam diferentes comunidades e domínios de aplicação, todos implementados em Java, o que demonstra a aplicabilidade da abordagem em distintos contextos de software orientado a objetos.
 
 \section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
 
+Concentra-se na condensação de \textbf{diagramas de classes UML} obtidos por engenharia reversa de sistemas orientados a objetos. O modelo principal é, portanto, o \textit{Class Diagram}, cuja reconstrução visa condensar a representação estrutural obtida pela engenharia reversa, destacando apenas as classes mais relevantes.
+
+Assim, o artefato de alto nível produzido é um \textbf{diagrama de classes condensado}.
+
+O processo se apoia etapas automáticas de análise de métricas e classificação supervisionada/não supervisionada para identificar as “important classes”. Assim, o modelo final é um \textbf{subconjunto do diagrama UML original}, estruturado de forma a manter a coerência semântica e a utilidade para documentação e manutenção de software.
 
 \section{RQ3. Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo?}
 
+O artigo privilegia o \textbf{aspecto estático} do sistema, pois toda a abordagem baseia-se em \textbf{métricas estruturais extraídas de diagramas de classes} gerados a partir do código-fonte. O método MCCondenser analisa características como tamanho, acoplamento e centralidade de classes em redes de dependência, sem recorrer a informações de execução ou rastreamento dinâmico.
 
+Essas métricas são calculadas com base em propriedades estruturais do código, como número de métodos, atributos e relações entre classes.
 
-\section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
+\section{RQ4. Quais técnicas e transformações viabilizam o condensamento dos diagrams?}
 
+O artigo \textcite{yang2016condensing} propõe o método \textbf{MCCondenser}, que utiliza uma combinação de técnicas de aprendizado de máquina, \textbf{k-means clustering}, \textbf{random under-sampling} e \textbf{ensemble learning} — para condensar diagramas de classes gerados por engenharia reversa, reduzindo o número de classes exibidas sem comprometer a representatividade do modelo.
+
+Primeiramente, o processo parte da extração de métricas estruturais (tamanho, acoplamento e rede) das classes de um projeto (utilizando o SDmetrics). Essas métricas são normalizadas pelo método \textbf{z-score} para padronizar as magnitudes numéricas.
+
+A seguir, aplica-se o algoritmo \textbf{k-means clustering} para identificar subconjuntos representativos de classes, que servirão como amostras rotuladas manualmente. Essa etapa constitui a primeira transformação crítica do processo de condensamento, pois permite selecionar amostras diversificadas e representativas de todo o diagrama, reduzindo significativamente o custo de rotulagem manual.
+
+Para lidar com o desequilíbrio entre classes importantes e não importantes, o método utiliza \textbf{random under-sampling}.
+
+Por fim, o \textbf{ensemble learning} é aplicado para combinar diversos classificadores gerados sobre subconjuntos distintos dos dados, criando um modelo final mais robusto e generalizável.
+
+Esse modelo é responsável por prever automaticamente quais classes são “importantes” e devem permanecer no diagrama condensado.
 
 \section{RQ5. Quais ferramentas/frameworks são utilizados?}
 
+O artigo faz uso de um conjunto de ferramentas de modelagem e mineração de dados voltadas à engenharia reversa e ao aprendizado de máquina. As principais são:
 
+MagicDraw utilizada para gerar o diagrama de classes a partir do código-fonte. Os autores descrevem essa etapa como o ponto de partida da abordagem:
+
+SDMetrics empregada para extrair métricas estruturais e de acoplamento das classes representadas no diagrama UML.
+
+Random Forest (como base classifier) escolhido como classificador principal para o processo de ensemble learning.
+
+Ferramentas e ambiente computacional os experimentos foram conduzidos em ambiente Windows 7 (64-bit) com CPU Intel Core T6570 e 4GB RAM, demonstrando que a execução do MCCondenser requer baixo poder computacional.
 
 \section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
 
+A validação da abordagem \textbf{MCCondenser} foi conduzida por meio de um \textbf{estudo experimental extensivo} realizado sobre nove sistemas de \textbf{código aberto desenvolvidos em Java}: ArgoUML, JavaClient, JGAP, JPMC, Mars, Maze, Neuroph, Wro4J e xUML, totalizando \textbf{2.640 classes}. O objetivo foi mensurar a eficácia e a eficiência do método em condensar diagramas de classes com o menor custo de rotulagem manual possível.
 
+A métrica central empregada foi a \textbf{AUC (Area Under the ROC Curve)}, utilizada em problemas de classificação binária. Seu uso é justificado pela natureza \textbf{desequilibrada dos conjuntos de dados}, em que há muito mais classes “não importantes” do que “importantes”, pois a AUC mede a capacidade do modelo de ranquear corretamente ambas as categorias.
+
+Com base nessa métrica, o experimento utilizou apenas 10\% dos dados como amostras rotuladas, enquanto o restante foi previsto automaticamente. Os autores realizaram dez repetições para reduzir o viés estatístico. O classificador base adotado foi o \textbf{Random Forest}, escolhido por sua robustez em comparação a outros algoritmos testados.
+
+Com esse delineamento experimental, os resultados mostraram que o \textbf{MCCondenser} superou significativamente os métodos de referência. Essa superioridade foi posteriormente confirmada pelos testes de Wilcoxon e \textit{Cliff’s delta}, assegurando a robustez empírica dos resultados. Além disso, a diferença de desempenho entre o uso de 10\% e 90\% dos dados rotulados foi pequena (queda média de apenas 0,13 na AUC), o que comprova o custo-benefício e a eficiência prática da abordagem, mesmo sob condições de mínima intervenção manual.
 
 \begin{table}[h!]
 \centering
-\scriptsize % ou \footnotesize, se quiser mais compacta
-\setlength{\tabcolsep}{4pt} % espaçamento horizontal entre colunas
-\renewcommand{\arraystretch}{1.2} % espaçamento vertical entre linhas
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.2}
 
 \begin{tabularx}{\textwidth}{Y Y Y Y Y Y Y}
 \toprule
@@ -189,13 +223,20 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
 \textbf{Validação / Estudo de Caso} \\
 \midrule
 
-
+\textcite{yang2016condensing} &
+Java; sistemas OO &
+UML Classe (condensado) &
+\Static; \Comp/\Redoc (estrutura) &
+\textbf{Extração de métricas (SDMetrics)} $\rightarrow$ Normalização (z-score) $\rightarrow$ \textbf{k-means clustering} $\rightarrow$ Random under-sampling $\rightarrow$ \textbf{Ensemble learning (Random Forest)} $\rightarrow$ diagrama condensado &
+MagicDraw; SDMetrics; Random Forest; Windows 7 &
+OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo=10\%; teste de Wilcoxon e Cliff’s $\delta$ \\
 
 \bottomrule
 \end{tabularx}
-\caption{Resumo das abordagens}
+\caption{Resumo da abordagem de Yang et al. (2016) — MCCondenser}
 \label{tab:mdre6}
 \end{table}
+
 
 \newpage
 

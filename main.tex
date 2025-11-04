@@ -240,7 +240,7 @@ Com base nos critérios de inclusão e exclusão, foram selecionados os seguinte
 
 \begin{itemize}
   \item A Model Driven Reverse Engineering Framework for Generating High Level UML Models From Java Source Code (2019).
-  \item Condensing Class Diagrams With Minimal Manual Labeling Cost (2016).
+  \item Condensing Class Diagrams With Minimal Manual Labeling Cost (2016). (parte do diagrama e aperfeiçoa)
   \item Enhancing Model-Driven Reverse Engineering Using Machine Learning (2024).
   \item Reverse Engineering of Source Code to Sequence Diagram Using Abstract Syntax Tree (2016).
   \item Towards a New Hybrid Approach of the Reverse Engineering of UML Sequence Diagram (2016).
@@ -282,12 +282,12 @@ J2UML; JavaCC; Dom4j; J2X (DTD/XML) &
 5 casos pequenos; acurácia: classes 96,4–100\%; relações 65,0–90,4\% \\
 
 \textcite{yang2016condensing} &
-Java (OSS) &
-UML Classe condensado (classes “importantes”) &
-\Static; \Comp\ (redução cognitiva) &
-Métricas (size, coupling, network) $\rightarrow$ \textit{k}-means (amostragem) $\rightarrow$ ensemble (Random Forest) $\Rightarrow$ seleção de classes &
-MCCondenser; SDMetrics; MagicDraw &
-OSS (9 projetos; 2640 classes); AUC=0.73; +10–20\% vs. baselines; treino ≈1s; predição <0,1s; rótulos 10\% \\
+Java; sistemas OO &
+UML Classe (condensado) &
+\Static; \Comp/\Redoc (estrutura) &
+\textbf{Extração de métricas (SDMetrics)} $\rightarrow$ Normalização (z-score) $\rightarrow$ \textbf{k-means clustering} $\rightarrow$ Random under-sampling $\rightarrow$ \textbf{Ensemble learning (Random Forest)} $\rightarrow$ diagrama condensado &
+MagicDraw; SDMetrics; Random Forest; Windows 7 &
+OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo=10\%; teste de Wilcoxon e Cliff’s $\delta$ \\
 % foi
 
 \textcite{siala2024enhancing} &
