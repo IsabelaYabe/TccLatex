@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/baidada2016hybrid"] 1762218012.28806 "build/baidada2016hybrid.bcf" "build/baidada2016hybrid.bbl" "build/baidada2016hybrid" 1762314402.71735 0
-  "build/baidada2016hybrid.bcf" 1762314402 112986 07e2fbd35071f7a8d05fa43b25bfa499 "pdflatex"
+["biber build/baidada2016hybrid"] 1762218012.28806 "build/baidada2016hybrid.bcf" "build/baidada2016hybrid.bbl" "build/baidada2016hybrid" 1762314578.42511 0
+  "build/baidada2016hybrid.bcf" 1762314578 112986 07e2fbd35071f7a8d05fa43b25bfa499 "pdflatex"
   "refs.bib" 1762195051 16890 87e8cedcf9a9180195c6bd6a16701e7b ""
   (generated)
   "build/baidada2016hybrid.bbl"
   "build/baidada2016hybrid.blg"
   (rewritten before read)
-["pdflatex"] 1762314401.43553 "d:/TccLatex/baidada2016hybrid.tex" "build/baidada2016hybrid.pdf" "baidada2016hybrid" 1762314402.71799 0
+["pdflatex"] 1762314577.12179 "d:/TccLatex/baidada2016hybrid.tex" "build/baidada2016hybrid.pdf" "baidada2016hybrid" 1762314578.42563 0
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761712815 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760148962 13270132 4f7a67e4221cab14f71bfd7fb550e04a ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/tex/latex/biblatex-contrib/biblatex-abnt/bbx/abnt.bbx" 1760066467 71996 11dbc19d4619916cb1bbe9955f3bd32b ""
@@ -31,7 +31,6 @@
   "D:/MikTec/fonts/tfm/public/lm/ec-lmr17.tfm" 1256929440 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmr8.tfm" 1256929440 12064 9b9ade9f64cb32ce1d9a88d21fbd5c2d ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmri12.tfm" 1256929440 17144 271aaf9ebb339934b04110dc5211fba4 ""
-  "D:/MikTec/fonts/tfm/public/lm/ec-lmtt8.tfm" 1256929440 1380 64228d979098ac090aa3f98d5aa8ad3e ""
   "D:/MikTec/fonts/tfm/public/lm/lmex10.tfm" 1256929440 992 ce925c9346c7613270a79afbee98c070 ""
   "D:/MikTec/fonts/tfm/public/lm/lmmi5.tfm" 1256929440 1508 51526923e80e59e37a4e87448b5af6e0 ""
   "D:/MikTec/fonts/tfm/public/lm/lmmi6.tfm" 1256929440 1512 94a3fd88c6f27dbd9ecb46987e297a4e ""
@@ -51,7 +50,6 @@
   "D:/MikTec/fonts/type1/public/lm/lmr8.pfb" 1256929440 122174 a2d5e73f396ddbeb3bdf5c79aea0993d ""
   "D:/MikTec/fonts/type1/public/lm/lmri12.pfb" 1256929440 109265 e6c7d377db6dfccd4a123fb26da8cffb ""
   "D:/MikTec/fonts/type1/public/lm/lmsy8.pfb" 1256929440 27802 5c876bb2c4040caaf035d60bd74a86bd ""
-  "D:/MikTec/fonts/type1/public/lm/lmtt8.pfb" 1256929440 115291 8eef1191953586767e75b29670028b8c ""
   "D:/MikTec/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "D:/MikTec/tex/generic/babel/babel.sty" 1754220793 146665 9149bce97203d4030d7cbe4f4e85dfc4 ""
   "D:/MikTec/tex/generic/babel/txtbabel.def" 1754220793 5231 82bb24bf20af7e4d760717f2cadb5170 ""
@@ -130,7 +128,6 @@
   "D:/MikTec/tex/latex/lm/omxlmex.fd" 1430474546 568 a5494d810f2680caf10205cd1226c76c ""
   "D:/MikTec/tex/latex/lm/ot1lmr.fd" 1430474546 1882 28c08db1407ebff35a658fd141753d16 ""
   "D:/MikTec/tex/latex/lm/t1lmr.fd" 1430474546 1867 996fe743d88a01aca041ed22cc10e1bb ""
-  "D:/MikTec/tex/latex/lm/t1lmtt.fd" 1430474546 2682 555da1faa2e266801e4b221d01a42cb5 ""
   "D:/MikTec/tex/latex/lm/ts1lmr.fd" 1430474546 1914 884882d7ebb0fd65cea93fca77ff6f5a ""
   "D:/MikTec/tex/latex/logreq/logreq.def" 1280941015 1620 fb1c32b818f2058eca187e5c41dfae77 ""
   "D:/MikTec/tex/latex/logreq/logreq.sty" 1280941015 6187 b27afc771af565d3a9ff1ca7d16d0d46 ""
@@ -148,11 +145,11 @@
   "D:/MikTec/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "D:/MikTec/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "Images/Logo_FGV.png" 1760051702 2490 33a2339c99ef5f8115145ba188c3c2a8 ""
-  "baidada2016hybrid.tex" 1762314399 10076 b743b09538559e1875d2acfa98ec4152 ""
-  "build/baidada2016hybrid.aux" 1762314402 8487 3ada9073cb7842e099aff21b9c1742b4 "pdflatex"
+  "baidada2016hybrid.tex" 1762314576 10070 07c21ea77325b5c00fe0a210d06c0468 ""
+  "build/baidada2016hybrid.aux" 1762314578 8487 3ada9073cb7842e099aff21b9c1742b4 "pdflatex"
   "build/baidada2016hybrid.bbl" 1762218013 2323 5ea170c65772dbc6787469148a8cd6e0 "biber build/baidada2016hybrid"
-  "build/baidada2016hybrid.run.xml" 1762314402 2528 65417008a23f04c02a4063e0fd273253 "pdflatex"
-  "d:/TccLatex/baidada2016hybrid.tex" 1762314399 10076 b743b09538559e1875d2acfa98ec4152 ""
+  "build/baidada2016hybrid.run.xml" 1762314578 2528 65417008a23f04c02a4063e0fd273253 "pdflatex"
+  "d:/TccLatex/baidada2016hybrid.tex" 1762314576 10070 07c21ea77325b5c00fe0a210d06c0468 ""
   (generated)
   "build/baidada2016hybrid.aux"
   "build/baidada2016hybrid.bcf"

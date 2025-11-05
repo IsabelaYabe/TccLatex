@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/main"] 1762229550.29463 "build/main.bcf" "build/main.bbl" "build/main" 1762229567.18142 0
+["biber build/main"] 1762229550.29463 "build/main.bcf" "build/main.bbl" "build/main" 1762314568.52318 0
   "D:/TccLatex/refs.bib" 1762195051 16890 87e8cedcf9a9180195c6bd6a16701e7b ""
-  "build/main.bcf" 1762229567 116575 b4fbd633893d136a07768c6130c3ae81 "pdflatex"
+  "build/main.bcf" 1762314568 116575 b4fbd633893d136a07768c6130c3ae81 "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
   (rewritten before read)
-["pdflatex"] 1762229565.28374 "d:/TccLatex/main.tex" "build/main.pdf" "main" 1762229567.18195 0
+["pdflatex"] 1762314566.57286 "d:/TccLatex/main.tex" "build/main.pdf" "main" 1762314568.52367 0
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761712815 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760148962 13270132 4f7a67e4221cab14f71bfd7fb550e04a ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/tex/latex/biblatex-contrib/biblatex-abnt/bbx/abnt.bbx" 1760066467 71996 11dbc19d4619916cb1bbe9955f3bd32b ""
@@ -35,7 +35,6 @@
   "D:/MikTec/fonts/tfm/public/lm/ec-lmri12.tfm" 1256929440 17144 271aaf9ebb339934b04110dc5211fba4 ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmri8.tfm" 1256929440 17152 c8240fef851c4991afefdae37a539ee1 ""
   "D:/MikTec/fonts/tfm/public/lm/ec-lmtt12.tfm" 1256929440 1368 6a60e6a5e029141041d64d339b87e533 ""
-  "D:/MikTec/fonts/tfm/public/lm/ec-lmtt8.tfm" 1256929440 1380 64228d979098ac090aa3f98d5aa8ad3e ""
   "D:/MikTec/fonts/tfm/public/lm/lmex10.tfm" 1256929440 992 ce925c9346c7613270a79afbee98c070 ""
   "D:/MikTec/fonts/tfm/public/lm/lmmi12.tfm" 1256929440 1524 753b192b18f2991794f9d41a8228510b ""
   "D:/MikTec/fonts/tfm/public/lm/lmmi5.tfm" 1256929440 1508 51526923e80e59e37a4e87448b5af6e0 ""
@@ -62,7 +61,6 @@
   "D:/MikTec/fonts/type1/public/lm/lmri8.pfb" 1256929440 109952 907d11d9707997c3fd76af7ec651ec78 ""
   "D:/MikTec/fonts/type1/public/lm/lmsy8.pfb" 1256929440 27802 5c876bb2c4040caaf035d60bd74a86bd ""
   "D:/MikTec/fonts/type1/public/lm/lmtt12.pfb" 1256929440 110323 19372944fba298bb4c4758abff959582 ""
-  "D:/MikTec/fonts/type1/public/lm/lmtt8.pfb" 1256929440 115291 8eef1191953586767e75b29670028b8c ""
   "D:/MikTec/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "D:/MikTec/tex/generic/babel/babel.sty" 1754220793 146665 9149bce97203d4030d7cbe4f4e85dfc4 ""
   "D:/MikTec/tex/generic/babel/txtbabel.def" 1754220793 5231 82bb24bf20af7e4d760717f2cadb5170 ""
@@ -160,12 +158,12 @@
   "D:/MikTec/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "Images/Logo_FGV.png" 1760051702 2490 33a2339c99ef5f8115145ba188c3c2a8 ""
   "Images/draw/fluxo_info.png" 1760930889 20299 a31cadcf611f26113796e9636cdc1d49 ""
-  "build/main.aux" 1762229566 13467 47496a37717bbb5a67b9c74879b0146e "pdflatex"
+  "build/main.aux" 1762314568 13467 3954a790cfc401a8f90685aa36a4059d "pdflatex"
   "build/main.bbl" 1762229563 38640 704e31c6d4b6e3e338740f10c861a414 "biber build/main"
-  "build/main.run.xml" 1762229567 2449 2222bf705e1198ab570179a426696e1b "pdflatex"
-  "build/main.toc" 1762229567 1870 d54c17c844781e2f1e3330169bc38f32 "pdflatex"
-  "d:/TccLatex/main.tex" 1762229547 39416 ed30aecffc3282ce5e9607afaa62d7ea ""
-  "main.tex" 1762229547 39416 ed30aecffc3282ce5e9607afaa62d7ea ""
+  "build/main.run.xml" 1762314568 2449 2222bf705e1198ab570179a426696e1b "pdflatex"
+  "build/main.toc" 1762314568 1870 d54c17c844781e2f1e3330169bc38f32 "pdflatex"
+  "d:/TccLatex/main.tex" 1762314563 39084 51136a6d6a0ad4f97388866d0dfeff91 ""
+  "main.tex" 1762314563 39084 51136a6d6a0ad4f97388866d0dfeff91 ""
   (generated)
   "build/main.aux"
   "build/main.bcf"

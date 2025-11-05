@@ -307,14 +307,13 @@ Comparação MDRE: dois estudos de caso; correção semântica, completude e com
 % foi
 
 \textcite{baidada2016hybrid} &
-Genérico; aplicações OO (GUI e multithread) &
+Java/Genérico; aplicações OO &
 UML Sequência (HLSD) &
 \textbf{Híbrido} (Estático + Dinâmico); Compreensão/Redocumentação (comportamento) &
-Estático: \textbf{CFG} para derivar valores de entrada por caso de uso $\rightarrow$ guiar execução; 
-Dinâmico: traços múltiplos + \textbf{filtragem por pacote} (e.g., Swing) $\rightarrow$ 
-Modelo intermediário: \textbf{Colored Petri Nets (CPN)} para fundir traços e detectar \texttt{seq/alt/opt/loop/par} $\rightarrow$ transformação CPN$\Rightarrow$UML &
-Metodologia (sem ferramenta nomeada); IM em \textbf{CPN} &
-Proposta conceitual; sem estudo industrial concluído; autores planejam avaliar em sistemas complexos \\
+CFG$\!\rightarrow$entradas; execuções+traços (filtro); traços$\!\rightarrow$CPN; CPN$\!\rightarrow$UML SD &
+Sem ferramenta nominal; UML 2.x; instrumentação/VM/debugger; CPN (IR) &
+Sem validação; futuro \\
+
 
 \textcite{leatongkam2017generating} &
 Fortran OO; científico (computational science) &

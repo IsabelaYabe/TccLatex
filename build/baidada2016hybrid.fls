@@ -307,10 +307,6 @@ INPUT D:\MikTec\tex\latex\microtype\mt-msb.cfg
 INPUT D:\MikTec\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT D:\MikTec\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmbx8.tfm
-INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
-INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
-INPUT D:\MikTec\tex\latex\lm\t1lmtt.fd
-INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmtt8.tfm
 INPUT D:\MikTec\fonts\enc\dvips\lm\lm-mathsy.enc
 INPUT D:\MikTec\fonts\tfm\public\lm\ec-lmcsc10.tfm
 INPUT d:\TccLatex\build\baidada2016hybrid.aux
@@ -332,5 +328,3 @@ INPUT D:\MikTec\fonts\type1\public\lm\lmri12.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmri12.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmsy8.pfb
 INPUT D:\MikTec\fonts\type1\public\lm\lmsy8.pfb
-INPUT D:\MikTec\fonts\type1\public\lm\lmtt8.pfb
-INPUT D:\MikTec\fonts\type1\public\lm\lmtt8.pfb
