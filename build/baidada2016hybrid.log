@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  3 NOV 2025 22:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  5 NOV 2025 00:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -852,47 +852,44 @@ Package pdftex.def Info: Images/Logo_FGV.png  used on input line 95.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 144.
  (D:\MikTec\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (D:\MikTec\tex/latex/lm\ot1lmr.fd) (D:\MikTec\tex/latex/lm\omllmm.fd) (D:\MikTec\tex/latex/lm\omslmsy.fd) (D:\MikTec\tex/latex/lm\omxlmex.fd) (D:\MikTec\tex/latex/amsfonts\umsa.fd) (D:\MikTec\tex/latex/microtype\mt-msa.cfg) (D:\MikTec\tex/latex/amsfonts\umsb.fd) (D:\MikTec\tex/latex/microtype\mt-msb.cfg)
-d:/TccLatex/baidada2016hybrid.tex:186: Misplaced \noalign.
-<recently read> \noalign 
-                         
-l.186 \end{tabularx}
-                    
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-d:/TccLatex/baidada2016hybrid.tex:186: Misplaced \noalign.
-<recently read> \noalign 
-                         
-l.186 \end{tabularx}
-                    
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-d:/TccLatex/baidada2016hybrid.tex:186: Misplaced \noalign.
-<recently read> \noalign 
-                         
-l.186 \end{tabularx}
-                    
-I expect to see \noalign only after the \cr of
-an alignment. Proceed, and I'll ignore this case.
-
-
+)
 
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.189 \end{table}
-                  [1{D:/MikTec/fonts/enc/dvips/lm/lm-ts1.enc}]
+l.167 O
+        objetivo principal √© compreens√£o e redocumenta√ß√£o, diagramas de ... [1{D:/MikTec/fonts/enc/dvips/lm/lm-ts1.enc}]
 
-[2]
+[2] (D:\MikTec\tex/latex/lm\ot1lmr.fd) (D:\MikTec\tex/latex/lm\omllmm.fd) (D:\MikTec\tex/latex/lm\omslmsy.fd) (D:\MikTec\tex/latex/lm\omxlmex.fd) (D:\MikTec\tex/latex/amsfonts\umsa.fd) (D:\MikTec\tex/latex/microtype\mt-msa.cfg) (D:\MikTec\tex/latex/amsfonts\umsb.fd) (D:\MikTec\tex/latex/microtype\mt-msb.cfg) (D:\MikTec\tex/latex/lm\t1lmtt.fd)
+Overfull \hbox (34.92932pt too wide) in paragraph at lines 222--222
+\T1/lmtt/m/n/8 seq\T1/lmr/m/n/8 (-20) /\T1/lmtt/m/n/8 alt\T1/lmr/m/n/8 (-20) /\T1/lmtt/m/n/8 opt\T1/lmr/m/n/8 (-20) /\T1/lmtt/m/n/8 loop\T1/lmr/m/n/8 (-20) /\T1/lmtt/m/n/8 par\T1/lmr/m/n/8 (-20) )|  
+ []
+
+
+Overfull \hbox (21.59172pt too wide) in paragraph at lines 222--222
+\T1/lmr/m/n/8 (-20) s„o/redocumentaÁ„o|  
+ []
+
+
+Overfull \hbox (3.81783pt too wide) in paragraph at lines 222--222
+[]|\T1/lmr/m/n/8 (-20) CFG$ \OMS/lmsy/m/n/8 !$\T1/lmr/m/n/8 (-20) entradas; 
+ []
+
+
+Overfull \hbox (15.2569pt too wide) in paragraph at lines 222--222
+\T1/lmr/m/n/8 (-20) Á„o/VM/debugger; 
+ []
+
+
+
+[3{D:/MikTec/fonts/enc/dvips/lm/lm-mathsy.enc}]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
 
 
-[3] (d:\TccLatex\build\baidada2016hybrid.aux)
+[4] (d:\TccLatex\build\baidada2016hybrid.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -911,17 +908,17 @@ Package logreq Info: Writing requests to 'baidada2016hybrid.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 22759 strings out of 468130
- 392222 string characters out of 5447467
- 1319132 words of memory out of 5000000
- 50977 multiletter control sequences out of 15000+600000
- 678597 words of font info for 113 fonts, out of 8000000 for 9000
+ 22829 strings out of 468130
+ 393191 string characters out of 5447467
+ 1319122 words of memory out of 5000000
+ 51023 multiletter control sequences out of 15000+600000
+ 679775 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,10n,79p,1651b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<D:/MikTec/fonts/type1/public/lm/lmbx12.pfb><D:/MikTec/fonts/type1/public/lm/lmbx8.pfb><D:/MikTec/fonts/type1/public/lm/lmcsc10.pfb><D:/MikTec/fonts/type1/public/lm/lmr12.pfb><D:/MikTec/fonts/type1/public/lm/lmr17.pfb><D:/MikTec/fonts/type1/public/lm/lmr8.pfb><D:/MikTec/fonts/type1/public/lm/lmri12.pfb>
-Output written on d:\TccLatex\build\baidada2016hybrid.pdf (4 pages, 205320 bytes).
+ 78i,11n,79p,1651b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<D:/MikTec/fonts/type1/public/lm/lmbx12.pfb><D:/MikTec/fonts/type1/public/lm/lmbx8.pfb><D:/MikTec/fonts/type1/public/lm/lmcsc10.pfb><D:/MikTec/fonts/type1/public/lm/lmr12.pfb><D:/MikTec/fonts/type1/public/lm/lmr17.pfb><D:/MikTec/fonts/type1/public/lm/lmr8.pfb><D:/MikTec/fonts/type1/public/lm/lmri12.pfb><D:/MikTec/fonts/type1/public/lm/lmsy8.pfb><D:/MikTec/fonts/type1/public/lm/lmtt8.pfb>
+Output written on d:\TccLatex\build\baidada2016hybrid.pdf (5 pages, 248290 bytes).
 PDF statistics:
- 108 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 30782 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 123 PDF objects out of 1000 (max. 8388607)
+ 15 named destinations out of 1000 (max. 500000)
+ 31294 words of extra memory for PDF output out of 35830 (max. 10000000)
 

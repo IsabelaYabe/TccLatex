@@ -151,16 +151,45 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
 
 \section{RQ1. Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
 
+A abordagem é declaradamente voltada a linguagens Java. As evidências incluem (i) um exemplo de \textit{control flow graph} (CFG) de um método Java e (ii) a geração de traços por execução em máquina virtual para programas Java, como explicitado pelos autores. 
+
 \section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
+
+O trabalho gera Diagramas de Sequência UML de alto nível (HLSD), com uso uso de operadores de interação (seq, alt, opt, loop, par). 
+
+Os HLSD são construídos com os operadores de combined SD do UML 2: seq, alt, opt, loop, par.
+
 
 \section{RQ3. Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?}
 
+É proposto uma abordagem híbrida (estático + dinâmico).
+
+O objetivo principal é compreensão e redocumentação, diagramas de sequencia, com efeito direto em manutenção/evolução.
+
 \section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
+
+A abordagem propõe um \textit{pipeline} híbrido composto por quatro etapas articuladas por uma representação intermediária (IR) comportamental baseada em \textit{Colored Petri Nets} (CPN), culminando na geração do \textit{UML Sequence Diagram}.
+
+Na primeira etapa, realiza-se a análise estática do código-fonte por meio da construção de um Control Flow Graph (CFG), que permite identificar condições de execução e derivar valores de entrada capazes de cobrir diferentes comportamentos do sistema.
+
+Em seguida, essas entradas são utilizadas para executar o sistema e coletar traços de execução (\textit{execution traces}) por instrumentação, máquina virtual (no caso de Java) ou depurador customizado. Diversas execuções são realizadas para capturar variações comportamentais, seguidas por uma filtragem de ruído que remove eventos irrelevantes.
+
+Os traços resultantes são convertidos em uma representação intermediária comportamental, estruturada como uma rede de Petri colorida (CPN). Nessa representação, lugares correspondem a diagramas de sequência básicos e transições a operadores de controle (\textit{alt}, \textit{loop}, \textit{seq}, \textit{par}). Um algoritmo incremental percorre os traços linha a linha para construir a CPN e identificar paralelismos por contagem de \textit{threads}.
+
+Por fim, aplica-se a transformação de CPN para UML Sequence Diagram, guiada por regras de mapeamento que traduzem operadores e fluxos em \textit{combined fragments} na notação UML 2.x.
 
 \section{RQ5. Quais ferramentas/frameworks são utilizados?}
 
+O padrão-alvo é a UML 2.x (OMG), utilizada como linguagem de modelagem de destino.
+A coleta de traços de execução é realizada por meio de instrumentação do código, uso da máquina virtual Java (JVM) ou de um depurador customizado, dependendo do ambiente analisado.
+
+A representação intermediária é construída sobre o formalismo de Colored Petri Nets (CPN), o que sugere o uso de ferramentas da família CPN Tools para manipulação, análise e simulação das redes.
+
+A transformação final para o Diagrama de Sequência UML é conduzida por regras de mapeamento baseadas em modelo, alinhadas às especificações da UML 2.x, possivelmente implementadas sobre um framework de transformação como o Eclipse Modeling Framework (EMF) ou ferramenta equivalente.
+
 \section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
 
+Não há validação reportada ou experimento, estudo de caso, métrica, análise de desempenho ou comparação sistemática.
 
 \begin{table}[h!]
 \centering
@@ -179,7 +208,14 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
 \textbf{Validação / Estudo de Caso} \\
 \midrule
 
+
 \textcite{baidada2016hybrid} &
+OO (ex.: Java); multithread &
+UML SD (HLSD; \texttt{seq}/\texttt{alt}/\texttt{opt}/\texttt{loop}/\texttt{par}) &
+Híbrido; compreensão/redocumentação &
+CFG$\!\rightarrow$entradas; execuções+traços (filtro); traços$\!\rightarrow$CPN; CPN$\!\rightarrow$UML SD &
+Sem ferramenta nominal; UML 2.x; instrumentação/VM/debugger; CPN (IR) &
+Sem validação; futuro \\
 
 
 \bottomrule
