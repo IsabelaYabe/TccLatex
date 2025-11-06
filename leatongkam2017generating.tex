@@ -151,16 +151,79 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
 
 \section{RQ1. Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}
 
+A abordagem foi aplicada à linguagem Fortran moderna (OO Fortran).
+  
+O domínio de aplicação é o da computação científica.
+
 \section{RQ2. Quais modelos/artefatos de alto nível são gerados?}
+Os modelos e artefatos de alto nível gerados são derivados da engenharia reversa de código Fortran orientado a objetos, produzindo representações UML que capturam tanto a estrutura quanto o comportamento do sistema.
+
+Originalmente implementado pela ferramenta ForUML, que extrai de código Fortran OO as estruturas de classes, atributos, métodos e relações de agregação e herança.
+
+Esses diagramas representam o aspecto estático do sistema, isto é, sua organização estrutural e hierarquias de classes.
+
+O trabalho propõe uma extensão da ferramenta ForUML para gerar também diagramas de sequência.
+
+O processo de extração gera um arquivo intermediário em formato XMI, que armazena a estrutura do diagrama UML para importação em ferramentas de modelagem como o ArgoUML.
 
 \section{RQ3. Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?}
 
+A proposta adota uma abordagem estática, fundamentada na análise do código-fonte Fortran. Concentrando-se exclusivamente na inspeção estrutural e semântica do código.
+
+O propósito declarado pelos autores é auxiliar a compreensão e redocumentação de programas científicos escritos em Fortran OO, cujo ciclo de vida é longo e frequentemente carece de documentação de design.
+
 \section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
+
+Se baseiam em três etapas principais: definição de regras, extração e geração de modelo.
+
+A primeira etapa consiste em definir regras formais de mapeamento entre elementos da linguagem Fortran OO e notações de diagramas UML de sequência. Ou seja, o sistema identifica padrões sintáticos no código (como chamadas de método, criação de objetos e controle de fluxo) e os converte em elementos comportamentais UML.
+
+NA segunda etapa um módulo de extração percorre o código-fonte Fortran e constrói uma árvore de nós (tree node structure) que representa a hierarquia de classes e suas relações. Durante essa travessia, o código é validado quanto à gramática Fortran, garantindo consistência sintática antes da geração dos diagramas. Essa estrutura intermediária atua como um modelo abstrato do sistema, análogo a um Abstract Syntax Tree (AST) estendida com semântica de classes e interações.
+
+Por fim, na terceira etapa o processo de transformação produz um modelo intermediário XMI, padrão utilizado para representar diagramas UML em formato intercambiável. Esse arquivo é então importado por ferramentas de modelagem como o ArgoUML, que renderiza os diagramas de sequência resultantes.
+
+
+
+\section{RQ4. Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}
+
+O processo se baseia em três etapas principais: definição de regras de mapeamento, extração estrutural e geração do modelo UML.
+
+Na primeira etapa, são definidas regras formais que associam elementos da linguagem Fortran OO a notações de diagramas UML. O sistema identifica padrões sintáticos, como chamadas de método, criação de objetos e estruturas de controle, e os converte em elementos comportamentais UML.
+
+Na segunda etapa, um módulo de extração percorre o código-fonte e constrói uma estrutura em árvore de nós (tree node structure) que representa classes, métodos e relações. Durante essa travessia, o código é validado segundo a gramática Fortran, assegurando consistência sintática. Essa estrutura atua como um modelo abstrato do sistema, análogo a uma AST (Abstract Syntax Tree) enriquecida com semântica de classes e interações.
+
+Por fim, a terceira etapa gera um modelo intermediário XMI, padrão da OMG para representação de diagramas UML. Esse arquivo é então importado por ferramentas como o ArgoUML, que renderiza automaticamente os diagramas de sequência.
+
 
 \section{RQ5. Quais ferramentas/frameworks são utilizados?}
 
-\section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
+as ferramentas e frameworks empregados concentram-se na extensão da infraestrutura já existente da ferramenta ForUML (Fortran UML Reverse Engineering Tool), complementada por tecnologias padrão de modelagem UML e interoperabilidade via XMI.
 
+O ForUML é a ferramenta-base do estudo, ela é capas de analisar código-fonte Fortran orientado a objetos e gerar diagramas UML de classes. E será agora estendida para incluir diagramas de sequência.
+
+O XMI é o formato de intercâmbio padronizado pela OMG (Object Management Group), responsável por definir as especificações UML utilizadas no mapeamento.
+
+Ferramenta open-source usada para visualização dos modelos UML gerados pela ForUML é o ArgoUML é compatível com o padrão XMI (XML Metadata Interchange), o que permite importar o modelo intermediário e renderizar automaticamente o diagrama.
+
+As regras de transformação entre código Fortran e notação UML seguem o padrão de especificação UML do OMG. Isso garante conformidade semântica e sintática com o metamodelo UML e integração com outras ferramentas compatíveis.
+
+
+\section{RQ5. Quais ferramentas/frameworks são utilizados?}
+
+As ferramentas empregadas concentram-se na extensão da infraestrutura da ForUML (Fortran UML Reverse Engineering Tool), complementada por tecnologias padrão de modelagem UML e interoperabilidade via XMI.
+
+A ForUML é a ferramenta-base do estudo: capaz de analisar código-fonte Fortran OO e gerar diagramas UML de classes, sendo agora expandida para incluir diagramas de sequência.
+
+O XMI (XML Metadata Interchange) é o formato de intercâmbio padronizado pela OMG (Object Management Group), utilizado para garantir a compatibilidade e a conformidade com o metamodelo UML.
+
+A visualização dos diagramas é realizada no ArgoUML, ferramenta open-source compatível com o padrão XMI, que permite importar e renderizar automaticamente os modelos gerados.
+
+As regras de transformação seguem as especificações da UML 2.x da OMG, assegurando aderência semântica e integração com outros frameworks de modelagem.
+
+\section{RQ6. Como as abordagens são validadas e com que qualidade prática?}
+O estudo é apresentado como um work in progress, descrevendo as etapas conceituais e o plano de testes para a nova funcionalidade de geração de diagramas de sequência no ForUML.
+
+O artigo menciona que o projeto foi publicado no GitHub para incentivar o uso e colaboração da comunidade científica. 
 
 \begin{table}[h!]
 \centering
@@ -180,7 +243,12 @@ A revisão tem o objetivo de compreender o estado da arte das abordagens de enge
 \midrule
 
 \textcite{leatongkam2017generating} &
-
+Fortran OO; computação científica e engenharia &
+UML Classe; UML Sequência; modelo intermediário XMI &
+Estático — compreensão e redocumentação &
+Regras de mapeamento código $\rightarrow$ UML (OMG); parsing estático; árvore sintática; geração XMI $\rightarrow$ importação ArgoUML &
+ForUML (extensão); ArgoUML; padrão OMG UML/XMI;&
+\textit{Work in progress} \\
 
 \bottomrule
 \end{tabularx}

@@ -1,8 +1,0 @@
-\babel@toc {brazil}{}\relax 
-\contentsline {section}{\numberline {1}Revisão literária}{1}{section.1}%
-\contentsline {section}{\numberline {2}Em quais linguagens e domínios as abordagens que partem de código-fonte foram aplicadas?}{1}{section.2}%
-\contentsline {section}{\numberline {3}Quais modelos/artefatos de alto nível são gerados?}{1}{section.3}%
-\contentsline {section}{\numberline {4}Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo (compreensão, redocumentação, migração, qualidade)?}{1}{section.4}%
-\contentsline {section}{\numberline {5}Quais técnicas e transformações viabilizam a passagem do código para o modelo de alto nível?}{2}{section.5}%
-\contentsline {section}{\numberline {6}Quais ferramentas/frameworks são utilizados?}{2}{section.6}%
-\contentsline {section}{\numberline {7}Como as abordagens são validadas e com que qualidade prática?}{3}{section.7}%

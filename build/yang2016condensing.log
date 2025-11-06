@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  3 NOV 2025 21:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.10.10)  5 NOV 2025 21:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -849,7 +849,7 @@ Package pdftex.def Info: Images/Logo_FGV.png  used on input line 95.
 [1
 
 {C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{D:/MikTec/fonts/enc/dvips/lm/lm-ec.enc} <./Images/Logo_FGV.png>]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 145.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 146.
  (D:\MikTec\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -858,11 +858,11 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.164 
+l.165 
        [1{D:/MikTec/fonts/enc/dvips/lm/lm-ts1.enc}]
 
 [2] (D:\MikTec\tex/latex/lm\ot1lmr.fd) (D:\MikTec\tex/latex/lm\omllmm.fd) (D:\MikTec\tex/latex/lm\omslmsy.fd) (D:\MikTec\tex/latex/lm\omxlmex.fd) (D:\MikTec\tex/latex/amsfonts\umsa.fd) (D:\MikTec\tex/latex/microtype\mt-msa.cfg) (D:\MikTec\tex/latex/amsfonts\umsb.fd) (D:\MikTec\tex/latex/microtype\mt-msb.cfg)
-Overfull \hbox (72.2369pt too wide) in paragraph at lines 235--235
+Overfull \hbox (72.2369pt too wide) in paragraph at lines 236--236
 \T1/lmr/m/sc/8 (-20) são\T1/lmr/m/n/8 (-20) /\T1/lmr/m/sc/8 (-20) Redocumentação\T1/lmr/m/n/8 (-20) (estrutura)|  
  []
 

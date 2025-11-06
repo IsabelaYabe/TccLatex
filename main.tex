@@ -247,8 +247,6 @@ Com base nos critérios de inclusão e exclusão, foram selecionados os seguinte
   \item WIP: Generating Sequence Diagrams for Modern Fortran (2017).
 \end{itemize}
 
-\subsection{Síntese comparativa dos estudos}
-
 \begin{sidewaystable}[p] % gera uma página própria com a tabela girada
 \centering
 \scriptsize % Mudar o tamanho da fonte para caber melhor
@@ -265,13 +263,6 @@ Com base nos critérios de inclusão e exclusão, foram selecionados os seguinte
 \textbf{Validação / Estudo de Caso} \\ % Rosa
 \midrule
 
-\textcite{Sabir2019MDRE} &
-Java (sistemas legados orientados a objetos) &
-UML \emph{Class Diagram} + \emph{Activity Diagram} (em pacote UML) &
-Estático; objetivo: compreensão/redocumentação &
-T2M/M2M em duas fases: Parser$\rightarrow$AST$\rightarrow$IM(XML) e mapeamentos IM$\rightarrow$UML (classe/atividade) &
-Eclipse + UML2/EMF; JavaParser (IMD); (Papyrus/StarUML/Rational Rose na validação manual) &
-Comparação especialista (modelos manuais vs. gerados), 5 estudos de caso; ATM e Amadeus descritos \\ 
 
 \textcite{zhang2016j2x} &
 Java; pequenos sistemas OO (eLib, Minesweeper, Blog, PayrollSys, myAlgsLib) &
@@ -284,7 +275,7 @@ J2UML; JavaCC; Dom4j; J2X (DTD/XML) &
 \textcite{yang2016condensing} &
 Java; sistemas OO &
 UML Classe (condensado) &
-\Static; \Comp/\Redoc (estrutura) &
+\Static; \Comp/\Redoc; estrutural &
 \textbf{Extração de métricas (SDMetrics)} $\rightarrow$ Normalização (z-score) $\rightarrow$ \textbf{k-means clustering} $\rightarrow$ Random under-sampling $\rightarrow$ \textbf{Ensemble learning (Random Forest)} $\rightarrow$ diagrama condensado &
 MagicDraw; SDMetrics; Random Forest; Windows 7 &
 OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo=10\%; teste de Wilcoxon e Cliff’s $\delta$ \\
@@ -295,16 +286,8 @@ UML Sequência (comportamental) &
 \Static; \Comp/\Redoc &
 \textbf{Código} $\rightarrow$ \textbf{AST (JavaParser)} $\rightarrow$ \textbf{DFS pós-ordem} $\rightarrow$ \textbf{PlantUML (Seq)} &
 REVUML; \JavaParser; \PlantUML &
-126 casos de teste (8 categorias: herança, polimorfismo, laços, recursão, métodos estáticos); geração correta e consistente de diagramas \\ 
+126 casos de teste (8 categorias; geração correta e consistente de diagramas \\ 
 
-\textcite{siala2024enhancing} &
-Java; Python; sistemas legados &
-UML Classe; OCL &
-Estático — compreensão, redocumentação e migração &
-código $\rightarrow$ tokenização/simplificação $\rightarrow$ geração textual UML/OCL intermediária(LLM) $\rightarrow$ model repair $\rightarrow$ diagramas UML/OCL &
-Graphviz; PlantUML; Modelio; AgileUML; LLM &
-Comparação MDRE: dois estudos de caso; correção semântica, completude e compreensibilidade \\
-% foi
 
 \textcite{baidada2016hybrid} &
 Java/Genérico; aplicações OO &
@@ -314,20 +297,66 @@ CFG$\!\rightarrow$entradas; execuções+traços (filtro); traços$\!\rightarrow$
 Sem ferramenta nominal; UML 2.x; instrumentação/VM/debugger; CPN (IR) &
 Sem validação; futuro \\
 
-
 \textcite{leatongkam2017generating} &
-Fortran OO; científico (computational science) &
-UML Sequência (com suporte a coarrays) &
-Estático; Compreensão/Redocumentação (comportamento) &
-Regras formais (OMG UML) para \emph{lifelines}, \emph{messages}, \emph{conditional/decision/loop}, \emph{coarrays}; Extração sintática $\rightarrow$ árvore de classes $\rightarrow$ mapeamento $\rightarrow$ XMI &
-Extensão do \textit{ForUML}; exporta \textbf{XMI}; visualização em \textit{ArgoUML} (avaliação de outras ferramentas) &
-Work-in-progress; plano de testes com pacotes Fortran OO e avaliação por usuários; sem estudo industrial concluído \\
+Fortran OO; computação científica e engenharia &
+UML Classe; UML Sequência; modelo intermediário XMI &
+Estático — compreensão e redocumentação &
+Regras de mapeamento código $\rightarrow$ UML (OMG); parsing estático; árvore sintática; geração XMI $\rightarrow$ importação ArgoUML &
+ForUML (extensão); ArgoUML; padrão OMG UML/XMI;&
+\textit{Work in progress} \\
+
+\textcite{Sabir2019MDRE} &
+Java (sistemas legados orientados a objetos) &
+UML \emph{Class Diagram} + \emph{Activity Diagram} (em pacote UML) &
+Estático; objetivo: compreensão/redocumentação &
+T2M/M2M em duas fases: Parser$\rightarrow$AST$\rightarrow$IM(XML) e mapeamentos IM$\rightarrow$UML (classe/atividade) &
+Eclipse + UML2/EMF; JavaParser (IMD); (Papyrus/StarUML/Rational Rose na validação manual) &
+Comparação especialista (modelos manuais vs. gerados), 5 estudos de caso; ATM e Amadeus descritos \\ 
+
+
+\textcite{siala2024enhancing} &
+Java; Python; sistemas legados &
+UML Classe; OCL &
+Estático — compreensão, redocumentação e migração &
+código $\rightarrow$ tokenização/simplificação $\rightarrow$ geração textual UML/OCL intermediária(LLM) $\rightarrow$ model repair $\rightarrow$ diagramas UML/OCL &
+Graphviz; PlantUML; Modelio; AgileUML; LLM &
+Comparação MDRE: dois estudos de caso; correção semântica, completude e compreensibilidade \\
 
 \bottomrule
 \end{tabularx}
 \caption{Síntese comparativa dos estudos selecionados.}
 \label{tab:sintese_comparativa}
 \end{sidewaystable}
+
+\subsection{Análise sistemática da literatura}
+
+A partir da síntese da Tabela~\ref{tab:sintese_comparativa}, organizamos os achados por eixo (RQ1–RQ6), destacando tendências, limitações e implicações para a presente pesquisa.
+
+\paragraph{RQ1 — Linguagens e domínios.}
+Predomina o ecossistema \textbf{Java} em sistemas orientados a objetos, tanto em estudos estruturais quanto comportamentais (\textcite{zhang2016j2x, yang2016condensing, Fauzi2016AST, Sabir2019MDRE}). Há ampliação pontual para \textbf{Fortran OO} em contexto de computação científica (\textcite{leatongkam2017generating}) e menção tanto a \textbf{Java} quanto a \textbf{Python} em proposta recente com LLMs (\textcite{siala2024enhancing}). Em síntese, o corpus avaliado é fortemente dominado por Java; Python surge como alvo relevante e contemporâneo, porém ainda subexplorado.
+
+\paragraph{RQ2 — Modelos/artefatos gerados.}
+A produção concentra-se em \textbf{UML Classe} e \textbf{UML Sequência}. Em \textcite{zhang2016j2x}, ambos são gerados a partir de um pipeline \textit{código} $\rightarrow$ \textit{J2X} $\rightarrow$ \textit{OFG/CFG} $\rightarrow$ \textit{UML} (Classe+Sequência) . \textcite{leatongkam2017generating} propõem estender o \emph{ForUML} para também extrair \textbf{Sequência} a partir de Fortran OO, exportando um \textbf{XMI} intermediário para visualização (e.g., ArgoUML) . \textcite{Fauzi2016AST} derivam \textbf{Sequência} diretamente da \textbf{AST}, com saída em \emph{PlantUML} (Seq), abordagem estática focada em interações. \textcite{Sabir2019MDRE} incluem \textbf{Activity} além de \textbf{Class}, gerando “modelos UML de alto nível” (classe + atividade) a partir de um modelo intermediário (UML2) . \textcite{yang2016condensing} não “geram” um novo tipo de diagrama, mas \emph{condensam} \textbf{diagramas de classe} via métricas + \emph{ensemble learning}, reduzindo a complexidade visual ao destacar “classes importantes” (AUC, testes de Wilcoxon/Cliff’s $\delta$) . Em contraste, \textbf{Casos de Uso} aparecem sobretudo como \emph{enquadramento conceitual} para Sequência (e.g., “SDs mostram interações num \emph{use case} específico”), mas não como artefato recuperado dos códigos analisados, sinalizando uma \textit{lacuna} na redocumentação de requisitos a partir de código
+
+\paragraph{RQ3 — Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo?}
+No conjunto analisado, prevalece de forma nítida o aspecto \textbf{\Static}, quase sempre orientado à \textbf{\Comp/\Redoc}. Os trabalhos clássicos da vertente estrutural e comportamental, como \textcite{zhang2016j2x} e \textcite{Fauzi2016AST}, operam integralmente sobre o código (sem execução), partindo de \emph{parsing}/AST e passando por representações intermediárias (p.\,ex., J2X) ou travessias específicas (DFS pós-ordem) para derivar, respectivamente, diagramas de Classe e Sequência. Em \textcite{leatongkam2017generating}, a mesma orientação estática se mantém ao estender o ForUML para Fortran OO via regras de mapeamento e exportação XMI; e em \textcite{Sabir2019MDRE}, o padrão T2M/M2M consolida o fluxo código$\rightarrow$AST$\rightarrow$IM$\rightarrow$UML, com \emph{Activity} agregada ao escopo estrutural. Ainda sob a ótica estática, \textcite{yang2016condensing} não cria um novo artefato, mas trata o \emph{pós-processamento} do diagrama de classes via métricas e \emph{machine learning}, reduzindo a complexidade visual sem recorrer a dados de execução. Em contraste com esse predomínio, \textcite{baidada2016hybrid} introduzem um caminho \textbf{\Hybrid} (estático + dinâmico) para Sequência: gera-se um conjunto de entradas a partir do CFG, coletam-se traços por instrumentação/VM, sintetiza-se uma IR comportamental em \emph{Colored Petri Nets} e, então, mapeia-se para UML 2.x, obtendo maior fidelidade comportamental, embora sem validação empírica robusta reportada. Por fim, \textcite{siala2024enhancing} preserva o caráter \textbf{\Static} ao integrar LLMs como camada semântica (texto intermediário UML/OCL seguido de \emph{model repair}), ampliando o objetivo para \textbf{migração} em sistemas legados e apontando uma inflexão do “estrutural puro” para um \emph{estrutural + semântico}. 
+
+\paragraph{RQ4 — Técnicas e transformações.}
+As abordagens convergem em um esqueleto MDRE que encadeia \emph{Text-to-Model} e \emph{Model-to-Model}: análise sintática do código (\emph{parsing}) para \textbf{AST} ou \textbf{IR} textual, seguida de mapeamentos para o metamodelo UML. Ainda assim, diferem nos \emph{intermediários}, nos operadores de fluxo usados para recuperar comportamento e no quanto incorporam \emph{semântica} além da sintaxe. Em \textcite{zhang2016j2x}, o núcleo é a \textbf{J2X} (DTD/XML), uma IR (\textit{Intermeadiate Representation}) que padroniza elementos de linguagem; o diagrama de classes surge de metadados extraídos dessa IR (Interme), enquanto o diagrama de sequência resulta da \textbf{integração OFG+CFG} (rastros de objetos + fluxo de controle) para identificar \emph{lifelines}, \emph{messages} e \emph{combined fragments} (\textsf{alt}/\textsf{opt}/\textsf{loop}) de modo inteiramente estático. \textcite{Fauzi2016AST} elimina o XML e vai direto da \textbf{AST} (JavaParser) para \emph{Sequence}, guiado por uma travessia \textbf{DFS pós-ordem} com registro de variáveis, resolução de herança/polimorfismo e marcação de estruturas condicionais/iterativas; a apresentação é automatizada via \textbf{PlantUML}. Já \textcite{Sabir2019MDRE} formalizam o pipeline clássico \textbf{T2M/M2M} em duas fases: da AST para um \textbf{Intermediate Model (XML/EMF)} e, então, do IM (\textit{Intermeadiate Model}) para \textbf{UML2} (Classe + \emph{Activity} por operação), com regras de transformação implementadas no ecossistema Eclipse/UML2. O \textbf{híbrido} de \textcite{baidada2016hybrid} desloca a recuperação comportamental para uma IR executável: um \textbf{CFG} orienta a geração de entradas; execuções instrumentadas produzem \emph{traces} filtrados; esses traços são sintetizados como \textbf{Colored Petri Nets (CPN)} e finalmente mapeados para \emph{UML Sequence}, capturando paralelismo e operadores combinados com maior fidelidade às execuções reais. Em domínio não-Java, \textcite{leatongkam2017generating} mantém a análise estática por \textbf{regras formais de mapeamento} (Fortran OO $\rightarrow$ UML), uma \emph{tree node structure} análoga à AST, e geração de \textbf{XMI} para importação/visualização no ArgoUML, expandindo o ForUML para \emph{Sequence}. Duas linhas recentes aplicam \emph{aprendizado}: \textcite{yang2016condensing} não cria um novo artefato, mas \textbf{condensa} o diagrama de classes com um pipeline \emph{métricas $\rightarrow$ normalização (z-score) $\rightarrow$ k-means $\rightarrow$ under-sampling $\rightarrow$ \emph{ensemble} (Random Forest)}, priorizando classes “importantes” e reduzindo a complexidade visual; e \textcite{siala2024enhancing} introduz \textbf{LLMs} como camada \emph{semântica}: o código é tokenizado/simplificado, traduzido para uma \textbf{representação textual intermediária UML/OCL}, submetida a \emph{model repair} e convertida em diagramas (PlantUML/Graphviz/Modelio). 
+
+Em termos de \emph{trade-offs}, IRs sintáticas (J2X, XMI, EMF) maximizam portabilidade e auditabilidade do pipeline; CPNs elevam a \emph{fidelidade comportamental} à custa de instrumentação; e LLMs ampliam a \emph{capacidade explicativa} ao incorporar indícios semânticos (nomes, comentários, docstrings).
+
+\paragraph{RQ5 — Ferramentas/frameworks.}
+O ecossistema técnico das abordagens analisadas agrega \emph{parsers}/geradores UML, frameworks MDE e utilitários de visualização/mineração. Em \textcite{zhang2016j2x}, a cadeia J2X apoia-se na \textbf{J2UML} (orquestração), no \textbf{JavaCC} (geração do parser/AST), em \textbf{DOM4J} (manipulação XML) e no próprio \textbf{J2X (DTD/XML)} como IR; os experimentos reportam ambiente Windows 32-bit (3 GB RAM; Core 2 Duo). Em \textcite{yang2016condensing}, para “condensar” diagramas de classes, utilizam-se \textbf{MagicDraw} (recuperação de Classe), \textbf{SDMetrics} (métricas), e \textbf{Random Forest} (classificador), com relatos do ambiente \textit{Windows 7} (64-bit). A \textcite{Fauzi2016AST} (REVUML) integra \textbf{JavaParser} (AST) e \textbf{PlantUML} (renderização do Sequência), dispensando IR XML intermediária. Em \textcite{baidada2016hybrid}, não há ferramenta nominal de ponta a ponta: a coleta se dá por \textbf{instrumentação}/\textbf{JVM}/\textbf{debugger}, a IR comportamental usa \textbf{Colored Petri Nets} (sugerindo uso de \textit{CPN Tools}), e o mapeamento segue \textbf{UML 2.x}. Em \textcite{leatongkam2017generating}, a extensão da \textbf{ForUML} gera \textbf{XMI (OMG)} para importação no \textbf{ArgoUML} (visualização de Sequência). No framework \textcite{Sabir2019MDRE} (Src2MoF), o gerador baseia-se em \textbf{Eclipse}+\textbf{UML2/EMF} e o \textbf{JavaParser} integra o IMD; ferramentas como \textbf{Papyrus}/\textbf{StarUML}/\textbf{Rational Rose} são citadas apenas para comparação manual, não no pipeline automático. Por fim, \textcite{siala2024enhancing} combina \textbf{AgileUML}/\textbf{OMG MDA} com \textbf{LLMs} (camada semântica) e usa \textbf{Graphviz}, \textbf{PlantUML} e \textbf{Modelio} para materializar \textit{UML/OCL} (fase M2V).
+
+\paragraph{RQ6 — Validação e qualidade prática.}
+A avaliação varia de \textbf{estudos de caso pequenos com acurácia estrutural} (classes 96{,}4–100\%, relações 65{,}0–90{,}4) \parencite{zhang2016j2x}, a \textbf{testes sistemáticos} de geração de sequência \parencite{Fauzi2016AST}, e \textbf{comparação especialista} sem métricas quantitativas \parencite{Sabir2019MDRE}. \textcite{yang2016condensing} recorre a \textbf{AUC} e testes estatísticos (Wilcoxon, Cliff’s $\delta$) para condensação de classes. \textcite{baidada2016hybrid} não reporta validação empírica. Em suma, há carência de avaliações \emph{comparativas} com ground truth e métricas padronizadas na maioria dos trabalhos.
+
+
+Leitura crítica (versão mais explícita). Os fluxos T2M/M2M sustentam traçabilidade e reprodutibilidade quando ancorados em IRs explícitas (J2X, EMF, XMI). Abordagens híbridas elevam a fidelidade comportamental (Petri Nets), mas dependem de instrumentação. As abordagens com LLMs (e.g., Siala 2024) inserem uma etapa semântica — código → representação textual próxima de UML/OCL — sem quebrar a cadeia MDA: os modelos continuam conformes a metamodelos OMG (via AgileUML) e podem ser materializados/validados em ferramentas padrão (Modelio, PlantUML, Graphviz), preservando a interoperabilidade do pipeline.
+
+\paragraph{Implicações para este trabalho.}
+As lacunas identificadas fundamentam a proposta de \textbf{redocumentação semântica} a partir de \textbf{Python}, combinando (i) \textbf{AST} como \emph{IM/IR} e (ii) \textbf{LLMs/embeddings} para inferir \emph{intenção e papel} (a partir de docstrings, comentários e nomenclaturas), visando a reconstrução de \textbf{diagramas de casos de uso}.
 
 \section{Escolha dos repositórios}
 Para análise foram escolhidos três repositórios independentes, dois de David Beazley e um de Brandon Rhodes, duas referências em linguagem Python. Os repositórios de David Beazley possui uma documentação completa no próprio repositório, facilitando a compreensão do software construido. Já o repositório do Brandon Rhodes não contém documentação, contudo o conteúdo é a portabilidade do jogo Colossal Cave Adventure de Fortran para Python.

@@ -370,73 +370,6 @@
       \field{pages}{13\bibrangedash 17}
       \range{pages}{5}
     \endentry
-    \entry{Sabir2019MDRE}{article}{}{}
-      \name{author}{6}{}{%
-        {{hash=6673fa0903305a555d025f8c6779e4db}{%
-           family={Sabir},
-           familyi={S\bibinitperiod},
-           given={Umair},
-           giveni={U\bibinitperiod}}}%
-        {{hash=6372a05a89ae07648215684d98f8c2a1}{%
-           family={Azam},
-           familyi={A\bibinitperiod},
-           given={Farooque},
-           giveni={F\bibinitperiod}}}%
-        {{hash=c48c83270afe8168febd1d410459fb55}{%
-           family={Haq},
-           familyi={H\bibinitperiod},
-           given={Sami\bibnamedelima Ul},
-           giveni={S\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
-        {{hash=3edd2fd01bcd18d0d778b3bbad7c3c0f}{%
-           family={Anwar},
-           familyi={A\bibinitperiod},
-           given={Muhammad\bibnamedelima Waseem},
-           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-        {{hash=1f019fc4263570add80300d40e9e98a2}{%
-           family={Butt},
-           familyi={B\bibinitperiod},
-           given={Wasi\bibnamedelima Haider},
-           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=b930f7f9d1d40aeca3ba9160e33244e1}{%
-           family={Amjad},
-           familyi={A\bibinitperiod},
-           given={Anam},
-           giveni={A\bibinitperiod}}}%
-      }
-      \strng{namehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
-      \strng{fullhash}{7167a14b17dd0ff15b9245b0d3d32b9e}
-      \strng{fullhashraw}{7167a14b17dd0ff15b9245b0d3d32b9e}
-      \strng{bibnamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
-      \strng{authorbibnamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
-      \strng{authornamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
-      \strng{authorfullhash}{7167a14b17dd0ff15b9245b0d3d32b9e}
-      \strng{authorfullhashraw}{7167a14b17dd0ff15b9245b0d3d32b9e}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Access}
-      \field{title}{A Model Driven Reverse Engineering Framework for Generating High Level {UML} Models from Java Source Code}
-      \field{urlday}{29}
-      \field{urlmonth}{10}
-      \field{urlyear}{2025}
-      \field{volume}{7}
-      \field{year}{2019}
-      \field{urldateera}{ce}
-      \field{pages}{158931\bibrangedash 158950}
-      \range{pages}{20}
-      \verb{doi}
-      \verb 10.1109/ACCESS.2019.2950884
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1109/ACCESS.2019.2950884
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1109/ACCESS.2019.2950884
-      \endverb
-    \endentry
     \entry{zhang2016j2x}{inproceedings}{}{}
       \name{author}{1}{}{%
         {{hash=2c0b840bb8e56b788648974d79a77c9e}{%
@@ -462,8 +395,8 @@
       \strng{authornamehash}{2c0b840bb8e56b788648974d79a77c9e}
       \strng{authorfullhash}{2c0b840bb8e56b788648974d79a77c9e}
       \strng{authorfullhashraw}{2c0b840bb8e56b788648974d79a77c9e}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -598,53 +531,6 @@
       \verb 10.1109/ICoDSE.2016.7936137
       \endverb
     \endentry
-    \entry{siala2024enhancing}{inproceedings}{}{}
-      \name{author}{1}{}{%
-        {{hash=aaaffe192df6e5faddfa685f9566dae6}{%
-           family={Siala},
-           familyi={S\bibinitperiod},
-           given={Hanan\bibnamedelima Abdulwahab},
-           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-      }
-      \list{language}{1}{%
-        {english}%
-      }
-      \list{location}{1}{%
-        {Lisbon, Portugal}%
-      }
-      \list{publisher}{1}{%
-        {IEEE/ACM}%
-      }
-      \strng{namehash}{aaaffe192df6e5faddfa685f9566dae6}
-      \strng{fullhash}{aaaffe192df6e5faddfa685f9566dae6}
-      \strng{fullhashraw}{aaaffe192df6e5faddfa685f9566dae6}
-      \strng{bibnamehash}{aaaffe192df6e5faddfa685f9566dae6}
-      \strng{authorbibnamehash}{aaaffe192df6e5faddfa685f9566dae6}
-      \strng{authornamehash}{aaaffe192df6e5faddfa685f9566dae6}
-      \strng{authorfullhash}{aaaffe192df6e5faddfa685f9566dae6}
-      \strng{authorfullhashraw}{aaaffe192df6e5faddfa685f9566dae6}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2024 IEEE/ACM 46th International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)}
-      \field{note}{King’s College London, London, UK}
-      \field{title}{Enhancing Model-Driven Reverse Engineering Using Machine Learning}
-      \field{year}{2024}
-      \field{pages}{1\bibrangedash 13}
-      \range{pages}{13}
-      \verb{doi}
-      \verb 10.1145/3593784.3639977
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1145/3593784.3639977
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1145/3593784.3639977
-      \endverb
-    \endentry
     \entry{baidada2016hybrid}{inproceedings}{}{}
       \name{author}{2}{}{%
         {{hash=34e92783ea743d123780995b48ca534b}{%
@@ -719,8 +605,8 @@
       \strng{authornamehash}{07c38b64b380f5aa883386da9d36db70}
       \strng{authorfullhash}{07c38b64b380f5aa883386da9d36db70}
       \strng{authorfullhashraw}{07c38b64b380f5aa883386da9d36db70}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -732,6 +618,120 @@
       \range{pages}{4}
       \verb{doi}
       \verb 10.1109/SE4Science.2017.13
+      \endverb
+    \endentry
+    \entry{Sabir2019MDRE}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=6673fa0903305a555d025f8c6779e4db}{%
+           family={Sabir},
+           familyi={S\bibinitperiod},
+           given={Umair},
+           giveni={U\bibinitperiod}}}%
+        {{hash=6372a05a89ae07648215684d98f8c2a1}{%
+           family={Azam},
+           familyi={A\bibinitperiod},
+           given={Farooque},
+           giveni={F\bibinitperiod}}}%
+        {{hash=c48c83270afe8168febd1d410459fb55}{%
+           family={Haq},
+           familyi={H\bibinitperiod},
+           given={Sami\bibnamedelima Ul},
+           giveni={S\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
+        {{hash=3edd2fd01bcd18d0d778b3bbad7c3c0f}{%
+           family={Anwar},
+           familyi={A\bibinitperiod},
+           given={Muhammad\bibnamedelima Waseem},
+           giveni={M\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=1f019fc4263570add80300d40e9e98a2}{%
+           family={Butt},
+           familyi={B\bibinitperiod},
+           given={Wasi\bibnamedelima Haider},
+           giveni={W\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=b930f7f9d1d40aeca3ba9160e33244e1}{%
+           family={Amjad},
+           familyi={A\bibinitperiod},
+           given={Anam},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{fullhash}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \strng{fullhashraw}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \strng{bibnamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{authorbibnamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{authornamehash}{a7f4da3a426a3dd0a142f3ff6ce42e31}
+      \strng{authorfullhash}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \strng{authorfullhashraw}{7167a14b17dd0ff15b9245b0d3d32b9e}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{title}{A Model Driven Reverse Engineering Framework for Generating High Level {UML} Models from Java Source Code}
+      \field{urlday}{29}
+      \field{urlmonth}{10}
+      \field{urlyear}{2025}
+      \field{volume}{7}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{158931\bibrangedash 158950}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2019.2950884
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/ACCESS.2019.2950884
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/ACCESS.2019.2950884
+      \endverb
+    \endentry
+    \entry{siala2024enhancing}{inproceedings}{}{}
+      \name{author}{1}{}{%
+        {{hash=aaaffe192df6e5faddfa685f9566dae6}{%
+           family={Siala},
+           familyi={S\bibinitperiod},
+           given={Hanan\bibnamedelima Abdulwahab},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {english}%
+      }
+      \list{location}{1}{%
+        {Lisbon, Portugal}%
+      }
+      \list{publisher}{1}{%
+        {IEEE/ACM}%
+      }
+      \strng{namehash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{fullhash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{fullhashraw}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{bibnamehash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{authorbibnamehash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{authornamehash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{authorfullhash}{aaaffe192df6e5faddfa685f9566dae6}
+      \strng{authorfullhashraw}{aaaffe192df6e5faddfa685f9566dae6}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2024 IEEE/ACM 46th International Conference on Software Engineering: Companion Proceedings (ICSE-Companion)}
+      \field{note}{King’s College London, London, UK}
+      \field{title}{Enhancing Model-Driven Reverse Engineering Using Machine Learning}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 13}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1145/3593784.3639977
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1145/3593784.3639977
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1145/3593784.3639977
       \endverb
     \endentry
     \entry{rhodes_adventure_py}{software}{}{}
@@ -750,8 +750,8 @@
       \strng{authornamehash}{eb282136fd89e99b6510fe7a46722b0a}
       \strng{authorfullhash}{eb282136fd89e99b6510fe7a46722b0a}
       \strng{authorfullhashraw}{eb282136fd89e99b6510fe7a46722b0a}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -799,8 +799,8 @@
       \strng{authornamehash}{05004c2c43cb43acd5435e7651eeef00}
       \strng{authorfullhash}{05004c2c43cb43acd5435e7651eeef00}
       \strng{authorfullhashraw}{05004c2c43cb43acd5435e7651eeef00}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -842,8 +842,8 @@
       \strng{authornamehash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhash}{19ba120924ee09440cd988b6ab1afc90}
       \strng{authorfullhashraw}{19ba120924ee09440cd988b6ab1afc90}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -874,8 +874,8 @@
       \strng{authornamehash}{7e521cf3616b7c888d511a80e9b82ad5}
       \strng{authorfullhash}{7e521cf3616b7c888d511a80e9b82ad5}
       \strng{authorfullhashraw}{7e521cf3616b7c888d511a80e9b82ad5}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -918,8 +918,8 @@
       \strng{authornamehash}{92b9b2299c2d435388f3b91670d2d31e}
       \strng{authorfullhash}{92b9b2299c2d435388f3b91670d2d31e}
       \strng{authorfullhashraw}{92b9b2299c2d435388f3b91670d2d31e}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -947,8 +947,8 @@
       \strng{authornamehash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
       \strng{authorfullhash}{43fb3f4f59c49358e6efeb3c59ef7bbd}
       \strng{authorfullhashraw}{43fb3f4f59c49358e6efeb3c59ef7bbd}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}

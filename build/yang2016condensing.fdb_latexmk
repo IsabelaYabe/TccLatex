@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber build/yang2016condensing"] 1762214441.186 "build/yang2016condensing.bcf" "build/yang2016condensing.bbl" "build/yang2016condensing" 1762216183.24811 0
-  "build/yang2016condensing.bcf" 1762216183 113137 eab9dae75b370778e784cd5abc8bd5c9 "pdflatex"
+["biber build/yang2016condensing"] 1762390204.59397 "build/yang2016condensing.bcf" "build/yang2016condensing.bbl" "build/yang2016condensing" 1762390208.91902 0
+  "build/yang2016condensing.bcf" 1762390208 113137 eab9dae75b370778e784cd5abc8bd5c9 "pdflatex"
   "refs.bib" 1762195051 16890 87e8cedcf9a9180195c6bd6a16701e7b ""
   (generated)
   "build/yang2016condensing.bbl"
   "build/yang2016condensing.blg"
   (rewritten before read)
-["pdflatex"] 1762216181.8253 "d:/TccLatex/yang2016condensing.tex" "build/yang2016condensing.pdf" "yang2016condensing" 1762216183.24862 0
+["pdflatex"] 1762390207.60764 "d:/TccLatex/yang2016condensing.tex" "build/yang2016condensing.pdf" "yang2016condensing" 1762390208.91955 0
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1761712815 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1760148962 13270132 4f7a67e4221cab14f71bfd7fb550e04a ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/tex/latex/biblatex-contrib/biblatex-abnt/bbx/abnt.bbx" 1760066467 71996 11dbc19d4619916cb1bbe9955f3bd32b ""
@@ -149,11 +149,11 @@
   "D:/MikTec/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "D:/MikTec/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "Images/Logo_FGV.png" 1760051702 2490 33a2339c99ef5f8115145ba188c3c2a8 ""
-  "build/yang2016condensing.aux" 1762216183 7817 393420407f1210a08d17dd48fd3937e0 "pdflatex"
-  "build/yang2016condensing.bbl" 1762214442 3062 b4e7392f8660ff4dffdf512eea86a0e7 "biber build/yang2016condensing"
-  "build/yang2016condensing.run.xml" 1762216183 2535 03b1ec1545dc579f35827cd26ccf4944 "pdflatex"
-  "d:/TccLatex/yang2016condensing.tex" 1762216178 13072 9311f801fd6eeb372a7e136df15e9d7a ""
-  "yang2016condensing.tex" 1762216178 13072 9311f801fd6eeb372a7e136df15e9d7a ""
+  "build/yang2016condensing.aux" 1762390208 7817 58cdd24291ebe3b43d5fbd3764032bfb "pdflatex"
+  "build/yang2016condensing.bbl" 1762390206 3062 b4e7392f8660ff4dffdf512eea86a0e7 "biber build/yang2016condensing"
+  "build/yang2016condensing.run.xml" 1762390208 2535 03b1ec1545dc579f35827cd26ccf4944 "pdflatex"
+  "d:/TccLatex/yang2016condensing.tex" 1762390199 13074 62b4bcaae33a4d9952429fe1c8f5be33 ""
+  "yang2016condensing.tex" 1762390199 13074 62b4bcaae33a4d9952429fe1c8f5be33 ""
   (generated)
   "build/yang2016condensing.aux"
   "build/yang2016condensing.bcf"
