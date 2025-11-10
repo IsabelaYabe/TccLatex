@@ -14,6 +14,10 @@
 \usepackage{hyperref}
 \usepackage{bookmark}
 
+\emergencystretch=2em
+\cleardoublepage
+\pagenumbering{arabic}
+
 % Matemática e teoremas (essencial só se você usa)
 \usepackage{amsmath,amssymb,amsthm}
 
@@ -42,7 +46,7 @@
   ittitles,
   justify
 ]{biblatex}
-\addbibresource{D:/TccLatex/refs.bib} % ← caminho corrigido
+\addbibresource{refs.bib} % ← caminho corrigido
 
 
 
@@ -371,7 +375,7 @@ Embeddings de código e de AST (NFASRPR-TRANS) para representar o código fonte;
 
 Relacionamentos estáticos.
 
-include: subrotinas/serviços invocados por ≥k casos de uso candidatos (reuso sistemático no grafo de chamadas).
+include: subrotinas/serviços invocados por $\ge k$ casos de uso candidatos (reuso sistemático no grafo de chamadas).
 
 extend: chamadas opcionais guardadas por condições (flags/feature toggles/validações) detectadas no AST/CFG; marcam “pontos de extensão” do caso de uso base.
 
@@ -387,28 +391,28 @@ Por que estático é suficiente (e como ancoramos)
 Extração de casos de uso a partir de métodos públicos. \textcite{pereira2011recovering}
 
 Generalização por herança/nomes homônimos.
-O mesmo trabalho mapeia herança estática para generalização: “generalization relations are obtained from inheritance and from public methods with the same signature in different classes.”【turn19file0L107-L110】
+O mesmo trabalho mapeia herança estática para generalização: “generalization relations are obtained from inheritance and from public methods with the same signature in different classes.”turn19file0L107-L110
 Fonte usada: regras de transformação (ATL) — adotamos a mesma leitura para Python (classes e MRO).
 
 Dependências entre casos a partir de chamadas.
-A transformação ATL inclui: “for each dependency between two public methods, create a dependency between the corresponding use cases.”【turn19file2L1-L7】
+A transformação ATL inclui: “for each dependency between two public methods, create a dependency between the corresponding use cases.”turn19file2L1-L7
 Fonte usada: regra Dependency2Dependency — base para nossas arestas de dependência/include.
 
 Heurísticas estáticas (sem execução).
-Os autores salientam que a técnica é estática (propagação em grafos de dados/controle) e que o “dinâmico” só melhora classificação de dependências; manteremos apenas o estático: “we perform a propagation analysis on the data-flow graph”【turn19file1L30-L37】 e, mais adiante, “dynamic analysis is used to classify dependencies…” (que aqui omitimos)【turn19file1L49-L57】.
+Os autores salientam que a técnica é estática (propagação em grafos de dados/controle) e que o “dinâmico” só melhora classificação de dependências; manteremos apenas o estático: “we perform a propagation analysis on the data-flow graph”turn19file1L30-L37 e, mais adiante, “dynamic analysis is used to classify dependencies…” (que aqui omitimos)turn19file1L49-L57.
 Fonte usada: seção de análise — adotamos a parte de data-flow/AST e descartamos a parte dinâmica.
 
 Embeddings estáticos guiados por AST.
-(Liang & Huang, 2024) descrevem um modelo com dois encoders (um para semântica lexical e outro para estrutura de AST) para sumarização de código.
+\textcite{LiangHuang2024ASTLLM} descrevem um modelo com dois encoders (um para semântica lexical e outro para estrutura de AST) para sumarização de código.
 Assim aproveitamos os embeddings para melhorar a qualidade dos clusters.
 
-Implicações para este trabalho. Propomos redocumentação semântica a partir de Python, combinando (i) AST como modelo intermediário (IM/IR) e (ii) embeddings sensíveis à estrutura (NFASRPR-TRANS) para inferir intenção e papel de métodos (docstrings, comentários e nomes). Casos de uso são inferidos por métodos de borda; generalizações vêm de herança/assinaturas homônimas; include decorre de subrotinas reutilizadas; extend de ramos opcionais. A saída é um Use Case Diagram em PlantUML. (Base: Pereira — extração estática por métodos públicos【turn19file0L101-L105】【turn19file0L107-L110】; Liang & Huang — embeddings orientados a AST【turn22file3L17-L33】.)
+Implicações para este trabalho. Propomos redocumentação semântica a partir de Python, combinando (i) AST como modelo intermediário (IM/IR) e (ii) embeddings sensíveis à estrutura (NFASRPR-TRANS) para inferir intenção e papel de métodos (docstrings, comentários e nomes). Casos de uso são inferidos por métodos de borda; generalizações vêm de herança/assinaturas homônimas; include decorre de subrotinas reutilizadas; extend de ramos opcionais. A saída é um Use Case Diagram em PlantUML. (Base: Pereira — extração estática por métodos públicos; embeddings orientados a AST.)
 
 (B) Sua “arquitetura pipeline” (ajustada para 0\% dinâmico)
 
 código → AST → embeddings+clusterização → regras estáticas (include/extend/atores) → PlantUML
 
-De onde vem: mapeamento “método público → caso de uso” e “chamada entre públicos → dependência” (Pereira)【turn19file0L101-L105】【turn19file2L1-L7】; robustez semântica dos vetores via AST-encoder (Liang & Huang)【turn22file8L1-L5】.
+De onde vem: mapeamento “método público → caso de uso” e “chamada entre públicos → dependência” (Pereira)turn19file0L101-L105turn19file2L1-L7; robustez semântica dos vetores via AST-encoder.
 
 Implementação prática (resumo)
 
@@ -418,27 +422,29 @@ Sinais estáticos:
 
 Atores: classes/módulos de interface (controllers/views/adapters; decorators de rota/CLI).
 
-include: função/método chamado por ≥k casos distintos; baixa complexidade ciclomática; sem guardas específicas.
+include: função/método chamado por $\ge k$ casos distintos; baixa complexidade ciclomática; sem guardas específicas.
 
 extend: chamadas condicionais (predicados sobre entrada/estado/feature-flag) marcando “pontos de extensão”.
 
 generalização: herança + homonímia de assinatura nos métodos.
 
-Escoragem: score = α·(freq de reuso) + β·(centralidade no call graph) − γ·(força da guarda condicional) para decidir include vs. extend.
+$score = \alpha \cdot (\text{freq. de reuso}) 
+       + \beta \cdot (\text{centralidade no call graph})
+       - \gamma \cdot (\text{força da guarda condicional})$
 
 Saída: .puml gerado a partir do grafo.
 
 Citações (trechos originais)
 
-Recovering Use Case Diagrams from Object-Oriented Code: “Each public method of a class corresponds to a use case whose name is the same as the method name.”【turn19file0L101-L105】
+Recovering Use Case Diagrams from Object-Oriented Code: “Each public method of a class corresponds to a use case whose name is the same as the method name.”turn19file0L101-L105
 
-Recovering Use Case Diagrams from Object-Oriented Code: “generalization relations are obtained from inheritance and from public methods with the same signature in different classes.”【turn19file0L107-L110】
+Recovering Use Case Diagrams from Object-Oriented Code: “generalization relations are obtained from inheritance and from public methods with the same signature in different classes.”turn19file0L107-L110
 
-Recovering Use Case Diagrams from Object-Oriented Code: “for each dependency between two public methods, create a dependency between the corresponding use cases.”【turn19file2L1-L7】
+Recovering Use Case Diagrams from Object-Oriented Code: “for each dependency between two public methods, create a dependency between the corresponding use cases.”turn19file2L1-L7
 
-Recovering Use Case Diagrams from Object-Oriented Code: “we perform a propagation analysis on the data-flow graph”【turn19file1L30-L37】
+Recovering Use Case Diagrams from Object-Oriented Code: “we perform a propagation analysis on the data-flow graph”turn19file1L30-L37
 
-Integrating Non-Fourier and AST-Structural Relative Position Representations…: “made up of two different types of encoders and one decoder…”【turn22file3L17-L21】; “…learn the structural information…”【turn22file3L29-L33】; “…allow the model to understand the semantics and syntax of the source code.”【turn22file8L1-L5】
+Integrating Non-Fourier and AST-Structural Relative Position Representations…: “made up of two different types of encoders and one decoder…”turn22file3L17-L21; “…learn the structural information…”turn22file3L29-L33; “…allow the model to understand the semantics and syntax of the source code.”turn22file8L1-L5
 
 Se topar, já escrevo o esqueleto do extrator (AST→grafo→PlantUML) e a rotina de scoring de include/extend.
 
@@ -453,7 +459,7 @@ Casos de uso (UC): cada método público vira um UC com o mesmo nome do método 
 Generalização (entre UCs): quando houver herança e mesmo nome/assinatura entre métodos em classes distintas, gere generalização entre os UCs correspondentes: “For each pair of same-name methods which are members of different classes with a generalization between them, a generalization between use cases… is generated.”
 
 Dependência entre UCs (aresta genérica): para cada chamada p.g() dentro de um método público m, crie dependência entre UC(m) e UC(g): “For each public method of a class, the method calls are analyzed to extract dependence relationships among basic use cases. Each message sent to an object corresponds to a dependence between use cases.”
-⟶ Decisão do seu trabalho (100\% estático): manter apenas “Dependency” (sem classificar em <<include>>/<<extend>>), pois a própria autora afirma que o tipo (include/extend) “may be inferred by a dynamic analysis” — que você não quer usar.
+$\longrightarrow$ Decisão do seu trabalho (100\% estático): manter apenas “Dependency” (sem classificar em <<include>>/<<extend>>), pois a própria autora afirma que o tipo (include/extend) “may be inferred by a dynamic analysis” — que você não quer usar.
 
 Atores: não inferir automaticamente (manter passo manual/regras externas), pois “actors can not be automatically inferred”.
 

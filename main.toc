@@ -1,0 +1,39 @@
+\babel@toc {brazil}{}\relax 
+\contentsline {section}{\numberline {1}Resumo}{1}{section.1}%
+\contentsline {section}{\numberline {2}Introdução}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Problematização}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Questão e hipótese}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Objetivos}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Relevância}{3}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Revisão literária}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Análise sistemática da literatura}{5}{subsection.3.1}%
+\contentsline {paragraph}{RQ1 — Linguagens e domínios.}{5}{section*.2}%
+\contentsline {paragraph}{RQ2 — Modelos/artefatos gerados.}{7}{section*.3}%
+\contentsline {paragraph}{RQ3 — Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo?}{7}{section*.4}%
+\contentsline {paragraph}{RQ4 — Técnicas e transformações.}{7}{section*.5}%
+\contentsline {paragraph}{RQ5 — Ferramentas/frameworks.}{8}{section*.6}%
+\contentsline {paragraph}{RQ6 — Validação e qualidade prática.}{9}{section*.7}%
+\contentsline {paragraph}{Implicações para este trabalho.}{9}{section*.8}%
+\contentsline {section}{\numberline {4}Código-fonte → AST}{13}{section.4}%
+\contentsline {paragraph}{Workflow.}{13}{section*.9}%
+\contentsline {paragraph}{Pré-processamento e AST.}{13}{section*.10}%
+\contentsline {paragraph}{Representação não-Fourier.}{13}{section*.11}%
+\contentsline {paragraph}{Representação estrutural (AST).}{13}{section*.12}%
+\contentsline {paragraph}{Arquitetura e decodificação.}{14}{section*.13}%
+\contentsline {paragraph}{Evidência empírica.}{14}{section*.14}%
+\contentsline {section}{\numberline {5}Escolha dos repositórios}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Colossal Cave Adventure}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Descrição do jogo}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}}{15}{subsection.5.3}%
+\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{16}{section*.15}%
+\contentsline {paragraph}{Tabela 2 – Short Room Labels.}{16}{section*.16}%
+\contentsline {paragraph}{Tabela 3 – Map Data.}{17}{section*.17}%
+\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{17}{section*.18}%
+\contentsline {paragraph}{Tabela 5 – Static Game States.}{18}{section*.19}%
+\contentsline {paragraph}{Tabela 6 – Hints and Events.}{18}{section*.20}%
+\contentsline {paragraph}{Tabela 7 – Object Locations.}{19}{section*.21}%
+\contentsline {paragraph}{Tabela 8 – Action Defaults.}{19}{section*.22}%
+\contentsline {paragraph}{Tabela 9 – Liquid Assets, Etc.}{20}{section*.23}%
+\contentsline {paragraph}{Tabela 10 – Class Messages.}{20}{section*.24}%
+\contentsline {paragraph}{Tabela 11 – Hints.}{21}{section*.25}%
+\contentsline {paragraph}{Tabela 12 – Magic Messages.}{21}{section*.26}%
