@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.10)  21 NOV 2025 03:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.10)  21 NOV 2025 05:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -878,7 +878,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 \openout4 = `main.toc'.
 
  [1]
-<Images/diagrams/fluxo_info.png, id=64, 352.31625pt x 252.945pt>
+<Images/diagrams/fluxo_info.png, id=62, 352.31625pt x 252.945pt>
 File: Images/diagrams/fluxo_info.png Graphic file (type png)
 <use Images/diagrams/fluxo_info.png>
 Package pdftex.def Info: Images/diagrams/fluxo_info.png  used on input line 164.
@@ -921,12 +921,12 @@ Overfull \hbox (55.17946pt too wide) in paragraph at lines 415--418
  []
 
 [10]
-<drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png, id=288, 1177.39874pt x 1561.835pt>
+<drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png, id=286, 1177.39874pt x 1561.835pt>
 File: drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png Graphic file (type png)
 <use drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png>
 Package pdftex.def Info: drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png  used on input line 449.
 (pdftex.def)             Requested size: 341.43437pt x 452.92056pt.
-<drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png, id=289, 844.15375pt x 723.70375pt>
+<drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png, id=287, 844.15375pt x 723.70375pt>
 File: drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png Graphic file (type png)
 <use drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png>
 Package pdftex.def Info: drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png  used on input line 456.
@@ -934,7 +934,7 @@ Package pdftex.def Info: drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png  u
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 463.
  [11] [12 <./drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png>]
-<drawio/Images/AST_Model_Plugins-plugins_package.drawio.png, id=304, 673.51625pt x 688.5725pt>
+<drawio/Images/AST_Model_Plugins-plugins_package.drawio.png, id=302, 673.51625pt x 688.5725pt>
 File: drawio/Images/AST_Model_Plugins-plugins_package.drawio.png Graphic file (type png)
 <use drawio/Images/AST_Model_Plugins-plugins_package.drawio.png>
 Package pdftex.def Info: drawio/Images/AST_Model_Plugins-plugins_package.drawio.png  used on input line 472.
@@ -942,17 +942,17 @@ Package pdftex.def Info: drawio/Images/AST_Model_Plugins-plugins_package.drawio.
  [13 <./drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png>] [14 <./drawio/Images/AST_Model_Plugins-plugins_package.drawio.png>]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 495.
- [15] [16{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [17] [18] [19] [20] [21]
-Underfull \hbox (badness 2269) in paragraph at lines 740--741
+ [15] [16{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [17] [18] [19] [20]
+Underfull \hbox (badness 2269) in paragraph at lines 710--711
 []\T1/lmr/m/n/12 (+20) Além dos co-man-dos clás-si-cos de na-ve-ga-ção por bús-sola, "\T1/lmr/m/it/12 (+20) EAST\T1/lmr/m/n/12 (+20) "/"\T1/lmr/m/it/12 (+20) E\T1/lmr/m/n/12 (+20) ",
  []
 
-[22] [23]
-Underfull \hbox (badness 1596) in paragraph at lines 798--799
+[21] [22]
+Underfull \hbox (badness 1596) in paragraph at lines 768--769
 []\T1/lmr/m/n/12 (+20) (9 - DOOR) (94 - YOU ARE AT ONE END OF AN IM-MENSE
  []
 
-[24] [25] [26] [27] [28] [29] (main.aux)
+[23] [24] [25] [26] [27] [28] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -962,17 +962,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23512 strings out of 467871
- 414778 string characters out of 5418375
+ 23509 strings out of 467871
+ 414746 string characters out of 5418375
  1345599 words of memory out of 5000000
- 51653 multiletter control sequences out of 15000+600000
+ 51652 multiletter control sequences out of 15000+600000
  712376 words of font info for 237 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,13n,79p,3040b,3959s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (31 pages, 685382 bytes).
+Output written on main.pdf (30 pages, 682719 bytes).
 PDF statistics:
- 616 PDF objects out of 1000 (max. 8388607)
- 117 named destinations out of 1000 (max. 500000)
- 47810 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 605 PDF objects out of 1000 (max. 8388607)
+ 115 named destinations out of 1000 (max. 500000)
+ 47802 words of extra memory for PDF output out of 51595 (max. 10000000)
 

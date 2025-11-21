@@ -610,36 +610,6 @@ Esses tensores são então passados para o modelo \texttt{CodeGNN}:
 = \mathrm{CodeGNN}(X, \texttt{edge\_index}, \texttt{edge\_weight}),
 \]
 
-em que \texttt{node\_embs} representa as embeddings contextuais refinadas de cada nó após a propagação de mensagens, e \texttt{graph\_emb} é obtido por um \emph{pooling} global com atenção. Em vez de utilizar apenas a média simples, este trabalho emprega um mecanismo de \textbf{attention pooling}, no qual a contribuição de cada nó para o embedding global é ponderada por um peso de atenção aprendido sobre os nós em \(\mathcal{V}_{\text{core}}\).
-
-
-\subsubsection{Entrada para a GNN}
-
-A AST completa já foi percorrida pelos \emph{passes} e cada nó foi encapsulado em um \texttt{TNode} enriquecido com metadados estruturais e semânticos. No entanto, a camada de GNN não opera sobre a árvore inteira, mas apenas sobre a projeção sintática reduzida definida na Seção~\ref{subsubsec:projecao_sintatica_reduzida}. Seja
-
-\[
-\mathcal{V}_{\text{core}} = \{\, t \in \texttt{TNodes} \mid t.\texttt{is\_core} = \text{True} \,\}
-\]
-
-o subconjunto de nós essenciais (\texttt{core\_tnodes}). Nesta etapa, todos os tensores $X$, \texttt{edge\_index} e \texttt{edge\_weight} são construídos \textbf{exclusivamente} sobre o subgrafo induzido por $\mathcal{V}_{\text{core}}$.
-
-O modelo passa então a dispor de três elementos:
-
-\begin{itemize}
-  \item \(X \in \mathbb{R}^{N \times d}\): matriz de \emph{features} iniciais dos
-        \(N = |\mathcal{V}_{\text{core}}|\) nós essenciais;
-  \item \(\texttt{edge\_index} \in \mathbb{N}^{2 \times E}\): topologia do grafo reduzido, codificada como pares de índices inteiros referindo-se a nós em \(\mathcal{V}_{\text{core}}\);
-  \item \(\texttt{edge\_weight} \in \mathbb{R}^{E}\): pesos gaussianos associados a cada
-        aresta do grafo reduzido.
-\end{itemize}
-
-Esses tensores são então passados para o modelo \texttt{CodeGNN}:
-
-\[
-\texttt{node\_embs},\ \texttt{graph\_emb}
-= \mathrm{CodeGNN}(X, \texttt{edge\_index}, \texttt{edge\_weight}),
-\]
-
 em que \texttt{node\_embs} representa as embeddings contextuais refinadas de cada nó após a propagação de mensagens, e \texttt{graph\_emb} é obtido por um \emph{pooling} global com atenção. Em vez de utilizar apenas a média simples, este trabalho emprega um mecanismo de \textbf{attention pooling}, no qual a contribuição de cada nó para o embedding global é ponderada por um peso de atenção aprendido sobre os nós em \(\mathcal{V}_{\text{core}}\). Na prática, isso faz com que o embedding de arquivo privilegie nós que concentram interações relevantes para a tarefa de redocumentação, facilitando, por exemplo, identificar trechos candidatos a representar operações centrais em casos de uso ou outros artefatos de alto nível derivados do código.
 
 
