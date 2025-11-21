@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.10)  10 NOV 2025 18:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.10)  21 NOV 2025 01:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -681,7 +681,7 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'brazil'.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 95.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 96.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (main.aux
@@ -690,31 +690,31 @@ Package babel Info: 'brazil' activates 'portuges' shorthands.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
-LaTeX Font Info:    ... okay on input line 95.
-LaTeX Info: Redefining \microtypecontext on input line 95.
-Package microtype Info: Applying patch `item' on input line 95.
-Package microtype Info: Applying patch `toc' on input line 95.
-Package microtype Info: Applying patch `eqnum' on input line 95.
-Package microtype Info: Applying patch `footnote' on input line 95.
-Package microtype Info: Applying patch `verbatim' on input line 95.
-LaTeX Info: Redefining \microtypesetup on input line 95.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Info: Redefining \microtypecontext on input line 96.
+Package microtype Info: Applying patch `item' on input line 96.
+Package microtype Info: Applying patch `toc' on input line 96.
+Package microtype Info: Applying patch `eqnum' on input line 96.
+Package microtype Info: Applying patch `footnote' on input line 96.
+Package microtype Info: Applying patch `verbatim' on input line 96.
+LaTeX Info: Redefining \microtypesetup on input line 96.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -781,7 +781,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 95.
+Package hyperref Info: Link coloring OFF on input line 96.
 Package biblatex Info: Trying to load language 'brazil' -> 'brazil-abnt'...
 Package biblatex Info: ... file 'brazil-abnt.lbx' found.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazil-abnt.lbx
@@ -851,118 +851,52 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
  (main.bbl)
-Package biblatex Info: Reference section=0 on input line 95.
-Package biblatex Info: Reference segment=0 on input line 95.
+Package biblatex Info: Reference section=0 on input line 96.
+Package biblatex Info: Reference segment=0 on input line 96.
 <Images/Logo_FGV.png, id=3, 408.52625pt x 124.465pt>
 File: Images/Logo_FGV.png Graphic file (type png)
 <use Images/Logo_FGV.png>
-Package pdftex.def Info: Images/Logo_FGV.png  used on input line 101.
+Package pdftex.def Info: Images/Logo_FGV.png  used on input line 102.
 (pdftex.def)             Requested size: 213.39568pt x 65.01463pt.
  [1
 
 
 {C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./Images/Logo_FGV.png>] (main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 4.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 5.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 4.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 5.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 4.
+(Font)              <12> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 4.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 4.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+(Font)              <6> on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 17.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
-\tf@toc=\write4
-\openout4 = `main.toc'.
-
- [1{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-Underfull \hbox (badness 2181) in paragraph at lines 148--149
-[]\T1/lmr/m/n/12 (+20) Quero que a in-tro-du-ção te-nha con-tex-tu-a-li-za-ção, po-ble-ma-ti-za-ção, ques-
- []
-
-
-Underfull \hbox (badness 2181) in paragraph at lines 152--153
-[]\T1/lmr/m/n/12 (+20) Quero que a in-tro-du-ção te-nha con-tex-tu-a-li-za-ção, po-ble-ma-ti-za-ção, ques-
- []
-
-<Images/draw/fluxo_info.png, id=52, 352.31625pt x 252.945pt>
-File: Images/draw/fluxo_info.png Graphic file (type png)
-<use Images/draw/fluxo_info.png>
-Package pdftex.def Info: Images/draw/fluxo_info.png  used on input line 164.
-(pdftex.def)             Requested size: 341.43437pt x 245.13249pt.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.176 
-       [1] [2{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc} <./Images/draw/fluxo_info.png>] [3] [4]
-Overfull \hbox (1.80759pt too wide) in paragraph at lines 330--330
-\T1/lmr/m/n/8 (-20) Parser$\OMS/lmsy/m/n/8 !$\T1/lmr/m/n/8 (-20) AST$\OMS/lmsy/m/n/8 !$\T1/lmr/m/n/8 (-20) IM(XML) 
- []
-
-[5] [6{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
-
-LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
-(Font)              using `T1/lmr/bx/n' instead on input line 346.
-
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 349.
-(C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
-File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmss' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
- [7] [8] [9]
-Overfull \hbox (25.58144pt too wide) in paragraph at lines 412--413
-[]\T1/lmr/m/n/12 (-20) código \TS1/lmr/m/n/12 (-20) ^^Y \T1/lmr/m/n/12 (-20) AST \TS1/lmr/m/n/12 (-20) ^^Y \T1/lmr/m/n/12 (-20) em-bed-dings+clusterização \TS1/lmr/m/n/12 (-20) ^^Y \T1/lmr/m/n/12 (-20) re-gras es-tá-ti-cas (in-clude/extend/atores)
- []
-
-[10]
-Overfull \hbox (55.17946pt too wide) in paragraph at lines 430--433
-[]$\OML/lmm/m/it/12 score \OT1/lmr/m/n/12 (-20) = \OML/lmm/m/it/12  \OMS/lmsy/m/n/12 ^^A \OT1/lmr/m/n/12 (-20) ([]) + \OML/lmm/m/it/12 ^^L \OMS/lmsy/m/n/12 ^^A \OT1/lmr/m/n/12 (-20) ([]) \OMS/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 ^^M \OMS/lmsy/m/n/12 ^^A \OT1/lmr/m/n/12 (-20) ([])$ 
- []
-
-[11]
-Underfull \hbox (badness 2005) in paragraph at lines 501--502
-[]\T1/lmr/m/n/12 (+20) Geração: ex-porte Plan-tUML (UCs, De-pen-den-cies, Ge-ne-ra-li-za-ti-ons; in-
- []
-
-[12]
-<Images/draw/NFASRPR-TRANS.png, id=291, 1142.01656pt x 572.89032pt>
-File: Images/draw/NFASRPR-TRANS.png Graphic file (type png)
-<use Images/draw/NFASRPR-TRANS.png>
-Package pdftex.def Info: Images/draw/NFASRPR-TRANS.png  used on input line 511.
-(pdftex.def)             Requested size: 341.43437pt x 171.27399pt.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 516.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 20.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -970,45 +904,106 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [13 <./Images/draw/NFASRPR-TRANS.png>] [14] [15] [16]
-Underfull \hbox (badness 2269) in paragraph at lines 618--619
-[]\T1/lmr/m/n/12 (+20) Além dos co-man-dos clás-si-cos de na-ve-ga-ção por bús-sola, "\T1/lmr/m/it/12 (+20) EAST\T1/lmr/m/n/12 (+20) "/"\T1/lmr/m/it/12 (+20) E\T1/lmr/m/n/12 (+20) ",
+)
+\tf@toc=\write4
+\openout4 = `main.toc'.
+
+ [1]
+<Images/diagrams/fluxo_info.png, id=62, 352.31625pt x 252.945pt>
+File: Images/diagrams/fluxo_info.png Graphic file (type png)
+<use Images/diagrams/fluxo_info.png>
+Package pdftex.def Info: Images/diagrams/fluxo_info.png  used on input line 164.
+(pdftex.def)             Requested size: 341.43437pt x 245.13249pt.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.174 
+       [1] [2{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc} <./Images/diagrams/fluxo_info.png>] [3]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 215.
+ (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [4{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
+Overfull \hbox (1.80759pt too wide) in paragraph at lines 330--330
+\T1/lmr/m/n/8 (-20) Parser$\OMS/lmsy/m/n/8 !$\T1/lmr/m/n/8 (-20) AST$\OMS/lmsy/m/n/8 !$\T1/lmr/m/n/8 (-20) IM(XML) 
  []
 
-[17] [18]
-Underfull \hbox (badness 1596) in paragraph at lines 676--677
-[]\T1/lmr/m/n/12 (+20) (9 - DOOR) (94 - YOU ARE AT ONE END OF AN IM-MENSE
- []
-
-[19] [20] [21] [22]
+[5] [6{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/12'.
 (microtype)             Ignoring protrusion settings for this character.
- [23] [24] (main.aux)
+ [7]
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 349.
+ (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmss.fd
+File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmss' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [8] [9]
+Overfull \hbox (25.58144pt too wide) in paragraph at lines 399--400
+[]\T1/lmr/m/n/12 (-20) código \TS1/lmr/m/n/12 (-20) ^^Y \T1/lmr/m/n/12 (-20) AST \TS1/lmr/m/n/12 (-20) ^^Y \T1/lmr/m/n/12 (-20) em-bed-dings+clusterização \TS1/lmr/m/n/12 (-20) ^^Y \T1/lmr/m/n/12 (-20) re-gras es-tá-ti-cas (in-clude/extend/atores)
+ []
+
+
+Overfull \hbox (55.17946pt too wide) in paragraph at lines 415--418
+[]$\OML/lmm/m/it/12 score \OT1/lmr/m/n/12 (-20) = \OML/lmm/m/it/12  \OMS/lmsy/m/n/12 ^^A \OT1/lmr/m/n/12 (-20) ([]) + \OML/lmm/m/it/12 ^^L \OMS/lmsy/m/n/12 ^^A \OT1/lmr/m/n/12 (-20) ([]) \OMS/lmsy/m/n/12 ^^@ \OML/lmm/m/it/12 ^^M \OMS/lmsy/m/n/12 ^^A \OT1/lmr/m/n/12 (-20) ([])$ 
+ []
+
+[10]
+<drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png, id=286, 1177.39874pt x 1561.835pt>
+File: drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png Graphic file (type png)
+<use drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png>
+Package pdftex.def Info: drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png  used on input line 449.
+(pdftex.def)             Requested size: 341.43437pt x 452.92056pt.
+<drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png, id=287, 844.15375pt x 723.70375pt>
+File: drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png Graphic file (type png)
+<use drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png>
+Package pdftex.def Info: drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png  used on input line 456.
+(pdftex.def)             Requested size: 341.43437pt x 292.72296pt.
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 463.
+ [11] [12 <./drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png>]
+<drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png, id=302, 1099.10625pt x 849.1725pt>
+File: drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png Graphic file (type png)
+<use drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png>
+Package pdftex.def Info: drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png  used on input line 472.
+(pdftex.def)             Requested size: 341.43437pt x 263.78496pt.
+ [13 <./drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png>] [14 <./drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png>]
+LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 492.
+ [15{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [16] [17] [18] [19]
+Underfull \hbox (badness 2269) in paragraph at lines 647--648
+[]\T1/lmr/m/n/12 (+20) Além dos co-man-dos clás-si-cos de na-ve-ga-ção por bús-sola, "\T1/lmr/m/it/12 (+20) EAST\T1/lmr/m/n/12 (+20) "/"\T1/lmr/m/it/12 (+20) E\T1/lmr/m/n/12 (+20) ",
+ []
+
+[20]
+Underfull \hbox (badness 1596) in paragraph at lines 705--706
+[]\T1/lmr/m/n/12 (+20) (9 - DOOR) (94 - YOU ARE AT ONE END OF AN IM-MENSE
+ []
+
+[21] [22] [23] [24] [25] [26] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23515 strings out of 467871
- 414549 string characters out of 5418375
- 1345157 words of memory out of 5000000
- 51631 multiletter control sequences out of 15000+600000
- 716280 words of font info for 248 fonts, out of 8000000 for 9000
+ 23529 strings out of 467871
+ 415687 string characters out of 5418375
+ 1346230 words of memory out of 5000000
+ 51655 multiletter control sequences out of 15000+600000
+ 712376 words of font info for 237 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,13n,79p,3134b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb>
-Output written on main.pdf (26 pages, 608436 bytes).
+ 78i,13n,79p,3040b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (28 pages, 704953 bytes).
 PDF statistics:
- 547 PDF objects out of 1000 (max. 8388607)
- 109 named destinations out of 1000 (max. 500000)
- 53880 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 601 PDF objects out of 1000 (max. 8388607)
+ 120 named destinations out of 1000 (max. 500000)
+ 47802 words of extra memory for PDF output out of 51595 (max. 10000000)
 
