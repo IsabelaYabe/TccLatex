@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1763698705.48955 -1
-  "main.bcf" 1763698705 121892 b0c6f1a2758e5515210a9118d4fd9cb4 "pdflatex"
+["biber main"] 1763702388.64789 "main.bcf" "main.bbl" "main" 1763707511.39103 0
+  "main.bcf" 1763707511 122045 17bc01f050d5ceb7d7bb4bb3339875a8 "pdflatex"
   "refs.bib" 1762803504 17998 51d8d171f0791e98d093090d3ca83a8c ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1763698702.80049 "d:/VSCODE/GITHUB_TCC/TccLatex/main.tex" "main.pdf" "main" 1763698705.49003 0
+["pdflatex"] 1763707508.87164 "d:/VSCODE/GITHUB_TCC/TccLatex/main.tex" "main.pdf" "main" 1763707511.39157 0
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1762809232 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1762809181 13333512 a13d0af6d4d4c2560966d642705c64a9 ""
   "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -70,7 +70,7 @@
   "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb" 1256929440 110323 19372944fba298bb4c4758abff959582 ""
   "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/tex/generic/babel/babel.sty" 1761147669 145885 784cdd1ebbc3dbacabd5ee30707617a3 ""
-  "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/pt/babel-brazil.tex" 1761147675 644 32a28dac6d360adf15560e212d2e814a ""
+  "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/pt/babel-brazilian.tex" 1761147675 379 9f94ea4211dd06e65f547717726f23f5 ""
   "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/tex/generic/babel/locale/pt/babel-pt-BR.ini" 1761147675 4550 1f8aa8e0148d8a21ebf02f586bbb2fc0 ""
   "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/tex/generic/babel/txtbabel.def" 1761147669 5231 82bb24bf20af7e4d760717f2cadb5170 ""
   "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576433602 40635 c40361e206be584d448876bba8a64a3b ""
@@ -172,15 +172,15 @@
   "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "Images/Logo_FGV.png" 1762803503 2490 33a2339c99ef5f8115145ba188c3c2a8 ""
   "Images/diagrams/fluxo_info.png" 1762803503 20299 a31cadcf611f26113796e9636cdc1d49 ""
-  "d:/VSCODE/GITHUB_TCC/TccLatex/main.tex" 1763698699 66041 ed2cfe899787338a1d417989e73660f2 ""
-  "drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png" 1763686734 443640 650bda8ae2bc1227dd95590377182276 ""
+  "d:/VSCODE/GITHUB_TCC/TccLatex/main.tex" 1763707503 70944 aeea2a6bd69bfe75d21d68093d11bcbf ""
   "drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png" 1763693423 626364 f79c66bfea791d08f776e37302686f10 ""
+  "drawio/Images/AST_Model_Plugins-plugins_package.drawio.png" 1763700432 396523 0ba086d744f6ea2c875f95ee4aec3fba ""
   "drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png" 1763684806 370884 cc286e5bd55777e655f6aeaf178feaac ""
-  "main.aux" 1763698705 25496 b131dd782b733fc024f238b65e4245e0 "pdflatex"
-  "main.bbl" 1763668975 42351 302cf7e3c575f0df7214732a25e2fc0b "biber main"
-  "main.run.xml" 1763698705 2437 34d4c87d19fc50f6b4cced4e08d4d71d "pdflatex"
-  "main.tex" 1763698699 66041 ed2cfe899787338a1d417989e73660f2 ""
-  "main.toc" 1763698705 3183 6c463ac12936949cfe27a878126cbc63 "pdflatex"
+  "main.aux" 1763707511 26323 98791c563e0123c822f4bf8429c411fe "pdflatex"
+  "main.bbl" 1763702390 42351 db545a865c6174ee75f0e36ade009496 "biber main"
+  "main.run.xml" 1763707511 2437 0b6702b7d17be4f9e14a0aec95f0588c "pdflatex"
+  "main.tex" 1763707503 70944 aeea2a6bd69bfe75d21d68093d11bcbf ""
+  "main.toc" 1763707511 3291 657c347924ecad43789fb5046d3caaf9 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

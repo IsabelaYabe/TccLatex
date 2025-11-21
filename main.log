@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.10)  21 NOV 2025 01:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.10)  21 NOV 2025 03:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -55,18 +55,12 @@ Package babel Warning: Configuration files are deprecated, as
 *
 (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-brazil.tex
-
-Package babel Warning: Name 'brazil' is deprecated.
-(babel)                Use 'brazilian' instead.
-(babel)                Reported on input line 19.
-
-)
-Package babel Info: Importing font and identification data for brazil
+) (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/pt\babel-brazilian.tex)
+Package babel Info: Importing font and identification data for brazilian
 (babel)             from babel-pt-BR.ini. Reported on input line 4295.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/babel-portuges\brazilian.ldf
 Language: portuges 2021/07/09 v1.2t Portuguese support from the babel system
-Package babel Info: Hyphen rules for 'brazil' set to \l@portuguese
+Package babel Info: Hyphen rules for 'brazilian' set to \l@portuguese
 (babel)             (\language56). Reported on input line 111.
 Package babel Info: Making " an active character on input line 143.
 )) (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/csquotes\csquotes.sty
@@ -680,12 +674,12 @@ Package: blx-case-expl3 2025/07/10 v3.21 expl3 case changing code for biblatex
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
-Package csquotes Info: Redefining alias 'default' -> 'brazil'.
+Package csquotes Info: Redefining alias 'default' -> 'brazilian'.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 96.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (main.aux
-Package babel Info: 'brazil' activates 'portuges' shorthands.
+Package babel Info: 'brazilian' activates 'portuges' shorthands.
 (babel)             Reported on input line 10.
 )
 \openout1 = `main.aux'.
@@ -782,6 +776,20 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 Package hyperref Info: Link coloring OFF on input line 96.
+Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
+Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
+ (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
+File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load language 'brazilian'...
+Package biblatex Info: ... file 'brazilian.lbx' found.
+ (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
+File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
+)
 Package biblatex Info: Trying to load language 'brazil' -> 'brazil-abnt'...
 Package biblatex Info: ... file 'brazil-abnt.lbx' found.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazil-abnt.lbx
@@ -790,23 +798,6 @@ Package biblatex Info: Trying to load language 'brazilian-abnt'...
 Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
 File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
-Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
-File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-Package biblatex Info: Trying to load language 'brazilian'...
-Package biblatex Info: ... file 'brazilian.lbx' found.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
-File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
-)))
-Package biblatex Info: Trying to load language 'brazilian-abnt'...
-Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
-File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
-Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
-File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
 Package biblatex Info: Trying to load language 'brazilian'...
 Package biblatex Info: ... file 'brazilian.lbx' found.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
@@ -820,29 +811,7 @@ Package biblatex Info: Trying to load language 'brazilian'...
 Package biblatex Info: ... file 'brazilian.lbx' found.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
 File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
-)))
-Package biblatex Info: Trying to load language 'brazil'...
-Package biblatex Info: ... file 'brazil.lbx' found.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
-File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
-Package biblatex Info: Trying to load language 'brazilian' -> 'brazilian-abnt'...
-Package biblatex Info: ... file 'brazilian-abnt.lbx' found.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex-abnt/lbx\brazilian-abnt.lbx
-File: brazilian-abnt.lbx 2018-11-17 v3.4 ABNT BibLaTeX citation style
-Package biblatex Info: Trying to load language 'brazilian'...
-Package biblatex Info: ... file 'brazilian.lbx' found.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
-File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load language 'brazil'...
-Package biblatex Info: ... file 'brazil.lbx' found.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazil.lbx
-File: brazil.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
-Package biblatex Info: Trying to load language 'brazilian'...
-Package biblatex Info: ... file 'brazilian.lbx' found.
- (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\brazilian.lbx
-File: brazilian.lbx 2025/07/10 v3.21 biblatex localization (PK/MW)
-))))))
+)))))
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
@@ -896,7 +865,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 20.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 19.
  (C:\Users\Isas_\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -909,7 +878,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 \openout4 = `main.toc'.
 
  [1]
-<Images/diagrams/fluxo_info.png, id=62, 352.31625pt x 252.945pt>
+<Images/diagrams/fluxo_info.png, id=64, 352.31625pt x 252.945pt>
 File: Images/diagrams/fluxo_info.png Graphic file (type png)
 <use Images/diagrams/fluxo_info.png>
 Package pdftex.def Info: Images/diagrams/fluxo_info.png  used on input line 164.
@@ -952,12 +921,12 @@ Overfull \hbox (55.17946pt too wide) in paragraph at lines 415--418
  []
 
 [10]
-<drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png, id=286, 1177.39874pt x 1561.835pt>
+<drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png, id=288, 1177.39874pt x 1561.835pt>
 File: drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png Graphic file (type png)
 <use drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png>
 Package pdftex.def Info: drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png  used on input line 449.
 (pdftex.def)             Requested size: 341.43437pt x 452.92056pt.
-<drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png, id=287, 844.15375pt x 723.70375pt>
+<drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png, id=289, 844.15375pt x 723.70375pt>
 File: drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png Graphic file (type png)
 <use drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png>
 Package pdftex.def Info: drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png  used on input line 456.
@@ -965,25 +934,25 @@ Package pdftex.def Info: drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png  u
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <12> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 463.
  [11] [12 <./drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png>]
-<drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png, id=302, 1099.10625pt x 849.1725pt>
-File: drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png Graphic file (type png)
-<use drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png>
-Package pdftex.def Info: drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png  used on input line 472.
-(pdftex.def)             Requested size: 341.43437pt x 263.78496pt.
- [13 <./drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png>] [14 <./drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png>]
+<drawio/Images/AST_Model_Plugins-plugins_package.drawio.png, id=304, 673.51625pt x 688.5725pt>
+File: drawio/Images/AST_Model_Plugins-plugins_package.drawio.png Graphic file (type png)
+<use drawio/Images/AST_Model_Plugins-plugins_package.drawio.png>
+Package pdftex.def Info: drawio/Images/AST_Model_Plugins-plugins_package.drawio.png  used on input line 472.
+(pdftex.def)             Requested size: 341.43437pt x 349.06596pt.
+ [13 <./drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png>] [14 <./drawio/Images/AST_Model_Plugins-plugins_package.drawio.png>]
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 492.
- [15{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [16] [17] [18] [19]
-Underfull \hbox (badness 2269) in paragraph at lines 647--648
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 495.
+ [15] [16{C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}] [17] [18] [19] [20] [21]
+Underfull \hbox (badness 2269) in paragraph at lines 740--741
 []\T1/lmr/m/n/12 (+20) Além dos co-man-dos clás-si-cos de na-ve-ga-ção por bús-sola, "\T1/lmr/m/it/12 (+20) EAST\T1/lmr/m/n/12 (+20) "/"\T1/lmr/m/it/12 (+20) E\T1/lmr/m/n/12 (+20) ",
  []
 
-[20]
-Underfull \hbox (badness 1596) in paragraph at lines 705--706
+[22] [23]
+Underfull \hbox (badness 1596) in paragraph at lines 798--799
 []\T1/lmr/m/n/12 (+20) (9 - DOOR) (94 - YOU ARE AT ONE END OF AN IM-MENSE
  []
 
-[21] [22] [23] [24] [25] [26] (main.aux)
+[24] [25] [26] [27] [28] [29] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -993,17 +962,17 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 23529 strings out of 467871
- 415687 string characters out of 5418375
- 1346230 words of memory out of 5000000
- 51655 multiletter control sequences out of 15000+600000
+ 23512 strings out of 467871
+ 414778 string characters out of 5418375
+ 1345599 words of memory out of 5000000
+ 51653 multiletter control sequences out of 15000+600000
  712376 words of font info for 237 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,13n,79p,3040b,4310s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 78i,13n,79p,3040b,3959s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (28 pages, 704953 bytes).
+Output written on main.pdf (31 pages, 685382 bytes).
 PDF statistics:
- 601 PDF objects out of 1000 (max. 8388607)
- 120 named destinations out of 1000 (max. 500000)
- 47802 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 616 PDF objects out of 1000 (max. 8388607)
+ 117 named destinations out of 1000 (max. 500000)
+ 47810 words of extra memory for PDF output out of 51595 (max. 10000000)
 

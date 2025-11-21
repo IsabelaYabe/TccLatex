@@ -1,4 +1,4 @@
-\babel@toc {brazil}{}\relax 
+\babel@toc {brazilian}{}\relax 
 \contentsline {section}{\numberline {1}Resumo}{1}{section.1}%
 \contentsline {section}{\numberline {2}Resumo}{1}{section.2}%
 \contentsline {section}{\numberline {3}Introdução}{1}{section.3}%
@@ -16,24 +16,25 @@
 \contentsline {paragraph}{RQ6 — Validação e qualidade prática.}{9}{section*.7}%
 \contentsline {section}{\numberline {5}Implicações para este trabalho.}{9}{section.5}%
 \contentsline {section}{\numberline {6}Implementação}{11}{section.6}%
-\contentsline {subsubsection}{\numberline {6.0.1}Pipeline de análise}{13}{subsubsection.6.0.1}%
 \contentsline {subsection}{\numberline {6.1}Geração de embeddings a partir dos \texttt {TNode}s}{15}{subsection.6.1}%
 \contentsline {subsubsection}{\numberline {6.1.1}Embedding por nó: estrutura e texto}{15}{subsubsection.6.1.1}%
-\contentsline {subsubsection}{\numberline {6.1.2}Grafo da AST e pesos gaussianos nas arestas}{15}{subsubsection.6.1.2}%
-\contentsline {subsubsection}{\numberline {6.1.3}Entrada para a GNN}{16}{subsubsection.6.1.3}%
-\contentsline {section}{\numberline {7}Escolha dos repositórios}{16}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Colossal Cave Adventure}{17}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Descrição do jogo}{17}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}}{17}{subsection.7.3}%
-\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{18}{section*.8}%
-\contentsline {paragraph}{Tabela 2 – Short Room Labels.}{19}{section*.9}%
-\contentsline {paragraph}{Tabela 3 – Map Data.}{19}{section*.10}%
-\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{19}{section*.11}%
-\contentsline {paragraph}{Tabela 5 – Static Game States.}{20}{section*.12}%
-\contentsline {paragraph}{Tabela 6 – Hints and Events.}{21}{section*.13}%
-\contentsline {paragraph}{Tabela 7 – Object Locations.}{21}{section*.14}%
-\contentsline {paragraph}{Tabela 8 – Action Defaults.}{22}{section*.15}%
-\contentsline {paragraph}{Tabela 9 – Liquid Assets, Etc.}{22}{section*.16}%
-\contentsline {paragraph}{Tabela 10 – Class Messages.}{23}{section*.17}%
-\contentsline {paragraph}{Tabela 11 – Hints.}{23}{section*.18}%
-\contentsline {paragraph}{Tabela 12 – Magic Messages.}{24}{section*.19}%
+\contentsline {subsubsection}{\numberline {6.1.2}Projeção Sintática Reduzida}{16}{subsubsection.6.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.3}Grafo da AST e pesos gaussianos nas arestas}{17}{subsubsection.6.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.4}Entrada para a GNN}{17}{subsubsection.6.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.5}Entrada para a GNN}{18}{subsubsection.6.1.5}%
+\contentsline {section}{\numberline {7}Escolha dos repositórios}{19}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Colossal Cave Adventure}{19}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Descrição do jogo}{19}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}}{20}{subsection.7.3}%
+\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{21}{section*.8}%
+\contentsline {paragraph}{Tabela 2 – Short Room Labels.}{21}{section*.9}%
+\contentsline {paragraph}{Tabela 3 – Map Data.}{22}{section*.10}%
+\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{22}{section*.11}%
+\contentsline {paragraph}{Tabela 5 – Static Game States.}{23}{section*.12}%
+\contentsline {paragraph}{Tabela 6 – Hints and Events.}{23}{section*.13}%
+\contentsline {paragraph}{Tabela 7 – Object Locations.}{24}{section*.14}%
+\contentsline {paragraph}{Tabela 8 – Action Defaults.}{24}{section*.15}%
+\contentsline {paragraph}{Tabela 9 – Liquid Assets, Etc.}{25}{section*.16}%
+\contentsline {paragraph}{Tabela 10 – Class Messages.}{25}{section*.17}%
+\contentsline {paragraph}{Tabela 11 – Hints.}{26}{section*.18}%
+\contentsline {paragraph}{Tabela 12 – Magic Messages.}{26}{section*.19}%

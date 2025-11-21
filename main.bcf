@@ -169,7 +169,7 @@
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortlocale</bcf:key>
-      <bcf:value>brazil</bcf:value>
+      <bcf:value>brazilian</bcf:value>
     </bcf:option>
     <bcf:option type="singlevalued">
       <bcf:key>sortingtemplatename</bcf:key>
@@ -2572,24 +2572,26 @@
     <bcf:citekey order="127" intorder="1">LiangHuang2024ASTLLM</bcf:citekey>
     <bcf:citekey order="128" intorder="1">LiangHuang2024ASTLLM</bcf:citekey>
     <bcf:citekey order="129" intorder="1">LiangHuang2024ASTLLM</bcf:citekey>
-    <bcf:citekey order="130" intorder="1">rhodes_adventure_py</bcf:citekey>
-    <bcf:citekey order="131" intorder="1">rhodes_adventure_py</bcf:citekey>
-    <bcf:citekey order="132" intorder="1">adventure_original_sources</bcf:citekey>
-    <bcf:citekey order="133" intorder="1">adventure_original_sources</bcf:citekey>
-    <bcf:citekey order="134" intorder="1">dibbell1998mytinylife</bcf:citekey>
-    <bcf:citekey order="135" intorder="1">dibbell1998mytinylife</bcf:citekey>
-    <bcf:citekey order="136" intorder="1">levy2010hackers</bcf:citekey>
-    <bcf:citekey order="137" intorder="1">levy2010hackers</bcf:citekey>
-    <bcf:citekey order="138" intorder="1">peterson1983genesis</bcf:citekey>
-    <bcf:citekey order="139" intorder="1">peterson1983genesis</bcf:citekey>
-    <bcf:citekey order="140" intorder="1">levy2010hackers</bcf:citekey>
-    <bcf:citekey order="141" intorder="1">levy2010hackers</bcf:citekey>
-    <bcf:citekey order="142" intorder="1">jerz2007colossal</bcf:citekey>
-    <bcf:citekey order="143" intorder="1">jerz2007colossal</bcf:citekey>
-    <bcf:citekey order="144" intorder="1">rhodes_adventure_py</bcf:citekey>
-    <bcf:citekey order="145" intorder="1">rhodes_adventure_py</bcf:citekey>
+    <bcf:citekey order="130" intorder="1">tonella2007reverse</bcf:citekey>
+    <bcf:citekey order="131" intorder="1">tonella2007reverse</bcf:citekey>
+    <bcf:citekey order="132" intorder="1">rhodes_adventure_py</bcf:citekey>
+    <bcf:citekey order="133" intorder="1">rhodes_adventure_py</bcf:citekey>
+    <bcf:citekey order="134" intorder="1">adventure_original_sources</bcf:citekey>
+    <bcf:citekey order="135" intorder="1">adventure_original_sources</bcf:citekey>
+    <bcf:citekey order="136" intorder="1">dibbell1998mytinylife</bcf:citekey>
+    <bcf:citekey order="137" intorder="1">dibbell1998mytinylife</bcf:citekey>
+    <bcf:citekey order="138" intorder="1">levy2010hackers</bcf:citekey>
+    <bcf:citekey order="139" intorder="1">levy2010hackers</bcf:citekey>
+    <bcf:citekey order="140" intorder="1">peterson1983genesis</bcf:citekey>
+    <bcf:citekey order="141" intorder="1">peterson1983genesis</bcf:citekey>
+    <bcf:citekey order="142" intorder="1">levy2010hackers</bcf:citekey>
+    <bcf:citekey order="143" intorder="1">levy2010hackers</bcf:citekey>
+    <bcf:citekey order="144" intorder="1">jerz2007colossal</bcf:citekey>
+    <bcf:citekey order="145" intorder="1">jerz2007colossal</bcf:citekey>
     <bcf:citekey order="146" intorder="1">rhodes_adventure_py</bcf:citekey>
     <bcf:citekey order="147" intorder="1">rhodes_adventure_py</bcf:citekey>
+    <bcf:citekey order="148" intorder="1">rhodes_adventure_py</bcf:citekey>
+    <bcf:citekey order="149" intorder="1">rhodes_adventure_py</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

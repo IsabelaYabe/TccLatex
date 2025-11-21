@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 
 % Idioma e tipografia
-\usepackage[brazil]{babel}
+\usepackage[brazilian]{babel}
 \usepackage{csquotes}
 \usepackage{lmodern}
 \usepackage{microtype}
@@ -455,7 +455,7 @@ Nenhum desses campos é oferecido diretamente pela AST nativa do Python; todos s
   \centering
   \includegraphics[width=0.8\textwidth]{drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png}
   \caption{Diagrama de sequencia da construção do TNode.}
-  \label{fig:diagrama de sequencia da construção do TNode}
+  \label{fig:diagrama_de_sequencia_da_construcao_do_tnode}
 \end{figure}
 
 Módulos principais da implementação do ASTCore (Figura~\ref{fig:arquitetura_astcore}):
@@ -469,26 +469,29 @@ Módulos principais da implementação do ASTCore (Figura~\ref{fig:arquitetura_a
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\textwidth]{drawio/Images/AST_Model_Plugins-ast_api_package.drawio.png}
+  \includegraphics[width=0.8\textwidth]{drawio/Images/AST_Model_Plugins-plugins_package.drawio.png}
   \caption{Arquitetura modular do ASTCore.}
   \label{fig:arquitetura_astcore}
 \end{figure}
 
-\subsubsection{Pipeline de análise}
+A arquitetura de microkernel adotada permite que novos passes sejam adicionados, removidos ou reorganizados sem alterar o restante do sistema. Cada \texttt{pass} é uma unidade autônoma que:
 
-Do ponto de vista operacional, o fluxo de implementação do ASTCore segue as seguintes etapas:
+\begin{itemize}
+\item consome apenas \texttt{TNode} e \texttt{Ctx};
+\item não conhece nem depende dos outros passes;
+\item é registrado dinamicamente no \texttt{PassRegistry};
+\item declara o conjunto de atributos que produz;
+\item define suas pré-condições via \texttt{when}.
+\end{itemize}
 
-\begin{enumerate}
-  \item \textbf{Descoberta de arquivos}: a função \texttt{analyze\_path} recebe um caminho raiz de projeto e itera sobre os arquivos \texttt{.py}. Para cada arquivo, o código-fonte é lido por uma função utilitária (\emph{wrapper} de \texttt{Path.read\_text}) que tenta múltiplas codificações e retorna o texto bruto.
-  \item \textbf{Construção da AST nativa}: o texto é convertido em uma AST do Python via \texttt{ast.parse}. Essa AST é a ``fonte de verdade'' sintática sobre a qual o ASTCore opera.
-  \item \textbf{Inicialização do contexto}: é criado um objeto \texttt{Ctx} com as linhas do arquivo (\texttt{lines}), o mapeamento de comentários por linha (\texttt{comments\_by\_line}) e os caminhos \texttt{root\_path} e \texttt{file\_path}. Esse contexto é compartilhado por todos os passes.
-  \item \textbf{Travessia da AST (\texttt{walk\_module})}: o módulo \texttt{astcore.walker} percorre a AST segundo a estratégia selecionada (por exemplo, \texttt{recursive\_pre}). A cada nó visitado, é criado um \texttt{TNode} contendo a referência ao nó original (\texttt{py\_node}) e informações estruturais básicas (\texttt{lineno}, \texttt{end\_lineno}, etc.).
-  \item \textbf{Aplicação dos passes}: para cada \texttt{TNode}, o \texttt{PassRegistry} aplica em sequência os plugins carregados (\texttt{load\_pass\_plugins}). Cada plugin lê e atualiza campos específicos do \texttt{TNode}, respeitando o princípio de separação de preocupações.
-  \item \textbf{Empacotamento dos resultados}: ao final da análise de um arquivo, o módulo \texttt{service} cria instâncias de \texttt{FileAnalysis} (arquivo, contexto, lista de \texttt{TNode}s e versão serializada de cada nó). Para uma análise completa, os resultados são agrupados em um \texttt{AnalysisResult} contendo a estratégia utilizada e a lista de arquivos analisados.
-  \item \textbf{Serialização}: a função \texttt{export\_json} converte cada \texttt{TNode} em um dicionário JSON-\emph{friendly}, preservando tanto os metadados estruturais quanto os campos enriquecidos pelos passes. Esse JSON é o insumo direto para as etapas seguintes do TCC (tokenização semântica, geração de embeddings e clusterização de candidatos a casos de uso).
-\end{enumerate}
+Isso facilita:
 
-
+\begin{itemize}
+\item extensão incremental do sistema;
+\item experimentação rápida (adição de passes sem recompilar);
+\item isolamento das análises;
+\item depuração sistemática.
+\end{itemize}
 \subsection{Geração de embeddings a partir dos \texttt{TNode}s}
 
 A representação vetorial dos nós da AST ocorre em duas etapas. Na primeira, cada \texttt{TNode} é codificado individualmente em um vetor $d$-dimensional que combina características estruturais e textuais. Na segunda etapa, o grafo da AST recebe pesos escalares em suas arestas, calculados por funções gaussianas que dependem da distância relativa entre os nós (em profundidade e/ou número de linha). Essa etapa é inspirada no uso de \emph{Gaussian embedders} proposto por \textcite{LiangHuang2024ASTLLM}, que empregam núcleos gaussianos para codificar posições relativas em modelos \emph{Transformer}; neste trabalho, a mesma ideia é adaptada ao contexto de grafos, sendo aplicada como viés multiplicativo nas arestas durante a agregação de mensagens da GNN.
@@ -498,6 +501,32 @@ A representação vetorial dos nós da AST ocorre em duas etapas. Na primeira, c
 A função \texttt{build\_node\_feature\_matrix} transforma a lista de \texttt{TNode}s em uma matriz de atributos \(X \in \mathbb{R}^{N \times d}\), em que cada linha corresponde ao embedding de um nó.
 
 O vetor de entrada de cada nó é construído a partir de dois grupos de atributos estruturais e textuais.
+
+O vetor estrutural contém:
+\begin{itemize}
+\item variáveis categóricas one-hot (tipo AST, visibilidade, classe\/método, core\_kind);
+\item variáveis contínuas normalizadas (profundidade, número de parâmetros, número de raises);
+\item flags booleanas.
+\end{itemize}
+
+Essa combinação de atributos discretos e contínuos permite que a GNN capture:
+
+\begin{itemize}
+\item sinais sintáticos (estrutura do código),
+\item sinais semânticos (uso de classes, métodos, padrões de chamada),
+\item e sinais hierárquicos (profundidade, escopo).
+\end{itemize}
+
+O texto derivado de cada \texttt{TNode}, produzido por \texttt{concat\_text\_from\_tnode}, fornece um resumo semântico rico que inclui:
+\begin{itemize}
+\item nome qualificado do símbolo;
+\item tokens do identificador (snake\/camel split);
+\item assinaturas e parâmetros;
+\item docstrings e comentários;
+\item informação de core\_kind.
+\end{itemize}
+
+Esse texto é codificado por um encoder neural leve (\texttt{TNodeMLPEncoder}), permitindo capturar semântica local sem necessidade de modelos de linguagem pesados.
 
 Os vetores estrutural e textual são então concatenados e passados por uma MLP (\texttt{TNodeMLPEncoder}), definida em \texttt{tnode\_encoder.py}, que projeta o resultado em um espaço de dimensão \(d\) (neste trabalho, \(d = 128\)):
 
@@ -514,40 +543,104 @@ X = \mathrm{stack}\big(\{\text{encode\_tnode}(t) \mid t \in \texttt{tnodes}\}\bi
 \]
 combinando simultaneamente propriedades sintáticas (AST) e semânticas (texto).
 
+\subsubsection{Projeção Sintática Reduzida}
+\label{subsubsec:projecao_sintatica_reduzida}
+Embora a AST completa seja construída e enriquecida pelos passes, a etapa de geração de embeddings utiliza apenas uma \textbf{subárvore reduzida}, alinhada à proposta de \textcite{tonella2007reverse}, contendo apenas os nós essenciais ao fluxo de objetos e à extração de comportamentos:
+
+\[
+\mathrm{core\_tnodes} = \{\, t \in \mathrm{TNodes} \mid t.\mathrm{is\_core} = \text{True} \,\}.
+\]
+
+A redução preserva apenas:
+
+\begin{itemize}
+\item nós de escopo (\texttt{Module}, \texttt{ClassDef}, \texttt{FunctionDef});
+\item atribuições (\texttt{Assign}, \texttt{AnnAssign});
+\item chamadas (\texttt{Call});
+\item retornos (\texttt{Return});
+\item exceções (\texttt{Raise}).
+\end{itemize}
+
+Nós de controle, como \texttt{If}, \texttt{For}, \texttt{While} e \texttt{Try}, permanecem disponíveis na AST completa, mas são excluídos da projeção reduzida, de modo que apenas operações relevantes ao fluxo semântico participem da etapa de aprendizado.
+
+Esse design permite manter o máximo de informação estrutural nos \texttt{TNode}s, ao mesmo tempo em que produz uma representação compacta e semanticamente orientada para a GNN.
+
 \subsubsection{Grafo da AST e pesos gaussianos nas arestas}
 
 A estrutura do arquivo-fonte é modelada como um grafo não direcionado, em que os vértices são os \texttt{TNode}s e as arestas representam relações pai–filho da AST. A função \texttt{build\_ast\_edge\_index} produz a matriz de adjacência esparsa no formato do PyTorch Geometric,
 \(\texttt{edge\_index} \in \mathbb{N}^{2 \times E}\), contendo arestas bidirecionais.
 
-Para enriquecer essas conexões, cada aresta \((i, j)\) recebe um peso escalar \(w_{ij}\) calculado a partir de uma função gaussiana sobre a distância estrutural entre os nós. Inspirado em esquemas de \emph{relative position encoding} com kernels gaussianos para código-fonte, o peso é definido como
+Para enriquecer essas conexões, cada aresta \((i, j)\) recebe um peso escalar \(w_{ij}\) calculado a partir de uma função gaussiana sobre uma noção de distância posicional entre os nós. Inspirado em esquemas de \emph{relative position encoding} com kernels gaussianos para código-fonte, o peso é definido como
 \[
 w_{ij}
 = \exp\!\left(
     - \frac{\lvert p_i - p_j \rvert^2}{2\sigma^2}
   \right),
 \]
-em que \(p_i\) e \(p_j\) podem representar a profundidade na AST ou o número de linha no arquivo, e \(\sigma\) é um hiperparâmetro de escala. Essa lógica é implementada nas funções \texttt{gaussian\_edge\_weights} e \texttt{gaussian\_edge\_weights\_combined}. A versão combinada utiliza duas dimensões (profundidade e linha), agregando os respectivos pesos (por exemplo, via produto ou média), de modo que a proximidade sintática e a proximidade no código-fonte contribuam conjuntamente para a força da aresta.
+em que \(p_i\) e \(p_j\) são escalares que codificam posição: no protótipo, podem representar (i) a profundidade do arquivo na hierarquia de diretórios do repositório (armazenada no campo \texttt{depth} do \texttt{TNode}) ou (ii) o número de linha no arquivo (\texttt{lineno}), e \(\sigma\) é um hiperparâmetro de escala. Essa lógica é implementada nas funções \texttt{gaussian\_edge\_weights} e \texttt{gaussian\_edge\_weights\_combined}. A versão combinada utiliza duas dimensões (profundidade e linha), agregando os respectivos pesos (por exemplo, via produto ou média), de modo que a proximidade na organização do projeto (arquivos no mesmo subdiretório) e a proximidade lexical dentro do arquivo contribuam conjuntamente para a força da aresta.
 
-Dessa forma, o grafo deixa de ser puramente não ponderado e passa a carregar um campo contínuo de relacionamentos estruturais: nós próximos (mesma região da árvore ou do arquivo) recebem pesos mais altos, enquanto nós distantes são atenuados.
+Na prática, esses pesos atuam como um filtro de atenção estrutural: a GNN é incentivada a concentrar a agregação de mensagens em interações locais (por exemplo, entre instruções próximas dentro do mesmo arquivo ou entre símbolos definidos em arquivos vizinhos na mesma pasta), enquanto conexões entre nós muito distantes na escala escolhida são progressivamente atenuadas. Isso é desejável nesta tarefa porque grande parte da semântica relevante para compreender um símbolo está em sua vizinhança imediata — seja no entorno das suas declarações e usos, seja no contexto modular onde o arquivo está inserido.
+
+Dessa forma, o grafo deixa de ser puramente não ponderado e passa a carregar um campo contínuo de relacionamentos estruturais: nós próximos (na mesma região do arquivo ou do repositório) recebem pesos mais altos, enquanto nós distantes são atenuados.
 
 \subsubsection{Entrada para a GNN}
 
-Ao final dessa etapa, o modelo dispõe de três elementos:
+A AST completa já foi percorrida pelos \emph{passes} e cada nó foi encapsulado em um \texttt{TNode} enriquecido com metadados estruturais e semânticos. No entanto, a camada de GNN não opera sobre a árvore inteira, mas apenas sobre a projeção sintática reduzida definida na Seção~\ref{subsubsec:projecao_sintatica_reduzida}. Seja
+
+\[
+\mathcal{V}_{\text{core}} = \{\, t \in \texttt{TNodes} \mid t.\texttt{is\_core} = \text{True} \,\}
+\]
+
+o subconjunto de nós essenciais (\texttt{core\_tnodes}). Nesta etapa, todos os tensores $X$, \texttt{edge\_index} e \texttt{edge\_weight} são construídos \textbf{exclusivamente} sobre o subgrafo induzido por $\mathcal{V}_{\text{core}}$.
+
+O modelo passa então a dispor de três elementos:
 
 \begin{itemize}
-  \item \(\,X \in \mathbb{R}^{N \times d}\): embeddings iniciais de cada \texttt{TNode};
-  \item \(\,\texttt{edge\_index} \in \mathbb{N}^{2 \times E}\): topologia do grafo da AST;
-  \item \(\,\texttt{edge\_weight} \in \mathbb{R}^{E}\): pesos gaussianos associados a cada aresta.
+  \item \(X \in \mathbb{R}^{N \times d}\): matriz de \emph{features} iniciais dos
+        \(N = |\mathcal{V}_{\text{core}}|\) nós essenciais;
+  \item \(\texttt{edge\_index} \in \mathbb{N}^{2 \times E}\): topologia do grafo reduzido, codificada como pares de índices inteiros referindo-se a nós em \(\mathcal{V}_{\text{core}}\);
+  \item \(\texttt{edge\_weight} \in \mathbb{R}^{E}\): pesos gaussianos associados a cada
+        aresta do grafo reduzido.
 \end{itemize}
 
-Esses tensores são passados para o modelo \texttt{CodeGNN}:
+Esses tensores são então passados para o modelo \texttt{CodeGNN}:
 
 \[
 \texttt{node\_embs},\ \texttt{graph\_emb}
 = \mathrm{CodeGNN}(X, \texttt{edge\_index}, \texttt{edge\_weight}),
 \]
 
-onde \texttt{node\_embs} representa as embeddings contextuais refinadas de cada nó após a propagação de mensagens, e \texttt{graph\_emb} é obtido por um \emph{pooling} global, produzindo uma representação vetorial compacta do arquivo como um todo.
+em que \texttt{node\_embs} representa as embeddings contextuais refinadas de cada nó após a propagação de mensagens, e \texttt{graph\_emb} é obtido por um \emph{pooling} global com atenção. Em vez de utilizar apenas a média simples, este trabalho emprega um mecanismo de \textbf{attention pooling}, no qual a contribuição de cada nó para o embedding global é ponderada por um peso de atenção aprendido sobre os nós em \(\mathcal{V}_{\text{core}}\).
+
+
+\subsubsection{Entrada para a GNN}
+
+A AST completa já foi percorrida pelos \emph{passes} e cada nó foi encapsulado em um \texttt{TNode} enriquecido com metadados estruturais e semânticos. No entanto, a camada de GNN não opera sobre a árvore inteira, mas apenas sobre a projeção sintática reduzida definida na Seção~\ref{subsubsec:projecao_sintatica_reduzida}. Seja
+
+\[
+\mathcal{V}_{\text{core}} = \{\, t \in \texttt{TNodes} \mid t.\texttt{is\_core} = \text{True} \,\}
+\]
+
+o subconjunto de nós essenciais (\texttt{core\_tnodes}). Nesta etapa, todos os tensores $X$, \texttt{edge\_index} e \texttt{edge\_weight} são construídos \textbf{exclusivamente} sobre o subgrafo induzido por $\mathcal{V}_{\text{core}}$.
+
+O modelo passa então a dispor de três elementos:
+
+\begin{itemize}
+  \item \(X \in \mathbb{R}^{N \times d}\): matriz de \emph{features} iniciais dos
+        \(N = |\mathcal{V}_{\text{core}}|\) nós essenciais;
+  \item \(\texttt{edge\_index} \in \mathbb{N}^{2 \times E}\): topologia do grafo reduzido, codificada como pares de índices inteiros referindo-se a nós em \(\mathcal{V}_{\text{core}}\);
+  \item \(\texttt{edge\_weight} \in \mathbb{R}^{E}\): pesos gaussianos associados a cada
+        aresta do grafo reduzido.
+\end{itemize}
+
+Esses tensores são então passados para o modelo \texttt{CodeGNN}:
+
+\[
+\texttt{node\_embs},\ \texttt{graph\_emb}
+= \mathrm{CodeGNN}(X, \texttt{edge\_index}, \texttt{edge\_weight}),
+\]
+
+em que \texttt{node\_embs} representa as embeddings contextuais refinadas de cada nó após a propagação de mensagens, e \texttt{graph\_emb} é obtido por um \emph{pooling} global com atenção. Em vez de utilizar apenas a média simples, este trabalho emprega um mecanismo de \textbf{attention pooling}, no qual a contribuição de cada nó para o embedding global é ponderada por um peso de atenção aprendido sobre os nós em \(\mathcal{V}_{\text{core}}\). Na prática, isso faz com que o embedding de arquivo privilegie nós que concentram interações relevantes para a tarefa de redocumentação, facilitando, por exemplo, identificar trechos candidatos a representar operações centrais em casos de uso ou outros artefatos de alto nível derivados do código.
 
 
 \section{Escolha dos repositórios}
