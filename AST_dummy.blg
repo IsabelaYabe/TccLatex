@@ -1,0 +1,9 @@
+[0] Config.pm:328> INFO - This is Biber 2.21
+[0] Config.pm:331> INFO - Logfile is 'AST_dummy.blg'
+[86] biber-MSWIN64:342> INFO - === 
+[124] Biber.pm:421> INFO - Reading 'AST_dummy.bcf'
+[211] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
+[220] bbl.pm:676> INFO - Writing 'AST_dummy.bbl' with encoding 'UTF-8'
+[220] bbl.pm:779> INFO - Output to AST_dummy.bbl
+[220] Biber.pm:132> WARN - The file 'AST_dummy.bcf' does not contain any citations!
+[220] Biber.pm:134> INFO - WARNINGS: 1

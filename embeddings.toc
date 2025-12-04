@@ -1,0 +1,26 @@
+\babel@toc {brazilian}{}\relax 
+\contentsline {subsection}{\numberline {0.1}API de geração de embeddings}{1}{subsection.0.1}%
+\contentsline {subsubsection}{\numberline {0.1.1}Entradas da API: nós enriquecidos e grafo da AST}{1}{subsubsection.0.1.1}%
+\contentsline {subsubsection}{\numberline {0.1.2}Codificação estrutural dos nós}{1}{subsubsection.0.1.2}%
+\contentsline {subsubsection}{\numberline {0.1.3}Codificação textual via SBERT}{1}{subsubsection.0.1.3}%
+\contentsline {subsubsection}{\numberline {0.1.4}Combinação estrutural–semântica}{2}{subsubsection.0.1.4}%
+\contentsline {subsubsection}{\numberline {0.1.5}Construção do grafo da AST com pesos gaussianos}{2}{subsubsection.0.1.5}%
+\contentsline {subsubsection}{\numberline {0.1.6}Rede Neural de Grafos (GNN)}{2}{subsubsection.0.1.6}%
+\contentsline {subsubsection}{\numberline {0.1.7}API de alto nível}{2}{subsubsection.0.1.7}%
+\contentsline {subsubsection}{\numberline {0.1.8}Níveis de embeddings produzidos}{3}{subsubsection.0.1.8}%
+\contentsline {subsubsection}{\numberline {0.1.9}Resumo da API no contexto do TCC}{3}{subsubsection.0.1.9}%
+\contentsline {subsubsection}{\numberline {0.1.10}Grafo da AST e pesos gaussianos nas arestas}{3}{subsubsection.0.1.10}%
+\contentsline {subsubsection}{\numberline {0.1.11}GNN para representação do grafo de código}{4}{subsubsection.0.1.11}%
+\contentsline {subsubsection}{\numberline {0.1.12}Modelagem em grafos: arquivo como unidade de embedding}{6}{subsubsection.0.1.12}%
+\contentsline {section}{\numberline {1}cluster}{7}{section.1}%
+\contentsline {section}{\numberline {2}Extração e seleção automática de casos de uso}{7}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Identificação dos candidatos a casos de uso}{8}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Embeddings e clusterização de casos de uso}{8}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Construção das relações entre casos de uso}{9}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Relações de dependência, include e extend}{9}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Generalização entre casos de uso}{9}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Métricas estruturais e papéis dos casos de uso}{9}{subsubsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.4}Seleção de casos de uso primários}{10}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Ordenação de clusters e escolha de representantes}{10}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Limite de casos de uso visíveis}{10}{subsubsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.5}Construção do diagrama final de casos de uso}{11}{subsection.2.5}%

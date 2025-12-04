@@ -1,0 +1,466 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Idioma e tipografia
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Layout e recursos básicos
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\emergencystretch=2em
+\cleardoublepage
+\pagenumbering{arabic}
+
+% Matemática e teoremas (essencial só se você usa)
+\usepackage{amsmath,amssymb,amsthm}
+
+% Tabelas em paisagem e colunas flexíveis
+% \usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{array} % para \newcolumntype
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\usepackage{rotating} % para sidewaystable/sideways
+
+
+% Bibliografia ABNT numerada
+\usepackage[
+  backend=biber,
+  style=abnt,
+  sorting=none,
+  giveninits=true,
+  uniquename=false,
+  doi=false,
+  isbn=false,
+  url=false,
+  language=brazil,
+  scbib,
+  ittitles,
+  justify
+]{biblatex}
+\addbibresource{refs.bib} % ← caminho corrigido
+
+
+
+% ======= PADRONIZAÇÃO PARA A TABELA MDRE =======
+
+% Coluna flexível "Y" (se ainda não tiver)
+% \usepackage{tabularx,booktabs,ragged2e,array}
+% \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+% 1) Vocabulário controlado (sempre em SMALL CAPS):
+% force medium series inside \textsc to avoid requesting a bold small-caps font (bx/sc)
+\newcommand{\Static}{{\mdseries\textsc{Estático}}}
+\newcommand{\Dynamic}{{\mdseries\textsc{Dinâmico}}}
+\newcommand{\Hybrid}{{\mdseries\textsc{Híbrido}}}
+\newcommand{\Comp}{{\mdseries\textsc{Compreensão}}}
+\newcommand{\Redoc}{{\mdseries\textsc{Redocumentação}}}
+\newcommand{\Mig}{{\mdseries\textsc{Migração}}}
+\newcommand{\Quali}{{\mdseries\textsc{Qualidade}}}
+
+% 2) Macros para setas e encadeamentos:
+\newcommand{\ctoa}{\(\text{Código} \rightarrow \text{AST}\)}
+\newcommand{\atoxi}{\(\text{AST} \rightarrow \text{IM}\)}   % IM = modelo intermediário
+\newcommand{\imtoxml}{\(\text{IM} \rightarrow \text{XML}\)}
+\newcommand{\imtomdl}{\(\text{IM} \rightarrow \text{UML}\)}
+\newcommand{\tmtomdl}{\(\text{T2M/M2M} \rightarrow \text{UML}\)}
+\newcommand{\xtoSeq}{\(\rightarrow \text{UML Sequência}\)}
+\newcommand{\xtoClass}{\(\rightarrow \text{UML Classe}\)}
+\newcommand{\xtoAct}{\(\rightarrow \text{UML Atividade}\)}
+
+% 3) Abreviações de ferramentas (consistentes):
+\newcommand{\EMF}{Eclipse/EMF}
+\newcommand{\UMLtwo}{UML2}
+\newcommand{\PlantUML}{PlantUML}
+\newcommand{\JavaParser}{JavaParser}
+
+% 4) Formato da célula “Aspecto”: Técnica ; Objetivo(s)
+%    Ex.: \Static; \Comp/\Redoc (estrutura + comportamento)
+
+% 5) Formato da célula “Técnica/Transformação”:
+%    Use sempre cadeia com “→”, negrite elementos-chaves e padronize nomes.
+%    Ex.: Código → AST → \textbf{IM(XML)} → T2M/M2M → \textbf{UML2}
+%
+% 6) Formato da célula “Validação”:
+%    [tipo de evidência; dataset/projetos; métrica(s) ou avaliação; nota curta]
+%    Ex.: OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo 10%
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0cm}
+        
+            \includegraphics[width=0.5\textwidth]{Images/Logo_FGV.png} 
+            
+        \vspace{1.5cm}
+        \large
+        
+        Ciência de Dados e I.A.\\
+        Escola de Matemática Aplicada\\
+        Fundação Getúlio Vargas\\
+
+        \vspace{1cm}  
+    
+        \Large
+        Engenharia de Requisitos
+            
+        \vspace{2cm}
+        
+        \vspace{0.25cm}
+
+        \Huge \textbf{Implementação da AST} \\ 
+        \vspace{0.5cm}
+        \huge \textbf{LLM para Engenharia de Requisitos}
+        \vspace{3.6cm}
+        
+        \large
+                Aluno: Isabela Yabe\\
+                Orientador: Rafael de Pinho André\\
+                Escola de Matemática Aplicada, FGV/EMAp \\
+                Rio de Janeiro - RJ.
+        \vfill
+            
+        \vspace{0.8cm}  
+        
+        Rio de Janeiro, 2025
+            
+    \end{center}
+\end{titlepage}
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\section{Implementação da Ferramenta de Análise Estática}
+
+% =========================================================
+% 1. Visão geral da solução
+% =========================================================
+\subsection{Visão geral da solução}
+
+% TODO: Contextualizar em 2–3 parágrafos:
+%  - Por que você precisa de uma AST enriquecida (extração de casos de uso, embeddings, etc.)
+%  - Limitações de usar só a AST "crua" do Python.
+%  - Ideia central da sua solução: microkernel + passes plugáveis + TNode.
+
+% Exemplo de tópicos para esse subtexto:
+%  - Objetivo: construir um modelo intermediário rico a partir de código Python.
+%  - Requisitos: extensível, reprodutível, independente de projeto específico.
+%  - Decisão: separar núcleo genérico (astcore) de passes especializados (pass_plugins).
+
+
+% =========================================================
+% 2. Organização dos módulos
+% =========================================================
+\subsection{Organização dos módulos da ferramenta}
+
+% Aqui entra aquele texto que você já começou sobre astcore e pass_plugins.
+% Estrutura proposta:
+
+\subsubsection{Núcleo \texttt{astcore}}
+
+% TODO: 1 parágrafo introdutório:
+%  - astcore como microkernel de análise.
+%  - Responsável por: modelo, fases, registro de passes, travessia.
+
+\paragraph{\texttt{astcore.errors}.}
+
+% TODO:
+%  - Descrever o papel das exceções específicas.
+%  - Citar 2–3 erros principais e em que situações aparecem.
+
+\paragraph{\texttt{astcore.model}.}
+
+% TODO:
+%  - Explicar que contém Ctx e TNode (referenciar subseção detalhada mais adiante).
+%  - Mencionar que TNode é a representação intermediária e que Ctx armazena estado global.
+
+\paragraph{\texttt{astcore.phase}.}
+
+% TODO:
+%  - Definir as fases (PRE, ENRICH, POST).
+%  - Explicar rapidamente como elas estruturam o pipeline de passes.
+
+\paragraph{\texttt{astcore.pass\_registry}.}
+
+% TODO:
+%  - Explicar PassSpec, PassRegistry e @register_pass.
+%  - Falar da ordenação topológica e das dependências entre passes.
+
+\paragraph{\texttt{astcore.traversal}.}
+
+% TODO:
+%  - Descrever as estratégias de travessia (pré-ordem, pós-ordem, BFS/iterativa).
+%  - Citar que todas implementam a mesma interface.
+
+\paragraph{\texttt{astcore.strategy\_factory}.}
+
+% TODO:
+%  - Explicar que escolhe a estratégia a partir de um identificador (string).
+%  - Comentar que isso desacopla o código cliente da implementação.
+
+\paragraph{\texttt{astcore.walker}.}
+
+% TODO:
+%  - Descrever o walk_module (ou equivalente).
+%  - Explicar em alto nível: 
+%    * percorre AST usando estratégia,
+%    * cria TNodes,
+%    * roda passes por fase.
+
+% ------------------------------
+\subsubsection{Camada de plugins \texttt{pass\_plugins}}
+
+\paragraph{\texttt{pass\_plugins.loader}.}
+
+% TODO:
+%  - Explicar como o loader importa dinamicamente os módulos.
+%  - Comentar sobre a função initialize() que registra passes no PassRegistry.
+%  - Ligar isso com a lista de plugins configurável.
+
+\paragraph{Passes padrão em \texttt{pass\_plugins.builtin}.}
+
+% TODO:
+%  - 1 parágrafo geral explicando que esses são os passes "de fábrica",
+%    responsáveis por preencher cada bloco do TNode.
+%  - Depois você detalha cada pass na subseção seguinte.
+
+
+% =========================================================
+% 3. Modelo de contexto e nós enriquecidos (Ctx e TNode)
+% =========================================================
+\subsection{Modelo de contexto e nós enriquecidos}
+
+\subsubsection{Contexto de análise \texttt{Ctx}}
+
+% TODO:
+%  - Retomar: Ctx = estado global por arquivo.
+%  - Explicar os campos principais:
+%    * class_stack, func_stack (escopo atual),
+%    * lines, comments_by_line (texto do arquivo e índice de comentários),
+%    * root_path, file_path (contexto de projeto),
+%    * docstrings_by_qname (índice global de docstrings),
+%    * scratch (área temporária para cooperação entre passes).
+
+% Se quiser, pode colocar uma pequena tabela nome do campo / descrição.
+
+\subsubsection{Nó sintático enriquecido \texttt{TNode}}
+
+% TODO:
+%  - Explicar a ideia geral:
+%    * TNode encapsula ast.AST + metadados derivados.
+%    * Organizado em blocos temáticos.
+
+\paragraph{Campos estruturais básicos.}
+
+% Aqui você já tem o texto de py_node, lineno, end_lineno.
+% TODO:
+%  - Explicar que isso ancora o TNode no código-fonte original.
+
+\paragraph{Bloco \emph{path\_info}.}
+
+% Aqui você já tem o texto sobre file_path, rel_path, dir_path, package, module, depth, ext.
+% TODO:
+%  - Referenciar o pass file_path_info.
+%  - Conectar com organização modular do repositório.
+
+\paragraph{Bloco \emph{names\_visibility}.}
+
+% TODO:
+%  - Explicar os campos: is_class, is_method, name, qname, decorators, visibility.
+%  - Citar que esse bloco é preenchido pelo pass names_visibility.
+%  - Comentar a relação com convenções de nomenclatura (prefixos _ / __).
+
+\paragraph{Bloco \emph{naming}.}
+
+% TODO:
+%  - Explicar orig_name, name_tokens, naming_style.
+%  - Dizer que isso ajuda a transformar nomes em tokens para embeddings.
+
+\paragraph{Bloco \emph{method\_kind}.}
+
+% TODO:
+%  - Explicar o campo method_kind e os valores possíveis.
+%  - Relacionar com decoradores @staticmethod, @classmethod, @property.
+
+\paragraph{Bloco \emph{io\_signature}.}
+
+% TODO:
+%  - Explicar params, return_annotation, is_generator, raises, return_exprs.
+%  - Dizer que isso modela a interface de entrada/saída da função/método.
+
+\paragraph{Bloco \emph{class\_kind}.}
+
+% TODO:
+%  - Explicar base_classes, metaclass, is_dataclass, is_final, is_enum, class_kind.
+%  - Relacionar com a classificação de classes em concrete/abstract/protocol.
+
+\paragraph{Bloco \emph{docs\_comments}.}
+
+% TODO:
+%  - Explicar docstring, leading_comment_block, inline_comments.
+%  - Ligar com docstrings_by_qname no Ctx.
+
+\paragraph{Bloco de grafo de chamadas.}
+
+% TODO:
+%  - Explicar local_callees, callers, callees, fan_in, fan_out.
+%  - Comentar que essas métricas são usadas depois na extração de casos de uso.
+
+
+% =========================================================
+% 4. Execução dos passes e pipeline de análise
+% =========================================================
+\subsection{Execução dos passes e pipeline de análise}
+
+% Aqui você conecta Phase + PassRegistry + walker.
+
+\subsubsection{Fases de execução e registro de passes}
+
+% TODO:
+%  - Explicar como os passes são registrados com:
+%    * name, phase, order, depends_on, node_types, provides.
+%  - Comentar a ordenação topológica por fase.
+%  - Dar um exemplo de dependência (ex.: call_metrics depende de call_edges).
+
+\subsubsection{Estratégias de travessia e \texttt{walker}}
+
+% TODO:
+%  - Descrever como a AST é percorrida:
+%    * escolha de estratégia (preorder, bfs, ...),
+%    * geração dos TNodes,
+%    * laço: para cada fase → para cada nó → rodar passes compatíveis.
+
+% Se quiser, aqui é um bom lugar pra referenciar o diagrama da ordem dos plugins.
+
+
+% =========================================================
+% 5. Passes padrão (documentação um a um)
+% =========================================================
+\subsection{Passes padrão de enriquecimento}
+
+% Aqui é a parte “catálogo” dos passes builtin, sempre com o mesmo padrão:
+% objetivo, campos preenchidos, resumo da lógica, dependências.
+
+\paragraph{\texttt{path\_info}.}
+
+% TODO:
+%  - Objetivo.
+%  - Campos preenchidos.
+%  - Resumo da lógica (já está praticamente pronto em texto).
+
+\paragraph{\texttt{names\_visibility}.}
+
+% TODO:
+%  - Objetivo.
+%  - Campos preenchidos.
+%  - Como usa class_stack/func_stack do Ctx.
+%  - Regras de visibilidade.
+
+\paragraph{\texttt{naming}.}
+
+% TODO:
+%  - Objetivo (tokenizar nomes e detectar estilo).
+%  - Campos preenchidos.
+%  - Heurísticas básicas de splitting.
+
+\paragraph{\texttt{method\_kind}.}
+
+% TODO:
+%  - Objetivo (distinguir tipos de método).
+%  - Campos preenchidos.
+%  - Como identifica static/class/property.
+
+\paragraph{\texttt{io\_signature}.}
+
+% TODO:
+%  - Objetivo (modelar I/O).
+%  - Campos preenchidos.
+%  - Como percorre a sub-árvore de função para retornar raises/return_exprs.
+
+\paragraph{\texttt{class\_kind}.}
+
+% TODO:
+%  - Objetivo (identificar tipo de classe).
+%  - Campos preenchidos.
+%  - Critérios para concrete/abstract/protocol.
+
+\paragraph{\texttt{docs\_comments}.}
+
+% TODO:
+%  - Objetivo (integrar docstrings e comentários).
+%  - Campos preenchidos em TNode.
+%  - Atualização de docstrings_by_qname no Ctx.
+
+\paragraph{\texttt{core\_nodes}.}
+
+% TODO:
+%  - Objetivo (definir subconjunto “essencial” da AST).
+%  - Campos preenchidos (is_core, core_kind).
+%  - Quais tipos de nós entram nesse recorte.
+
+\paragraph{\texttt{call\_graph}.}
+
+% TODO:
+%  - Objetivo (construir grafo de chamadas e métricas).
+%  - Campos preenchidos em duas fases:
+%    * ENRICH: local_callees + scratch["call_edges"].
+%    * POST: callers, callees, fan_in, fan_out.
+%  - Dependência de outros passes, se houver.
+
+
+% =========================================================
+% 6. API de alto nível para análise de repositórios
+% =========================================================
+\subsection{API de alto nível para análise de repositórios}
+
+% Aqui entra a parte do run_ast_analysis.
+
+% TODO:
+%  - Descrever a função run_ast_analysis (entrada: arquivo ou diretório).
+%  - Explicar o que é AnalysisResult (mapa de arquivo → {Ctx, lista de TNodes}).
+%  - Passos do fluxo:
+%    * descobrir arquivos .py,
+%    * ler código, coletar comentários, montar Ctx,
+%    * parsear AST e chamar walk_module,
+%    * retornar estrutura serializável (e opcionalmente exportar para JSON).
+
+% Você pode fechar esta subseção mencionando como esse resultado é consumido:
+%  - geração de embeddings,
+%  - extração de casos de uso,
+%  - etc.
+
+
+% =========================================================
+% 7. Considerações finais sobre a arquitetura
+% =========================================================
+\subsection{Resumo da arquitetura de análise estática}
+
+% TODO:
+%  - 1–2 parágrafos amarrando tudo:
+%    * separação núcleo vs plugins,
+%    * papel de Ctx/TNode,
+%    * papel das fases e passes,
+%    * como isso viabiliza os experimentos de Engenharia de Requisitos/LLM.
+
+\newpage
+\printbibliography
+
+\end{document}
+
+\newpage
+
+\printbibliography
+
+\end{document}

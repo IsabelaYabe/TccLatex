@@ -21,19 +21,26 @@
 \contentsline {subsubsection}{\numberline {6.1.2}Projeção Sintática Reduzida}{16}{subsubsection.6.1.2}%
 \contentsline {subsubsection}{\numberline {6.1.3}Grafo da AST e pesos gaussianos nas arestas}{17}{subsubsection.6.1.3}%
 \contentsline {subsubsection}{\numberline {6.1.4}Entrada para a GNN}{17}{subsubsection.6.1.4}%
-\contentsline {section}{\numberline {7}Escolha dos repositórios}{18}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Colossal Cave Adventure}{18}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Descrição do jogo}{18}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}}{19}{subsection.7.3}%
-\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{20}{section*.8}%
-\contentsline {paragraph}{Tabela 2 – Short Room Labels.}{21}{section*.9}%
-\contentsline {paragraph}{Tabela 3 – Map Data.}{21}{section*.10}%
-\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{21}{section*.11}%
-\contentsline {paragraph}{Tabela 5 – Static Game States.}{22}{section*.12}%
-\contentsline {paragraph}{Tabela 6 – Hints and Events.}{23}{section*.13}%
-\contentsline {paragraph}{Tabela 7 – Object Locations.}{23}{section*.14}%
-\contentsline {paragraph}{Tabela 8 – Action Defaults.}{24}{section*.15}%
-\contentsline {paragraph}{Tabela 9 – Liquid Assets, Etc.}{24}{section*.16}%
-\contentsline {paragraph}{Tabela 10 – Class Messages.}{25}{section*.17}%
-\contentsline {paragraph}{Tabela 11 – Hints.}{25}{section*.18}%
-\contentsline {paragraph}{Tabela 12 – Magic Messages.}{26}{section*.19}%
+\contentsline {subsubsection}{\numberline {6.1.5}Grafo de chamadas e métricas de fan-in/fan-out}{18}{subsubsection.6.1.5}%
+\contentsline {subsubsection}{\numberline {6.1.6}Cálculo de métricas estruturais dos casos de uso}{20}{subsubsection.6.1.6}%
+\contentsline {paragraph}{Fan-in e fan-out}{20}{section*.8}%
+\contentsline {paragraph}{Normalização dos valores}{20}{section*.9}%
+\contentsline {paragraph}{Score base de inclusão}{20}{section*.10}%
+\contentsline {paragraph}{Bônus estrutural para UCs auxiliares}{21}{section*.11}%
+\contentsline {paragraph}{Score final e relação com estereótipos UML}{21}{section*.12}%
+\contentsline {section}{\numberline {7}Escolha dos repositórios}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Colossal Cave Adventure}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Descrição do jogo}{21}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}}{22}{subsection.7.3}%
+\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{23}{section*.13}%
+\contentsline {paragraph}{Tabela 2 – Short Room Labels.}{24}{section*.14}%
+\contentsline {paragraph}{Tabela 3 – Map Data.}{24}{section*.15}%
+\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{24}{section*.16}%
+\contentsline {paragraph}{Tabela 5 – Static Game States.}{25}{section*.17}%
+\contentsline {paragraph}{Tabela 6 – Hints and Events.}{26}{section*.18}%
+\contentsline {paragraph}{Tabela 7 – Object Locations.}{26}{section*.19}%
+\contentsline {paragraph}{Tabela 8 – Action Defaults.}{27}{section*.20}%
+\contentsline {paragraph}{Tabela 9 – Liquid Assets, Etc.}{27}{section*.21}%
+\contentsline {paragraph}{Tabela 10 – Class Messages.}{28}{section*.22}%
+\contentsline {paragraph}{Tabela 11 – Hints.}{28}{section*.23}%
+\contentsline {paragraph}{Tabela 12 – Magic Messages.}{29}{section*.24}%

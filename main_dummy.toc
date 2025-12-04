@@ -1,0 +1,39 @@
+\babel@toc {brazilian}{}\relax 
+\contentsline {section}{\numberline {1}Resumo}{1}{section.1}%
+\contentsline {section}{\numberline {2}Resumo}{1}{section.2}%
+\contentsline {section}{\numberline {3}Introdução}{1}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Problematização}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Questão e hipótese}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Objetivos}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Relevância}{4}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Revisão literária}{4}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Análise sistemática da literatura}{5}{subsection.4.1}%
+\contentsline {paragraph}{RQ1 — Linguagens e domínios.}{7}{section*.2}%
+\contentsline {paragraph}{RQ2 — Modelos/artefatos gerados.}{7}{section*.3}%
+\contentsline {paragraph}{RQ3 — Qual aspecto é privilegiado (estático, dinâmico, híbrido) e com qual objetivo?}{7}{section*.4}%
+\contentsline {paragraph}{RQ4 — Técnicas e transformações.}{8}{section*.5}%
+\contentsline {paragraph}{RQ5 — Ferramentas/frameworks.}{8}{section*.6}%
+\contentsline {paragraph}{RQ6 — Validação e qualidade prática.}{9}{section*.7}%
+\contentsline {section}{\numberline {5}Metodologia}{9}{section.5}%
+\contentsline {subsubsection}{\numberline {5.0.1}Construção da árvore sintática enriquecida}{11}{subsubsection.5.0.1}%
+\contentsline {paragraph}{Escolha da estratégia de travessia da AST}{11}{section*.8}%
+\contentsline {paragraph}{Arquitetura modular da construção da AST}{12}{section*.9}%
+\contentsline {subsubsection}{\numberline {5.0.2}Geração de embeddings e grafo de código}{12}{subsubsection.5.0.2}%
+\contentsline {paragraph}{Combinação de features estruturais e textuais}{13}{section*.10}%
+\contentsline {paragraph}{Construção explícita do grafo da AST}{13}{section*.11}%
+\contentsline {section}{\numberline {6}Escolha dos repositórios}{14}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Colossal Cave Adventure}{14}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Descrição do jogo}{14}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}}{15}{subsection.6.3}%
+\contentsline {paragraph}{Tabela 1 – Long Descriptions.}{16}{section*.12}%
+\contentsline {paragraph}{Tabela 2 – Short Room Labels.}{16}{section*.13}%
+\contentsline {paragraph}{Tabela 3 – Map Data.}{17}{section*.14}%
+\contentsline {paragraph}{Tabela 4 – Grouped Vocabulary Keywords.}{17}{section*.15}%
+\contentsline {paragraph}{Tabela 5 – Static Game States.}{18}{section*.16}%
+\contentsline {paragraph}{Tabela 6 – Hints and Events.}{18}{section*.17}%
+\contentsline {paragraph}{Tabela 7 – Object Locations.}{19}{section*.18}%
+\contentsline {paragraph}{Tabela 8 – Action Defaults.}{19}{section*.19}%
+\contentsline {paragraph}{Tabela 9 – Liquid Assets, Etc.}{20}{section*.20}%
+\contentsline {paragraph}{Tabela 10 – Class Messages.}{20}{section*.21}%
+\contentsline {paragraph}{Tabela 11 – Hints.}{21}{section*.22}%
+\contentsline {paragraph}{Tabela 12 – Magic Messages.}{21}{section*.23}%

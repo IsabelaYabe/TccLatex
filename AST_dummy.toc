@@ -1,0 +1,41 @@
+\babel@toc {brazilian}{}\relax 
+\contentsline {section}{\numberline {1}Implementação da Ferramenta de Análise Estática}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Visão geral da solução}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Organização dos módulos da ferramenta}{1}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Núcleo \texttt {astcore}}{3}{subsubsection.1.2.1}%
+\contentsline {paragraph}{\texttt {astcore.model}.}{3}{section*.2}%
+\contentsline {paragraph}{\texttt {astcore.phase}.}{3}{section*.3}%
+\contentsline {paragraph}{\texttt {astcore.pass\_registry}.}{3}{section*.4}%
+\contentsline {paragraph}{\texttt {astcore.traversal}.}{4}{section*.5}%
+\contentsline {paragraph}{\texttt {astcore.strategy\_factory}.}{4}{section*.6}%
+\contentsline {paragraph}{\texttt {astcore.walker}.}{4}{section*.7}%
+\contentsline {subsubsection}{\numberline {1.2.2}Camada de plugins \texttt {pass\_plugins}}{4}{subsubsection.1.2.2}%
+\contentsline {paragraph}{\texttt {pass\_plugins.loader}.}{4}{section*.8}%
+\contentsline {paragraph}{Passes padrão em \texttt {pass\_plugins.builtin}.}{4}{section*.9}%
+\contentsline {subsection}{\numberline {1.3}Modelo de contexto e nós enriquecidos}{4}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Contexto de análise \texttt {Ctx}}{4}{subsubsection.1.3.1}%
+\contentsline {subsubsection}{\numberline {1.3.2}Nó sintático enriquecido \texttt {TNode}}{4}{subsubsection.1.3.2}%
+\contentsline {paragraph}{Campos estruturais básicos.}{4}{section*.10}%
+\contentsline {paragraph}{Bloco \emph {path\_info}.}{5}{section*.11}%
+\contentsline {paragraph}{Bloco \emph {names\_visibility}.}{5}{section*.12}%
+\contentsline {paragraph}{Bloco \emph {naming}.}{5}{section*.13}%
+\contentsline {paragraph}{Bloco \emph {method\_kind}.}{5}{section*.14}%
+\contentsline {paragraph}{Bloco \emph {io\_signature}.}{5}{section*.15}%
+\contentsline {paragraph}{Bloco \emph {class\_kind}.}{5}{section*.16}%
+\contentsline {paragraph}{Bloco \emph {docs\_comments}.}{5}{section*.17}%
+\contentsline {paragraph}{Bloco de grafo de chamadas.}{5}{section*.18}%
+\contentsline {subsection}{\numberline {1.4}Execução dos passes e pipeline de análise}{5}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Fases de execução e registro de passes}{5}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Estratégias de travessia e \texttt {walker}}{6}{subsubsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.5}Passes padrão de enriquecimento}{6}{subsection.1.5}%
+\contentsline {paragraph}{\texttt {path\_info}.}{6}{section*.19}%
+\contentsline {paragraph}{\texttt {names\_visibility}.}{6}{section*.20}%
+\contentsline {paragraph}{\texttt {naming}.}{6}{section*.21}%
+\contentsline {paragraph}{\texttt {method\_kind}.}{6}{section*.22}%
+\contentsline {paragraph}{\texttt {io\_signature}.}{6}{section*.23}%
+\contentsline {paragraph}{\texttt {class\_kind}.}{6}{section*.24}%
+\contentsline {paragraph}{\texttt {docs\_comments}.}{6}{section*.25}%
+\contentsline {paragraph}{\texttt {core\_nodes}.}{6}{section*.26}%
+\contentsline {paragraph}{\texttt {call\_graph}.}{6}{section*.27}%
+\contentsline {subsection}{\numberline {1.6}API de alto nível para análise de repositórios}{6}{subsection.1.6}%
+\contentsline {subsection}{\numberline {1.7}Resumo da arquitetura de análise estática}{6}{subsection.1.7}%

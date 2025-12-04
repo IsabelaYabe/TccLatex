@@ -437,12 +437,14 @@ Elevação de nível (agrupar UCs): aplicar heurísticas de clusterização para
 Observação prática: você pode manter todas as arestas como Dependency e, apenas na visualização, sinalizar candidatos a include (reuso alto/fan-in elevado) e candidatos a extend (dependências sob guarda condicional detectável no AST/CFG). Isso segue a letra do artigo (classificação formal requer dinâmica), mas entrega valor prático na redocumentação.
 
 \section{Implementação}
-
-Este capítulo descreve a implementação para representar código-fonte Python a partir de sua Árvore Sintática Abstrata (AST) e gerar embeddings semânticos para apoio a tarefas de análise de código. A solução foi organizada em três camadas principais: (i) um núcleo de análise estática que constrói a AST e produz a estrutura intermediária TNode; (ii) uma arquitetura de microkernel baseada em passes plugáveis, responsável por enriquecer cada nó com metadados estruturais e semânticos; e (iii) uma camada de representação vetorial, que combina features estruturais e textuais em um encoder de nós e, em seguida, aplica uma GNN sobre o grafo da AST para obter embeddings por nó e um embedding global do arquivo.
+2302
+emânticos para apoio a tarefas de análise de código. A solução foi organizada em três camadas principais: (i) um núcleo de análise estática que constrói a AST e produz a estrutura intermediária TNode; (ii) uma arquitetura de microkernel baseada em passes plugáveis, responsável por enriquecer cada nó com metadados estruturais e semânticos; e (iii) uma camada de representação vetorial, que combina features estruturais e textuais em um encoder de nós e, em seguida, aplica uma GNN sobre o grafo da AST para obter embeddings por nó e um embedding global do arquivo.
 
 O TNode é a representação intermediária que agrega a AST bruta com as informações derivadas pelos passes (Figura~\ref{fig:plugins}). Sua definição é organizada em blocos de campos, cada um associado a um grupo de passes especializado: Informações de caminho (\texttt{path\_info}); Informações de nomes e visibilidade (\texttt{names\_visibility} e \texttt{naming}); Tipo de método e assinatura de I/O (\texttt{method\_kind} e \texttt{io\_signature}); Tipo de classe (\texttt{class\_kind}); Documentação e comentários (\texttt{docs\_comments}).
 
 Nenhum desses campos é oferecido diretamente pela AST nativa do Python; todos são inferidos pelo conjunto de passes executados.
+
+Cada nó \texttt{TNode} recebe, além do nome simples (\texttt{name}), um nome qualificado (\texttt{qname}) construído a partir da pilha de classes e funções ativas durante a travessia da AST. O \texttt{qname} identifica de forma única o elemento no arquivo, por exemplo, \texttt{"Unit.accept"} para um método público da classe \texttt{Unit}. Esse identificador é utilizado posteriormente para mapear métodos a casos de uso e para construir relações de dependência entre casos de uso.
 
 \begin{figure}
   \centering
@@ -611,6 +613,123 @@ Esses tensores são então passados para o modelo \texttt{CodeGNN}:
 \]
 
 em que \texttt{node\_embs} representa as embeddings contextuais refinadas de cada nó após a propagação de mensagens, e \texttt{graph\_emb} é obtido por um \emph{pooling} global com atenção. Em vez de utilizar apenas a média simples, este trabalho emprega um mecanismo de \textbf{attention pooling}, no qual a contribuição de cada nó para o embedding global é ponderada por um peso de atenção aprendido sobre os nós em \(\mathcal{V}_{\text{core}}\). Na prática, isso faz com que o embedding de arquivo privilegie nós que concentram interações relevantes para a tarefa de redocumentação, facilitando, por exemplo, identificar trechos candidatos a representar operações centrais em casos de uso ou outros artefatos de alto nível derivados do código.
+
+\subsubsection{Grafo de chamadas e métricas de fan-in/fan-out}
+
+Além das informações estruturais da AST, a ferramenta constrói um grafo estático de chamadas entre funções e métodos do programa. Nesse grafo, cada nó corresponde a um elemento chamável (função ou método) e cada aresta dirigida \( (c \rightarrow d) \) indica que o chamador \(c\) realiza uma chamada para o alvo \(d\) em seu corpo.
+
+A extração desse grafo é realizada em duas etapas, implementadas como \emph{passes} sobre os \texttt{TNode}s:
+
+\begin{enumerate}
+  \item \textbf{Coleta local de chamadas (\texttt{call\_edges})}: 
+  para cada nó que representa uma definição de função ou método (isto é, nós \texttt{ast.FunctionDef} e \texttt{ast.AsyncFunctionDef}), o sistema percorre o corpo da definição em busca de nós \texttt{ast.Call}. De cada chamada é extraída uma representação textual do alvo (por exemplo, \texttt{"helper"}, \texttt{"self.level\_up"}, \texttt{"grupo.accept"}), que é armazenada em um campo \texttt{local\_callees} do \texttt{TNode}. Ao mesmo tempo, são registrados pares \((\text{caller\_id}, \text{callee\_repr})\) em uma estrutura temporária no contexto de análise (\texttt{Ctx}).
+
+  \item \textbf{Consolidação global de métricas (\texttt{call\_metrics})}: 
+  após a visita de todo o módulo (fase \texttt{POST}), esses pares são agregados para construir uma visão global do grafo de chamadas. Primeiro, cada \texttt{TNode} chamável recebe um identificador estável \(\text{caller\_id}\) (priorizando \texttt{qname} quando disponível, como \texttt{Unit.accept}). Em seguida, o sistema:
+  \begin{itemize}
+    \item acumula, para cada chamador, o conjunto de alvos distintos que ele chama (\texttt{callees\_set});
+    \item tenta casar cada alvo textual com um chamável conhecido, usando o \emph{nome simples} como chave (por exemplo, tanto \texttt{"self.level\_up"} quanto \texttt{"Unit.level\_up"} são associados ao método \texttt{level\_up}).
+  \end{itemize}
+\end{enumerate}
+
+A partir dessa agregação, são preenchidos os campos:
+
+\begin{itemize}
+  \item \texttt{callees}: lista ordenada de identificadores dos nós que \emph{este} nó chama;
+  \item \texttt{callers}: lista ordenada de identificadores dos nós que \emph{chamam este} nó;
+  \item \texttt{fan\_out}: número de alvos distintos chamados por esse nó (tamanho de \texttt{callees});
+  \item \texttt{fan\_in}: número de chamadores distintos que atingem esse nó (tamanho de \texttt{callers}).
+\end{itemize}
+
+Formalmente, se denotarmos por \(C(m)\) o conjunto de chamadores de um método \(m\) e por \(D(m)\) o conjunto de métodos chamados por \(m\), temos:
+\[
+\text{fan\_in}(m) = \lvert C(m) \rvert, 
+\qquad
+\text{fan\_out}(m) = \lvert D(m) \rvert.
+\]
+
+Essas métricas fornecem um sinal estrutural importante para a identificação de candidatos a casos de uso:
+
+\begin{itemize}
+  \item métodos com \emph{fan-out} elevado tendem a atuar como \emph{orquestradores}, coordenando múltiplas operações internas;
+  \item métodos com \emph{fan-in} elevado tendem a ser \emph{serviços reutilizados}, chamados por diversos pontos do sistema, o que os torna bons candidatos a operações incluídas (\texttt{include}) em vários casos de uso;
+  \item métodos com \(\texttt{fan\_in} = \texttt{fan\_out} = 0\) tendem a ser folhas isoladas, com menor relevância para a visão de alto nível do comportamento do sistema.
+\end{itemize}
+
+Na etapa de recuperação de casos de uso, esses valores de \texttt{fan\_in} e \texttt{fan\_out} são combinados com outros atributos (como visibilidade, tipo de classe e embeddings gerados pela GNN) para priorizar métodos mais centrais como candidatos a casos de uso principais e para destacar operações com alto grau de reutilização como candidatas a relacionamentos de inclusão.
+
+\subsubsection{Cálculo de métricas estruturais dos casos de uso}
+
+A partir do grafo de dependências entre os métodos públicos selecionados como candidatos a Casos de Uso (UCs) (Seção~\ref{sec:callgraph}), a ferramenta calcula um conjunto de métricas estruturais derivadas exclusivamente da análise estática do código-fonte. Essas métricas permitem identificar padrões de reutilização, dependência e papel arquitetural de cada UC dentro do sistema. O cálculo é realizado pela função \texttt{compute\_uc\_metrics}, que recebe como entrada o conjunto de arestas dirigidas entre UCs:
+\[
+(\mathrm{UC}_{\text{src}}, \mathrm{UC}_{\text{dst}}) \in E,
+\]
+onde \(\mathrm{UC}_{\text{src}}\) chama \(\mathrm{UC}_{\text{dst}}\) em seu corpo.
+
+\paragraph{Fan-in e fan-out}
+
+Para cada UC \(u\), são computados:
+
+\begin{itemize}
+  \item \textbf{Fan-in}: número de UCs que chamam \(u\):
+  \[
+    \mathrm{fan\_in}(u) = \bigl\lvert \{\, v \mid (v \rightarrow u) \in E \,\} \bigr\rvert;
+  \]
+  \item \textbf{Fan-out}: número de UCs que \(u\) chama:
+  \[
+    \mathrm{fan\_out}(u) = \bigl\lvert \{\, w \mid (u \rightarrow w) \in E \,\} \bigr\rvert.
+  \]
+\end{itemize}
+
+Essas métricas são clássicas na análise de arquitetura e refletem o grau de acoplamento entre responsabilidades.
+
+\paragraph{Normalização dos valores}
+
+Como diferentes sistemas podem ter escalas muito distintas (por exemplo, módulos com poucos UCs e módulos com centenas), os valores de \(\mathrm{fan\_in}\) e \(\mathrm{fan\_out}\) são normalizados para o intervalo \([0, 1]\):
+\[
+  \mathrm{in\_norm}(u) = 
+  \frac{\mathrm{fan\_in}(u)}{\max_{x} \mathrm{fan\_in}(x)}, 
+  \qquad
+  \mathrm{out\_norm}(u) = 
+  \frac{\mathrm{fan\_out}(u)}{\max_{x} \mathrm{fan\_out}(x)}.
+\]
+Essa normalização torna a análise menos sensível ao tamanho absoluto do projeto, permitindo comparar UCs em sistemas de porte diferente.
+
+\paragraph{Score base de inclusão}
+
+Em UML, um caso de uso tende a ser incluído por outro quando representa uma funcionalidade reutilizável, relativamente autocontenida e invocada repetidamente por diferentes UCs externos. Inspirando-se nesse comportamento, a ferramenta define um \emph{score base de inclusão} para cada UC \(u\):
+\[
+  \mathrm{include\_base}(u)
+  = \mathrm{in\_norm}(u) \cdot 
+    \bigl(1 - \lambda_{\text{out}} \cdot \mathrm{out\_norm}(u)\bigr),
+\]
+em que \(\lambda_{\text{out}} \in [0, 1]\) controla quanto o \emph{fan-out} influencia negativamente o score (neste trabalho, adotou-se \(\lambda_{\text{out}} = 0{,}7\)). Nessa formulação:
+\begin{itemize}
+  \item \(\mathrm{in\_norm}(u)\) aumenta a pontuação de UCs amplamente reutilizados;
+  \item \(\mathrm{out\_norm}(u)\) penaliza UCs que orquestram muitas dependências, comportamento mais típico de casos de uso ``macro'', e não de UCs incluídos.
+\end{itemize}
+
+\paragraph{Bônus estrutural para UCs auxiliares}
+
+Além do score base, o algoritmo acrescenta um \emph{bônus estrutural} associado ao papel de UC auxiliar (\emph{helper}). Esse bônus cresce quando o UC é alvo de diversas chamadas, mas possui \emph{fan-out} baixo:
+\[
+  \mathrm{bonus}(u) 
+  = \beta \cdot 
+    \frac{\mathrm{fan\_in}(u)}
+         {\mathrm{fan\_in}(u) + \mathrm{fan\_out}(u) + \gamma},
+\]
+em que \(\beta\) é um fator de escala (neste trabalho, \(\beta = 0{,}1\)) e \(\gamma > 0\) evita divisão por zero e estabiliza a fórmula. Esse padrão caracteriza UCs folha reutilizados, fortemente associados ao estereótipo \texttt{\textless\textless include\textgreater\textgreater}.
+
+\paragraph{Score final e relação com estereótipos UML}
+
+O score final de inclusão é obtido pela combinação do score base com o bônus estrutural:
+\[
+  \mathrm{include\_score}(u) 
+  = \min\bigl(\mathrm{include\_base}(u) + \mathrm{bonus}(u),\ 1{,}0\bigr),
+\]
+garantindo um valor sempre no intervalo \([0, 1]\).
+
+Na etapa de recuperação de casos de uso, scores altos de \(\mathrm{include\_score}(u)\) indicam UCs que se comportam como serviços reutilizados por diversos outros UCs e, portanto, bons candidatos a relacionamentos \texttt{\textless\textless include\textgreater\textgreater}. Scores muito baixos tendem a caracterizar UCs pouco reutilizados ou UCs raiz (\emph{entry}), enquanto scores intermediários, combinados com outras evidências (como condições de disparo observadas no código), podem sugerir candidatos a \texttt{\textless\textless extend\textgreater\textgreater}. Esses valores são combinados posteriormente com outros atributos (visibilidade, tipo de classe e embeddings gerados pela GNN) para orientar a clusterização e priorização de casos de uso.
 
 
 \section{Escolha dos repositórios}

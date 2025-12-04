@@ -1,0 +1,655 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Idioma e tipografia
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Layout e recursos básicos
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\emergencystretch=2em
+\cleardoublepage
+\pagenumbering{arabic}
+
+% Matemática e teoremas (essencial só se você usa)
+\usepackage{amsmath,amssymb,amsthm}
+
+% Tabelas em paisagem e colunas flexíveis
+% \usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{array} % para \newcolumntype
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\usepackage{rotating} % para sidewaystable/sideways
+
+
+% Bibliografia ABNT numerada
+\usepackage[
+  backend=biber,
+  style=abnt,
+  sorting=none,
+  giveninits=true,
+  uniquename=false,
+  doi=false,
+  isbn=false,
+  url=false,
+  language=brazil,
+  scbib,
+  ittitles,
+  justify
+]{biblatex}
+\addbibresource{refs.bib} % ← caminho corrigido
+
+
+
+% ======= PADRONIZAÇÃO PARA A TABELA MDRE =======
+
+% Coluna flexível "Y" (se ainda não tiver)
+% \usepackage{tabularx,booktabs,ragged2e,array}
+% \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+% 1) Vocabulário controlado (sempre em SMALL CAPS):
+% force medium series inside \textsc to avoid requesting a bold small-caps font (bx/sc)
+\newcommand{\Static}{{\mdseries\textsc{Estático}}}
+\newcommand{\Dynamic}{{\mdseries\textsc{Dinâmico}}}
+\newcommand{\Hybrid}{{\mdseries\textsc{Híbrido}}}
+\newcommand{\Comp}{{\mdseries\textsc{Compreensão}}}
+\newcommand{\Redoc}{{\mdseries\textsc{Redocumentação}}}
+\newcommand{\Mig}{{\mdseries\textsc{Migração}}}
+\newcommand{\Quali}{{\mdseries\textsc{Qualidade}}}
+
+% 2) Macros para setas e encadeamentos:
+\newcommand{\ctoa}{\(\text{Código} \rightarrow \text{AST}\)}
+\newcommand{\atoxi}{\(\text{AST} \rightarrow \text{IM}\)}   % IM = modelo intermediário
+\newcommand{\imtoxml}{\(\text{IM} \rightarrow \text{XML}\)}
+\newcommand{\imtomdl}{\(\text{IM} \rightarrow \text{UML}\)}
+\newcommand{\tmtomdl}{\(\text{T2M/M2M} \rightarrow \text{UML}\)}
+\newcommand{\xtoSeq}{\(\rightarrow \text{UML Sequência}\)}
+\newcommand{\xtoClass}{\(\rightarrow \text{UML Classe}\)}
+\newcommand{\xtoAct}{\(\rightarrow \text{UML Atividade}\)}
+
+% 3) Abreviações de ferramentas (consistentes):
+\newcommand{\EMF}{Eclipse/EMF}
+\newcommand{\UMLtwo}{UML2}
+\newcommand{\PlantUML}{PlantUML}
+\newcommand{\JavaParser}{JavaParser}
+
+% 4) Formato da célula “Aspecto”: Técnica ; Objetivo(s)
+%    Ex.: \Static; \Comp/\Redoc (estrutura + comportamento)
+
+% 5) Formato da célula “Técnica/Transformação”:
+%    Use sempre cadeia com “→”, negrite elementos-chaves e padronize nomes.
+%    Ex.: Código → AST → \textbf{IM(XML)} → T2M/M2M → \textbf{UML2}
+%
+% 6) Formato da célula “Validação”:
+%    [tipo de evidência; dataset/projetos; métrica(s) ou avaliação; nota curta]
+%    Ex.: OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo 10%
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0cm}
+        
+            \includegraphics[width=0.5\textwidth]{Images/Logo_FGV.png} 
+            
+        \vspace{1.5cm}
+        \large
+        
+        Ciência de Dados e I.A.\\
+        Escola de Matemática Aplicada\\
+        Fundação Getúlio Vargas\\
+
+        \vspace{1cm}  
+    
+        \Large
+        Engenharia de Requisitos
+            
+        \vspace{2cm}
+        
+        \vspace{0.25cm}
+
+        \Huge \textbf{Implementação da AST} \\ 
+        \vspace{0.5cm}
+        \huge \textbf{LLM para Engenharia de Requisitos}
+        \vspace{3.6cm}
+        
+        \large
+                Aluno: Isabela Yabe\\
+                Orientador: Rafael de Pinho André\\
+                Escola de Matemática Aplicada, FGV/EMAp \\
+                Rio de Janeiro - RJ.
+        \vfill
+            
+        \vspace{0.8cm}  
+        
+        Rio de Janeiro, 2025
+            
+    \end{center}
+\end{titlepage}
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+% =========================================================
+% SEÇÃO: API DE EMBEDDINGS
+% =========================================================
+\subsection{API de geração de embeddings}
+
+A API de geração de embeddings constitui a camada final do pipeline de análise estática
+implementado neste trabalho. Seu objetivo é transformar o código-fonte Python, já
+representado por meio dos nós sintáticos enriquecidos (\texttt{TNode}s), em
+representações vetoriais densas adequadas para tarefas de mineração de software,
+recuperação semântica e modelos de apoio à Engenharia de Requisitos. Essa camada
+integra informações estruturais, textuais e relacionais, produzindo embeddings em três
+níveis hierárquicos: nó, arquivo e repositório.
+
+\subsubsection{Entradas da API: nós enriquecidos e grafo da AST}
+
+Após a execução do microkernel de passes, cada arquivo analisado é representado por um
+conjunto de \texttt{TNode}s que descreve, de forma unificada, a estrutura sintática do
+programa e os metadados extraídos durante o enriquecimento. Cada \texttt{TNode}
+contém informações como nome qualificado, visibilidade, assinatura, tipo de classe ou
+método, docstrings, profundidade sintática, posição no arquivo e métricas locais do
+grafo de chamadas. Esses nós constituem a entrada para a etapa de codificação
+vetorial.
+
+\subsubsection{Codificação estrutural dos nós}
+
+A primeira etapa da API consiste na extração de \emph{features} estruturais, implementada no
+módulo \texttt{struct\_features.py}. Esse módulo define vocabulários categóricos que capturam
+a natureza sintática do nó (por exemplo, \texttt{ClassDef}, \texttt{FunctionDef}, \texttt{Return},
+\texttt{Assign}), bem como indicadores derivados dos passes, como visibilidade, tipo de classe,
+tipo de método e papel lógico do nó na AST reduzida (\texttt{core\_kind}).
+
+Além disso, são extraídos atributos numéricos, tais como profundidade do nó na AST,
+número de parâmetros, número de exceções levantadas e diversas flags booleanas que
+identificam padrões estruturais (como \texttt{is\_class}, \texttt{is\_method}, \texttt{is\_core}).
+Essas informações são transformadas em um vetor contínuo de dimensão fixa
+(\texttt{STRUCT\_DIM}), que sintetiza o papel estrutural do nó no código-fonte.
+
+\subsubsection{Codificação textual via SBERT}
+
+Embora as propriedades estruturais sejam essenciais, elas não capturam inteiramente o
+significado semântico dos elementos do código. Por essa razão, a API integra um
+codificador textual baseado em SBERT (Sentence-BERT), conforme implementado em
+\texttt{tnode\_encoder.py}. Nesse módulo, cada \texttt{TNode} é convertido em uma descrição
+textual consolidada que inclui, entre outros elementos: nome qualificado, tokens do
+identificador, decoradores, classes base, lista de parâmetros, docstring e blocos de
+comentários associados.
+
+Essa descrição é então processada pelo modelo SBERT, que produz um embedding
+textual de dimensão \texttt{TEXT\_EMB\_DIM}. Assim, cada nó passa a possuir duas
+representações complementares: uma estrutural e outra semântica.
+
+\subsubsection{Combinação estrutural–semântica}
+
+Os vetores estruturais e textuais são concatenados e projetados por um codificador
+multicamadas (\texttt{TNodeMLPEncoder}), resultando em um embedding final de dimensão
+reduzida (típicamente 128). Essa etapa atua como um \emph{fusion encoder}, combinando
+informações sintáticas e semânticas de forma robusta e apropriada para processamento
+gráfico posterior.
+
+\subsubsection{Construção do grafo da AST com pesos gaussianos}
+
+A etapa seguinte consiste na construção do grafo de dependências sintáticas, conforme
+implementado no módulo \texttt{ast\_graph.py}. A função \texttt{build\_ast\_edge\_index}
+gera uma estrutura \texttt{edge\_index} no formato utilizado por bibliotecas como PyTorch
+Geometric, conectando nós pais e filhos da AST.
+
+Além disso, o módulo implementa funções de ponderação de arestas baseadas em núcleos
+gaussianos, que atribuem maior influência a pares de nós sintaticamente próximos (por
+profundidade ou posição no arquivo). Esse mecanismo introduz um viés posicional útil
+para modelos gráficos, permitindo que a convolução considere a proximidade estrutural
+como um fator contínuo.
+
+\subsubsection{Rede Neural de Grafos (GNN)}
+
+O módulo \texttt{gnn.py} implementa a arquitetura utilizada para propagar informações pelo
+grafo e produzir embeddings globais. A rede consiste em duas camadas de convolução
+gráfica (GCN), combinadas com normalização simétrica, aplicação dos pesos gaussianos
+nas arestas e um mecanismo de \emph{global attention pooling}. O fluxo é o seguinte:
+
+\begin{enumerate}
+    \item cada nó recebe seu embedding combinado (estrutura + semântica);
+    \item as camadas GCN propagam informações entre nós conectados;
+    \item o mecanismo de atenção atribui pesos relativos aos nós;
+    \item obtém-se um único embedding representativo de cada arquivo.
+\end{enumerate}
+
+Esse embedding global sintetiza características estruturais, semânticas e relacionais do
+arquivo, capturando padrões de uso de classes e funções, estruturas de controle,
+interações de chamadas e estilo geral do código.
+
+\subsubsection{API de alto nível}
+
+Com todos os componentes integrados, a API expõe funções de alto nível que ocultam os
+detalhes internos e permitem aplicar a GNN de forma simples:
+
+\begin{itemize}
+    \item \texttt{encode\_file\_with\_gnn(path)}: retorna os embeddings dos nós,
+    o embedding global do arquivo e os \texttt{TNode}s enriquecidos correspondentes;
+    \item \texttt{encode\_repository\_with\_gnn(root)}: processa todos os arquivos de um
+    repositório, gerando embeddings por nó, por arquivo e um embedding global do
+    repositório;
+    \item \texttt{run\_gnn\_repository(...)}: função de fachada que integra análise estática,
+    construção da AST, aplicação dos passes e execução da GNN.
+\end{itemize}
+
+Cada chamada retorna estruturas serializáveis que podem ser reutilizadas em tarefas
+posteriores, como clusterização, busca semântica ou extração automatizada de artefatos
+de requisitos.
+
+\subsubsection{Níveis de embeddings produzidos}
+
+A API produz embeddings em três níveis, cada um adequado a diferentes tarefas:
+
+\begin{itemize}
+    \item \textbf{Nível de nó}: um embedding por \texttt{TNode}, útil para identificar
+    padrões sintáticos e semânticos finos;
+    \item \textbf{Nível de arquivo}: um embedding global por arquivo, adequado para
+    agrupamento de componentes, identificação de papéis arquiteturais e análise modular;
+    \item \textbf{Nível de repositório}: um embedding único que resume o estilo global,
+    o design e as convenções de um sistema como um todo.
+\end{itemize}
+
+\subsubsection{Resumo da API no contexto do TCC}
+
+A API de embeddings permite consolidar, em um único pipeline, a análise estrutural,
+textual e relacional do código-fonte Python. Essa abordagem, fundamentada na
+combinação de ASTs enriquecidas, SBERT e Redes Neurais de Grafos, torna possível
+representar código de maneira vetorial, preservando propriedades sintáticas e
+semânticas que são essenciais para tarefas de Engenharia de Software baseadas em
+aprendizado de máquina. Esses embeddings constituem a base empírica para as
+aplicações desenvolvidas neste trabalho, incluindo identificação de comportamentos
+arquiteturais, agrupamento funcional e suporte à extração automatizada de requisitos.
+
+
+\subsubsection{Grafo da AST e pesos gaussianos nas arestas}
+
+A estrutura do arquivo-fonte é modelada como um grafo não direcionado, em que os
+vértices são os \texttt{TNode}s e as arestas representam relações pai--filho da AST.
+A função \texttt{build\_ast\_edge\_index} produz a matriz de adjacência esparsa no formato
+do PyTorch Geometric, \(\texttt{edge\_index} \in \mathbb{N}^{2 \times E}\), contendo arestas
+bidirecionais entre nós sintaticamente adjacentes.
+
+Além da topologia do grafo, este trabalho introduz uma heurística para atribuir pesos às
+arestas, com o objetivo de incorporar informação de proximidade estrutural diretamente
+no mecanismo de \emph{message passing} da GNN. Em vez de tratar todas as arestas com
+peso unitário, cada aresta \((i,j)\) recebe um peso escalar \(w_{ij}\) calculado a partir de
+uma função gaussiana da distância entre os nós:
+
+\[
+  w_{ij} \;=\; \exp\!\left(-\frac{d_{ij}^{2}}{2\sigma^{2}}\right),
+\]
+
+em que \(d_{ij}\) é uma distância escalar derivada de atributos dos nós (por exemplo,
+diferença de profundidade na AST ou diferença de número de linha no arquivo) e
+\(\sigma > 0\) é um hiperparâmetro de escala. Na prática, a implementação considera duas
+formas de distância: \(d_{ij}^{(\text{depth})}\), baseada na diferença entre os campos
+\texttt{depth} dos nós, e \(d_{ij}^{(\text{lineno})}\), baseada na diferença entre os campos
+\texttt{lineno}. Uma variante combinada (\texttt{gaussian\_edge\_weights\_combined})
+agrega ambas as componentes em um único peso contínuo.
+
+Intuitivamente, pesos gaussianos próximos de 1 são atribuídos a pares de nós
+estruturalmente próximos (mesma região da AST ou linhas próximas no arquivo), enquanto
+arestas que conectam nós muito distantes recebem pesos próximos de zero. Dessa forma,
+a GNN é incentivada a dar mais importância a mensagens trocadas entre elementos que,
+do ponto de vista sintático e posicional, pertencem ao mesmo ``bloco lógico'' de código,
+atenuando a influência de vizinhos mais distantes.
+
+Essa estratégia está alinhada com a intuição de abordagens baseadas em cadeias de
+Markov sobre ASTs e grafos de fluxo de controle, que modelam explicitamente a
+probabilidade de transição entre tipos de nós. Aqui, no entanto, essa noção de
+proximidade é incorporada de forma contínua nos pesos das arestas e utilizada
+diretamente nas camadas de convolução gráfica. Do ponto de vista metodológico, os pesos
+gaussianos são tratados como uma heurística: o capítulo de experimentos compara
+explicitamente o desempenho da GNN em duas configurações --- grafo não ponderado
+(\(w_{ij} = 1\) para todas as arestas) e grafo ponderado por \texttt{gaussian\_edge\_weights}
+--- avaliando se a introdução desse viés posicional resulta em melhora na qualidade dos
+embeddings para as tarefas de interesse deste trabalho.
+
+\subsubsection{GNN para representação do grafo de código}
+
+Após a construção do grafo da AST e do cálculo dos vetores de features por nó (seção anterior), a ferramenta aplica uma \emph{Graph Neural Network} (GNN) para combinar informações locais e globais do código--fonte em embeddings vetoriais. Essa etapa é implementada pela classe \texttt{CodeGNN}, que consiste em duas camadas de convolução em grafos (\texttt{SimpleGCNLayer}) seguidas de uma operação de \emph{global attention pooling} para obter um embedding em nível de arquivo.
+
+A classe \texttt{SimpleGCNLayer} implementa uma camada do tipo GCN com normalização simétrica e suporte a pesos por aresta. Dado um conjunto de embeddings de nós
+\[
+X \in \mathbb{R}^{N \times d_{\text{in}}}
+\]
+e um conjunto de arestas direcionadas representadas por \(\texttt{edge\_index} \in \mathbb{N}^{2 \times E}\), a camada executa os seguintes passos:
+
+\begin{enumerate}
+    \item Adiciona \emph{self-loops} para todos os nós, garantindo que cada nó também considere suas próprias features na agregação. Na prática, isso equivale a trabalhar com a matriz de adjacência \(A' = A + I\).
+
+    \item Calcula o grau de cada nó, a partir dos destinos das arestas:
+    \[
+    d_i = \sum_{j} A'_{ji},
+    \]
+    e a respectiva normalização simétrica
+    \[
+    \hat{A}_{ij} = \frac{A'_{ij}}{\sqrt{d_i d_j}}.
+    \]
+
+    \item Aplica uma transformação linear aos embeddings de entrada,
+    \[
+    H = X W, \quad W \in \mathbb{R}^{d_{\text{in}} \times d_{\text{out}}},
+    \]
+    seguida de uma etapa de agregação por vizinhança:
+    \[
+    H'_i = \sigma\left( \sum_{j} \hat{A}_{ji} H_j \right),
+    \]
+    onde \(\sigma\) é a função de ativação ReLU.
+\end{enumerate}
+
+O módulo suporta ainda a incorporação de um peso escalar por aresta (\texttt{edge\_weight}), derivado de funções gaussianas que dependem da profundidade na AST e/ou da linha de código (seção anterior). Esses pesos atuam como um viés multiplicativo sobre a normalização estrutural, permitindo reforçar ou atenuar contribuições de determinadas arestas:
+\[
+\tilde{A}_{ij} = \hat{A}_{ij} \cdot w_{ij},
+\]
+onde \(w_{ij}\) é o peso gaussiano atribuído à aresta \((i,j)\).
+
+A classe \texttt{CodeGNN} instancia duas camadas \texttt{SimpleGCNLayer} em sequência. A primeira camada projeta os embeddings de nós da dimensão de entrada \(d_{\text{in}}\) para uma dimensão intermediária \(d_{\text{hidden}}\), e a segunda camada produz os embeddings finais com dimensão \(d_{\text{out}}\). Essa pilha de duas camadas permite que cada nó agregue informação de vizinhos de primeira e segunda ordem no grafo (por exemplo, chamadas encadeadas ou relações indiretas na AST).
+
+Após as convoluções em grafos, a \texttt{CodeGNN} aplica um mecanismo de \emph{global attention pooling} para obter um único vetor representando o grafo (isto é, o arquivo). Seja \(H \in \mathbb{R}^{N \times d_{\text{out}}}\) o conjunto de embeddings finais dos nós. A camada de atenção aprende um escalar de importância para cada nó:
+\[
+s_i = \text{MLP}(H_i) \in \mathbb{R},
+\]
+onde \(\text{MLP}\) é uma pequena rede totalmente conectada. Esses escores são normalizados via \emph{softmax},
+\[
+\alpha_i = \frac{\exp(s_i)}{\sum_{j} \exp(s_j)},
+\]
+e o embedding global do grafo é calculado como uma média ponderada:
+\[
+\mathbf{g} = \sum_{i} \alpha_i H_i.
+\]
+
+Dessa forma, a \texttt{CodeGNN} produz simultaneamente:
+\begin{itemize}
+    \item embeddings por nó (\(H\)), utilizados para análises mais locais (por exemplo, agrupar métodos ou classes semelhantes); e
+    \item um embedding global \(\mathbf{g}\) para cada arquivo, utilizado como representação compacta do código a nível de unidade de compilação.
+\end{itemize}
+
+Na API de embeddings, esse modelo é aplicado sobre o grafo de TNodes gerado pela análise estática. Os vetores de features por nó (combinação de features estruturais e textuais) alimentam a \texttt{CodeGNN}, que retorna tanto os embeddings de nós quanto o embedding do arquivo. Em um nível superior, os embeddings de arquivos podem ainda ser agregados (por exemplo, via média) para produzir um embedding em nível de repositório.
+
+\subsubsection{Modelagem em grafos: arquivo como unidade de embedding}
+
+A etapa de geração de embeddings estruturais do código foi projetada para operar em
+nível de arquivo, isto é, cada arquivo Python (\texttt{.py}) é tratado como um módulo
+independente e convertido em um grafo AST individual. Essa decisão respeita tanto a
+semântica da linguagem quanto princípios de engenharia de software que favorecem
+modularidade, isolamento de responsabilidade e escalabilidade do processamento em
+grafos.
+
+Em Python, cada arquivo corresponde, por definição, a um módulo. Esse módulo tende a
+encapsular um conjunto coeso de classes, funções e definições fortemente relacionadas
+entre si. Ao converter cada arquivo em um grafo separado, o modelo preserva essa
+unidade natural do código-fonte e a organização lógica definida pelo desenvolvedor.
+O encoder segue exatamente essa estrutura: (i) cada arquivo gera sua própria AST;
+(ii) cada AST é convertida em um grafo (\texttt{edge\_index} e vetores de features por nó);
+(iii) a GNN produz um embedding global para o módulo; e (iv) o embedding do
+repositório é obtido pela agregação (por exemplo, média) dos embeddings dos módulos.
+Assim, obtém-se uma arquitetura hierárquica de representação consistente com a
+subseção anterior: embeddings em nível de nó, de arquivo e de repositório.
+
+Uma alternativa conceitualmente atraente seria construir um único grafo global contendo
+todos os nós de todos os arquivos, adicionando arestas adicionais para chamadas entre
+módulos, relações de importação, herança cruzada e outras dependências estruturais.
+Entretanto, essa abordagem traz desafios significativos. Em primeiro lugar, há uma
+explosão de complexidade e custo computacional: repositórios reais podem conter
+dezenas de milhares de nós de AST e um número ainda maior de arestas, o que aumenta
+consideravelmente o custo de \emph{message passing} na GNN em termos de memória e
+tempo de processamento, dificultando a aplicação em projetos de médio e grande porte.
+
+Em segundo lugar, a fusão de todos os arquivos em um único grafo reduz a
+interpretabilidade do modelo, tornando mais difícil identificar limites naturais entre
+componentes, compreender o significado do embedding resultante e associar mudanças
+no embedding a trechos específicos do código. O modelo deixa de refletir, de maneira
+explícita, a modularidade do projeto. Em terceiro lugar, a abordagem global é menos
+robusta: um erro em um único arquivo (por exemplo, uma AST inválida ou uma falha pontual
+na etapa de encoding) pode comprometer o processamento de todo o grafo. Na abordagem
+modular adotada neste trabalho, um arquivo com problemas pode ser descartado ou
+apenas registrado em log, sem impedir a análise do restante do repositório.
+
+Do ponto de vista dos objetivos deste trabalho, a construção de um grafo global também
+não se mostrou necessária. A extração de estruturas funcionais (como candidatos a casos
+de uso), a clusterização de métodos públicos e o cálculo de métricas de dependência
+são viabilizados de forma adequada pelo modelo hierárquico atual, no qual embeddings
+por arquivo já oferecem uma visão suficientemente rica das responsabilidades de cada
+módulo.
+
+Em contrapartida, a decisão de gerar embeddings por arquivo proporciona vantagens
+práticas claras: (i) escalabilidade, pois cada grafo é pequeno o suficiente para ser
+processado de forma eficiente; (ii) paralelização natural, uma vez que arquivos distintos
+podem ser analisados em paralelo; (iii) simplicidade de implementação, com uma
+arquitetura clara, estável e compatível com padrões amplamente usados em GNNs, como
+\emph{global pooling} por grafo; e (iv) aderência às unidades de significado já presentes no
+código, alinhando a modelagem matemática com a forma como desenvolvedores
+organizam seus projetos.
+
+Apesar de a abordagem por módulo ser suficiente para os experimentos conduzidos neste
+trabalho, a construção de um grafo unificado do repositório surge como uma direção
+natural de trabalhos futuros. Nesse cenário, o grafo poderia incorporar explicitamente
+arestas de importação, chamadas entre arquivos, herança cruzada e outras dependências
+intermódulo, permitindo que o modelo propagasse informação entre módulos de forma
+mais direta. Essa linha é particularmente promissora para arquiteturas recentes de
+\emph{Software Graph Transformers} e variantes de GNN projetadas para lidar com grafos
+gigantes por meio de mini-batches estruturados, e representa um caminho interessante
+para aprofundar a representação arquitetural de sistemas de software em futuras
+extensões deste trabalho.
+
+\section{cluster}
+\section{Extração e seleção automática de casos de uso}
+\label{sec:uc_extraction}
+
+A ferramenta proposta constrói diagramas de casos de uso diretamente a partir do
+código-fonte da aplicação. A ideia central consiste em tratar determinados métodos de
+classes como candidatos a casos de uso e, a partir das relações de chamada entre esses
+métodos, derivar um grafo de dependências que é posteriormente projetado em um
+diagrama UML de casos de uso.
+
+A abordagem é inspirada em trabalhos como Pereira et al.~\cite{Pereira2011}, que
+propõem a recuperação de casos de uso a partir de métodos públicos de classes e de suas
+relações de chamada, mas adapta essas ideias ao contexto de análise estática, uso de
+embeddings de código e técnicas de clusterização.
+
+\subsection{Identificação dos candidatos a casos de uso}
+
+O primeiro passo consiste em identificar, na AST (\emph{Abstract Syntax Tree}) dos arquivos
+analisados, quais nós representam potenciais casos de uso. Para isso, a ferramenta aplica
+uma regra mínima baseada em duas condições:
+
+\begin{itemize}
+    \item o nó deve representar um método de classe;
+    \item o método deve possuir visibilidade pública.
+\end{itemize}
+
+Em outras palavras, cada método público de uma classe é tratado como um candidato a
+caso de uso. Para cada candidato, a ferramenta armazena:
+
+\begin{itemize}
+    \item um identificador canônico (\texttt{uc\_id}), normalmente o nome qualificado do
+    método (por exemplo, \texttt{OrderController.handle\_request});
+    \item o nó da AST correspondente (\texttt{TNode}), contendo metadados sobre a classe
+    proprietária, visibilidade, posição no arquivo e demais atributos derivados pelos
+    passes de análise;
+    \item informações sobre a classe dona (por exemplo, se é concreta, abstrata ou um
+    protocolo e quais são suas superclasses);
+    \item a lista de outros métodos chamados por esse método, obtida a partir dos passes
+    responsáveis pela análise de chamadas.
+\end{itemize}
+
+Esse conjunto de candidatos corresponde à ``visão bruta'' dos casos de uso do sistema:
+todo ponto público de interação exposto pelas classes é considerado um possível caso de
+uso.
+
+\subsection{Embeddings e clusterização de casos de uso}
+
+Na etapa seguinte, cada candidato a caso de uso é codificado em um vetor denso
+(\emph{embedding}). Essa representação combina:
+
+\begin{itemize}
+    \item \emph{features} estruturais do nó da AST, tais como tipo de nó, profundidade,
+    visibilidade e métricas simples de código;
+    \item informação textual associada ao nó, incluindo nome do método, nome da classe,
+    comentários e docstrings.
+\end{itemize}
+
+Essas informações são reunidas em uma representação vetorial e refinadas por meio de
+uma \emph{Graph Neural Network} (GNN) aplicada sobre o grafo da AST do arquivo, conforme
+descrito na Seção~\ref{sec:embeddings_gnn}. O resultado é um embedding para cada
+método público identificado como candidato a caso de uso.
+
+A partir desses vetores, a ferramenta aplica o algoritmo \emph{k-means} globalmente
+sobre todos os candidatos, agrupando métodos estrutural e semanticamente semelhantes
+em até \(K\) clusters. Cada cluster é interpretado como um conjunto de casos de uso
+relacionados, por exemplo, operações pertencentes a um mesmo domínio funcional ou a
+um mesmo componente controlador.
+
+\subsection{Construção das relações entre casos de uso}
+
+Com o conjunto de candidatos estabelecido, a ferramenta constrói um grafo de relações
+entre casos de uso. São considerados três tipos principais de relações: dependência
+(\emph{dependency/include/extend}), generalização e métricas estruturais derivadas.
+
+\subsubsection{Relações de dependência, include e extend}
+
+A ferramenta percorre o corpo de cada método público e identifica chamadas a outros
+métodos públicos. Cada chamada gera uma aresta dirigida entre casos de uso: se o
+método \(A\) chama o método \(B\), cria-se uma aresta \(A \rightarrow B\) no grafo de casos
+de uso. Em um segundo momento, essas arestas são classificadas em:
+
+\begin{itemize}
+    \item \textbf{dependency}: caso genérico, quando não há evidências suficientes para
+    caracterizar a chamada como \emph{include} ou \emph{extend};
+    \item \textbf{include}: quando o método de destino é chamado de forma não guardada
+    (isto é, fora de condicionais) e apresenta alto grau de reutilização (fan-in elevado),
+    indicando que seu comportamento faz parte do fluxo principal do caso de uso de
+    origem;
+    \item \textbf{extend}: quando o método de destino é chamado apenas em contextos
+    guardados (por exemplo, dentro de condicionais), sugerindo que ele representa um
+    fluxo alternativo acionado sob certas condições.
+\end{itemize}
+
+Essas regras constituem uma heurística que aproxima o grafo de chamadas do código da
+semântica de \emph{include}/\emph{extend} da UML, permitindo interpretar métodos
+reutilizados e fluxos condicionais como passos reutilizáveis ou extensões de casos de uso.
+
+\subsubsection{Generalização entre casos de uso}
+
+A ferramenta também explora a hierarquia de classes. Quando uma classe filha
+sobrescreve um método público de sua classe base com o mesmo nome, a ferramenta cria
+uma relação de generalização entre os casos de uso correspondentes: o método na
+subclasse é tratado como uma especialização do método na superclasse. No diagrama,
+essa relação é representada por uma aresta de generalização
+(\(\text{UC}_{\text{filha}} \;--|>\; \text{UC}_{\text{pai}}\)), análoga à generalização entre
+casos de uso na UML.
+
+\subsubsection{Métricas estruturais e papéis dos casos de uso}
+
+A partir do grafo de dependências, são calculadas métricas simples para cada caso de uso:
+
+\begin{itemize}
+    \item \textbf{fan\_in}: número de outros casos de uso que invocam aquele caso de uso;
+    \item \textbf{fan\_out}: número de casos de uso invocados por ele;
+    \item \textbf{include\_score}: heurística baseada em \texttt{fan\_in} e \texttt{fan\_out}
+    que indica o quão provável é que um caso de uso seja um candidato a \emph{include}.
+\end{itemize}
+
+Com base nessas métricas, cada caso de uso é classificado em um dos seguintes papéis:
+
+\begin{itemize}
+    \item \textbf{entry} (entrada): \texttt{fan\_in} \(= 0\) e \texttt{fan\_out} \(> 0\),
+    sugerindo um fluxo de entrada no sistema;
+    \item \textbf{helper} (auxiliar): \texttt{fan\_in} \(> 0\) e \texttt{fan\_out} \(= 0\),
+    sugerindo um caso de uso reutilizado, mas que não delega para outros;
+    \item \textbf{bridge} (ponte): \texttt{fan\_in} \(> 0\) e \texttt{fan\_out} \(> 0\),
+    intermediando fluxos entre casos de uso;
+    \item \textbf{isolated} (isolado): \texttt{fan\_in} \(= 0\) e \texttt{fan\_out} \(= 0\),
+    sem conexões com outros casos de uso.
+\end{itemize}
+
+\subsection{Seleção de casos de uso primários}
+
+Nem todos os casos de uso identificados são exibidos no diagrama final. Para evitar
+diagramas excessivamente densos, a ferramenta seleciona um subconjunto de casos de
+uso primários (ou focos), combinando informações de clusterização e métricas
+estruturais.
+
+\subsubsection{Ordenação de clusters e escolha de representantes}
+
+Inicialmente, os clusters obtidos pelo \emph{k-means} são ordenados pelo número de
+membros, priorizando grupos maiores. Em seguida, para cada cluster, a ferramenta
+seleciona um único caso de uso como foco. Os candidatos dentro do cluster são
+ordenados de acordo com dois critérios:
+
+\begin{enumerate}
+    \item \textbf{papel estrutural}: casos de uso classificados como \texttt{entry} têm
+    prioridade, seguidos por \texttt{bridge}, e, por último, \texttt{helper} e
+    \texttt{isolated};
+    \item \textbf{restrição de inclusão/extensão}: casos de uso que são alvo de relações
+    \emph{include} ou \emph{extend} não são considerados primários. A ferramenta assume
+    que, à luz de Pereira et al.~\cite{Pereira2011} e da própria UML, casos de uso incluídos
+    ou estendidos por outros representam passos reutilizados ou fluxos alternativos e,
+    portanto, não devem ser exibidos como fluxos principais.
+\end{enumerate}
+
+O primeiro candidato que satisfaz esses critérios é escolhido como representante do
+cluster. Em um caso extremo, em que todos os candidatos do cluster sejam ``proibidos''
+(por exemplo, todos são alvo de \emph{include} ou \emph{extend}), a ferramenta recorre ao
+representante original definido pelo próprio algoritmo de clusterização.
+
+\subsubsection{Limite de casos de uso visíveis}
+
+O processo descrito é repetido até que se atinja um limite máximo de casos de uso
+primários (\texttt{max\_visible\_ucs}), definido como parâmetro da ferramenta. O resultado
+é um conjunto de identificadores de foco (\texttt{focus\_uc\_ids}), que determina quais
+casos de uso serão efetivamente destacados no diagrama final.
+
+\subsection{Construção do diagrama final de casos de uso}
+
+A etapa final consiste na construção do diagrama de casos de uso a partir de um
+especificador de diagrama (\texttt{DiagramSpec}), que reúne:
+
+\begin{itemize}
+    \item os casos de uso primários (focos);
+    \item casos de uso secundários diretamente relacionados aos focos por
+    \emph{include}, \emph{extend} ou generalização;
+    \item as arestas de dependência e generalização entre esses nós;
+    \item as métricas e papéis (\texttt{entry}, \texttt{helper}, \texttt{bridge},
+    \texttt{isolated}) de cada caso de uso;
+    \item informações adicionais, como o pacote de origem de cada caso de uso.
+\end{itemize}
+
+A partir desse especificador, o diagrama é exportado em PlantUML, utilizando
+estereótipos e cores para diferenciar:
+
+\begin{itemize}
+    \item casos de uso de entrada, auxiliares, de ponte e isolados;
+    \item casos de uso primários (representantes de cluster), que são destacados
+    visualmente;
+    \item relações de \emph{include}, \emph{extend}, \emph{dependency} e
+    \emph{generalization}.
+\end{itemize}
+
+Dessa forma, a ferramenta produz automaticamente um diagrama de casos de uso que
+sintetiza o comportamento exposto pelo código-fonte em termos de fluxos principais
+(casos de uso primários) e passos reutilizados ou variantes (casos de uso secundários),
+mantendo coerência com a semântica de \emph{include}/\emph{extend} discutida na
+literatura e oferecendo uma visão de alto nível da funcionalidade do sistema a partir do
+código.
+
+\newpage
+
+\printbibliography
+
+\end{document}
