@@ -734,6 +734,97 @@
       \verb https://doi.org/10.1145/3593784.3639977
       \endverb
     \endentry
+    \entry{LiangHuang2024ASTLLM}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=84ca357402e550af40dd928989090ba4}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Hsiang-Mei},
+           giveni={H\bibinithyphendelim M\bibinitperiod}}}%
+        {{hash=500328505201336f7434ad8a4433b45f}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Chin-Yu},
+           giveni={C\bibinithyphendelim Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{38ea0985f68f804d89f63dc9f23baa4e}
+      \strng{fullhash}{38ea0985f68f804d89f63dc9f23baa4e}
+      \strng{fullhashraw}{38ea0985f68f804d89f63dc9f23baa4e}
+      \strng{bibnamehash}{38ea0985f68f804d89f63dc9f23baa4e}
+      \strng{authorbibnamehash}{38ea0985f68f804d89f63dc9f23baa4e}
+      \strng{authornamehash}{38ea0985f68f804d89f63dc9f23baa4e}
+      \strng{authorfullhash}{38ea0985f68f804d89f63dc9f23baa4e}
+      \strng{authorfullhashraw}{38ea0985f68f804d89f63dc9f23baa4e}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Access}
+      \field{month}{1}
+      \field{title}{Integrating Non-Fourier and AST-Structural Relative Position Representations Into Transformer-Based Model for Source Code Summarization}
+      \field{volume}{12}
+      \field{year}{2024}
+      \field{pages}{9871\bibrangedash 9889}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1109/ACCESS.2024.3354390
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1109/ACCESS.2024.3354390
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1109/ACCESS.2024.3354390
+      \endverb
+    \endentry
+    \entry{Ahmad2020TransformerCodeSummarization}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=349acd90e658a614644a50b4d6042da0}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Wasi\bibnamedelima Uddin},
+           giveni={W\bibinitperiod\bibinitdelim U\bibinitperiod}}}%
+        {{hash=fd7237d4640fadf33f7b56a9bb30509d}{%
+           family={Chakraborty},
+           familyi={C\bibinitperiod},
+           given={Saikat},
+           giveni={S\bibinitperiod}}}%
+        {{hash=0806c08947a2a72e09479f9555c0dad5}{%
+           family={Ray},
+           familyi={R\bibinitperiod},
+           given={Baishakhi},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e92742530fcafbae797b45437638bb01}{%
+           family={Chang},
+           familyi={C\bibinitperiod},
+           given={Kai-Wei},
+           giveni={K\bibinithyphendelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{5f420decff4f5bc65afdb8db06882953}
+      \strng{fullhash}{bc15a9b0a515eb9eafe2c3babf380e63}
+      \strng{fullhashraw}{bc15a9b0a515eb9eafe2c3babf380e63}
+      \strng{bibnamehash}{5f420decff4f5bc65afdb8db06882953}
+      \strng{authorbibnamehash}{5f420decff4f5bc65afdb8db06882953}
+      \strng{authornamehash}{5f420decff4f5bc65afdb8db06882953}
+      \strng{authorfullhash}{bc15a9b0a515eb9eafe2c3babf380e63}
+      \strng{authorfullhashraw}{bc15a9b0a515eb9eafe2c3babf380e63}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2005.00653}
+      \field{title}{A Transformer-Based Approach for Source Code Summarization}
+      \field{year}{2020}
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/2005.00653
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/2005.00653
+      \endverb
+    \endentry
     \entry{pereira2011recovering}{inproceedings}{}{}
       \name{author}{3}{}{%
         {{hash=87504c595c3584e56b4e1829ddea7537}{%
@@ -779,48 +870,44 @@
       \verb 10.1109/ITNG.2011.130
       \endverb
     \endentry
-    \entry{LiangHuang2024ASTLLM}{article}{}{}
+    \entry{rahman2018kernel}{inproceedings}{}{}
       \name{author}{2}{}{%
-        {{hash=84ca357402e550af40dd928989090ba4}{%
-           family={Liang},
-           familyi={L\bibinitperiod},
-           given={Hsiang-Mei},
-           giveni={H\bibinithyphendelim M\bibinitperiod}}}%
-        {{hash=500328505201336f7434ad8a4433b45f}{%
-           family={Huang},
-           familyi={H\bibinitperiod},
-           given={Chin-Yu},
-           giveni={C\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=c6f2554df2062c7b4abd506de41f486a}{%
+           family={Rahman},
+           familyi={R\bibinitperiod},
+           given={Faizan},
+           giveni={F\bibinitperiod}}}%
+        {{hash=e1d716cb03900599910a1296e9ed2973}{%
+           family={Beheshti},
+           familyi={B\bibinitperiod},
+           given={Soosan},
+           giveni={S\bibinitperiod}}}%
       }
-      \strng{namehash}{38ea0985f68f804d89f63dc9f23baa4e}
-      \strng{fullhash}{38ea0985f68f804d89f63dc9f23baa4e}
-      \strng{fullhashraw}{38ea0985f68f804d89f63dc9f23baa4e}
-      \strng{bibnamehash}{38ea0985f68f804d89f63dc9f23baa4e}
-      \strng{authorbibnamehash}{38ea0985f68f804d89f63dc9f23baa4e}
-      \strng{authornamehash}{38ea0985f68f804d89f63dc9f23baa4e}
-      \strng{authorfullhash}{38ea0985f68f804d89f63dc9f23baa4e}
-      \strng{authorfullhashraw}{38ea0985f68f804d89f63dc9f23baa4e}
+      \list{location}{1}{%
+        {Pacific Grove, CA, USA}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{88ff47626c4d660cff19654f7e40a836}
+      \strng{fullhash}{88ff47626c4d660cff19654f7e40a836}
+      \strng{fullhashraw}{88ff47626c4d660cff19654f7e40a836}
+      \strng{bibnamehash}{88ff47626c4d660cff19654f7e40a836}
+      \strng{authorbibnamehash}{88ff47626c4d660cff19654f7e40a836}
+      \strng{authornamehash}{88ff47626c4d660cff19654f7e40a836}
+      \strng{authorfullhash}{88ff47626c4d660cff19654f7e40a836}
+      \strng{authorfullhashraw}{88ff47626c4d660cff19654f7e40a836}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{IEEE Access}
-      \field{month}{1}
-      \field{title}{Integrating Non-Fourier and AST-Structural Relative Position Representations Into Transformer-Based Model for Source Code Summarization}
-      \field{volume}{12}
-      \field{year}{2024}
-      \field{pages}{9871\bibrangedash 9889}
-      \range{pages}{19}
+      \field{booktitle}{Proceedings of the 52nd Asilomar Conference on Signals, Systems, and Computers}
+      \field{title}{Kernel k-Minimum Average Central Error (K-MACE) Clustering}
+      \field{year}{2018}
       \verb{doi}
-      \verb 10.1109/ACCESS.2024.3354390
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1109/ACCESS.2024.3354390
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1109/ACCESS.2024.3354390
+      \verb 10.1109/ACSSC.2018.8645076
       \endverb
     \endentry
     \entry{rhodes_adventure_py}{software}{}{}

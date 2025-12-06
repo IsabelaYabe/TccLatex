@@ -1,9 +1,0 @@
-[0] Config.pm:328> INFO - This is Biber 2.21
-[0] Config.pm:331> INFO - Logfile is 'template_model.blg'
-[88] biber-MSWIN64:342> INFO - === 
-[140] Biber.pm:421> INFO - Reading 'template_model.bcf'
-[229] Biber.pm:1002> INFO - Found 0 citekeys in bib section 0
-[239] bbl.pm:676> INFO - Writing 'template_model.bbl' with encoding 'UTF-8'
-[239] bbl.pm:779> INFO - Output to template_model.bbl
-[239] Biber.pm:132> WARN - The file 'template_model.bcf' does not contain any citations!
-[239] Biber.pm:134> INFO - WARNINGS: 1

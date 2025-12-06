@@ -1,6 +1,0 @@
-\babel@toc {brazilian}{}\relax 
-\contentsline {section}{\numberline {1}Implementação}{1}{section.1}%
-\contentsline {subsubsection}{\numberline {1.0.1}Modelo de contexto e nós enriquecidos}{1}{subsubsection.1.0.1}%
-\contentsline {section}{\numberline {2}Arquitetura Geral do Modelo de Análise Estática}{2}{section.2}%
-\contentsline {paragraph}{Campos estruturais básicos do \texttt {TNode}.}{2}{section*.2}%
-\contentsline {paragraph}{Bloco \emph {path\_info}.}{3}{section*.3}%

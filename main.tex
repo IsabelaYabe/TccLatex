@@ -143,11 +143,9 @@
 \pagenumbering{arabic}
 
 \section{Resumo}
-
-\section{Resumo}
  Este trabalho investiga se é possível recuperar artefatos de requisitos, em particular diagramas de casos de uso, diretamente a partir de sistemas implementados em Python, combinando análise estática de código e técnicas recentes de representação semântica com \textit{Large Language Models} (LLMs).
 
-A proposta parte da \textit{Abstract Syntax Tree} (AST) do código-fonte, tratada como modelo intermediário em um fluxo de \textit{Model-Driven Reverse Engineering} (MDRE). Sobre essa estrutura, são extraídas \textit{features} estruturais (tipo de nó, escopo, relações de chamada) e textuais (nomes, docstrings, comentários), que alimentam um encoder de nós e uma GNN responsável por produzir embeddings semântico-estruturais do arquivo. A partir desses embeddings, métodos públicos são identificados como candidatos a casos de uso e agrupados por similaridade semântica, enquanto o grafo de chamadas fornece relações de dependência entre casos.
+A proposta parte da \textit{Abstract Syntax Tree} (AST) do código-fonte, tratada como modelo intermediário em um fluxo de \textit{Model-Driven Reverse Engineering} (MDRE). Sobre essa estrutura, são extraídas \textit{features} estruturais (tipo de nó, escopo, relações de chamada) e textuais (nomes, docstrings, comentários), que alimentam um encoder de nós e uma GNN responsável por produzir embeddings semântico-estruturais do arquivo. A partir desses embeddings, métodos públicos são identificados como candidatos a casos de uso e agrupados por similaridade, enquanto o grafo de chamadas fornece relações de dependência entre casos.
 
 O resultado esperado é um processo de redocumentação capaz de gerar diagramas de casos de uso em \textit{PlantUML} a partir de código Python, preservando a semântica observada e oferecendo uma visão de alto nível do sistema. A principal contribuição é aproximar engenharia de requisitos e engenharia reversa ao mostrar como LLMs e modelos de código orientados por AST podem apoiar a recuperação de requisitos em cenários em que a documentação está ausente ou desatualizada.
 
@@ -253,81 +251,80 @@ Com base nos critérios de inclusão e exclusão, foram selecionados os seguinte
 
 \begin{sidewaystable}[p]
 \centering
-\scriptsize % Mudar o tamanho da fonte para caber melhor
+\scriptsize
 \setlength{\tabcolsep}{3pt}
 \renewcommand{\arraystretch}{1.2}
+
 \begin{tabularx}{\textheight}{Y Y Y Y Y Y Y}
 \toprule
 \textbf{Autores / Referência} &
-\textbf{Linguagem / Domínio} & % Verde
-\textbf{Modelo Gerado} & % Azul
-\textbf{Aspecto} & % Laranja
-\textbf{Técnica / Tipo de Transformação} & % Roxo
-\textbf{Ferramenta / Framework} & % Cinza
-\textbf{Validação / Estudo de Caso} \\ % Rosa
+\textbf{Linguagem / Domínio} &
+\textbf{Modelo Gerado} &
+\textbf{Aspecto} &
+\textbf{Técnica / Tipo de Transformação} &
+\textbf{Ferramenta / Framework} &
+\textbf{Validação / Estudo de Caso} \\
 \midrule
-
 
 \textcite{zhang2016j2x} &
 Java; pequenos sistemas OO (eLib, Minesweeper, Blog, PayrollSys, myAlgsLib) &
 UML Classe; UML Sequência &
-Estático — compreensão, manutenção/redocumentação &
-Código→AST→J2X; mapeamentos (gen./impl./assoc./dep.); sentenças simplif.→OFG; CFG+OFG→Sequência &
-J2UML; JavaCC; Dom4j; J2X (DTD/XML) &
-5 casos pequenos; acurácia: classes 96,4–100\%; relações 65,0–90,4\% \\
+\Static; \Comp/\Redoc &
+Código → AST → J2X; mapeamentos (gen./impl./assoc./dep.); sentenças simplif. → OFG; CFG + OFG → UML Sequência &
+J2UML; JavaCC; DOM4J; J2X (DTD/XML) &
+5 sistemas pequenos; acurácia: classes 96,4–100\%; relações 65,0–90,4\% \\
 
 \textcite{yang2016condensing} &
 Java; sistemas OO &
 UML Classe (condensado) &
-\Static; \Comp/\Redoc; estrutural &
-\textbf{Extração de métricas (SDMetrics)} $\rightarrow$ Normalização (z-score) $\rightarrow$ \textbf{k-means clustering} $\rightarrow$ Random under-sampling $\rightarrow$ \textbf{Ensemble learning (Random Forest)} $\rightarrow$ diagrama condensado &
+\Static; \Comp/\Redoc (estrutura) &
+Extração de métricas (SDMetrics) → normalização (z-score) → k-means → under-sampling → ensemble (Random Forest) → diagrama condensado &
 MagicDraw; SDMetrics; Random Forest; Windows 7 &
-OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo=10\%; teste de Wilcoxon e Cliff’s $\delta$ \\
+OSS (9 projetos, 2640 classes); AUC = 0.73; custo de rótulo = 10\%; testes de Wilcoxon e Cliff’s $\delta$ \\
 
 \textcite{Fauzi2016AST} &
-Java; sistemas orientados a objetos &
+Java; sistemas OO &
 UML Sequência (comportamental) &
 \Static; \Comp/\Redoc &
-\textbf{Código} $\rightarrow$ \textbf{AST (JavaParser)} $\rightarrow$ \textbf{DFS pós-ordem} $\rightarrow$ \textbf{PlantUML (Seq)} &
+Código → AST (\JavaParser) → DFS pós-ordem → \PlantUML{} (Sequência) &
 REVUML; \JavaParser; \PlantUML &
-126 casos de teste (8 categorias; geração correta e consistente de diagramas \\ 
-
+126 casos de teste (8 categorias); geração correta e consistente de diagramas \\
 
 \textcite{baidada2016hybrid} &
-Java/Genérico; aplicações OO &
+Java / genérico; aplicações OO &
 UML Sequência (HLSD) &
-\textbf{Híbrido} (Estático + Dinâmico); Compreensão/Redocumentação (comportamento) &
-CFG$\!\rightarrow$entradas; execuções+traços (filtro); traços$\!\rightarrow$CPN; CPN$\!\rightarrow$UML SD &
-Sem ferramenta nominal; UML 2; instrumentação/VM/debugger; CPN (IR) &
-Sem validação; futuro \\
+\Hybrid{}; \Comp/\Redoc (comportamento) &
+CFG → geração de entradas; execuções + traços (filtragem) → CPN (IR) → UML Sequência &
+UML2; instrumentação / JVM / debugger; CPN (IR) & 
+Sem validação empírica reportada \\
 
 \textcite{leatongkam2017generating} &
 Fortran OO; computação científica e engenharia &
-UML Classe; UML Sequência; modelo intermediário XMI &
-Estático — compreensão e redocumentação &
-Regras de mapeamento código $\rightarrow$ UML (OMG); parsing estático; árvore sintática; geração XMI $\rightarrow$ importação ArgoUML &
-ForUML (extensão); ArgoUML; padrão OMG UML/XMI;&
+UML Classe; UML Sequência; XMI intermediário &
+\Static; \Comp/\Redoc &
+Regras código → UML (OMG); parsing estático; árvore sintática; geração XMI → importação ArgoUML &
+ForUML (extensão); ArgoUML; OMG UML/XMI &
 \textit{Work in progress} \\
 
 \textcite{Sabir2019MDRE} &
-Java (sistemas legados orientados a objetos) &
-UML \emph{Class Diagram} + \emph{Activity Diagram} (em pacote UML) &
-Estático; objetivo: compreensão/redocumentação &
-T2M/M2M em duas fases: Parser$\rightarrow$AST$\rightarrow$IM(XML) e mapeamentos IM$\rightarrow$UML (classe/atividade) &
-Eclipse + UML2/EMF; JavaParser (IMD); (Papyrus/StarUML/Rational Rose na validação manual) &
-Comparação especialista (modelos manuais vs. gerados), 5 estudos de caso; ATM e Amadeus descritos \\ 
-
+Java; sistemas legados OO &
+UML Class Diagram; UML Activity Diagram &
+\Static; \Comp/\Redoc &
+T2M/M2M: Parser → AST → IM(XML) → mapeamentos IM → UML (classe/atividade) &
+Eclipse + UML2/EMF; JavaParser (IMD); Papyrus / StarUML / Rational Rose (validação) &
+5 estudos de caso; comparação especialista (ATM e Amadeus) \\
 
 \textcite{siala2024enhancing} &
 Java; Python; sistemas legados &
 UML Classe; OCL &
-Estático — compreensão, redocumentação e migração &
-código $\rightarrow$ tokenização/simplificação $\rightarrow$ geração textual UML/OCL intermediária(LLM) $\rightarrow$ model repair $\rightarrow$ diagramas UML/OCL &
-Graphviz; PlantUML; Modelio; AgileUML; LLM &
-Comparação MDRE: dois estudos de caso; correção semântica, completude e compreensibilidade \\
-
+\Static; \Comp/\Redoc/\Mig &
+Código → tokenização / simplificação → representação textual UML/OCL (LLM) → model repair → UML/OCL &
+Graphviz; \PlantUML; Modelio; AgileUML; LLM &
+2 estudos de caso; avaliação de correção semântica, completude e compreensibilidade \\
 \bottomrule
+
 \end{tabularx}
+
 \caption{Síntese comparativa dos estudos selecionados.}
 \label{tab:sintese_comparativa}
 \end{sidewaystable}
@@ -354,388 +351,411 @@ O ecossistema técnico das abordagens analisadas agrega \emph{parsers}/geradores
 \paragraph{RQ6 — Validação e qualidade prática.}
 A avaliação varia de \textbf{estudos de caso pequenos com acurácia estrutural} (classes 96{,}4–100\%, relações 65{,}0–90{,}4) \parencite{zhang2016j2x}, a \textbf{testes sistemáticos} de geração de sequência \parencite{Fauzi2016AST}, e \textbf{comparação especialista} sem métricas quantitativas \parencite{Sabir2019MDRE}. \textcite{yang2016condensing} recorre a \textbf{AUC} e testes estatísticos (Wilcoxon, Cliff’s $\delta$) para condensação de classes. \textcite{baidada2016hybrid} não reporta validação empírica. Em suma, há carência de avaliações \emph{comparativas} com ground truth e métricas padronizadas na maioria dos trabalhos.
 
-\section{Implicações para este trabalho.}
+\section{metodologia}
 
-Plano estático (objetivo: casos de uso a partir de código Python)
+Metodologicamente, este trabalho segue uma abordagem de engenharia de software experimental estruturada segundo os princípios de Model-Driven Reverse Engineering (MDRE). Conforme definido por \textcite{Bruneliere2010MoDisco}, um processo MDRE organiza-se em duas fases fundamentais: Model Discovery, responsável por transformar o sistema analisado em um modelo uniforme, e Model Understanding, no qual esse modelo é explorado, transformado e refinado até produzir as representações desejadas \textcite{Bruneliere2010MoDisco}.
 
-Código → AST (IM/IR).
-Parser de Python para construir a AST como modelo intermediário.
+Neste estudo, essas duas fases se materializam diretamente na arquitetura do pipeline:
 
-Candidatos a casos de uso.
-Heurística estática: funções/métodos “públicos” viram use cases candidatos.
+(i) Model Discovery — Construção do modelo intermediário (AST enriquecida)
 
-Clusterização para agrupar intenções.
-Embeddings de código e de AST (NFASRPR-TRANS) para representar o código fonte; K-means/HDBSCAN agrupam métodos por intenção/semântica.
-– O centróide do cluster nomeia o caso de uso; demais métodos viram passos/serviços/extends/includes.
+A fase de descoberta corresponde à extração de um modelo homogêneo a partir do código-fonte. No presente trabalho, essa etapa é realizada por meio da análise sintática e do enriquecimento da AST: o código é convertido em uma coleção estruturada de \texttt{TNode}s contendo informações sintáticas, posicionais, textuais e métricas locais. Esse modelo intermediário funciona como a “vista” uniforme do sistema.
 
-Relacionamentos estáticos.
+(ii) Model Understanding — Geração de embeddings e interpretação estrutural
 
-include: subrotinas/serviços invocados por $\ge k$ casos de uso candidatos (reuso sistemático no grafo de chamadas).
+A segunda fase do MDRE — compreensão do modelo — é implementada pela geração de embeddings semântico-estruturais e pela construção do grafo reduzido que alimenta a \texttt{CodeGNN}. Essa etapa analisa e transforma o modelo descoberto, produzindo representações vetoriais que codificam padrões sintáticos e semânticos, relações de dependência e proximidade estrutural. Esse processamento equivale às transformações de compreensão e análise previstas na fase de Model Understanding do MoDisco
 
-extend: chamadas opcionais guardadas por condições (flags/feature toggles/validações) detectadas no AST/CFG; marcam “pontos de extensão” do caso de uso base.
+(iii) Recuperação dos candidatos a casos de uso
 
-generalização (atores e casos): herança/implementação e sobrecarga de nomes (métodos homônimos (Shape, TextShape, GeometryShape) em super/subclasses) indicam especializações; atores inferidos de camadas de borda (controllers, adapters, decorators de rota) - rever.
+Com os embeddings produzidos, o pipeline identifica métodos públicos como candidatos a casos de uso, agrupa-os por similaridade vetorial, e deriva relações estruturais, dependência, inclusão e extensão, a partir do grafo de chamadas. Esta etapa corresponde à aplicação do modelo compreendido para recuperar comportamentos funcionais de mais alto nível.
 
-dependência entre casos: mapeada de chamadas entre métodos “públicos” → dependência entre use cases.
+(iv) Geração do modelo final — diagrama de casos de uso
 
-Geração (PlantUML).
-Serialização dos nós (casos, atores) e arestas (include/extend/generalização/dependência) em PlantUML.
-
-Extração de casos de uso a partir de métodos públicos. \textcite{pereira2011recovering}
-
-Generalização por herança/nomes homônimos.
-O mesmo trabalho mapeia herança estática para generalização.
-Fonte usada: regras de transformação (ATL) — adotamos a mesma leitura para Python (classes e MRO).
-
-Dependências entre casos a partir de chamadas.
-Fonte usada: regra Dependency2Dependency — base para nossas arestas de dependência/include.
-
-Embeddings estáticos guiados por AST.
-\textcite{LiangHuang2024ASTLLM} descrevem um modelo com dois encoders (um para semântica lexical e outro para estrutura de AST) para sumarização de código.
-Assim aproveitamos os embeddings para melhorar a qualidade dos clusters.
-
-Implicações para este trabalho. Propomos redocumentação semântica a partir de Python, combinando (i) AST como modelo intermediário (IM/IR) e (ii) embeddings sensíveis à estrutura (NFASRPR-TRANS) para inferir intenção e papel de métodos (docstrings, comentários e nomes). Casos de uso são inferidos por métodos de borda; generalizações vêm de herança/assinaturas homônimas; include decorre de subrotinas reutilizadas; extend de ramos opcionais. A saída é um Use Case Diagram em PlantUML. (Base: Pereira — extração estática por métodos públicos; embeddings orientados a AST.)
-
-código → AST → embeddings+clusterização → regras estáticas (include/extend/atores) → PlantUML
-
-De onde vem: mapeamento “método público → caso de uso” e “chamada entre públicos → dependência” (Pereira), robustez semântica dos vetores via AST-encoder.
-
-Representação: nós = {atores, casos}; arestas = {include, extend, generalização, dependência}.
-
-Sinais estáticos:
-
-Atores: classes/módulos de interface (controllers/views/adapters; decorators de rota/CLI).
-
-include: função/método chamado por $\ge k$ casos distintos; baixa complexidade ciclomática; sem guardas específicas.
-
-extend: chamadas condicionais (predicados sobre entrada/estado/feature-flag) marcando “pontos de extensão”.
-
-generalização: herança + homonímia de assinatura nos métodos.
-
-$score = \alpha \cdot (\text{freq. de reuso}) 
-       + \beta \cdot (\text{centralidade no call graph})
-       - \gamma \cdot (\text{força da guarda condicional})$
-
-Saída: .puml gerado a partir do grafo.
-
-Elementos e regras de extração (todos estáticos):
-
-Casos de uso (UC): cada método público vira um UC com o mesmo nome do método (no seu caso, prefixe com o nome da classe para evitar colisões). Trecho-base (“Recovering Use Case Diagrams from Object Oriented Code”): “Basic use cases are extracted analyzing public methods. Each public method of a class corresponds to a use case whose name is the same as the method name.”
-
-Generalização (entre UCs): quando houver herança e mesmo nome/assinatura entre métodos em classes distintas, gere generalização entre os UCs correspondentes: “For each pair of same-name methods which are members of different classes with a generalization between them, a generalization between use cases… is generated.”
-
-Dependência entre UCs (aresta genérica): para cada chamada p.g() dentro de um método público m, crie dependência entre UC(m) e UC(g): “For each public method of a class, the method calls are analyzed to extract dependence relationships among basic use cases. Each message sent to an object corresponds to a dependence between use cases.”
-
-$\longrightarrow$ Decisão do seu trabalho (100\% estático): manter apenas “Dependency” (sem classificar em <<include>>/<<extend>>), pois a própria autora afirma que o tipo (include/extend) “may be inferred by a dynamic analysis” — que você não quer usar.
-
-Atores: não inferir automaticamente (manter passo manual/regras externas), pois “actors can not be automatically inferred”.
-
-Passos do processo (estático): (1) gerar código abstrato/AST; (2) executar algoritmo de recuperação estática; (3) (dinâmico para classificar dependências) — omitido no seu trabalho; (4) definir UCs de alto nível.
-
-Elevação de nível (agrupar UCs): aplicar heurísticas de clusterização para formar UCs mais abstratos: “use cases may be clustered in single more abstract use cases by applying simple heuristics”. (Heurísticas a/b do passo 4).
-
-Observação prática: você pode manter todas as arestas como Dependency e, apenas na visualização, sinalizar candidatos a include (reuso alto/fan-in elevado) e candidatos a extend (dependências sob guarda condicional detectável no AST/CFG). Isso segue a letra do artigo (classificação formal requer dinâmica), mas entrega valor prático na redocumentação.
-
-\section{Implementação}
-2302
-emânticos para apoio a tarefas de análise de código. A solução foi organizada em três camadas principais: (i) um núcleo de análise estática que constrói a AST e produz a estrutura intermediária TNode; (ii) uma arquitetura de microkernel baseada em passes plugáveis, responsável por enriquecer cada nó com metadados estruturais e semânticos; e (iii) uma camada de representação vetorial, que combina features estruturais e textuais em um encoder de nós e, em seguida, aplica uma GNN sobre o grafo da AST para obter embeddings por nó e um embedding global do arquivo.
-
-O TNode é a representação intermediária que agrega a AST bruta com as informações derivadas pelos passes (Figura~\ref{fig:plugins}). Sua definição é organizada em blocos de campos, cada um associado a um grupo de passes especializado: Informações de caminho (\texttt{path\_info}); Informações de nomes e visibilidade (\texttt{names\_visibility} e \texttt{naming}); Tipo de método e assinatura de I/O (\texttt{method\_kind} e \texttt{io\_signature}); Tipo de classe (\texttt{class\_kind}); Documentação e comentários (\texttt{docs\_comments}).
-
-Nenhum desses campos é oferecido diretamente pela AST nativa do Python; todos são inferidos pelo conjunto de passes executados.
-
-Cada nó \texttt{TNode} recebe, além do nome simples (\texttt{name}), um nome qualificado (\texttt{qname}) construído a partir da pilha de classes e funções ativas durante a travessia da AST. O \texttt{qname} identifica de forma única o elemento no arquivo, por exemplo, \texttt{"Unit.accept"} para um método público da classe \texttt{Unit}. Esse identificador é utilizado posteriormente para mapear métodos a casos de uso e para construir relações de dependência entre casos de uso.
+Por fim, o processo produz um modelo visual final: um diagrama de casos de uso representando funcionalidades reconstruídas e suas relações. Esse artefato sintetiza o entendimento alcançado e cumpre o papel da representação final prevista em MDRE: um modelo abstrato, uniformizado e adequado para documentação, análise e comunicação.
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\textwidth]{drawio/Images/AST_Model_Plugins-plugins_order_package.drawio.png}
-  \caption{Plugins.}
-  \label{fig:plugins}
+  \includegraphics[width=0.8\textwidth]{drawio/comp_flow/fluxo_de_dados.png}
+  \caption{Fluxo de dados da metodologia proposta, da análise estática do código-fonte em Python à geração dos embeddings e dos diagramas de casos de uso.}
+  \label{fig:fluxo_dados_metodologia}
 \end{figure}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.8\textwidth]{drawio/Images/AST_Model_Plugins-tnode_seq.drawio.png}
-  \caption{Diagrama de sequencia da construção do TNode.}
-  \label{fig:diagrama_de_sequencia_da_construcao_do_tnode}
+\section{Extração do Modelo Intermediário (AST Enriquecida)}
+A primeira etapa a consiste em transformar o código-fonte Python em um modelo intermediário, estruturado a partir da \textit{Abstract Syntax Tree} (AST). Esse modelo é representado por instâncias de \texttt{TNode}, que encapsulam tanto informações estruturais quanto textuais extraídas automaticamente do código.
+
+A Figura~\ref{fig:componentes_ast} apresenta a arquitetura responsável por essa etapa, composta por três módulos principais: (i) \textbf{ASTEngine}, que implementa a travessia e a construção dos \textit{TNodes}; (ii) \textbf{PassPlugins}, que enriquece cada nó com metadados adicionais; e (iii) \textbf{ASTApi}, que fornece a fachada de alto nível para execução da análise em repositórios completos.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{drawio/comp_flow/diagrama_de_componentes_AST.png}
+    \caption{Arquitetura da etapa de extração da AST enriquecida.}
+    \label{fig:componentes_ast}
 \end{figure}
 
-Módulos principais da implementação do ASTCore (Figura~\ref{fig:arquitetura_astcore}):
-\begin{itemize}
-  \item \textbf{\texttt{astcore.model}}: define as classes centrais \texttt{Ctx} e \texttt{TNode}, utilizando \texttt{@dataclass} da biblioteca padrão do Python. Essa camada encapsula a representação intermediária e é independente dos passes de análise.
-  \item \textbf{\texttt{astcore.walker}}: implementa as estratégias de travessia da AST nativa do Python (\texttt{recursive\_pre}, \texttt{iterative\_pre}, \texttt{bfs}), produzindo uma sequência de \texttt{TNode}s a partir de um \texttt{ast.Module}. Essa camada atua como um \emph{visitor} especializado, mas desacoplado dos detalhes de cada análise.
-  \item \textbf{\texttt{pass\_plugins}}: pasta de plugins que contém os passes responsáveis por enriquecer os nós (\texttt{names\_visibility}, \texttt{method\_kind}, \texttt{class\_kind}, \texttt{docs\_comments}, \texttt{naming}, \texttt{io\_signature}, \texttt{path\_info}, etc.). Cada plugin conhece apenas a API de \texttt{Ctx} e \texttt{TNode}, e não interage diretamente com outros plugins.
-  \item \textbf{\texttt{pass\_plugins.pass\_registry}}: módulo que registra os passes disponíveis, resolve dependências entre eles e determina a ordem de execução. Funciona como um \emph{registry} e uma pequena camada de \emph{inversão de controle}: o usuário informa quais passes carregar e o \texttt{PassRegistry} garante que sejam aplicados na ordem correta.
-  \item \textbf{\texttt{src.service}}: módulo de alto nível que oferece operações como \texttt{analyze\_path} e \texttt{export\_json}. Ele atua como \emph{fachada} do ASTCore, orquestrando carregamento de plugins, travessia da AST, enriquecimento dos nós e serialização dos resultados.
-\end{itemize}
+\subsection{Arquitetura da Extração}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.8\textwidth]{drawio/Images/AST_Model_Plugins-plugins_package.drawio.png}
-  \caption{Arquitetura modular do ASTCore.}
-  \label{fig:arquitetura_astcore}
+A etapa de \emph{Analyse Path} é realizada no módulo \texttt{service}, que percorre recursivamente o diretório fornecido, identifica os arquivos \texttt{.py}, lê seu conteúdo e inicializa o contexto de análise (\texttt{Ctx}) para cada arquivo. Em seguida, ocorre a fase de \emph{Source Code Parsing}, na qual o conteúdo do arquivo é convertido para uma AST nativa do Python (\texttt{ast.parse}) e imediatamente processado pelo motor \textbf{ASTEngine} através da função \texttt{walk\_module}. Essa etapa não apenas interpreta o código, mas também constrói o modelo intermediário, criando instâncias de \texttt{TNode} que representam cada elemento sintático do arquivo.
+
+O motor \textbf{ASTEngine} conduz uma travessia controlada da AST, seguindo estratégias configuráveis (\textit{recursive pre-order}, \textit{post-order}, \textit{iterative}, \textit{BFS}). Abordagens clássicas voltadas à recuperação de comportamento e de fluxos de execução tendem a empregar \emph{depth-first search} em pós-ordem (\emph{DFS post-order}). No contexto da ferramenta REVUML, por exemplo, \textcite{Fauzi2016AST} argumentam que a travessia pós-ordem é mais adequada para preservar a sequência das instruções no código e, assim, apoiar a geração de diagramas de sequência e a reconstrução da
+ordem de execução.
+
+Por outro lado, trabalhos recentes focados em representação vetorial de código e em modelos neurais para compreensão de programas têm privilegiado variantes de pré-ordem. Estudos como o de \textcite{LiangHuang2024ASTLLM} mostram que a linearização da AST em pré-ordem (especialmente na forma \emph{reverse pre-order}) produz sequências mais estáveis e informativas para técnicas de \emph{tree positional encoding} e embeddings estruturais, levando a ganhos consistentes em tarefas de classificação, sumarização e \emph{clustering} de código.
+
+Durante essa travessia, são criados dois elementos fundamentais: o contexto de análise (\texttt{Ctx}) e os nós enriquecidos (\texttt{TNode}). O \texttt{Ctx} mantém o estado global do arquivo (linhas de código, comentários, pilhas de classes e funções), enquanto cada \texttt{TNode} encapsula o nó original da AST e recebe metadados estruturais (profundidade na AST, relações pai–filho, posição no arquivo) e textuais.
+
+O enriquecimento dos nós é realizado pelos \textbf{passes} registrados em \texttt{PassPlugins}, organizados em fases (\textit{PRE}, \textit{ENRICH}, \textit{POST}) e ordenados por dependências declaradas via \texttt{PassRegistry}. Cada plugin preenche campos específicos do \texttt{TNode}, como \textit{PathInfo}, \textit{NamesVisibility}, \textit{MethodKind}, \textit{IOSignature}, \textit{ClassKind}, \textit{DocsComments} e \textit{CallGraph}.
+
+Ao final, o módulo \texttt{service} agrega todos os \texttt{TNode}s enriquecidos em uma instância \texttt{AnalysisResult}, que representa o modelo intermediário sobre oqual as etapas posteriores de geração de embeddings e recuperação de casos de uso serão executadas.
+
+
+\section{Geração de Embeddings Semântico-Estruturais (AST + GNN)}
+
+A segunda etapa parte do modelo intermediário produzido pela análise de AST, composto por instâncias de \texttt{TNode} enriquecidas com metadados estruturais e textuais. Cada \texttt{TNode} é transformado em um vetor numérico que combina informações sobre o papel daquele elemento no código (tipo de nó, visibilidade, tipo de classe e método, grau de participação no grafo de chamadas, profundidade, entre outros) com uma representação densa do vocabulário associado (nomes, docstrings e comentários).
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{drawio/comp_flow/diagrama_de_componentes_embeddings.png}
+    \caption{Arquitetura da etapa de geração de embeddings.}
+    \label{fig:componentes_embeddings}
 \end{figure}
 
-A arquitetura de microkernel adotada permite que novos passes sejam adicionados, removidos ou reorganizados sem alterar o restante do sistema. Cada \texttt{pass} é uma unidade autônoma que:
+\subsection{Codificação estrutural e textual do nó}
 
-\begin{itemize}
-\item consome apenas \texttt{TNode} e \texttt{Ctx};
-\item não conhece nem depende dos outros passes;
-\item é registrado dinamicamente no \texttt{PassRegistry};
-\item declara o conjunto de atributos que produz;
-\item define suas pré-condições via \texttt{when}.
-\end{itemize}
+Seguindo a diretriz de \textcite{tonella2007reverse}, que recomenda descartar detalhes internos dos corpos de métodos por não contribuírem para a recuperação de modelos arquiteturais, o pipeline reduz a AST a um subconjunto de nós estruturalmente relevantes. Essa redução é implementada pelo \textit{pass} \texttt{core\_nodes}, que marca em cada \texttt{TNode} um indicador \texttt{is\_core} e um rótulo \texttt{core\_kind}, identificando apenas escopos (\texttt{Module}, \texttt{ClassDef}, \texttt{FunctionDef}, \texttt{AsyncFunctionDef}) e operações essenciais (\texttt{assign}, \texttt{call}, \texttt{return}, \texttt{raise}) como nós centrais.
 
-Isso facilita:
+A codificação estrutural é realizada pela função \texttt{structural\_features}, que mapeia cada \texttt{TNode} para um vetor fixo de dimensão \texttt{STRUCT\_DIM}. Esse vetor é composto por blocos \emph{one-hot} para categorias discretas (tipo reduzido do nó na AST, visibilidade, \emph{class kind}, \emph{method kind} e \emph{core\_kind}) e por um bloco contínuo de \emph{flags} numéricas. Entre essas \emph{flags} estão: número de parâmetros, profundidade normalizada na AST, número de exceções lançadas, quantidade de classes base e decoradores, métricas de \emph{fan-in} e \emph{fan-out} no grafo de chamadas e a posição do arquivo no diretório (\emph{file depth}).
 
-\begin{itemize}
-\item extensão incremental do sistema;
-\item experimentação rápida (adição de passes sem recompilar);
-\item isolamento das análises;
-\item depuração sistemática.
-\end{itemize}
-\subsection{Geração de embeddings a partir dos \texttt{TNode}s}
+Em paralelo, a codificação textual utiliza um encoder semântico baseado em \emph{Sentence-BERT} (\texttt{all-MiniLM-L6-v2}). Para cada nó, a função \texttt{concat\_text\_from\_tnode} constrói uma descrição textual em três níveis: (i) informações de nomeação e contexto, incluindo o nome qualificado (\texttt{qname}), os \emph{tokens} do identificador (\texttt{name\_tokens}), o estilo de nomeação (\textit{snake\_case}, \textit{camelCase}, \textit{PascalCase}) e os nomes de pacote e módulo; (ii) documentação associada, composta por \textit{docstrings}, comentários de cabeçalho e comentários inline; e (iii) indícios de comportamento extraídos automaticamente, como expressões de retorno, anotações de tipo e chamadas locais a outros símbolos do mesmo módulo.
 
-A representação vetorial dos nós da AST ocorre em duas etapas. Na primeira, cada \texttt{TNode} é codificado individualmente em um vetor $d$-dimensional que combina características estruturais e textuais. Na segunda etapa, o grafo da AST recebe pesos escalares em suas arestas, calculados por funções gaussianas que dependem da distância relativa entre os nós (em profundidade e/ou número de linha). Essa etapa é inspirada no uso de \emph{Gaussian embedders} proposto por \textcite{LiangHuang2024ASTLLM}, que empregam núcleos gaussianos para codificar posições relativas em modelos \emph{Transformer}; neste trabalho, a mesma ideia é adaptada ao contexto de grafos, sendo aplicada como viés multiplicativo nas arestas durante a agregação de mensagens da GNN.
+Neste trabalho, chamamos de \emph{tokens do identificador} as subpalavras obtidas a partir do nome original. Por exemplo, os identificadores \texttt{getUserName} e \texttt{user\_name} são decompostos, respectivamente, em \texttt{[get, user, name]} e \texttt{[user, name]}. Essa decomposição separa unidades semânticas menores, permitindo que o encoder textual explore melhor o significado dos nomes do código.
 
-\subsubsection{Embedding por nó: estrutura e texto}
+A inclusão explícita dos \emph{tokens} de identificadores e do estilo de nomeação é inspirada em resultados recentes que mostram que a decomposição semântica de nomes de variáveis e métodos melhora a capacidade do modelo de inferir o papel estrutural e funcional dos elementos do código \textcite{Ahmad2020TransformerCodeSummarization}. No presente trabalho, o texto consolidado é truncado em até 1024 caracteres e codificado pelo \texttt{SBERTTextEncoder}, produzindo um embedding semântico denso de dimensão fixa (\texttt{TEXT\_EMB\_DIM}).
 
-A função \texttt{build\_node\_feature\_matrix} transforma a lista de \texttt{TNode}s em uma matriz de atributos \(X \in \mathbb{R}^{N \times d}\), em que cada linha corresponde ao embedding de um nó.
+\subsection{Encoder semântico e combinação estrutural–textual}
 
-O vetor de entrada de cada nó é construído a partir de dois grupos de atributos estruturais e textuais.
+Uma vez definidas as \emph{features} estruturais e o texto consolidado de cada nó, a etapa seguinte consiste em projetar essas informações em um espaço vetorial denso adequado para o processamento por grafos. Essa projeção é realizada em duas camadas: (i) um encoder semântico baseado em \textit{Sentence-BERT} para o texto associado ao nó e (ii) um \textit{Multi-Layer Perceptron} (MLP) que combina o vetor estrutural e o embedding textual em uma única representação compacta.
 
-O vetor estrutural contém:
-\begin{itemize}
-\item variáveis categóricas one-hot (tipo AST, visibilidade, classe\/método, core\_kind);
-\item variáveis contínuas normalizadas (profundidade, número de parâmetros, número de raises);
-\item flags booleanas.
-\end{itemize}
+O encoder semântico é encapsulado na classe \texttt{SBERTTextEncoder}, que carrega um modelo pré-treinado \texttt{SentenceTransformer} (\texttt{all-MiniLM-L6-v2}) e expõe um método \texttt{encode} responsável por mapear uma descrição textual arbitrária para um vetor denso de dimensão fixa (\texttt{TEXT\_EMB\_DIM}). Para evitar o custo de inicialização repetida do modelo, o encoder é instanciado uma única vez, por meio de um padrão de projeto do tipo \textit{singleton} (\texttt{get\_text\_encoder}), e reutilizado em toda a análise. A função \texttt{text\_features(t)} aplica esse encoder ao texto gerado por \texttt{concat\_text\_from\_tnode}, produzindo um embedding semântico \(x_t \in \mathbb{R}^{\texttt{TEXT\_EMB\_DIM}}\).
 
-Essa combinação de atributos discretos e contínuos permite que a GNN capture:
-
-\begin{itemize}
-\item sinais sintáticos (estrutura do código),
-\item sinais semânticos (uso de classes, métodos, padrões de chamada),
-\item e sinais hierárquicos (profundidade, escopo).
-\end{itemize}
-
-O texto derivado de cada \texttt{TNode}, produzido por \texttt{concat\_text\_from\_tnode}, fornece um resumo semântico rico que inclui:
-\begin{itemize}
-\item nome qualificado do símbolo;
-\item tokens do identificador (snake\/camel split);
-\item assinaturas e parâmetros;
-\item docstrings e comentários;
-\item informação de core\_kind.
-\end{itemize}
-
-Esse texto é codificado por um encoder neural leve (\texttt{TNodeMLPEncoder}), permitindo capturar semântica local sem necessidade de modelos de linguagem pesados.
-
-Os vetores estrutural e textual são então concatenados e passados por uma MLP (\texttt{TNodeMLPEncoder}), definida em \texttt{tnode\_encoder.py}, que projeta o resultado em um espaço de dimensão \(d\) (neste trabalho, \(d = 128\)):
+Esses dois vetores são combinados pelo módulo \texttt{TNodeMLPEncoder}, implementado como uma rede MLP de duas camadas. Esse encoder recebe como entrada a concatenação do vetor estrutural e do embedding textual e aplica primeiro uma normalização de camada (\texttt{LayerNorm}) sobre o vetor conjunto, seguida de uma projeção não linear:
 
 \[
-\text{encode\_tnode}(t)
-= \text{MLP}\big(\text{structural\_features}(t) \mathbin{\|} \text{text\_features}(t)\big)
-\in \mathbb{R}^d.
+z_t = [\, s_t \,\|\, x_t \,], \qquad
+\hat{z}_t = \text{LayerNorm}(z_t), \qquad
+h_t = W_2 \,\sigma(W_1 \hat{z}_t + b_1) + b_2,
 \]
 
-A matriz final de atributos de nó é dada por
+em que \(s_t \in \mathbb{R}^{\texttt{STRUCT\_DIM}}\) representa as \emph{features} estruturais do nó \(t\), \(x_t \in \mathbb{R}^{\texttt{TEXT\_EMB\_DIM}}\) é o embedding semântico produzido pelo SBERT, \([\,\cdot \,\|\, \cdot\,]\) indica concatenação, \(\sigma\) é a função de ativação ReLU e \(h_t \in \mathbb{R}^D\) é o vetor resultante com dimensão de saída \texttt{out\_dim}. 
+
+A função \texttt{make\_tnode\_encoder} instancia o \texttt{TNodeMLPEncoder} com os valores corretos de \texttt{STRUCT\_DIM} e \texttt{TEXT\_EMB\_DIM}, garantindo que a rede seja compatível com o encoder textual carregado. Por fim, a função \texttt{encode\_tnode} aplica, para cada \texttt{TNode}, o pipeline completo de codificação estrutural e textual, retornando o vetor \(h_t\) já no dispositivo (\textit{CPU} ou \textit{GPU}) em que a GNN será executada.
+
+Ao aplicar \texttt{encode\_tnode} a todos os nós de um arquivo, a função \texttt{build\_node\_feature\_matrix} empilha esses vetores em uma matriz de \emph{features}
 \[
-X = \mathrm{stack}\big(\{\text{encode\_tnode}(t) \mid t \in \texttt{tnodes}\}\big)
-\in \mathbb{R}^{N \times d},
+X \in \mathbb{R}^{N \times D},
 \]
-combinando simultaneamente propriedades sintáticas (AST) e semânticas (texto).
+em que \(N\) é o número de nós considerados (nós \emph{core}) e \(D = \texttt{out\_dim}\) é a dimensão de saída do encoder. Essa matriz representa o ponto de partida para a etapa de convolução em grafos, na qual as informações semânticas e estruturais de cada nó serão refinadas em função da vizinhança na AST reduzida.
 
-\subsubsection{Projeção Sintática Reduzida}
-\label{subsubsec:projecao_sintatica_reduzida}
-Embora a AST completa seja construída e enriquecida pelos passes, a etapa de geração de embeddings utiliza apenas uma \textbf{subárvore reduzida}, alinhada à proposta de \textcite{tonella2007reverse}, contendo apenas os nós essenciais ao fluxo de objetos e à extração de comportamentos:
+\subsection{Construção do grafo e pesos gaussianos}
 
+Sobre esse conjunto de nós é construído um grafo derivado da AST reduzida. A função \texttt{build\_core\_edge\_index} seleciona apenas os nós marcados como \emph{core} (escopos, atribuições, chamadas, retornos e lançamentos de exceção) e conecta cada nó core \(c_i\) ao ancestral core mais próximo \(c_j\) na árvore sintática. Para cada aresta candidata \(e = (i,j)\), são calculadas duas medidas posicionais: (i) o \emph{gap} de nós intermediários ignorados entre o filho e o ancestral e (ii) a diferença de profundidade entre ambos na AST (\emph{depth}).
+
+Seja \(n_{\text{interm}}(i,j)\) o número de nós não--core entre \(c_i\) e \(c_j\), e \(\text{depth}(\cdot)\) a profundidade do nó na árvore. As medidas brutas são definidas como:
 \[
-\mathrm{core\_tnodes} = \{\, t \in \mathrm{TNodes} \mid t.\mathrm{is\_core} = \text{True} \,\}.
-\]
-
-A redução preserva apenas:
-
-\begin{itemize}
-\item nós de escopo (\texttt{Module}, \texttt{ClassDef}, \texttt{FunctionDef});
-\item atribuições (\texttt{Assign}, \texttt{AnnAssign});
-\item chamadas (\texttt{Call});
-\item retornos (\texttt{Return});
-\item exceções (\texttt{Raise}).
-\end{itemize}
-
-Nós de controle, como \texttt{If}, \texttt{For}, \texttt{While} e \texttt{Try}, permanecem disponíveis na AST completa, mas são excluídos da projeção reduzida, de modo que apenas operações relevantes ao fluxo semântico participem da etapa de aprendizado.
-
-Esse design permite manter o máximo de informação estrutural nos \texttt{TNode}s, ao mesmo tempo em que produz uma representação compacta e semanticamente orientada para a GNN.
-
-\subsubsection{Grafo da AST e pesos gaussianos nas arestas}
-
-A estrutura do arquivo-fonte é modelada como um grafo não direcionado, em que os vértices são os \texttt{TNode}s e as arestas representam relações pai–filho da AST. A função \texttt{build\_ast\_edge\_index} produz a matriz de adjacência esparsa no formato do PyTorch Geometric,
-\(\texttt{edge\_index} \in \mathbb{N}^{2 \times E}\), contendo arestas bidirecionais.
-
-Para enriquecer essas conexões, cada aresta \((i, j)\) recebe um peso escalar \(w_{ij}\) calculado a partir de uma função gaussiana sobre uma noção de distância posicional entre os nós. Inspirado em esquemas de \emph{relative position encoding} com kernels gaussianos para código-fonte, o peso é definido como
-\[
-w_{ij}
-= \exp\!\left(
-    - \frac{\lvert p_i - p_j \rvert^2}{2\sigma^2}
-  \right),
-\]
-em que \(p_i\) e \(p_j\) são escalares que codificam posição: no protótipo, podem representar (i) a profundidade do arquivo na hierarquia de diretórios do repositório (armazenada no campo \texttt{depth} do \texttt{TNode}) ou (ii) o número de linha no arquivo (\texttt{lineno}), e \(\sigma\) é um hiperparâmetro de escala. Essa lógica é implementada nas funções \texttt{gaussian\_edge\_weights} e \texttt{gaussian\_edge\_weights\_combined}. A versão combinada utiliza duas dimensões (profundidade e linha), agregando os respectivos pesos (por exemplo, via produto ou média), de modo que a proximidade na organização do projeto (arquivos no mesmo subdiretório) e a proximidade lexical dentro do arquivo contribuam conjuntamente para a força da aresta.
-
-Na prática, esses pesos atuam como um filtro de atenção estrutural: a GNN é incentivada a concentrar a agregação de mensagens em interações locais (por exemplo, entre instruções próximas dentro do mesmo arquivo ou entre símbolos definidos em arquivos vizinhos na mesma pasta), enquanto conexões entre nós muito distantes na escala escolhida são progressivamente atenuadas. Isso é desejável nesta tarefa porque grande parte da semântica relevante para compreender um símbolo está em sua vizinhança imediata — seja no entorno das suas declarações e usos, seja no contexto modular onde o arquivo está inserido.
-
-Dessa forma, o grafo deixa de ser puramente não ponderado e passa a carregar um campo contínuo de relacionamentos estruturais: nós próximos (na mesma região do arquivo ou do repositório) recebem pesos mais altos, enquanto nós distantes são atenuados.
-
-\subsubsection{Entrada para a GNN}
-
-A AST completa já foi percorrida pelos \emph{passes} e cada nó foi encapsulado em um \texttt{TNode} enriquecido com metadados estruturais e semânticos. No entanto, a camada de GNN não opera sobre a árvore inteira, mas apenas sobre a projeção sintática reduzida definida na Seção~\ref{subsubsec:projecao_sintatica_reduzida}. Seja
-
-\[
-\mathcal{V}_{\text{core}} = \{\, t \in \texttt{TNodes} \mid t.\texttt{is\_core} = \text{True} \,\}
-\]
-
-o subconjunto de nós essenciais (\texttt{core\_tnodes}). Nesta etapa, todos os tensores $X$, \texttt{edge\_index} e \texttt{edge\_weight} são construídos \textbf{exclusivamente} sobre o subgrafo induzido por $\mathcal{V}_{\text{core}}$.
-
-O modelo passa então a dispor de três elementos:
-
-\begin{itemize}
-  \item \(X \in \mathbb{R}^{N \times d}\): matriz de \emph{features} iniciais dos
-        \(N = |\mathcal{V}_{\text{core}}|\) nós essenciais;
-  \item \(\texttt{edge\_index} \in \mathbb{N}^{2 \times E}\): topologia do grafo reduzido, codificada como pares de índices inteiros referindo-se a nós em \(\mathcal{V}_{\text{core}}\);
-  \item \(\texttt{edge\_weight} \in \mathbb{R}^{E}\): pesos gaussianos associados a cada
-        aresta do grafo reduzido.
-\end{itemize}
-
-Esses tensores são então passados para o modelo \texttt{CodeGNN}:
-
-\[
-\texttt{node\_embs},\ \texttt{graph\_emb}
-= \mathrm{CodeGNN}(X, \texttt{edge\_index}, \texttt{edge\_weight}),
-\]
-
-em que \texttt{node\_embs} representa as embeddings contextuais refinadas de cada nó após a propagação de mensagens, e \texttt{graph\_emb} é obtido por um \emph{pooling} global com atenção. Em vez de utilizar apenas a média simples, este trabalho emprega um mecanismo de \textbf{attention pooling}, no qual a contribuição de cada nó para o embedding global é ponderada por um peso de atenção aprendido sobre os nós em \(\mathcal{V}_{\text{core}}\). Na prática, isso faz com que o embedding de arquivo privilegie nós que concentram interações relevantes para a tarefa de redocumentação, facilitando, por exemplo, identificar trechos candidatos a representar operações centrais em casos de uso ou outros artefatos de alto nível derivados do código.
-
-\subsubsection{Grafo de chamadas e métricas de fan-in/fan-out}
-
-Além das informações estruturais da AST, a ferramenta constrói um grafo estático de chamadas entre funções e métodos do programa. Nesse grafo, cada nó corresponde a um elemento chamável (função ou método) e cada aresta dirigida \( (c \rightarrow d) \) indica que o chamador \(c\) realiza uma chamada para o alvo \(d\) em seu corpo.
-
-A extração desse grafo é realizada em duas etapas, implementadas como \emph{passes} sobre os \texttt{TNode}s:
-
-\begin{enumerate}
-  \item \textbf{Coleta local de chamadas (\texttt{call\_edges})}: 
-  para cada nó que representa uma definição de função ou método (isto é, nós \texttt{ast.FunctionDef} e \texttt{ast.AsyncFunctionDef}), o sistema percorre o corpo da definição em busca de nós \texttt{ast.Call}. De cada chamada é extraída uma representação textual do alvo (por exemplo, \texttt{"helper"}, \texttt{"self.level\_up"}, \texttt{"grupo.accept"}), que é armazenada em um campo \texttt{local\_callees} do \texttt{TNode}. Ao mesmo tempo, são registrados pares \((\text{caller\_id}, \text{callee\_repr})\) em uma estrutura temporária no contexto de análise (\texttt{Ctx}).
-
-  \item \textbf{Consolidação global de métricas (\texttt{call\_metrics})}: 
-  após a visita de todo o módulo (fase \texttt{POST}), esses pares são agregados para construir uma visão global do grafo de chamadas. Primeiro, cada \texttt{TNode} chamável recebe um identificador estável \(\text{caller\_id}\) (priorizando \texttt{qname} quando disponível, como \texttt{Unit.accept}). Em seguida, o sistema:
-  \begin{itemize}
-    \item acumula, para cada chamador, o conjunto de alvos distintos que ele chama (\texttt{callees\_set});
-    \item tenta casar cada alvo textual com um chamável conhecido, usando o \emph{nome simples} como chave (por exemplo, tanto \texttt{"self.level\_up"} quanto \texttt{"Unit.level\_up"} são associados ao método \texttt{level\_up}).
-  \end{itemize}
-\end{enumerate}
-
-A partir dessa agregação, são preenchidos os campos:
-
-\begin{itemize}
-  \item \texttt{callees}: lista ordenada de identificadores dos nós que \emph{este} nó chama;
-  \item \texttt{callers}: lista ordenada de identificadores dos nós que \emph{chamam este} nó;
-  \item \texttt{fan\_out}: número de alvos distintos chamados por esse nó (tamanho de \texttt{callees});
-  \item \texttt{fan\_in}: número de chamadores distintos que atingem esse nó (tamanho de \texttt{callers}).
-\end{itemize}
-
-Formalmente, se denotarmos por \(C(m)\) o conjunto de chamadores de um método \(m\) e por \(D(m)\) o conjunto de métodos chamados por \(m\), temos:
-\[
-\text{fan\_in}(m) = \lvert C(m) \rvert, 
+\mathrm{gap}_{ij} = n_{\text{interm}}(i,j), 
 \qquad
-\text{fan\_out}(m) = \lvert D(m) \rvert.
+\Delta \mathrm{depth}_{ij} = \bigl|\,\text{depth}(c_i) - \text{depth}(c_j)\,\bigr|.
 \]
 
-Essas métricas fornecem um sinal estrutural importante para a identificação de candidatos a casos de uso:
+No código, ambas são normalizadas por uma transformação logarítmica estável, usando \texttt{log1p}:
+\[
+\tilde{g}_{ij} = \log(1 + \mathrm{gap}_{ij}), 
+\qquad
+\tilde{d}_{ij} = \log\bigl(1 + \Delta \mathrm{depth}_{ij}\bigr).
+\]
+
+Esses dois sinais alimentam a função \texttt{hibrid\_weight\_gaussian}, que aplica funções de similaridade gaussiana separadas para \(\tilde{g}_{ij}\) e \(\tilde{d}_{ij}\). Dados os hiperparâmetros \(\sigma_{\text{gap}}\) e \(\sigma_{\text{depth}}\), as similaridades são definidas por:
+\[
+\mathrm{sim}_{\text{gap}}(i,j)
+=
+\exp\!\left(
+  - \frac{\tilde{g}_{ij}^{2}}{2\sigma_{\text{gap}}^{2}}
+\right),
+\qquad
+\mathrm{sim}_{\text{depth}}(i,j)
+=
+\exp\!\left(
+  - \frac{\tilde{d}_{ij}^{2}}{2\sigma_{\text{depth}}^{2}}
+\right).
+\]
+Esses dois sinais alimentam a função \texttt{hibrid\_weight\_gaussian}, que aplica funções de similaridade gaussiana separadas para \(\tilde{g}_{ij}\) e \(\tilde{d}_{ij}\). Dados os hiperparâmetros \(\sigma_{\text{gap}}\) e \(\sigma_{\text{depth}}\), as similaridades são definidas por:
+\[
+\mathrm{sim}_{\text{gap}}(i,j)
+=
+\exp\!\left(
+  - \frac{\tilde{g}_{ij}^{2}}{2\sigma_{\text{gap}}^{2}}
+\right),
+\qquad
+\mathrm{sim}_{\text{depth}}(i,j)
+=
+\exp\!\left(
+  - \frac{\tilde{d}_{ij}^{2}}{2\sigma_{\text{depth}}^{2}}
+\right).
+\]
+
+Nessa formulação, \(\sigma_{\text{gap}}\) e \(\sigma_{\text{depth}}\) controlam a \emph{escala} da vizinhança considerada relevante em cada dimensão posicional. Valores menores de \(\sigma\) tornam o kernel mais “concentrado”: pequenas variações em \(\tilde{g}_{ij}\) ou \(\tilde{d}_{ij}\) já reduzem significativamente a similaridade, privilegiando arestas muito locais na AST. Valores maiores de \(\sigma\) produzem um decaimento mais suave, permitindo que nós separados por gaps ou diferenças de profundidade maiores ainda contribuam com pesos não desprezíveis na propagação de mensagens. Na prática, esses hiperparâmetros controlam o quão sensível a GNN é à distância estrutural entre os nós.
+
+Os pesos finais utilizados pela GNN em cada aresta \(e=(i,j)\) são obtidos combinando essas duas similaridades. O código oferece dois modos: combinação por produto,
+\[
+w_{ij} = \mathrm{sim}_{\text{gap}}(i,j)\,\cdot\,\mathrm{sim}_{\text{depth}}(i,j),
+\]
+ou por média aritmética,
+\[
+w_{ij} = \frac{\mathrm{sim}_{\text{gap}}(i,j) + \mathrm{sim}_{\text{depth}}(i,j)}{2}.
+\]
+
+A escolha do modo de combinação impacta a forma como a distância estrutural é interpretada pela GNN. No modo \texttt{product}, o peso só permanece alto quando a aresta é simultaneamente próxima em ambas as dimensões (gap e profundidade); uma similaridade baixa em qualquer uma delas reduz o peso total, aproximando o comportamento de um operador lógico ``E'' suave.  Já no modo \texttt{mean}, uma similaridade alta em apenas uma das dimensões é suficiente para manter um peso intermediário, o que corresponde a uma combinação mais permissiva, semelhante a um ``OU'' suave entre as duas noções de proximidade.
+
+O vetor de pesos resultante,
+\[
+\mathbf{w} = \bigl(w_{ij}\bigr)_{(i,j)\in E} \in \mathbb{R}^{|E|},
+\]
+atua como um viés posicional suave no grafo: arestas que conectam nós estruturalmente próximos na AST (pequenos \(\tilde{g}_{ij}\) e \(\tilde{d}_{ij}\)) recebem pesos mais altos, enquanto conexões entre regiões distantes do código são atenuadas. Esses pesos são passados diretamente como \emph{edge\_weight} para a \texttt{CodeGNN} durante a propagação de mensagens.
+
+\subsection{GNN e níveis de embedding}
+
+A etapa final de codificação é realizada pelo modelo \texttt{CodeGNN}, composto por duas camadas de Graph Convolutional Network (\texttt{SimpleGCNLayer}) com normalização simétrica do grau e inclusão explícita de auto-laços, seguidas de uma etapa de \emph{global\ attention\ pooling}. A GNN recebe a matriz (X), o grafo de arestas (\texttt{edge\_index}) e os pesos gaussianos (\texttt{edge\_weight}), produzindo embeddings refinados para cada nó da AST e um embedding agregado para o arquivo.
+
+Cada camada \texttt{SimpleGCNLayer} implementa a operação padrão de uma Graph Convolutional Network (GCN) com normalização simétrica do grau. Seja \(A\) a matriz de adjacência do grafo reduzido e \(X\) a matriz de features de entrada. No código, são adicionados auto-laços (\emph{self-loops}) a todos os nós, o que corresponde a trabalhar com \(\hat{A} = A + I\). A matriz de graus é então recalculada como \(\hat{D}_{ii} = \sum_j \hat{A}_{ij}\) e a atualização de cada camada segue a forma:
+\[
+H^{(l+1)} = \sigma\bigl(\hat{D}^{-1/2} \hat{A}\, \hat{D}^{-1/2} H^{(l)} W^{(l)}\bigr),
+\]
+onde \(H^{(0)} = X\), \(W^{(l)}\) são as matrizes de pesos aprendidas e \(\sigma\) é a ativação ReLU. A inclusão de auto-laços garante que cada nó preserve e propague também as suas próprias features, e não apenas a informação agregada dos vizinhos.
+
+Para obter um embedding em nível de arquivo, o modelo \texttt{CodeGNN} aplica um esquema de \emph{global attention pooling}. Dado o conjunto de embeddings de nós \(h_i\), um pequeno MLP (\texttt{attn\_gate}) calcula um escalar de importância \(s_i = a(h_i)\) para cada nó. Esses escores são normalizados por \textit{softmax},
+\[
+\alpha_i = \frac{\exp(s_i)}{\sum_j \exp(s_j)},
+\]
+e o embedding do grafo é calculado como uma média ponderada:
+\[
+g = \sum_i \alpha_i\, h_i.
+\]
+Dessa forma, nós considerados mais relevantes pelo mecanismo de atenção contribuem mais para o vetor final do arquivo do que nós estruturalmente periféricos, em contraste com um \emph{pooling} puramente uniforme (por exemplo, média simples).
+
+Em seguida, a função \texttt{encode\_repository\_with\_gnn} aplica esse processo a todos os arquivos Python do repositório, gerando (i) um mapa de nós \texttt{TNode} por arquivo, (ii) tensores com embeddings de nós, (iii) embeddings de grafo por arquivo e (iv) um embedding do repositório, obtido pela média dos vetores de arquivo. A API de alto nível \texttt{run\_gnn\_repository} encapsula esse fluxo e expõe os hiperparâmetros principais (dimensão de saída, tamanho máximo de texto, sigmas das gaussianas e modo de combinação), permitindo reproduzir o processo de forma configurável nos experimentos.
+
+Do ponto de vista conceitual, o pipeline produz três níveis de representação vetorial:
 
 \begin{itemize}
-  \item métodos com \emph{fan-out} elevado tendem a atuar como \emph{orquestradores}, coordenando múltiplas operações internas;
-  \item métodos com \emph{fan-in} elevado tendem a ser \emph{serviços reutilizados}, chamados por diversos pontos do sistema, o que os torna bons candidatos a operações incluídas (\texttt{include}) em vários casos de uso;
-  \item métodos com \(\texttt{fan\_in} = \texttt{fan\_out} = 0\) tendem a ser folhas isoladas, com menor relevância para a visão de alto nível do comportamento do sistema.
+    \item \textbf{embeddings de nó}, que capturam o papel semântico e estrutural de cada elemento do código;
+    \item \textbf{embeddings de arquivo}, que sintetizam o comportamento e a organização de cada unidade de compilação;
+    \item \textbf{embedding de repositório}, que resume a visão global do sistema analisado.
 \end{itemize}
 
-Na etapa de recuperação de casos de uso, esses valores de \texttt{fan\_in} e \texttt{fan\_out} são combinados com outros atributos (como visibilidade, tipo de classe e embeddings gerados pela GNN) para priorizar métodos mais centrais como candidatos a casos de uso principais e para destacar operações com alto grau de reutilização como candidatas a relacionamentos de inclusão.
+Esses embeddings são reutilizados na etapa seguinte para selecionar candidatos a casos de uso, agrupar métodos semanticamente semelhantes e derivar relações de dependência, inclusão e extensão entre funcionalidades.
 
-\subsubsection{Cálculo de métricas estruturais dos casos de uso}
 
-A partir do grafo de dependências entre os métodos públicos selecionados como candidatos a Casos de Uso (UCs) (Seção~\ref{sec:callgraph}), a ferramenta calcula um conjunto de métricas estruturais derivadas exclusivamente da análise estática do código-fonte. Essas métricas permitem identificar padrões de reutilização, dependência e papel arquitetural de cada UC dentro do sistema. O cálculo é realizado pela função \texttt{compute\_uc\_metrics}, que recebe como entrada o conjunto de arestas dirigidas entre UCs:
-\[
-(\mathrm{UC}_{\text{src}}, \mathrm{UC}_{\text{dst}}) \in E,
-\]
-onde \(\mathrm{UC}_{\text{src}}\) chama \(\mathrm{UC}_{\text{dst}}\) em seu corpo.
+\section{Recuperação e Agrupamento de Casos de Uso}
 
-\paragraph{Fan-in e fan-out}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{drawio/comp_flow/diagrama_de_componentes_usecases.png}
+    \caption{Arquitetura da etapa de recuperação e agrupamento de casos de uso.}
+    \label{fig:componentes_usecases}
+\end{figure}
 
-Para cada UC \(u\), são computados:
+A terceira etapa do pipeline visa identificar, a partir dos embeddings gerados pela GNN, os casos de uso implementados no sistema. Essa etapa é dividida em duas fases principais: (i) a recuperação inicial de candidatos a casos de uso, baseada em heurísticas estruturais aplicadas à AST enriquecida; e (ii) o agrupamento desses candidatos por similaridade semântica, utilizando algoritmos de \emph{clustering} no espaço vetorial dos embeddings.
+
+A identificação inicial dos casos de uso parte diretamente da AST enriquecida, na qual cada nó (\texttt{TNode}) contém informações estruturais como qualificador de visibilidade, nome qualificado (\texttt{qname}), classe proprietária, métodos chamados e outros metadados adicionais. Seguindo a heurística clássica apresentada por \textcite{pereira2011recovering}, cada método público é tratado como um \emph{caso de uso básico}, pois representa uma operação exposta por uma classe e, portanto, uma funcionalidade observável do sistema. 
+
+Essa regra simplifica e padroniza a detecção inicial dos casos de uso, garantindo que apenas operações acessíveis externamente sejam consideradas candidatas.
+
+A função \texttt{collect\_uc\_candidates} percorre todos os \texttt{TNode}s da AST e realiza três tarefas principais. Em primeiro lugar, \emph{indexa as classes encontradas}: cada nó que representa uma classe é armazenado em um índice por nome qualificado, permitindo recuperar informações como o tipo da classe (\texttt{class\_kind}), suas classes-base (herança) e demais metadados úteis para a posterior inferência de relações entre casos de uso. Em seguida, a função \emph{filtra os métodos públicos}, convertendo em candidatos apenas os nós configurados como métodos públicos.
+
+Por fim, para cada método público é construído um objeto \texttt{UseCaseCandidate}, que reúne:
 
 \begin{itemize}
-  \item \textbf{Fan-in}: número de UCs que chamam \(u\):
-  \[
-    \mathrm{fan\_in}(u) = \bigl\lvert \{\, v \mid (v \rightarrow u) \in E \,\} \bigr\rvert;
-  \]
-  \item \textbf{Fan-out}: número de UCs que \(u\) chama:
-  \[
-    \mathrm{fan\_out}(u) = \bigl\lvert \{\, w \mid (u \rightarrow w) \in E \,\} \bigr\rvert.
-  \]
+  \item um identificador estável (\texttt{uc\_id}), normalmente o nome qualificado \texttt{Classe.método};
+  \item a posição do nó original na lista de \texttt{TNode}s (\texttt{tnode\_index}) e uma referência direta ao \texttt{TNode} correspondente;
+  \item a classe proprietária (\texttt{owner\_class\_qname}), seu tipo (\texttt{owner\_class\_kind}) e suas classes-base (\texttt{owner\_base\_classes});
+  \item a lista de métodos chamados (\texttt{called\_qnames}), indispensável para recuperar dependências entre casos de uso;
+  \item a profundidade do arquivo no qual o método se encontra (\texttt{file\_depth}), um atributo estrutural que indica o quão “superficial” ou “interno” é o componente dentro do repositório analisado.
 \end{itemize}
 
-Essas métricas são clássicas na análise de arquitetura e refletem o grau de acoplamento entre responsabilidades.
+O resultado é uma lista estruturada de candidatos a casos de uso, pronta para ser utilizada nas etapas subsequentes do pipeline: geração de embeddings, \emph{clustering}, classificação de papéis e construção das relações entre casos de uso (\emph{include}, \emph{extend}, generalização e dependência).
 
-\paragraph{Normalização dos valores}
+\subsection{Agrupamento e Seleção de Casos de Uso}
 
-Como diferentes sistemas podem ter escalas muito distintas (por exemplo, módulos com poucos UCs e módulos com centenas), os valores de \(\mathrm{fan\_in}\) e \(\mathrm{fan\_out}\) são normalizados para o intervalo \([0, 1]\):
+Uma vez identificados os candidatos a casos de uso, cada \texttt{UseCaseCandidate} é projetado para o espaço vetorial gerado pela GNN. A função \texttt{extract\_uc\_embeddings} seleciona, a partir da matriz de embeddings de nós produzida pelo modelo (\texttt{node\_embs}), apenas as linhas correspondentes aos índices dos candidatos e aplica normalização L2 linha a linha.
+
+
+\paragraph{Escolha automática do número de clusters.}
+Quando o número de clusters não é fornecido explicitamente pelo usuário, o sistema aplica uma rotina inspirada no método Kernel k-MACE de \textcite{rahman2018kernel}. A função \texttt{choose\_m\_and\_sigma\_with\_kmace\_like} avalia uma grade de valores para \(m\) (número de clusters) e \(\sigma\) (largura do kernel gaussiano) e, para cada combinação, executa \texttt{kernel\_kmeans\_labels\_and\_compactness}. Essa rotina calcula: (i) o \emph{data error} médio \(Y_{sm}\), medido como a distância média de cada ponto ao centro do seu cluster no espaço do kernel; (ii) a variância dessas distâncias \(\mathrm{Var}_{sm}\); e (iii) uma aproximação da matriz de covariância de cada cluster no espaço original.
+
+Com esses valores, é construído um escore composto
 \[
-  \mathrm{in\_norm}(u) = 
-  \frac{\mathrm{fan\_in}(u)}{\max_{x} \mathrm{fan\_in}(x)}, 
-  \qquad
-  \mathrm{out\_norm}(u) = 
-  \frac{\mathrm{fan\_out}(u)}{\max_{x} \mathrm{fan\_out}(x)}.
+Z_{sm} \approx Y_{sm} + \beta_N \sqrt{\mathrm{Var}_{sm}} + \lambda m,
 \]
-Essa normalização torna a análise menos sensível ao tamanho absoluto do projeto, permitindo comparar UCs em sistemas de porte diferente.
+no qual o primeiro termo favorece configurações mais compactas, o segundo controla a variabilidade intra\-cluster (proxy do \emph{bound} de generalização do Kernel k-MACE) e o terceiro penaliza soluções com muitos clusters. Na implementação, esses termos são mapeados diretamente para o código da seguinte forma: \(Y_{sm}\) corresponde à variável \texttt{y\_sm}, \(\mathrm{Var}_{sm}\) à variável \texttt{var\_sm}, \(\beta_N\) ao parâmetro \texttt{beta\_N} e \(\lambda\) ao parâmetro \texttt{penalty\_lambda} da função \texttt{choose\_m\_and\_sigma\_with\_kmace\_like}. A combinação \((m,\sigma)\) que minimiza \texttt{z\_sm} (implementação de \(Z_{sm}\)) é escolhida como configuração final de agrupamento.
 
-\paragraph{Score base de inclusão}
 
-Em UML, um caso de uso tende a ser incluído por outro quando representa uma funcionalidade reutilizável, relativamente autocontenida e invocada repetidamente por diferentes UCs externos. Inspirando-se nesse comportamento, a ferramenta define um \emph{score base de inclusão} para cada UC \(u\):
+\paragraph{Clustering com \emph{k}-means.}
+Definidos o número de clusters e, quando necessário, o valor de \(\sigma\), os candidatos são agrupados pela função \texttt{run\_kmeans\_uc}. Esse módulo permite duas variantes: (i) \emph{k}-means linear clássico, usando a implementação do \textit{scikit-learn} com distância euclidiana; ou (ii) \emph{kernel} \emph{k}-means, que opera sobre uma matriz de similaridade gaussiana \(K\), calculada a partir dos embeddings com o kernel
+\(
+K_{ij} = \exp\bigl(-\lVert x_i - x_j\rVert^2 / (2\sigma^2)\bigr).
+\)
+Na prática, o pipeline utiliza a versão com kernel, aproximando o comportamento do Kernel k-MACE ao agrupar os casos de uso em regiões mais coesas no espaço de features não linear.
+
+O resultado desse processo é encapsulado na estrutura \texttt{UcClusteringResult}, que armazena: (i) o vetor de rótulos de cluster para cada candidato; (ii) os centroides dos clusters (no espaço original dos embeddings); e (iii) a lista de membros por cluster, juntamente com um representante selecionado para cada grupo.
+
+\paragraph{Seleção de casos de uso representativos.}
+A escolha dos casos de uso que serão destacados no diagrama parte diretamente dos clusters obtidos. Para cada cluster, a função \texttt{run\_kmeans\_uc} seleciona um único representante (\emph{focus use case}) em duas etapas.
+
+Na primeira etapa, o algoritmo tenta restringir a escolha a métodos considerados ``mais abstratos''. Para isso, a função \texttt{is\_abstract\_like} verifica se o candidato está associado a uma classe marcada como \texttt{abstract} ou \texttt{protocol}; quando existirem tais métodos dentro do cluster, apenas eles são considerados como candidatos a representante. Caso contrário, todos os membros do cluster são elegíveis.
+
+Na segunda etapa, os candidatos elegíveis são ordenados por um escore que combina centralidade semântica e profundidade estrutural. Seja \(x_i \in \mathbb{R}^D\) o embedding do candidato \(i\) no cluster \(k\) e \(\mu_k\) o centróide desse cluster (média dos embeddings no espaço original). Para cada candidato é calculado:
 \[
-  \mathrm{include\_base}(u)
-  = \mathrm{in\_norm}(u) \cdot 
-    \bigl(1 - \lambda_{\text{out}} \cdot \mathrm{out\_norm}(u)\bigr),
+\mathrm{score}(i) = \lVert x_i - \mu_k \rVert_2 \;+\; \alpha \cdot \mathrm{depth\_norm}(i),
 \]
-em que \(\lambda_{\text{out}} \in [0, 1]\) controla quanto o \emph{fan-out} influencia negativamente o score (neste trabalho, adotou-se \(\lambda_{\text{out}} = 0{,}7\)). Nessa formulação:
+onde o primeiro termo mede a distância euclidiana do embedding ao centróide (centralidade no espaço semântico) e o segundo termo penaliza candidatos definidos em arquivos mais profundos na árvore de diretórios. Na implementação, a profundidade normalizada \(\mathrm{depth\_norm}(i)\) é obtida dividindo-se o \texttt{file\_depth} do candidato pelo valor máximo observado no conjunto (\texttt{max\_depth}), produzindo um valor em \([0,1]\), e o peso \(\alpha\) corresponde ao parâmetro \texttt{depth\_weight} da função \texttt{run\_kmeans\_uc}. O representante do cluster é definido como o candidato com menor valor de \(\mathrm{score}(i)\).
+
+Com isso, cada cluster passa a ser representado por um caso de uso que, ao mesmo tempo, (i) é próximo ao centro do grupo no espaço vetorial aprendido pela GNN e (ii) tende a residir em arquivos mais ``superficiais'' da arquitetura, em linha com a hipótese de que casos de uso principais são expostos em camadas menos internas do sistema.
+
+\paragraph{Relações estruturais entre casos de uso.}
+Após o agrupamento dos candidatos, o pipeline reconstrói automaticamente as relações estruturais entre os casos de uso. Três tipos principais de relações são extraídos:
+
 \begin{itemize}
-  \item \(\mathrm{in\_norm}(u)\) aumenta a pontuação de UCs amplamente reutilizados;
-  \item \(\mathrm{out\_norm}(u)\) penaliza UCs que orquestram muitas dependências, comportamento mais típico de casos de uso ``macro'', e não de UCs incluídos.
+    \item \textbf{Generalização} — Quando um método de uma subclasse sobrescreve um método definido na classe-base, cria-se uma relação \texttt{superclass.m} $\rightarrow$ \texttt{subclass.m}. Essa inferência é realizada pela função \texttt{build\_uc\_generalization\_edges}, que agrupa os candidatos por classe proprietária e verifica, para cada subclasse, se alguma de suas classes-base define um método com o mesmo nome.
+
+    \item \textbf{Dependências} — A partir das chamadas registradas em \texttt{called\_qnames}, a função \texttt{build\_dependency\_edges} constrói arestas entre casos de uso, representando que um método público depende da execução de outro (Arquivo: \texttt{edges.py}).
+
+    \item \textbf{Estereótipos de dependência} — Cada dependência é classificada como \emph{include}, \emph{extend} ou \emph{dependency}. A função \texttt{build\_dependency\_edge\_infos} agrega informações sobre chamadas guardadas e não guardadas, enquanto \texttt{classify\_edge} aplica heurísticas inspiradas na semântica UML (por exemplo, chamadas reutilizadas no fluxo principal sugerem \emph{include}). A função \texttt{group\_edges\_by\_kind} organiza essas relações em dependências semânticas e genéricas, permitindo sua renderização diferenciada no diagrama final.
 \end{itemize}
 
-\paragraph{Bônus estrutural para UCs auxiliares}
+\paragraph{Cálculo de métricas e papéis.}
+Com as relações de dependência estabelecidas, o pipeline calcula métricas estruturais para cada caso de uso por meio da função \texttt{compute\_uc\_metrics}. Essa função faz o cálculo de \emph{fan-in} e \emph{fan-out} (\texttt{compute\_fan\_in\_out}), que quantificam, respectivamente, quantas vezes um caso de uso é chamado por outros e quantas vezes ele chama outros casos de uso.
 
-Além do score base, o algoritmo acrescenta um \emph{bônus estrutural} associado ao papel de UC auxiliar (\emph{helper}). Esse bônus cresce quando o UC é alvo de diversas chamadas, mas possui \emph{fan-out} baixo:
+A partir dessas métricas, a função \texttt{classify\_uc\_role} atribui um papel estrutural a cada caso de uso:
+
+\begin{itemize}
+    \item \textbf{entry} — casos de uso com \texttt{fan-in = 0} e \texttt{fan-out > 0}, funcionando como pontos de entrada lógicos (operações que iniciam fluxos);
+    \item \textbf{bridge} — casos de uso com \texttt{fan-in > 0} e \texttt{fan-out > 0}, atuando como intermediários que encadeiam funcionalidades;
+    \item \textbf{helper} — casos de uso com \texttt{fan-in > 0} e \texttt{fan-out = 0}, caracterizando operações auxiliares frequentemente reutilizadas;
+    \item \textbf{isolated} — casos de uso sem dependências relevantes, indicando funções desconectadas do fluxo principal.
+\end{itemize}
+
+\paragraph{Inferência de \textit{include} e \textit{extend}.}
+A partir das métricas estruturais calculadas, em particular dos valores de \emph{fan-in} e \emph{fan-out}, o pipeline realiza a classificação semântica das dependências entre casos de uso. Essa etapa utiliza os mesmos identificadores presentes em \texttt{metrics} para distinguir quando uma chamada representa reutilização obrigatória, comportamento alternativo ou apenas uma dependência genérica.
+
+Primeiro, a função \texttt{build\_dependency\_edge\_infos} agrega, para cada par 
+\(
+(\mathrm{UC}_{src}, \mathrm{UC}_{dst})
+\),
+o número total de chamadas observadas, bem como quantas são condicionais (\texttt{guarded\_calls}) e quantas ocorrem no fluxo principal (\texttt{unguarded\_calls}). Esses valores descrevem o padrão de ativação de cada dependência.
+
+Em seguida, a função \texttt{classify\_edge} utiliza o \emph{fan-in} do destino, recuperado diretamente do dicionário \texttt{metrics}, em conjunto com o padrão de guarda das chamadas para rotular semanticamente cada aresta. Um caso de uso \texttt{dst} é classificado como alvo de um \texttt{<<include>>} quando apresenta reutilização
 \[
-  \mathrm{bonus}(u) 
-  = \beta \cdot 
-    \frac{\mathrm{fan\_in}(u)}
-         {\mathrm{fan\_in}(u) + \mathrm{fan\_out}(u) + \gamma},
+\mathrm{fan\_in}_{dst} \ge 1
 \]
-em que \(\beta\) é um fator de escala (neste trabalho, \(\beta = 0{,}1\)) e \(\gamma > 0\) evita divisão por zero e estabiliza a fórmula. Esse padrão caracteriza UCs folha reutilizados, fortemente associados ao estereótipo \texttt{\textless\textless include\textgreater\textgreater}.
+e todas as chamadas que o ativam ocorrem de forma incondicional (\texttt{guarded\_calls} = 0 e \texttt{unguarded\_calls} > 0), caracterizando um subfluxo obrigatório.
 
-\paragraph{Score final e relação com estereótipos UML}
+Por outro lado, o rótulo \texttt{<<extend>>} é atribuído quando todas as chamadas são condicionais (\texttt{guarded\_calls} > 0 e \texttt{unguarded\_calls} = 0), indicando um comportamento opcional ou alternativo que só é executado mediante uma condição específica no código.
 
-O score final de inclusão é obtido pela combinação do score base com o bônus estrutural:
-\[
-  \mathrm{include\_score}(u) 
-  = \min\bigl(\mathrm{include\_base}(u) + \mathrm{bonus}(u),\ 1{,}0\bigr),
-\]
-garantindo um valor sempre no intervalo \([0, 1]\).
+Nos casos em que nenhuma dessas condições é satisfeita, a relação é tratada como \texttt{dependency}. Finalmente, a função \texttt{group\_edges\_by\_kind} organiza as arestas classificadas em dependências semânticas (\texttt{include} e \texttt{extend}) e dependências genéricas, permitindo que o diagrama final reflita de maneira diferenciada os três tipos de vínculos.
 
-Na etapa de recuperação de casos de uso, scores altos de \(\mathrm{include\_score}(u)\) indicam UCs que se comportam como serviços reutilizados por diversos outros UCs e, portanto, bons candidatos a relacionamentos \texttt{\textless\textless include\textgreater\textgreater}. Scores muito baixos tendem a caracterizar UCs pouco reutilizados ou UCs raiz (\emph{entry}), enquanto scores intermediários, combinados com outras evidências (como condições de disparo observadas no código), podem sugerir candidatos a \texttt{\textless\textless extend\textgreater\textgreater}. Esses valores são combinados posteriormente com outros atributos (visibilidade, tipo de classe e embeddings gerados pela GNN) para orientar a clusterização e priorização de casos de uso.
+\subsection{Geração do diagrama de casos de uso.}
+Com todas as métricas calculadas e as relações (\emph{dependency}, \emph{include}, \emph{extend} e generalização) devidamente classificadas, o pipeline constrói a especificação final do diagrama. A função \texttt{build\_filtered\_diagram\_spec} seleciona quais casos de uso serão exibidos, garantindo que todos os representantes de cluster apareçam no diagrama e incluindo automaticamente seus vizinhos estruturais quando necessário. Por fim, \texttt{export\_diagram\_spec\_to\_puml} gera o arquivo PlantUML contendo os nós, estereótipos e arestas resultantes da análise, enquanto o módulo \texttt{generate\_usecase\_diagram} encapsula esse processo de ponta a ponta, produzindo a imagem final do diagrama. Assim, o modelo sintetiza em uma única visualização os principais casos de uso identificados, seus papéis estruturais e suas relações funcionais.
 
+\subsubsection*{Parâmetros do pipeline de análise de casos de uso}
+
+A Tabela~\ref{tab:params-usecase} descreve os principais parâmetros utilizados na execução do pipeline  (\texttt{run\_usecase\_analysis}), incluindo configurações de extração da AST, geração de embeddings, pesos gaussianos do grafo reduzido, clustering e seleção de representantes.
+
+\begin{table}[h]
+\centering
+\footnotesize
+\begin{tabular}{p{3cm} p{11cm}}
+\hline
+\textbf{Parâmetro} & \textbf{Descrição} \\
+\hline
+
+\texttt{repo\_path} &
+Diretório raiz do repositório Python a ser analisado. Todos os arquivos \texttt{.py} são processados recursivamente. \\
+
+\texttt{out\_dir} &
+Diretório onde serão salvos o arquivo \texttt{.puml}, sua renderização e artefatos auxiliares. \\
+
+\texttt{file\_name} &
+Nome do arquivo PlantUML a ser gerado. \\
+
+\texttt{plantuml\_jar} &
+Caminho para o \texttt{plantuml.jar}, usado para renderizar o diagrama em imagem. \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Parâmetros da GNN e extração da AST}} \\
+\hline
+
+\texttt{strategy} &
+Estratégia de travessia da AST (ex.: \texttt{recursive\_pre}), controlando a ordem de visitação dos nós. \\
+
+\texttt{out\_dim} &
+Dimensão dos embeddings produzidos pela GNN para cada nó e para cada arquivo. \\
+
+\texttt{max\_chars} &
+Número máximo de caracteres do trecho de código usado como entrada textual para o encoder. \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Pesos gaussianos do grafo reduzido}} \\
+\hline
+
+\texttt{sigma\_gap} &
+Largura da gaussiana aplicada à medida de separação entre nós ``core'' (gap). 
+Controla o quanto a similaridade decai com a distância estrutural. \\
+
+\texttt{sigma\_depth} &
+Largura da gaussiana aplicada à diferença de profundidade na árvore syntática. \\
+
+\texttt{mode} &
+Modo de combinação das duas gaussianas (\textit{gap} e \textit{depth}), 
+por exemplo \texttt{"product"} ou \texttt{"mean"}. \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Configurações do clustering (k-means / kernel k-means)}} \\
+\hline
+
+\texttt{n\_clusters} &
+Número de clusters desejados. Se \texttt{None}, o pipeline aplica a rotina 
+kmace-like para escolher automaticamente o melhor valor de \(m\). \\
+
+\texttt{use\_kernel} &
+Se \texttt{True}, utiliza Kernel k-means com kernel gaussiano; caso contrário, 
+usa k-means euclidiano clássico. \\
+
+\texttt{sigma} &
+Largura da gaussiana usada no Kernel k-means. \\
+
+\texttt{beta\_N} &
+Peso do termo de variância no escore \(Z_{sm}\) da rotina kmace-like, 
+controlando a penalização de clusters muito difusos. \\
+
+\texttt{penalty\_lambda} &
+Coeficiente \(\lambda\) que penaliza soluções com muitos clusters no cálculo de \(Z_{sm}\). \\
+
+\hline
+\multicolumn{2}{l}{\textbf{Seleção dos representantes dos clusters}} \\
+\hline
+
+\texttt{depth\_weight} &
+Peso \(\alpha\) do termo de profundidade de arquivo no escore usado para seleção do representante.
+Valores maiores priorizam casos de uso definidos em arquivos mais ``superficiais'' na estrutura do repositório. \\
+
+\hline
+\end{tabular}
+\caption{Descrição dos principais parâmetros do pipeline de análise de casos de uso.}
+\label{tab:params-usecase}
+\end{table}
 
 \section{Escolha dos repositórios}
 
 Para a análise foram escolhidos três repositórios independentes, dois de David Beazley e um de Brandon Rhodes, duas referências em linguagem Python. Os repositórios de David Beazley possuem documentação completa no próprio repositório, facilitando a compreensão do software construído. Já o repositório de Brandon Rhodes não contém documentação, mas seu conteúdo é a adaptação do jogo \emph{Colossal Cave Adventure} de Fortran para Python.
-
 
 \subsection{Colossal Cave Adventure}
 Este trabalho utiliza como base uma reimplementação de \textcite{rhodes_adventure_py} em Python 3, que preserva o jogo original de Crowther e Don Woods, utilizando o arquivo de dados \texttt{advent.dat} \textcite{adventure_original_sources}. O pacote permite jogar em dois modos, no \emph{prompt} do Python e em terminal do sistema operacional. Além disso, disponibiliza \textit{walkthroughs} automatizados na pasta de testes.
