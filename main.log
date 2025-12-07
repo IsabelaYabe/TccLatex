@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.10)  6 DEC 2025 21:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.10)  6 DEC 2025 21:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -943,72 +943,72 @@ Overfull \hbox (65.40285pt too wide) in paragraph at lines 470--471
 <drawio/comp_flow/diagrama_de_componentes_usecases.png, id=361, 954.56625pt x 1443.3925pt>
 File: drawio/comp_flow/diagrama_de_componentes_usecases.png Graphic file (type png)
 <use drawio/comp_flow/diagrama_de_componentes_usecases.png>
-Package pdftex.def Info: drawio/comp_flow/diagrama_de_componentes_usecases.png  used on input line 579.
+Package pdftex.def Info: drawio/comp_flow/diagrama_de_componentes_usecases.png  used on input line 565.
 (pdftex.def)             Requested size: 426.79135pt x 645.336pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [18]
-Overfull \hbox (12.84816pt too wide) in paragraph at lines 595--596
+Overfull \hbox (12.84816pt too wide) in paragraph at lines 581--582
 []\T1/lmr/m/n/12 (-20) um iden-ti-fi-ca-dor es-tá-vel (\T1/lmtt/m/n/12 uc_id\T1/lmr/m/n/12 (-20) ), nor-mal-mente o nome qua-li-fi-cado \T1/lmtt/m/n/12 Classe.método\T1/lmr/m/n/12 (-20) ; 
  []
 
-[19] [20] [21] [22]
+[19] [20] [21]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 693.
+(Font)              <10> on input line 679.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 693.
+(Font)              <7> on input line 679.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23] [24] [25] [26]
-Underfull \hbox (badness 2269) in paragraph at lines 892--893
+[22] [23] [24] [25] [26]
+Underfull \hbox (badness 2269) in paragraph at lines 878--879
 []\T1/lmr/m/n/12 (+20) Além dos co-man-dos clás-si-cos de na-ve-ga-ção por bús-sola, "\T1/lmr/m/it/12 (+20) EAST\T1/lmr/m/n/12 (+20) "/"\T1/lmr/m/it/12 (+20) E\T1/lmr/m/n/12 (+20) ",
  []
 
 [27] [28]
-Underfull \hbox (badness 1596) in paragraph at lines 950--951
+Underfull \hbox (badness 1596) in paragraph at lines 936--937
 []\T1/lmr/m/n/12 (+20) (9 - DOOR) (94 - YOU ARE AT ONE END OF AN IM-MENSE
  []
 
-[29] [30] [31] [32]
+[29] [30] [31]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<GRAPH_UC/Images/adventure.png, id=496, 2063.71pt x 595.22375pt>
+<GRAPH_UC/Images/adventure.png, id=490, 2063.71pt x 595.22375pt>
 File: GRAPH_UC/Images/adventure.png Graphic file (type png)
 <use GRAPH_UC/Images/adventure.png>
-Package pdftex.def Info: GRAPH_UC/Images/adventure.png  used on input line 1070.
+Package pdftex.def Info: GRAPH_UC/Images/adventure.png  used on input line 1056.
 (pdftex.def)             Requested size: 2063.705pt x 595.2223pt.
 
-LaTeX Warning: Float too large for page by 47.98315pt on input line 1073.
+LaTeX Warning: Float too large for page by 47.98315pt on input line 1059.
 
+[32]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 <GRAPH_UC/Images/chess.png, id=498, 1434.35875pt x 205.76875pt>
 File: GRAPH_UC/Images/chess.png Graphic file (type png)
 <use GRAPH_UC/Images/chess.png>
-Package pdftex.def Info: GRAPH_UC/Images/chess.png  used on input line 1112.
+Package pdftex.def Info: GRAPH_UC/Images/chess.png  used on input line 1098.
 (pdftex.def)             Requested size: 1434.35527pt x 205.76823pt.
 
-LaTeX Warning: Float too large for page by 66.52896pt on input line 1115.
+LaTeX Warning: Float too large for page by 66.52896pt on input line 1101.
 
-[33]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<GRAPH_UC/Images/graph_uc.png, id=504, 3255.16125pt x 229.85875pt>
+<GRAPH_UC/Images/graph_uc.png, id=499, 3255.16125pt x 229.85875pt>
 File: GRAPH_UC/Images/graph_uc.png Graphic file (type png)
 <use GRAPH_UC/Images/graph_uc.png>
-Package pdftex.def Info: GRAPH_UC/Images/graph_uc.png  used on input line 1147.
+Package pdftex.def Info: GRAPH_UC/Images/graph_uc.png  used on input line 1133.
 (pdftex.def)             Requested size: 3255.15335pt x 229.85817pt.
 
-LaTeX Warning: Float too large for page by 77.73026pt on input line 1150.
+LaTeX Warning: Float too large for page by 77.73026pt on input line 1136.
 
-[34] [35] [36] [37] [38 <./drawio/comp_flow/diagrama_de_componentes_usecases.png>] [39] [40] [41 <./GRAPH_UC/Images/adventure.png (PNG copy)>] [42 <./GRAPH_UC/Images/chess.png (PNG copy)>] [43] [44 <./GRAPH_UC/Images/graph_uc.png (PNG copy)>] (main.aux)
+[33] [34] [35] [36] [37] [38 <./drawio/comp_flow/diagrama_de_componentes_usecases.png>] [39] [40] [41 <./GRAPH_UC/Images/adventure.png (PNG copy)>] [42 <./GRAPH_UC/Images/chess.png (PNG copy)>] [43] [44 <./GRAPH_UC/Images/graph_uc.png (PNG copy)>] (main.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
@@ -1030,7 +1030,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  78i,13n,79p,3040b,3959s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi7.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmss12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt12.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt8.pfb><C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (46 pages, 1186763 bytes).
+Output written on main.pdf (46 pages, 1186378 bytes).
 PDF statistics:
  793 PDF objects out of 1000 (max. 8388607)
  157 named destinations out of 1000 (max. 500000)
