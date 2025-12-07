@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1765073565.1086 -1
-  "main.bcf" 1765073564 118358 5601534eebcb163801c0006f8bbacd36 "pdflatex"
+["biber text"] 1765073007.68275 "text.bcf" "text.bbl" "text" 1765073861.06613 0
   "refs.bib" 1765051479 21698 e182048b7ca2cfbd61362af19ab09acf ""
+  "text.bcf" 1765073860 123122 33252b4d6f0b0fdcb1ec02c755ca885e "pdflatex"
   (generated)
-  "main.bbl"
-  "main.blg"
+  "text.bbl"
+  "text.blg"
   (rewritten before read)
-["pdflatex"] 1765073562.71114 "d:/VSCODE/GITHUB_TCC/TccLatex/main.tex" "main.pdf" "main" 1765073565.10919 2
+["pdflatex"] 1765073858.14509 "d:/VSCODE/GITHUB_TCC/TccLatex/text.tex" "text.pdf" "text" 1765073861.06673 0
   "C:/Users/Isas_/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1762809232 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/Isas_/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1762809181 13333512 a13d0af6d4d4c2560966d642705c64a9 ""
   "C:/Users/Isas_/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -197,20 +197,21 @@
   "GRAPH_UC/Images/graph_uc.png" 1765060749 87584 649b2fdd9dc5dec1340d7bef5ed62831 ""
   "Images/Logo_FGV.png" 1762803503 2490 33a2339c99ef5f8115145ba188c3c2a8 ""
   "Images/diagrams/fluxo_info.png" 1762803503 20299 a31cadcf611f26113796e9636cdc1d49 ""
-  "d:/VSCODE/GITHUB_TCC/TccLatex/main.tex" 1765073559 215569 4cb5e10c2e5caaccaaf71faf9c914992 ""
+  "d:/VSCODE/GITHUB_TCC/TccLatex/text.tex" 1765073860 107509 5e90cb50468f22bc7046d80ef83996f4 ""
   "drawio/comp_flow/diagrama_de_componentes_AST.png" 1764892728 1301668 abc4483ca3acac64546f30a0861bb739 ""
   "drawio/comp_flow/diagrama_de_componentes_embeddings.png" 1764892769 1281842 e069f332b5ff1adb78c175a2fb48dcb9 ""
   "drawio/comp_flow/diagrama_de_componentes_usecases.png" 1764892790 1299682 f701a12d1098f78b150018507d22e2f6 ""
   "drawio/comp_flow/fluxo_de_dados.png" 1764892658 1277394 92cb5f849a9aa1434344d5f3fd880f6b ""
-  "main.aux" 1765073564 29281 2c1c22b6ab2602e8236fd52254ef8d99 "pdflatex"
-  "main.bbl" 0 -1 0 "biber main"
-  "main.tex" 1765073559 215569 4cb5e10c2e5caaccaaf71faf9c914992 ""
-  "main.toc" 1765073564 5093 86ce0db910fb2ad385805ffff0b5dc46 "pdflatex"
+  "text.aux" 1765073860 36463 8da98c33dc3f436ac8ee912a2ef14290 "pdflatex"
+  "text.bbl" 1765073009 49172 677a47703096c93d07b95d24c90b12be "biber text"
+  "text.run.xml" 1765073860 2437 07801d4ddb75896646ff18c7e5afde02 "pdflatex"
+  "text.tex" 1765073860 107509 5e90cb50468f22bc7046d80ef83996f4 ""
+  "text.toc" 1765073860 4706 b535b03d62d8b190d65a0d3f7fbad334 "pdflatex"
   (generated)
-  "main.aux"
-  "main.bcf"
-  "main.log"
-  "main.pdf"
-  "main.run.xml"
-  "main.toc"
+  "text.aux"
+  "text.bcf"
+  "text.log"
+  "text.pdf"
+  "text.run.xml"
+  "text.toc"
   (rewritten before read)
