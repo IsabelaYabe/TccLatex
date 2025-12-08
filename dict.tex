@@ -1,0 +1,154 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Idioma e tipografia
+\usepackage[brazilian]{babel}
+\usepackage{csquotes}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% Layout e recursos básicos
+\usepackage[left=3cm,right=3cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{bookmark}
+
+\emergencystretch=2em
+\cleardoublepage
+\pagenumbering{arabic}
+
+% Matemática e teoremas (essencial só se você usa)
+\usepackage{amsmath,amssymb,amsthm}
+
+% Tabelas em paisagem e colunas flexíveis
+% \usepackage{pdflscape}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+\usepackage{array} % para \newcolumntype
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\usepackage{rotating} % para sidewaystable/sideways
+
+
+% Bibliografia ABNT numerada
+\usepackage[
+  backend=biber,
+  style=abnt,
+  sorting=none,
+  giveninits=true,
+  uniquename=false,
+  doi=false,
+  isbn=false,
+  url=false,
+  language=brazil,
+  scbib,
+  ittitles,
+  justify
+]{biblatex}
+\addbibresource{refs.bib} % ← caminho corrigido
+
+
+
+% ======= PADRONIZAÇÃO PARA A TABELA MDRE =======
+
+% Coluna flexível "Y" (se ainda não tiver)
+% \usepackage{tabularx,booktabs,ragged2e,array}
+% \newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+
+% 1) Vocabulário controlado (sempre em SMALL CAPS):
+% force medium series inside \textsc to avoid requesting a bold small-caps font (bx/sc)
+\newcommand{\Static}{{\mdseries\textsc{Estático}}}
+\newcommand{\Dynamic}{{\mdseries\textsc{Dinâmico}}}
+\newcommand{\Hybrid}{{\mdseries\textsc{Híbrido}}}
+\newcommand{\Comp}{{\mdseries\textsc{Compreensão}}}
+\newcommand{\Redoc}{{\mdseries\textsc{Redocumentação}}}
+\newcommand{\Mig}{{\mdseries\textsc{Migração}}}
+\newcommand{\Quali}{{\mdseries\textsc{Qualidade}}}
+
+% 2) Macros para setas e encadeamentos:
+\newcommand{\ctoa}{\(\text{Código} \rightarrow \text{AST}\)}
+\newcommand{\atoxi}{\(\text{AST} \rightarrow \text{IM}\)}   
+\newcommand{\imtoxml}{\(\text{IM} \rightarrow \text{XML}\)}
+\newcommand{\imtomdl}{\(\text{IM} \rightarrow \text{UML}\)}
+\newcommand{\tmtomdl}{\(\text{T2M/M2M} \rightarrow \text{UML}\)}
+\newcommand{\xtoSeq}{\(\rightarrow \text{UML Sequência}\)}
+\newcommand{\xtoClass}{\(\rightarrow \text{UML Classe}\)}
+\newcommand{\xtoAct}{\(\rightarrow \text{UML Atividade}\)}
+
+% 3) Abreviações de ferramentas (consistentes):
+\newcommand{\EMF}{Eclipse/EMF}
+\newcommand{\UMLtwo}{UML2}
+\newcommand{\PlantUML}{PlantUML}
+\newcommand{\JavaParser}{JavaParser}
+
+% 4) Formato da célula “Aspecto”: Técnica ; Objetivo(s)
+%    Ex.: \Static; \Comp/\Redoc (estrutura + comportamento)
+
+% 5) Formato da célula “Técnica/Transformação”:
+%    Use sempre cadeia com “→”, negrite elementos-chaves e padronize nomes.
+%    Ex.: Código → AST → \textbf{IM(XML)} → T2M/M2M → \textbf{UML2}
+%
+% 6) Formato da célula “Validação”:
+%    [tipo de evidência; dataset/projetos; métrica(s) ou avaliação; nota curta]
+%    Ex.: OSS (9 projetos, 2640 classes); AUC=0.73; custo de rótulo 10%
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{0cm}
+        
+            \includegraphics[width=0.5\textwidth]{Images/Logo_FGV.png} 
+            
+        \vspace{1.5cm}
+        \large
+        
+        Ciência de Dados e I.A.\\
+        Escola de Matemática Aplicada\\
+        Fundação Getúlio Vargas\\
+
+        \vspace{1cm}  
+    
+        \Large
+        Engenharia de Requisitos
+            
+        \vspace{2cm}
+        
+        \vspace{0.25cm}
+
+        \Huge \textbf{Proposta de TCC} \\ 
+        \vspace{0.5cm}
+        \huge \textbf{LLM para Engenharia de Requisitos}
+        \vspace{3.6cm}
+        
+        \large
+                Aluno: Isabela Yabe\\
+                Orientador: Rafael de Pinho André\\
+                Escola de Matemática Aplicada, FGV/EMAp \\
+                Rio de Janeiro - RJ.
+        \vfill
+            
+        \vspace{0.8cm}  
+        
+        Rio de Janeiro, 2025
+            
+    \end{center}
+\end{titlepage}
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\section{indice}
+    \begin{itemize}
+        \item L
+        \item Large Language Models LLMs, 146
+        \item 
+    \end{itemize}
+
+\newpage
+
+\end{document}

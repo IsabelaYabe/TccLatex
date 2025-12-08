@@ -14,6 +14,9 @@
 \usepackage{hyperref}
 \usepackage{bookmark}
 
+\usepackage{makeidx}
+\makeindex
+
 \emergencystretch=2em
 \cleardoublepage
 \pagenumbering{arabic}
@@ -159,7 +162,7 @@ Este estudo fundamenta-se em autores que defendem o desenvolvimento estruturado 
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.8\textwidth]{Images/diagrams/fluxo_info.png}
+  \includegraphics[width=0.5 \textwidth]{drawio/comp_flow/fluxo_de_informacoes.png}
   \caption{Cadeia de tradução de requisitos segundo Constantine (1979): o diagrama ilustra o fluxo de informações entre os diferentes participantes do processo de desenvolvimento de software, começando pelo proprietário do produto e usuário, passando pelo analista, engenheiro de requisitos, designer e programador. Cada etapa representa uma tradução sucessiva das necessidades do usuário até a implementação final, destacando os pontos em que podem ocorrer perdas ou distorções de significado.}
   \label{fig:cadeia_traducao_constantine1979}
 \end{figure}
@@ -371,21 +374,21 @@ A avaliação varia de estudos de caso pequenos com acurácia estrutural (classe
 
 Metodologicamente, este trabalho segue uma abordagem de engenharia de software experimental estruturada segundo os princípios de Model-Driven Reverse Engineering (MDRE). Conforme definido por \textcite{Bruneliere2010MoDisco}.
 
-Neste estudo, essas duas fases se materializam diretamente na arquitetura do pipeline:
+Neste estudo, essas duas fases se materializam diretamente na arquitetura do pipeline\ref{fig:fluxo_dados_metodologia}:
 
-(i) Model Discovery — Construção do modelo intermediário (AST enriquecida)
+(i) Model Discovery — Construção do modelo intermediário (AST enriquecida).
 
 A fase de descoberta corresponde à extração de um modelo homogêneo a partir do código-fonte. No presente trabalho, essa etapa é realizada por meio da análise sintática e do enriquecimento da AST: o código é convertido em uma coleção estruturada de TNodes contendo informações sintáticas, posicionais, textuais e métricas locais.
 
-(ii) Model Understanding — Geração de embeddings e interpretação estrutural
+(ii) Model Understanding — Geração de embeddings e interpretação estrutural.
 
-A segunda fase do MDRE (compreensão do modelo) é implementada pela geração de embeddings semântico-estruturais e pela construção do grafo reduzido que alimenta a CodeGNN. Essa etapa analisa e transforma o modelo descoberto, produzindo representações vetoriais que codificam padrões sintáticos e semânticos, relações de dependência e proximidade estrutural. Esse processamento equivale às transformações de compreensão e análise previstas na fase de Model Understanding.
+A segunda fase do MDRE (compreensão do modelo) é implementada pela geração de embeddings semântico-estruturais e pela construção do grafo reduzido que alimenta a CodeGNN. Essa etapa analisa e transforma o modelo descoberto, produzindo representações vetoriais que codificam padrões sintáticos e semânticos, relações de dependência e proximidade estrutural. Esse processamento equivale às transformações de compreensão e análise previstas na fase de Model Understanding MU.
 
-(iii) Recuperação dos candidatos a casos de uso
+(iii) Recuperação dos candidatos a casos de uso.
 
 Com os embeddings produzidos, o pipeline identifica métodos públicos como candidatos a casos de uso, agrupa-os por similaridade vetorial, e deriva relações estruturais, dependência, inclusão e extensão, a partir do grafo de chamadas. Esta etapa corresponde à aplicação do modelo compreendido para recuperar comportamentos funcionais de mais alto nível.
 
-(iv) Geração do modelo final — diagrama de casos de uso
+(iv) Geração do modelo final — diagrama de casos de uso.
 
 Por fim, o processo produz um modelo visual final: um diagrama de casos de uso representando funcionalidades reconstruídas e suas relações. Esse artefato sintetiza o entendimento alcançado e cumpre o papel da representação final prevista em MDRE: um modelo abstrato, uniformizado e adequado para documentação, análise e comunicação.
 
@@ -397,34 +400,38 @@ Por fim, o processo produz um modelo visual final: um diagrama de casos de uso r
 \end{figure}
 
 \section{Extração do Modelo Intermediário (AST Enriquecida)}
-A primeira etapa a consiste em transformar o código-fonte Python em um modelo intermediário, estruturado a partir da AST. Esse modelo é representado por instâncias de TNode, que encapsulam tanto informações estruturais quanto textuais extraídas automaticamente do código.
+A primeira etapa a consiste em transformar o código-fonte Python em um IM, estruturado a partir da AST. Esse modelo é representado por instâncias de TNode, que encapsulam tanto informações estruturais quanto textuais extraídas automaticamente do código.
 
 A Figura~\ref{fig:componentes_ast} apresenta a arquitetura responsável por essa etapa, composta por três módulos principais: (i) ASTEngine, que implementa a travessia e a construção dos TNodes; (ii) PassPlugins, que enriquece cada nó com metadados adicionais; e (iii) ASTApi, que fornece a fachada de alto nível para execução da análise em repositórios completos.
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{drawio/comp_flow/diagrama_de_componentes_AST.png}
+    \includegraphics[width=1.2\textwidth]{drawio/comp_flow/diagrama_de_componentes_AST.png}
     \caption{Arquitetura da etapa de extração da AST enriquecida.}
     \label{fig:componentes_ast}
 \end{figure}
 
 \subsection{Arquitetura da Extração}
 
-A etapa de Analyse Path é realizada no módulo service, que percorre recursivamente o diretório fornecido, identifica os arquivos .py, lê seu conteúdo e inicializa o contexto de análise (Ctx) para cada arquivo. Em seguida, ocorre a fase de Source Code Parsing, na qual o conteúdo do arquivo é convertido para uma AST nativa do Python (ast.parse) e imediatamente processado pelo motor ASTEngine através da função walk\_module. Essa etapa não apenas interpreta o código, mas também constrói o modelo intermediário, criando instâncias de TNode que representam cada elemento sintático do arquivo.
+A etapa de Analyse Path é realizada no módulo service, que percorre recursivamente o diretório fornecido, identifica os arquivos .py, lê seu conteúdo e inicializa o contexto de análise (Ctx) para cada arquivo. Em seguida, ocorre a fase de Source Code Parsing, na qual o conteúdo do arquivo é convertido para uma AST nativa do Python (ast.parse) e imediatamente processado pelo motor ASTEngine através da função walk\_module. Essa etapa não apenas interpreta o código, mas também constrói o IM, criando instâncias de TNode que representam cada elemento sintático do arquivo.
 
 O motor ASTEngine conduz uma travessia controlada da AST, seguindo estratégias configuráveis (recursive pre-order, post-order, iterative, BFS). Abordagens clássicas voltadas à recuperação de comportamento e de fluxos de execução tendem a empregar depth-first search em pós-ordem (DFS post-order). No contexto da ferramenta REVUML, por exemplo, \textcite{Fauzi2016AST} argumentam que a travessia pós-ordem é mais adequada para preservar a sequência das instruções no código e, assim, apoiar a geração de diagramas de sequência e a reconstrução da ordem de execução.
 
 Por outro lado, \textcite{LiangHuang2024ASTLLM} mostram que a linearização da AST em pré-ordem (especialmente na forma reverse pre-order) produz sequências mais estáveis e informativas para técnicas de tree positional encoding e embeddings estruturais, levando a ganhos consistentes em tarefas de classificação, sumarização e clustering de código.
 
-Durante essa travessia, são criados dois elementos fundamentais: o contexto de análise (Ctx) e os nós enriquecidos (TNode). O Ctx mantém o estado global do arquivo (linhas de código, comentários, pilhas de classes e funções), enquanto cada TNode encapsula o nó original da AST e recebe metadados estruturais (profundidade na AST, relações pai–filho, posição no arquivo) e textuais.
+Durante essa travessia, são criados dois elementos fundamentais: o Ctx e os nós TNode. O Ctx mantém o estado global do arquivo (linhas de código, comentários, pilhas de classes e funções), enquanto cada TNode encapsula o nó original da AST e recebe metadados estruturais (profundidade na AST, relações pai–filho, posição no arquivo) e textuais.
 
 O enriquecimento dos nós é realizado pelos passes registrados em PassPlugins, organizados em fases (PRE, ENRICH, POST) e ordenados por dependências declaradas via PassRegistry. Cada plugin preenche campos específicos do TNode, como PathInfo, NamesVisibility, MethodKind, IOSignature, ClassKind, DocsComments e CallGraph.
 
-Ao final, o módulo service agrega todos os TNodes enriquecidos em uma instância AnalysisResult, que representa o modelo intermediário sobre oqual as etapas posteriores de geração de embeddings e recuperação de casos de uso serão executadas.
+Ao final, o módulo service agrega todos os TNodes enriquecidos em uma instância AnalysisResult, que representa o IM sobre o qual as etapas posteriores de geração de embeddings e recuperação de casos de uso serão executadas.
 
 \section{Geração de Embeddings Semântico-Estruturais (AST + GNN)}
 
-A segunda etapa parte do modelo intermediário produzido pela análise de AST, composto por instâncias de TNode enriquecidas com metadados estruturais e textuais. Cada TNode é transformado em um vetor numérico que combina informações sobre o papel daquele elemento no código (tipo de nó, visibilidade, tipo de classe e método, grau de participação no grafo de chamadas, profundidade, entre outros) com uma representação densa do vocabulário associado (nomes, docstrings e comentários).
+Cada TNode é convertido em um vetor denso que sintetiza suas propriedades sintáticas (tipo de nó na AST, visibilidade, tipo de classe/método, métricas locais de chamada, profundidade estrutural, propriedades semânticas dos identificadores) e seu conteúdo textual (nomes, docstrings, comentários e indícios comportamentais). Essa combinação produz um embedding local \[h_t\] capaz de representar o papel semântico-estrutural de cada elemento no código.
+
+Os embeddings locais são refinados por uma rede CodeGNN, que incorpora informações de vizinhança, profundidade e distância na AST. Esse processamento corresponde exatamente às transformações previstas na fase de MU: a interpretação do modelo intermediário a partir de suas relações, similaridades e interdependências, produzindo representações que agregam significado global ao comportamento do código. 
+
+A Figura~\ref{fig:componentes_embeddings} ilustra a arquitetura da etapa de geração de embeddings.
 
 \begin{figure}[h]
     \centering
@@ -443,29 +450,23 @@ Em paralelo, a codificação textual utiliza um encoder semântico baseado em Se
 
 Neste trabalho, chamamos de tokens do identificador as subpalavras obtidas a partir do nome original. Por exemplo, os identificadores getUserName e user\_name são decompostos, respectivamente, em [get, user, name] e [user, name]. Essa decomposição separa unidades semânticas menores, permitindo que o encoder textual explore melhor o significado dos nomes do código.
 
-A inclusão explícita dos tokens de identificadores e do estilo de nomeação é inspirada em resultados recentes que mostram que a decomposição semântica de nomes de variáveis e métodos melhora a capacidade do modelo de inferir o papel estrutural e funcional dos elementos do código \textcite{Ahmad2020TransformerCodeSummarization}. No presente trabalho, o texto consolidado é truncado em até 1024 caracteres e codificado pelo SBERTTextEncoder, produzindo um embedding semântico denso de dimensão fixa (TEXT\_EMB\_DIM).
+A inclusão explícita dos tokens de identificadores e do estilo de nomeação é inspirada em \textcite{Ahmad2020TransformerCodeSummarization} que mostram que a decomposição semântica de nomes de variáveis e métodos melhora a capacidade do modelo de inferir o papel estrutural e funcional dos elementos do código. No presente trabalho, o texto consolidado é truncado e codificado pelo SBERTTextEncoder, produzindo um embedding semântico denso de dimensão fixa (TEXT\_EMB\_DIM).
 
 \subsection{Encoder semântico e combinação estrutural–textual}
 
 Uma vez definidas as features estruturais e o texto consolidado de cada nó, a etapa seguinte consiste em projetar essas informações em um espaço vetorial denso adequado para o processamento por grafos. Essa projeção é realizada em duas camadas: (i) um encoder semântico baseado em Sentence-BERT para o texto associado ao nó e (ii) um Multi-Layer Perceptron (MLP) que combina o vetor estrutural e o embedding textual em uma única representação compacta.
 
-O encoder semântico é encapsulado na classe SBERTTextEncoder, que carrega um modelo pré-treinado SentenceTransformer (all-MiniLM-L6-v2) e expõe um método encode responsável por mapear uma descrição textual arbitrária para um vetor denso de dimensão fixa (TEXT\_EMB\_DIM). Para evitar o custo de inicialização repetida do modelo, o encoder é instanciado uma única vez, por meio de um padrão de projeto do tipo singleton (get\_text\_encoder), e reutilizado em toda a análise. A função text\_features aplica esse encoder ao texto gerado por concat\_text\_from\_tnode, produzindo um embedding semântico \(x_t \in \mathbb{R}^{\texttt{TEXT\_EMB\_DIM}}\).
+O encoder semântico é encapsulado na classe SBERTTextEncoder, que carrega um modelo pré-treinado SentenceTransformer (all-MiniLM-L6-v2) e expõe um método encode responsável por mapear uma descrição textual arbitrária para um vetor denso de dimensão fixa (TEXT\_EMB\_DIM). Para evitar o custo de inicialização repetida do modelo, o encoder é instanciado uma única vez, por meio de um padrão de projeto do tipo singleton (get\_text\_encoder), e reutilizado em toda a análise. A função text\_features aplica esse encoder ao texto gerado por concat\_text\_from\_tnode, produzindo um embedding semântico.
 
-Esses dois vetores são combinados pelo módulo TNodeMLPEncoder, implementado como uma rede MLP de duas camadas. Esse encoder recebe como entrada a concatenação do vetor estrutural e do embedding textual e aplica primeiro uma normalização de camada (LayerNorm) sobre o vetor conjunto, seguida de uma projeção não linear:
+Esses dois vetores são combinados pelo módulo TNodeMLPEncoder, implementado como uma rede MLP de duas camadas. Esse encoder recebe como entrada a concatenação do vetor estrutural e do embedding textual e aplica primeiro uma normalização de camada (\emph{LayerNorm}) sobre o vetor conjunto, seguida de uma projeção não linear:
 
 \[
 z_t = [\, s_t \,\|\, x_t \,], \qquad
-\hat{z}_t = \text{LayerNorm}(z_t), \qquad
+\hat{z}_t = \mathrm{LayerNorm}(z_t), \qquad
 h_t = W_2 \,\sigma(W_1 \hat{z}_t + b_1) + b_2,
 \]
 
-em que \(s_t \in \mathbb{R}^{STRUCT\_DIM}\) representa as features estruturais do nó \(t\), \(x_t \in \mathbb{R}^{TEXT\_EMB\_DIM}\) é o embedding semântico produzido pelo SBERT, \([\,\cdot \,\|\, \cdot\,]\) indica concatenação, \(\sigma\) é a função de ativação ReLU e \(h_t \in \mathbb{R}^D\) é o vetor resultante com dimensão de saída out\_dim. 
-
-baron! begin
-em que \(s_t \in \mathbb{R}^{\text{STRUCT\_DIM}}\) representa as features estruturais do nó \(t\),
-enquanto \(z \in \mathbb{R}^{D}\) é o embedding final de código, que alimenta a etapa seguinte de agrupamento.
-
-baron! end
+em que \(s_t \in \mathbb{R}^{\text{STRUCT\_DIM}}\) representa as features estruturais do nó \(t\), \(x_t \in \mathbb{R}^{\text{TEXT\_EMB\_DIM}}\) corresponde ao embedding semântico produzido pelo SBERT, \([\,\cdot\|\cdot\,]\) indica concatenação, \(\sigma\) é a função de ativação ReLU e \(h_t \in \mathbb{R}^{D}\) é o embedding final de código gerado pelo encoder. Esse vetor \(h_t\) é então utilizado como entrada para a etapa posterior de convolução em grafos e para o processo de agrupamento de casos de uso.
 
 A função make\_tnode\_encoder instancia o TNodeMLPEncoder com os valores corretos de STRUCT\_DIM e TEXT\_EMB\_DIM, garantindo que a rede seja compatível com o encoder textual carregado. Por fim, a função encode\_tnode aplica, para cada TNode, o pipeline completo de codificação estrutural e textual, retornando o vetor \(h_t\) já no dispositivo (CPU ou GPU) em que a GNN será executada.
 
@@ -537,7 +538,7 @@ H^{(l+1)} = \sigma\bigl(\hat{D}^{-1/2} \hat{A}\, \hat{D}^{-1/2} H^{(l)} W^{(l)}\
 \]
 onde \(H^{(0)} = X\), \(W^{(l)}\) são as matrizes de pesos aprendidas e \(\sigma\) é a ativação ReLU. A inclusão de auto-laços garante que cada nó preserve e propague também as suas próprias features, e não apenas a informação agregada dos vizinhos.
 
-Para obter um embedding em nível de arquivo, o modelo CodeGNN aplica um esquema de global attention pooling. Dado o conjunto de embeddings de nós \(h_i\), um pequeno MLP (attn\_gate) calcula um escalar de importância \(s_i = a(h_i)\) para cada nó. Esses escores são normalizados por softmax,
+Para obter um embedding em nível de arquivo, o modelo CodeGNN aplica um esquema de global attention pooling. Dado o conjunto de embeddings de nós \(h_i\), um pequeno MLP (attn\_gate) calcula um escalar de importância \(s_i = a(h_i)\) para cada nó. Esses scores são normalizados por softmax,
 \[
 \alpha_i = \frac{\exp(s_i)}{\sum_j \exp(s_j)},
 \]
@@ -559,7 +560,6 @@ Do ponto de vista conceitual, o pipeline produz três níveis de representação
 
 Esses embeddings são reutilizados na etapa seguinte para selecionar candidatos a casos de uso, agrupar métodos semanticamente semelhantes e derivar relações de dependência, inclusão e extensão entre funcionalidades.
 
-
 \section{Recuperação e Agrupamento de Casos de Uso}
 
 \begin{figure}[h]
@@ -571,7 +571,9 @@ Esses embeddings são reutilizados na etapa seguinte para selecionar candidatos 
 
 A terceira etapa do pipeline visa identificar, a partir dos embeddings gerados pela GNN, os casos de uso implementados no sistema. Essa etapa é dividida em duas fases principais: (i) a recuperação inicial de candidatos a casos de uso, baseada em heurísticas estruturais aplicadas à AST enriquecida; e (ii) o agrupamento desses candidatos por similaridade semântica, utilizando algoritmos de clustering no espaço vetorial dos embeddings.
 
-A identificação inicial dos casos de uso parte diretamente da AST enriquecida, na qual cada nó (TNode) contém informações estruturais como qualificador de visibilidade, nome qualificado (qname), classe proprietária, métodos chamados e outros metadados adicionais. Seguindo a heurística clássica apresentada por \textcite{pereira2011recovering}, cada método público é tratado como um caso de uso básico, pois representa uma operação exposta por uma classe e, portanto, uma funcionalidade observável do sistema. 
+A Figura~\ref{fig:componentes_usecases} ilustra a arquitetura dessa etapa, composta por dois módulos principais.
+
+A identificação inicial dos casos de uso parte diretamente da AST enriquecida, na qual cada nó TNode contém informações estruturais como qualificador de visibilidade, nome qualificado (qname), classe proprietária, métodos chamados e outros metadados adicionais. Seguindo a heurística clássica apresentada por \textcite{pereira2011recovering}, cada método público é tratado como um caso de uso básico, pois representa uma operação exposta por uma classe e, portanto, uma funcionalidade observável do sistema. 
 
 Essa regra simplifica e padroniza a detecção inicial dos casos de uso, garantindo que apenas operações acessíveis externamente sejam consideradas candidatas.
 
@@ -589,22 +591,23 @@ Por fim, para cada método público é construído um objeto UseCaseCandidate, q
 
 O resultado é uma lista estruturada de candidatos a casos de uso, pronta para ser utilizada nas etapas subsequentes do pipeline: geração de embeddings, clustering, classificação de papéis e construção das relações entre casos de uso (include, extend, generalização e dependência).
 
-\subsection{Agrupamento e Seleção de Casos de Uso}
-
 Uma vez identificados os candidatos a casos de uso, cada UseCaseCandidate é projetado para o espaço vetorial gerado pela GNN. A função extract\_uc\_embeddings seleciona, a partir da matriz de embeddings de nós produzida pelo modelo (node\_embs), apenas as linhas correspondentes aos índices dos candidatos e aplica normalização L2 linha a linha.
 
 
-\paragraph{Escolha automática do número de clusters.}
+\subsection{Escolha automática do número de clusters.}
 Quando o número de clusters não é fornecido explicitamente pelo usuário, o sistema aplica uma rotina inspirada no método Kernel k-MACE de \textcite{rahman2018kernel}. A função choose\_m\_and\_sigma\_with\_kmace\_like avalia uma grade de valores para \(m\) (número de clusters) e \(\sigma\) (largura do kernel gaussiano) e, para cada combinação, executa kernel\_kmeans\_labels\_and\_compactness. Essa rotina calcula: (i) o data error médio \(Y_{sm}\), medido como a distância média de cada ponto ao centro do seu cluster no espaço do kernel; (ii) a variância dessas distâncias \(\mathrm{Var}_{sm}\); e (iii) uma aproximação da matriz de covariância de cada cluster no espaço original.
 
-Com esses valores, é construído um escore composto
+Com esses valores, é construído um score composto
 \[
 Z_{sm} \approx Y_{sm} + \beta_N \sqrt{\mathrm{Var}_{sm}} + \lambda m,
 \]
-no qual o primeiro termo favorece configurações mais compactas, o segundo controla a variabilidade intra\-cluster (proxy do bound de generalização do Kernel k-MACE) e o terceiro penaliza soluções com muitos clusters. Na implementação, esses termos são mapeados diretamente para o código da seguinte forma: \(Y_{sm}\) corresponde à variável y\_sm, \(\mathrm{Var}_{sm}\) à variável var\_sm, \(\beta_N\) ao parâmetro beta\_N e \(\lambda\) ao parâmetro penalty\_lambda da função choose\_m\_and\_sigma\_with\_kmace\_like. A combinação \((m,\sigma)\) que minimiza z\_sm (implementação de \(Z_{sm}\)) é escolhida como configuração final de agrupamento.
 
+onde \(Y_{sm}\) favorece configurações mais compactas, o termo \(\mathrm{Var}_{sm}\) atua como um proxy do bound probabilístico do ACE no Kernel k-MACE, e o termo \(\lambda m\) penaliza soluções com número excessivo de clusters, evitando segmentações superfinas. Na implementação, esses elementos correspondem diretamente às variáveis y\_sm, var\_sm, beta\_N e penalty\_lambda na função choose\_m\_and\_sigma\_with\_kmace\_like.
 
-\paragraph{Clustering com \emph{k}-means.}
+Por fim, a combinação \((m,\sigma)\) que minimiza \(Z_{sm}\) é 
+selecionada como configuração final de agrupamento.
+
+\subsection{Clustering com \emph{k}-means.}
 Definidos o número de clusters e, quando necessário, o valor de \(\sigma\), os candidatos são agrupados pela função run\_kmeans\_uc. Esse módulo permite duas variantes: (i) k-means linear clássico, usando a implementação do scikit-learn com distância euclidiana; ou (ii) kernel k-means, que opera sobre uma matriz de similaridade gaussiana \(K\), calculada a partir dos embeddings com o kernel
 \(
 K_{ij} = \exp\bigl(-\lVert x_i - x_j\rVert^2 / (2\sigma^2)\bigr).
@@ -613,12 +616,12 @@ Na prática, o pipeline utiliza a versão com kernel, aproximando o comportament
 
 O resultado desse processo é encapsulado na estrutura UcClusteringResult, que armazena: (i) o vetor de rótulos de cluster para cada candidato; (ii) os centroides dos clusters (no espaço original dos embeddings); e (iii) a lista de membros por cluster, juntamente com um representante selecionado para cada grupo.
 
-\paragraph{Seleção de casos de uso representativos.}
+\subsection{Seleção de casos de uso representativos.}
 A escolha dos casos de uso que serão destacados no diagrama parte diretamente dos clusters obtidos. Para cada cluster, a função run\_kmeans\_uc seleciona um único representante (focus use case) em duas etapas.
 
 Na primeira etapa, o algoritmo tenta restringir a escolha a métodos considerados ``mais abstratos''. Para isso, a função is\_abstract\_like verifica se o candidato está associado a uma classe marcada como abstract ou protocol; quando existirem tais métodos dentro do cluster, apenas eles são considerados como candidatos a representante. Caso contrário, todos os membros do cluster são elegíveis.
 
-Na segunda etapa, os candidatos elegíveis são ordenados por um escore que combina centralidade semântica e profundidade estrutural. Seja \(x_i \in \mathbb{R}^D\) o embedding do candidato \(i\) no cluster \(k\) e \(\mu_k\) o centróide desse cluster (média dos embeddings no espaço original). Para cada candidato é calculado:
+Na segunda etapa, os candidatos elegíveis são ordenados por um score que combina centralidade semântica e profundidade estrutural. Seja \(x_i \in \mathbb{R}^D\) o embedding do candidato \(i\) no cluster \(k\) e \(\mu_k\) o centróide desse cluster (média dos embeddings no espaço original). Para cada candidato é calculado:
 \[
 \mathrm{score}(i) = \lVert x_i - \mu_k \rVert_2 \;+\; \alpha \cdot \mathrm{depth\_norm}(i),
 \]
@@ -626,52 +629,83 @@ onde o primeiro termo mede a distância euclidiana do embedding ao centróide (c
 
 Com isso, cada cluster passa a ser representado por um caso de uso que, ao mesmo tempo, (i) é próximo ao centro do grupo no espaço vetorial aprendido pela GNN e (ii) tende a residir em arquivos mais ``superficiais'' da arquitetura, em linha com a hipótese de que casos de uso principais são expostos em camadas menos internas do sistema.
 
-\paragraph{Relações estruturais entre casos de uso.}
-Após o agrupamento dos candidatos, o pipeline reconstrói automaticamente as relações estruturais entre os casos de uso. Três tipos principais de relações são extraídos:
+\subsection{Relações estruturais entre casos de uso.}
+
+Após o agrupamento dos candidatos, o pipeline reconstrói automaticamente 
+as relações estruturais entre os casos de uso. Três tipos principais de 
+vínculos são extraídos:
 
 \begin{itemize}
-    \item \textbf{Generalização} — Quando um método de uma subclasse sobrescreve um método definido na classe-base, cria-se uma relação superclass.m $\rightarrow$ subclass.m. Essa inferência é realizada pela função build\_uc\_generalization\_edges, que agrupa os candidatos por classe proprietária e verifica, para cada subclasse, se alguma de suas classes-base define um método com o mesmo nome.
+    \item \textbf{Generalização} — Quando um método de uma subclasse 
+    sobrescreve um método definido na classe-base, cria-se uma aresta 
+    superclass.m~$\rightarrow$~subclass.m. Essa inferência é realizada pela 
+    função build\_uc\_generalization\_edges, que agrupa os candidatos 
+    por classe proprietária e verifica, para cada subclasse, se alguma classe-base 
+    define um método com o mesmo nome.
 
-    \item \textbf{Dependências} — A partir das chamadas registradas em called\_qnames, a função build\_dependency\_edges constrói arestas entre casos de uso, representando que um método público depende da execução de outro (Arquivo: edges.py).
+    \item \textbf{Dependências} — A partir das chamadas registradas em 
+    called\_qnames, a função build\_dependency\_edges constrói 
+    arestas entre casos de uso, indicando que um método público depende da 
+    execução de outro.
 
-    \item \textbf{Estereótipos de dependência} — Cada dependência é classificada como include, extend ou dependency. A função build\_dependency\_edge\_infos agrega informações sobre chamadas guardadas e não guardadas, enquanto classify\_edge aplica heurísticas inspiradas na semântica UML (por exemplo, chamadas reutilizadas no fluxo principal sugerem include). A função group\_edges\_by\_kind organiza essas relações em dependências semânticas e genéricas, permitindo sua renderização diferenciada no diagrama final.
+    \item \textbf{Informações de chamada} — Para cada par 
+    $(\mathrm{UC}_{src}, \mathrm{UC}_{dst})$, a função 
+    build\_dependency\_edge\_infos agrega o número total de chamadas, 
+    bem como quantas são condicionais (guarded\_calls) e quantas ocorrem 
+    no fluxo principal (unguarded\_calls), caracterizando o padrão de 
+    ativação da dependência.
 \end{itemize}
 
-\paragraph{Cálculo de métricas e papéis.}
-Com as relações de dependência estabelecidas, o pipeline calcula métricas estruturais para cada caso de uso por meio da função compute\_uc\_metrics. Essa função faz o cálculo de fan-in e fan-out (compute\_fan\_in\_out), que quantificam, respectivamente, quantas vezes um caso de uso é chamado por outros e quantas vezes ele chama outros casos de uso.
+Com as dependências estabelecidas, o pipeline calcula métricas estruturais para 
+cada caso de uso utilizando a função compute\_uc\_metrics. Os valores de 
+fan-in e fan-out (compute\_fan\_in\_out) quantificam, respectivamente, 
+quantas vezes um caso de uso é chamado por outros e quantas vezes ele ativa 
+outros casos de uso.
 
-A partir dessas métricas, a função classify\_uc\_role atribui um papel estrutural a cada caso de uso:
+A classificação semântica das dependências é realizada pela função 
+\texttt{classify\_edge}, que combina (i) os valores de fan-in do destino, obtidos 
+a partir de \texttt{metrics}, com (ii) o padrão de guarda das chamadas disponível 
+em \texttt{edge\_infos}. Um caso de uso destino é rotulado como alvo de um 
+\textit{<<include>>} quando apresenta reutilização
 
-\begin{itemize}
-    \item \textbf{entry} — casos de uso com fan-in = 0 e fan-out > 0, funcionando como pontos de entrada lógicos (operações que iniciam fluxos);
-    \item \textbf{bridge} — casos de uso com fan-in > 0 e fan-out > 0, atuando como intermediários que encadeiam funcionalidades;
-    \item \textbf{helper} — casos de uso com fan-in > 0 e fan-out = 0, caracterizando operações auxiliares frequentemente reutilizadas;
-    \item \textbf{isolated} — casos de uso sem dependências relevantes, indicando funções desconectadas do fluxo principal.
-\end{itemize}
-
-\paragraph{Inferência de include e extend.}
-A partir das métricas estruturais calculadas, em particular dos valores de fan-in e fan-out, o pipeline realiza a classificação semântica das dependências entre casos de uso. Essa etapa utiliza os mesmos identificadores presentes em metrics para distinguir quando uma chamada representa reutilização obrigatória, comportamento alternativo ou apenas uma dependência genérica.
-
-Primeiro, a função build\_dependency\_edge\_infos agrega, para cada par 
-\(
-(\mathrm{UC}_{src}, \mathrm{UC}_{dst})
-\),
-o número total de chamadas observadas, bem como quantas são condicionais (guarded\_calls) e quantas ocorrem no fluxo principal (unguarded\_calls). Esses valores descrevem o padrão de ativação de cada dependência.
-
-Em seguida, a função classify\_edge utiliza o fan-in do destino, recuperado diretamente do dicionário metrics, em conjunto com o padrão de guarda das chamadas para rotular semanticamente cada aresta. Um caso de uso dst é classificado como alvo de um <<include>> quando apresenta reutilização
 \[
 \mathrm{fan\_in}_{dst} \ge 1
 \]
-e todas as chamadas que o ativam ocorrem de forma incondicional (guarded\_calls = 0 e unguarded\_calls > 0), caracterizando um subfluxo obrigatório.
 
-Por outro lado, o rótulo <<extend>> é atribuído quando todas as chamadas são condicionais (guarded\_calls > 0 e unguarded\_calls = 0), indicando um comportamento opcional ou alternativo que só é executado mediante uma condição específica no código.
+e todas as invocações que o ativam são incondicionais 
+(guarded\_calls = 0 e unguarded\_calls > 0), caracterizando um 
+subfluxo obrigatório.
 
-Nos casos em que nenhuma dessas condições é satisfeita, a relação é tratada como dependency. Finalmente, a função group\_edges\_by\_kind organiza as arestas classificadas em dependências semânticas (include e extend) e dependências genéricas, permitindo que o diagrama final reflita de maneira diferenciada os três tipos de vínculos.
+O rótulo \textit{<<extend>>} é atribuído quando todas as chamadas são 
+condicionais (guarded\_calls > 0 e unguarded\_calls = 0), 
+indicando um comportamento alternativo ou opcional.
+
+Nos demais casos, a relação é classificada como \textit{dependency}. Por fim, a 
+função \texttt{group\_edges\_by\_kind} organiza as arestas resultantes em 
+dependências semânticas (include e extend) e dependências genéricas, permitindo 
+que o diagrama final reflita visualmente os três tipos de vínculos.
+
+Com as métricas consolidadas, a função classify\_uc\_role atribui um 
+papel estrutural a cada caso de uso, caracterizando sua função dentro do grafo:
+
+\begin{itemize}
+    \item \textbf{entry} — fan-in = 0 e fan-out > 0; casos de uso que iniciam 
+    fluxos, funcionando como pontos de entrada lógicos;
+    
+    \item \textbf{bridge} — fan-in > 0 e fan-out > 0; casos de uso que atuam como 
+    intermediários, encadeando funcionalidades;
+    
+    \item \textbf{helper} — fan-in > 0 e fan-out = 0; operações auxiliares 
+    frequentemente reutilizadas por outros casos de uso;
+    
+    \item \textbf{isolated} — casos de uso sem dependências relevantes, indicando 
+    funcionalidades desconectadas do fluxo principal.
+\end{itemize}
 
 \subsection{Geração do diagrama de casos de uso.}
-Com todas as métricas calculadas e as relações (dependency, include, extend e generalização) devidamente classificadas, o pipeline constrói a especificação final do diagrama. A função build\_filtered\_diagram\_spec seleciona quais casos de uso serão exibidos, garantindo que todos os representantes de cluster apareçam no diagrama e incluindo automaticamente seus vizinhos estruturais quando necessário. Por fim, export\_diagram\_spec\_to\_puml gera o arquivo PlantUML contendo os nós, estereótipos e arestas resultantes da análise, enquanto o módulo generate\_usecase\_diagram encapsula esse processo de ponta a ponta, produzindo a imagem final do diagrama. Assim, o modelo sintetiza em uma única visualização os principais casos de uso identificados, seus papéis estruturais e suas relações funcionais.
+Com todas as métricas calculadas e as relações (dependency, include, extend e generalização) devidamente classificadas, o pipeline constrói a especificação final do diagrama. A função build\_filtered\_diagram\_spec seleciona quais casos de uso serão exibidos, garantindo que todos os representantes de cluster (primary) apareçam no diagrama e incluindo automaticamente seus vizinhos estruturais quando necessário. Por fim, export\_diagram\_spec\_to\_puml gera o arquivo PlantUML contendo os nós, estereótipos e arestas resultantes da análise, enquanto o módulo generate\_usecase\_diagram encapsula esse processo de ponta a ponta, produzindo a imagem final do diagrama. Assim, o modelo sintetiza em uma única visualização os principais casos de uso identificados, seus papéis estruturais e suas relações funcionais.
 
-\subsubsection{Parâmetros do pipeline de análise de casos de uso}
+\subsection{Parâmetros do pipeline de análise de casos de uso}
 
 A Tabela~\ref{tab:params-usecase} descreve os principais parâmetros utilizados na execução do pipeline  (run\_usecase\_analysis), incluindo configurações de extração da AST, geração de embeddings, pesos gaussianos do grafo reduzido, clustering e seleção de representantes.
 
@@ -739,7 +773,8 @@ usa k-means euclidiano clássico. \\
 Largura da gaussiana usada no Kernel k-means. Controla o quão ``local'' é a noção de similaridade entre embeddings: valores menores destacam apenas vizinhos muito próximos, enquanto valores maiores aproximam embeddings mais distantes. É utilizado apenas quando \texttt{use\_kernel = True}: se \texttt{n\_clusters} é \texttt{None}, o valor de \(\sigma\) é escolhido automaticamente pela rotina kmace-like; se \texttt{n\_clusters} é fixo, \(\sigma\) deve ser fornecido explicitamente. \\
 
 \texttt{beta\_N} &
-Peso do termo de variância no escore \(Z_{sm}\) da rotina kmace-like, 
+Peso do termo de variância no e
+score \(Z_{sm}\) da rotina kmace-like, 
 controlando a penalização de clusters muito difusos. \\
 
 \texttt{penalty\_lambda} &
@@ -750,7 +785,7 @@ Coeficiente \(\lambda\) que penaliza soluções com muitos clusters no cálculo 
 \hline
 
 \texttt{depth\_weight} &
-Peso \(\alpha\) do termo de profundidade de arquivo no escore usado para seleção do representante.
+Peso \(\alpha\) do termo de profundidade de arquivo no score usado para seleção do representante.
 Valores maiores priorizam casos de uso definidos em arquivos mais ``superficiais'' na estrutura do repositório. \\
 
 \hline
@@ -808,9 +843,7 @@ Independentemente do modo de execução, o sistema expõe ao jogador um conjunto
     \item \textbf{Encerrar a partida}: o jogador pode encerrar a sessão de jogo (QUIT), seja no modo interativo ou no terminal tradicional. O sistema trata o encerramento de forma controlada, podendo solicitar confirmação e, ao final, exibir mensagens de classificação de acordo com a pontuação alcançada.
 \end{itemize}
 
-Já no artigo, \textcite{jerz2007colossal} recupera e examina o código-fonte escrito por Will Crowther, a partir de um backup preservado no SAIL. Jerz descreve as seis tabelas centrais que organizam os dados do jogo: descrições longas, rótulos curtos das salas, dados de mapa, vocabulário agrupado, estados estáticos e eventos ou dicas.  
-
-Essa arquitetura de dados é mantida na reimplementação em Python, embora expandida para doze seções, resultado da integração da versão de Don Woods \textcite{rhodes_adventure_py}. A leitura e o processamento dessas tabelas ocorrem por meio do arquivo advent.dat, que preserva a semântica e a estrutura do código original. 
+Já no artigo, \textcite{jerz2007colossal} recupera e examina o código-fonte escrito por Will Crowther, a partir de um backup preservado no SAIL. Jerz descreve as 12 tabelas centrais que organizam os dados do jogo.
 
 As seis tabelas descritas por Crowther estruturam o mundo do jogo e suas interações:
 \begin{enumerate}
@@ -825,13 +858,154 @@ As seis tabelas descritas por Crowther estruturam o mundo do jogo e suas intera�
 As outras seis adicionadas na versão em colaboração com Woods são:
 
 \begin{enumerate}
-  \item \emph{Object locations} — localização dos objetos;
-  \item \emph{Action defaults} — mensagens padrão ligadas a verbos de ação;
-  \item \emph{Liquid assets / flags — COND} por sala (luz, líquidos, restrições do pirata, bits de dicas);
-  \item \emph{Class messages} — faixas de pontuação e mensagens de classificação do jogador;
-  \item \emph{Hints} — dicas (turnos necessários, penalidade, pergunta e resposta);
-  \item \emph{Magic messages} — mensagens de inicialização e manutenção.
+  \item \textbf{Object locations} — localização dos objetos;
+  \item \textbf{Action defaults} — mensagens padrão ligadas a verbos de ação;
+  \item \textbf{Liquid assets / flags — COND} por sala (luz, líquidos, restrições do pirata, bits de dicas);
+  \item \textbf{Class messages} — faixas de pontuação e mensagens de classificação do jogador;
+  \item \textbf{Hints} — dicas (turnos necessários, penalidade, pergunta e resposta);
+  \item \textbf{Magic messages} — mensagens de inicialização e manutenção.
 \end{enumerate}
+
+Descrições mais detalhadas dessas tabelas podem ser encontradas no Apêndice~\ref{apendice:tabelas_adventure}.
+
+Essa arquitetura de dados é mantida na reimplementação em Python, embora expandida para doze seções, resultado da integração da versão de Don Woods \textcite{rhodes_adventure_py}. A leitura e o processamento dessas tabelas ocorrem por meio do arquivo advent.dat, que preserva a semântica e a estrutura do código original. 
+
+
+\subsection{Integração com a implementação em Python.}
+Na reimplementação em Python analisada neste trabalho, as doze tabelas descritas por Crowther e Woods são materializadas na classe Data, definida no módulo data.py. O arquivo advent.dat é percorrido sequencialmente pela função parse(), que delega cada linha às rotinas section1--section12, responsáveis por povoar as estruturas internas da instância de Data. Esses atributos incluem: rooms (descrições longas, rótulos curtos, tabela topológica e flags de ambiente), vocabulary (verbos de movimento, ações e substantivos), objects (localizações, propriedades e mensagens condicionais), messages (eventos, respostas e textos arbitrários), class\_messages (faixas de pontuação), hints (condições, penalidades e textos de dica) e magic\_messages (mensagens de manutenção). 
+
+A classe Game, definida em game.py e declarada como class Game(Data), herda integralmente essa camada de dados estáticos e acrescenta o estado dinâmico da execução, localização (self.loc), turnos (self.turns), pontuação (compute\_score), estado da luz (t\_light), morte e ressurgimento (die(), die\_here()), fechamento da caverna, temporizadores, manejo de criaturas (anões e pirata) e controle de efeitos aleatórios. Além disso, Game implementa o interpretador de comandos do jogador, distribuído entre os métodos do\_command(), dispatch\_command() e as rotinas específicas de verbo (t\_carry(), t\_drop(), t\_unlock(), do\_motion() etc.), que consultam diretamente as estruturas derivadas do arquivo de dados advent.dat, previamente carregadas pela classe Data.
+
+Na prática, essa arquitetura permite mapear comandos textuais simples para operações de alto nível: por exemplo, o comando ``take lamp'' é tratado por t\_carry() e atualiza o inventário do jogador; ``drop vase'' aciona t\_drop() e pode quebrar o objeto dependendo da sala; movimentos como ``west'' ou ``back'' são resolvidos por do\_motion() com base na tabela de transições da caverna; ``inventory'' lista os itens carregados; ``score'' consulta compute\_score() para exibir a pontuação corrente; e ``save <arquivo>'' delega a t\_suspend() e ao método de classe resume(), permitindo serializar e restaurar todo o estado da aventura a partir de um arquivo. Assim, o motor do jogo opera sobre um modelo declarativo fixado nas tabelas originais, separando de forma clara a camada de representação estática (Data) da camada comportamental (Game)
+
+A Figura~\ref{fig:caso_de_uso_adventure} apresenta o grafo de casos de uso reconstruído pelo modelo. Os nós destacados como entry (Game.t\_light, i\_quit.callback, die.callback) correspondem a pontos de entrada em fluxos de interação relevantes para o jogador, como acender ou apagar a luz, encerrar voluntariamente a partida ou morrer e ter a pontuação final calculada. Métodos como Game.ask\_verb\_what e Game.dispatch\_command aparecem como casos de uso de suporte, associados ao processamento de comandos textuais, enquanto operações sobre o modelo de dados, como Data.referent e Object.is\_at, são identificadas como auxiliares na resolução de referências a objetos e na verificação de localização. As relações include e extend capturam, respectivamente, chamadas obrigatórias, por exemplo, a inclusão de Game.write\_message sempre que uma mensagem é exibida, e variações opcionais de fluxo, como os múltiplos caminhos que levam ao encerramento da partida. Dessa forma, o diagrama gerado é compatível com a compreensão funcional.
+
+\begin{table}[h]
+  \centering
+  \caption{Parâmetros utilizados no experimento final para o repositório \texttt{adventure}.}
+  \label{tab:param_adventure}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Parâmetro} & \textbf{Valor} \\
+    \midrule
+    \texttt{strategy}       & \texttt{recursive\_post} \\
+    \texttt{out\_dim}       & \texttt{256} \\
+    \texttt{max\_chars}     & \texttt{2048} \\
+    \texttt{sigma\_gap}     & \texttt{0.5} \\
+    \texttt{sigma\_depth}   & \texttt{1.0} \\
+    \texttt{mode}           & \texttt{mean} \\
+    \texttt{n\_clusters}    & \texttt{None} \\
+    \texttt{use\_kernel}    & \texttt{True} \\
+    \texttt{sigma}          & \texttt{None} \\
+    \texttt{beta\_N}        & \texttt{1.5} \\
+    \texttt{penalty\_lambda}& \(\,2 \cdot e^{-4}\,\) \\
+    \texttt{depth\_weight}  & \texttt{01.0} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[angle=90,width=0.47\textwidth]{GRAPH_UC/Images/adventure.png}
+  \caption{Caso de uso do repositório adventure gerado pelo modelo construido.}
+  \label{fig:caso_de_uso_adventure}
+\end{figure}
+
+\subsection{Análise estrutural do código de xadrez}
+
+O sistema é estruturado em três componentes principais. A classe Player representa cada jogador, armazenando cor, peças capturadas e pontuação, enquanto WhitePlayer e BlackPlayer apenas especializam a cor. A classe Board concentra o estado do tabuleiro e as regras estáticas do jogo: mantém a matriz 8x8 de peças, valida movimentos conforme o tipo de peça e aplica capturas e promoções. Já a classe ChessGame atua como controlador da aplicação, coordenando os turnos, lendo comandos do usuário e encerrando a partida quando um rei é capturado. Assim, a lógica do domínio permanece encapsulada em Board, os jogadores funcionam como entidades simples e ChessGame organiza o fluxo geral da partida.
+
+O diagrama gerado pelo modelo para esse repositório é apresentado na Figura~\ref{fig:caso_de_uso_chess}. Nele, o método ChessGame.run é identificado como caso de uso de entrada (entry), representando o fluxo principal da aplicação: o laço de jogo que imprime o tabuleiro, lê comandos, valida movimentos, aplica capturas e alterna o jogador da vez. Os métodos ChessGame.switch\_turn, Board.print\_board e Board.apply\_move aparecem como casos de uso auxiliares (helper), refletindo o fato de que a execução de uma jogada envolve, respectivamente, a alternância de turno, a visualização do tabuleiro e a atualização efetiva do estado interno.
+
+A funcionalidade de pontuação é representada por Player.score\_summary, também classificado como helper. O modelo identificou uma relação include entre ChessGame.show\_scoreboard e Player.score\_summary, o que está alinhado com a implementação: sempre que o placar é exibido, o sistema delega a cada jogador a construção de um resumo textual com nome, cor, pontuação e peças capturadas. De modo semelhante, a relação extend entre Board.move\_is\_valid e Board.is\_white\_piece indica que a verificação de cor da peça é um comportamento opcional, acionado apenas quando a validação de um movimento exige checar se a peça na origem pertence ao jogador atual. O método Player.color\_str é classificado como other, por ser uma rotina de apoio simples, usada apenas para exibir a cor no texto do jogo.
+
+Comparando o diagrama com as funcionalidades esperadas, observa-se que o modelo recupera de forma razoável a estrutura da aplicação. O caso de uso de realizar jogada é decomposto em um caso de uso principal (ChessGame.run) e em casos auxiliares responsáveis por alternar o turno, atualizar o tabuleiro e exibir o placar. A lógica de pontuação e de captura de peças aparece ligada ao placar por meio de Player.score\_summary. 
+
+\begin{table}[h]
+  \centering
+  \caption{Parâmetros utilizados no experimento final para o repositório \texttt{chess}.}
+  \label{tab:param_chess}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Parâmetro} & \textbf{Valor} \\
+    \midrule
+    \texttt{strategy}       & \texttt{recursive\_post} \\
+    \texttt{out\_dim}       & \texttt{256} \\
+    \texttt{max\_chars}     & \texttt{256} \\
+    \texttt{sigma\_gap}     & \texttt{0.5} \\
+    \texttt{sigma\_depth}   & \texttt{1.0} \\
+    \texttt{mode}           & \texttt{mean} \\
+    \texttt{n\_clusters}    & \texttt{None} \\
+    \texttt{use\_kernel}    & \texttt{True} \\
+    \texttt{sigma}          & \texttt{None} \\
+    \texttt{beta\_N}        & \texttt{1.5} \\
+    \texttt{penalty\_lambda}& \(\,2 \cdot e^{-4}\,\) \\
+    \texttt{depth\_weight}  & \texttt{0.5} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[angle=90,width=0.24\textwidth]{GRAPH_UC/Images/chess.png}
+  \caption{Caso de uso do repositório chess gerado pelo modelo construido.}
+  \label{fig:caso_de_uso_chess}
+\end{figure}
+
+\subsection{Repositório do próprio pipeline (autorreferência)}
+
+Além dos dois sistemas selecionados, o modelo também foi executado sobre o próprio código que o implementa. Esse repositório reúne os módulos de análise de AST, geração de embeddings, construção do grafo e recuperação de casos de uso, conforme descrito nos diagramas de componentes e de fluxo de dados apresentados.
+
+\begin{table}[h]
+  \centering
+  \caption{Parâmetros utilizados no experimento final para o repositório \texttt{graph uc}.}
+  \label{tab:param_graph_uc}
+  \begin{tabular}{ll}
+    \toprule
+    \textbf{Parâmetro} & \textbf{Valor} \\
+    \midrule
+    \texttt{strategy}       & \texttt{recursive\_post} \\
+    \texttt{out\_dim}       & \texttt{512} \\
+    \texttt{max\_chars}     & \texttt{2048} \\
+    \texttt{sigma\_gap}     & \texttt{0.5} \\
+    \texttt{sigma\_depth}   & \texttt{1.0} \\
+    \texttt{mode}           & \texttt{mean} \\
+    \texttt{n\_clusters}    & \texttt{None} \\
+    \texttt{use\_kernel}    & \texttt{True} \\
+    \texttt{sigma}          & \texttt{None} \\
+    \texttt{beta\_N}        & \texttt{1.5} \\
+    \texttt{penalty\_lambda}& \(\,2 \cdot e^{-4}\,\) \\
+    \texttt{depth\_weight}  & \texttt{0.5} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[angle=90,width=0.12\textwidth]{GRAPH_UC/Images/graph_uc.png}
+  \caption{Caso de uso do repositório graph uc gerado pelo modelo construído.}
+  \label{fig:caso_de_uso_graph_uc}
+\end{figure}
+
+\section{Conclusão}
+
+Do ponto de vista conceitual e prático, as principais contribuições deste trabalho podem ser sintetizadas em:
+
+\begin{itemize}
+  \item a definição de um modelo intermediário baseado em AST enriquecida para sistemas Python, com TNodes que integram informações sintáticas, estruturais e textuais de forma uniforme;
+  \item o projeto de um encoder semântico-estrutural de código que combina features de AST, decomposição de identificadores, documentação e comentários com uma GNN guiada por pesos gaussianos no grafo reduzido;
+  \item a proposta de um processo de recuperação de casos de uso fundamentado em heurísticas estruturais (métodos públicos, grafo de chamadas, herança), clustering no espaço vetorial e métricas de fan-in/fan-out, incluindo uma rotina kmace-like para seleção automática do número de clusters;
+  \item a implementação de um pipeline completo de redocumentação capaz de gerar diagramas de casos de uso em PlantUML a partir de repositórios Python, aproximando engenharia de requisitos e engenharia reversa em cenários com documentação ausente ou desatualizada.
+\end{itemize}
+
+Naturalmente, a abordagem apresenta limitações. Em primeiro lugar, a inferência de casos de uso é inteiramente baseada em heurísticas estruturais e em similaridade entre embeddings, o que pode destacar fluxos internos relevantes do ponto de vista de arquitetura de código, mas pouco significativos do ponto de vista de negócio. Em segundo lugar, o pipeline não recupera atores externos; o diagrama resultante representa apenas casos de uso internos e suas relações. 
+
+Em síntese, os resultados obtidos sugerem que o código-fonte, quando analisado por meio de modelos intermediários baseados em AST e enriquecido com representações semânticas, pode servir como ponto de partida viável para a recuperação de casos de uso. Embora não substitua a participação de usuários e analistas na engenharia de requisitos, a abordagem proposta oferece um apoio automatizado à redocumentação de sistemas legados, reduzindo o esforço inicial de compreensão e aproximando, em alguma medida, o que o sistema faz do que os seus requisitos originais pretendiam que ele fizesse.
+
+\section*{Apêndice A -- 12 tabelas de dados do jogo Adventure}
+\addcontentsline{toc}{section}{Apêndice A -- 12 tabelas de dados do jogo Adventure}
+\label{apendice:tabelas_adventure}
 
 \paragraph{Tabela 1 – Long Descriptions.}  
 A Tabela 1 contém descrições extensas dos ambientes do jogo. Com entradas identificadas de 1 a 140, ela define os textos apresentados ao jogador em diferentes locais. Cada linha representa uma sala ou estado narrativo. Parte dessas descrições refere-se diretamente a locais da caverna, como o trecho “YOU ARE STANDING AT THE END OF A ROAD BEFORE A SMALL BRICK BUILDING”, enquanto outras descrevem situações de falha ou eventos inesperados, como “YOU ARE AT THE BOTTOM OF THE PIT WITH A BROKEN NECK”.  
@@ -1020,140 +1194,10 @@ Exemplos
   \item 4 \textit{ONLY WIZARDS ARE PERMITTED WITHIN THE CAVE RIGHT NOW.}
 \end{itemize}
 
-\paragraph{Integração com a implementação em Python.}
-Na reimplementação em Python analisada neste trabalho, as doze tabelas descritas por Crowther e Woods são materializadas na classe Data, definida no módulo data.py. O arquivo advent.dat é percorrido sequencialmente pela função parse(), que delega cada linha às rotinas section1--section12, responsáveis por povoar as estruturas internas da instância de Data. Esses atributos incluem: rooms (descrições longas, rótulos curtos, tabela topológica e flags de ambiente), vocabulary (verbos de movimento, ações e substantivos), objects (localizações, propriedades e mensagens condicionais), messages (eventos, respostas e textos arbitrários), class\_messages (faixas de pontuação), hints (condições, penalidades e textos de dica) e magic\_messages (mensagens de manutenção). 
-
-A classe Game, definida em game.py e declarada como class Game(Data), herda integralmente essa camada de dados estáticos e acrescenta o estado dinâmico da execução, localização (self.loc), turnos (self.turns), pontuação (compute\_score), estado da luz (t\_light), morte e ressurgimento (die(), die\_here()), fechamento da caverna, temporizadores, manejo de criaturas (anões e pirata) e controle de efeitos aleatórios. Além disso, Game implementa o interpretador de comandos do jogador, distribuído entre os métodos do\_command(), dispatch\_command() e as rotinas específicas de verbo (t\_carry(), t\_drop(), t\_unlock(), do\_motion() etc.), que consultam diretamente as estruturas derivadas do arquivo de dados advent.dat, previamente carregadas pela classe Data.
-
-Na prática, essa arquitetura permite mapear comandos textuais simples para operações de alto nível: por exemplo, o comando ``take lamp'' é tratado por t\_carry() e atualiza o inventário do jogador; ``drop vase'' aciona t\_drop() e pode quebrar o objeto dependendo da sala; movimentos como ``west'' ou ``back'' são resolvidos por do\_motion() com base na tabela de transições da caverna; ``inventory'' lista os itens carregados; ``score'' consulta compute\_score() para exibir a pontuação corrente; e ``save <arquivo>'' delega a t\_suspend() e ao método de classe resume(), permitindo serializar e restaurar todo o estado da aventura a partir de um arquivo. Assim, o motor do jogo opera sobre um modelo declarativo fixado nas tabelas originais, separando de forma clara a camada de representação estática (Data) da camada comportamental (Game)
-
-A Figura~\ref{fig:caso_de_uso_adventure} apresenta o grafo de casos de uso reconstruído pelo modelo. Os nós destacados como entry (Game.t\_light, i\_quit.callback, die.callback) correspondem a pontos de entrada em fluxos de interação relevantes para o jogador, como acender ou apagar a luz, encerrar voluntariamente a partida ou morrer e ter a pontuação final calculada. Métodos como Game.ask\_verb\_what e Game.dispatch\_command aparecem como casos de uso de suporte, associados ao processamento de comandos textuais, enquanto operações sobre o modelo de dados, como Data.referent e Object.is\_at, são identificadas como auxiliares na resolução de referências a objetos e na verificação de localização. As relações include e extend capturam, respectivamente, chamadas obrigatórias, por exemplo, a inclusão de Game.write\_message sempre que uma mensagem é exibida, e variações opcionais de fluxo, como os múltiplos caminhos que levam ao encerramento da partida. Dessa forma, o diagrama gerado é compatível com a compreensão funcional.
-
-\begin{table}[h]
-  \centering
-  \caption{Parâmetros utilizados no experimento final para o repositório \texttt{adventure}.}
-  \label{tab:param_adventure}
-  \begin{tabular}{ll}
-    \toprule
-    \textbf{Parâmetro} & \textbf{Valor} \\
-    \midrule
-    \texttt{strategy}       & \texttt{recursive\_pre} \\
-    \texttt{out\_dim}       & \texttt{256} \\
-    \texttt{max\_chars}     & \texttt{2048} \\
-    \texttt{sigma\_gap}     & \texttt{0.5} \\
-    \texttt{sigma\_depth}   & \texttt{1.0} \\
-    \texttt{mode}           & \texttt{mean} \\
-    \texttt{n\_clusters}    & \texttt{None} \\
-    \texttt{use\_kernel}    & \texttt{True} \\
-    \texttt{sigma}          & \texttt{None} \\
-    \texttt{beta\_N}        & \texttt{1.5} \\
-    \texttt{penalty\_lambda}& \(\,2 \cdot e^{-4}\,\) \\
-    \texttt{depth\_weight}  & \texttt{01.0} \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\begin{figure}
-  \centering
-  \includegraphics[angle=90,width=0.47\textwidth]{GRAPH_UC/Images/adventure.png}
-  \caption{Caso de uso do repositório adventure gerado pelo modelo construido.}
-  \label{fig:caso_de_uso_adventure}
-\end{figure}
-
-\subsection{Análise estrutural do código de xadrez}
-
-O sistema é estruturado em três componentes principais. A classe Player representa cada jogador, armazenando cor, peças capturadas e pontuação, enquanto WhitePlayer e BlackPlayer apenas especializam a cor. A classe Board concentra o estado do tabuleiro e as regras estáticas do jogo: mantém a matriz 8x8 de peças, valida movimentos conforme o tipo de peça e aplica capturas e promoções. Já a classe ChessGame atua como controlador da aplicação, coordenando os turnos, lendo comandos do usuário e encerrando a partida quando um rei é capturado. Assim, a lógica do domínio permanece encapsulada em Board, os jogadores funcionam como entidades simples e ChessGame organiza o fluxo geral da partida.
-
-O diagrama gerado pelo modelo para esse repositório é apresentado na Figura~\ref{fig:caso_de_uso_chess}. Nele, o método ChessGame.run é identificado como caso de uso de entrada (entry), representando o fluxo principal da aplicação: o laço de jogo que imprime o tabuleiro, lê comandos, valida movimentos, aplica capturas e alterna o jogador da vez. Os métodos ChessGame.switch\_turn, Board.print\_board e Board.apply\_move aparecem como casos de uso auxiliares (helper), refletindo o fato de que a execução de uma jogada envolve, respectivamente, a alternância de turno, a visualização do tabuleiro e a atualização efetiva do estado interno.
-
-A funcionalidade de pontuação é representada por Player.score\_summary, também classificado como helper. O modelo identificou uma relação include entre ChessGame.show\_scoreboard e Player.score\_summary, o que está alinhado com a implementação: sempre que o placar é exibido, o sistema delega a cada jogador a construção de um resumo textual com nome, cor, pontuação e peças capturadas. De modo semelhante, a relação extend entre Board.move\_is\_valid e Board.is\_white\_piece indica que a verificação de cor da peça é um comportamento opcional, acionado apenas quando a validação de um movimento exige checar se a peça na origem pertence ao jogador atual. O método Player.color\_str é classificado como other, por ser uma rotina de apoio simples, usada apenas para exibir a cor no texto do jogo.
-
-Comparando o diagrama com as funcionalidades esperadas, observa-se que o modelo recupera de forma razoável a estrutura da aplicação. O caso de uso de realizar jogada é decomposto em um caso de uso principal (ChessGame.run) e em casos auxiliares responsáveis por alternar o turno, atualizar o tabuleiro e exibir o placar. A lógica de pontuação e de captura de peças aparece ligada ao placar por meio de Player.score\_summary. 
-
-\begin{table}[h]
-  \centering
-  \caption{Parâmetros utilizados no experimento final para o repositório \texttt{chess}.}
-  \label{tab:param_chess}
-  \begin{tabular}{ll}
-    \toprule
-    \textbf{Parâmetro} & \textbf{Valor} \\
-    \midrule
-    \texttt{strategy}       & \texttt{recursive\_pre} \\
-    \texttt{out\_dim}       & \texttt{256} \\
-    \texttt{max\_chars}     & \texttt{256} \\
-    \texttt{sigma\_gap}     & \texttt{0.5} \\
-    \texttt{sigma\_depth}   & \texttt{1.0} \\
-    \texttt{mode}           & \texttt{mean} \\
-    \texttt{n\_clusters}    & \texttt{None} \\
-    \texttt{use\_kernel}    & \texttt{True} \\
-    \texttt{sigma}          & \texttt{None} \\
-    \texttt{beta\_N}        & \texttt{1.5} \\
-    \texttt{penalty\_lambda}& \(\,2 \cdot e^{-4}\,\) \\
-    \texttt{depth\_weight}  & \texttt{0.5} \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-
-\begin{figure}
-  \centering
-  \includegraphics[angle=90,width=0.24\textwidth]{GRAPH_UC/Images/chess.png}
-  \caption{Caso de uso do repositório chess gerado pelo modelo construido.}
-  \label{fig:caso_de_uso_chess}
-\end{figure}
-
-\subsection{Repositório do próprio pipeline (autorreferência)}
-
-Além dos dois sistemas selecionados, o modelo também foi executado sobre o próprio código que o implementa. Esse repositório reúne os módulos de análise de AST, geração de embeddings, construção do grafo e recuperação de casos de uso, conforme descrito nos diagramas de componentes e de fluxo de dados apresentados.
-
-\begin{table}[h]
-  \centering
-  \caption{Parâmetros utilizados no experimento final para o repositório \texttt{graph uc}.}
-  \label{tab:param_graph_uc}
-  \begin{tabular}{ll}
-    \toprule
-    \textbf{Parâmetro} & \textbf{Valor} \\
-    \midrule
-    \texttt{strategy}       & \texttt{recursive\_pre} \\
-    \texttt{out\_dim}       & \texttt{512} \\
-    \texttt{max\_chars}     & \texttt{2048} \\
-    \texttt{sigma\_gap}     & \texttt{0.5} \\
-    \texttt{sigma\_depth}   & \texttt{1.0} \\
-    \texttt{mode}           & \texttt{mean} \\
-    \texttt{n\_clusters}    & \texttt{None} \\
-    \texttt{use\_kernel}    & \texttt{True} \\
-    \texttt{sigma}          & \texttt{None} \\
-    \texttt{beta\_N}        & \texttt{1.5} \\
-    \texttt{penalty\_lambda}& \(\,2 \cdot e^{-4}\,\) \\
-    \texttt{depth\_weight}  & \texttt{0.5} \\
-    \bottomrule
-  \end{tabular}
-\end{table}
-
-\begin{figure}
-  \centering
-  \includegraphics[angle=90,width=0.12\textwidth]{GRAPH_UC/Images/graph_uc.png}
-  \caption{Caso de uso do repositório graph uc gerado pelo modelo construído.}
-  \label{fig:caso_de_uso_graph_uc}
-\end{figure}
-
-\section{Conclusão}
-
-Do ponto de vista conceitual e prático, as principais contribuições deste trabalho podem ser sintetizadas em:
-
-\begin{itemize}
-  \item a definição de um modelo intermediário baseado em AST enriquecida para sistemas Python, com TNodes que integram informações sintáticas, estruturais e textuais de forma uniforme;
-  \item o projeto de um encoder semântico-estrutural de código que combina features de AST, decomposição de identificadores, documentação e comentários com uma GNN guiada por pesos gaussianos no grafo reduzido;
-  \item a proposta de um processo de recuperação de casos de uso fundamentado em heurísticas estruturais (métodos públicos, grafo de chamadas, herança), clustering no espaço vetorial e métricas de fan-in/fan-out, incluindo uma rotina kmace-like para seleção automática do número de clusters;
-  \item a implementação de um pipeline completo de redocumentação capaz de gerar diagramas de casos de uso em PlantUML a partir de repositórios Python, aproximando engenharia de requisitos e engenharia reversa em cenários com documentação ausente ou desatualizada.
-\end{itemize}
-
-Naturalmente, a abordagem apresenta limitações. Em primeiro lugar, a inferência de casos de uso é inteiramente baseada em heurísticas estruturais e em similaridade entre embeddings, o que pode destacar fluxos internos relevantes do ponto de vista de arquitetura de código, mas pouco significativos do ponto de vista de negócio. Em segundo lugar, o pipeline não recupera atores externos; o diagrama resultante representa apenas casos de uso internos e suas relações. 
-
-Em síntese, os resultados obtidos sugerem que o código-fonte, quando analisado por meio de modelos intermediários baseados em AST e enriquecido com representações semânticas, pode servir como ponto de partida viável para a recuperação de casos de uso. Embora não substitua a participação de usuários e analistas na engenharia de requisitos, a abordagem proposta oferece um apoio automatizado à redocumentação de sistemas legados, reduzindo o esforço inicial de compreensão e aproximando, em alguma medida, o que o sistema faz do que os seus requisitos originais pretendiam que ele fizesse.
+\newpage
+\printindex
 
 \newpage
-
 \printbibliography
 
 \end{document}
